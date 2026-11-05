@@ -176,7 +176,7 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
                     )}
                     <div className="flex items-center gap-2">
                       <p className="text-base font-semibold text-text">
-                        {dhikr.transliteration}
+                        {dhikr.name || dhikr.transliteration}
                       </p>
                       {dhikr.isBuiltIn && (
                         <span className="text-[10px] font-medium bg-primary-soft text-primary px-2 py-0.5 rounded-full">
@@ -184,6 +184,9 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
                         </span>
                       )}
                     </div>
+                    {dhikr.transliteration && dhikr.transliteration !== dhikr.name && (
+                      <p className="text-xs italic text-muted mt-0.5">{dhikr.transliteration}</p>
+                    )}
                     {dhikr.meaning && (
                       <p className="text-xs text-muted mt-0.5 leading-snug">{dhikr.meaning}</p>
                     )}

@@ -149,7 +149,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                 {activeDhikr.arabicText}
               </p>
             )}
-            <p className="text-sm font-medium text-text">{activeDhikr.transliteration}</p>
+            <p className="text-sm font-semibold text-text">{activeDhikr.name || activeDhikr.transliteration}</p>
+            {activeDhikr.transliteration && activeDhikr.transliteration !== activeDhikr.name && (
+              <p className="text-xs italic text-muted mt-0.5">{activeDhikr.transliteration}</p>
+            )}
             {activeDhikr.meaning && (
               <p className="text-xs text-muted mt-0.5">{activeDhikr.meaning}</p>
             )}
