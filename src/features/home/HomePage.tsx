@@ -23,7 +23,6 @@ interface HomePageProps {
   settings: AppSettings;
   onUpdateSession: (session: ActiveSession) => void;
   onNavigateToDhikr: () => void;
-  onNavigateToDailyDhikr?: () => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
@@ -32,7 +31,6 @@ export const HomePage: React.FC<HomePageProps> = ({
   settings,
   onUpdateSession,
   onNavigateToDhikr,
-  onNavigateToDailyDhikr,
 }) => {
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [showTargetModal, setShowTargetModal] = useState(false);
@@ -153,24 +151,6 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
           <ChevronDown size={20} className="text-muted flex-shrink-0 ml-3" />
         </button>
-
-        {/* Daily Dhikr Quick Link */}
-        {onNavigateToDailyDhikr && (
-          <button
-            type="button"
-            onClick={onNavigateToDailyDhikr}
-            className="w-full mt-2.5 px-4 py-2 bg-primary-soft/60 hover:bg-primary-soft border border-primary/20 rounded-xl flex items-center justify-between text-left active:scale-[0.99] transition-all"
-          >
-            <div className="flex items-center gap-2.5">
-              <span className="text-sm">☀️🌙</span>
-              <div>
-                <p className="text-xs font-bold text-primary-dark">Dzikir Pagi & Petang</p>
-                <p className="text-[10px] text-muted">Bacaan dzikir harian sesuai sunnah berlembar</p>
-              </div>
-            </div>
-            <ChevronDown size={16} className="text-primary -rotate-90" />
-          </button>
-        )}
 
         {/* Counter Area */}
         <div className="flex flex-col items-center mt-6">

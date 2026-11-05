@@ -267,7 +267,6 @@ export const App: React.FC = () => {
             settings={settings}
             onUpdateSession={handleUpdateSession}
             onNavigateToDhikr={() => setActiveTab('dhikr')}
-            onNavigateToDailyDhikr={() => setActiveTab('daily-dhikr')}
           />
         )}
 
