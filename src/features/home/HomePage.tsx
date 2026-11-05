@@ -150,12 +150,6 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
             )}
             <p className="text-sm font-semibold text-text">{activeDhikr.name || activeDhikr.transliteration}</p>
-            {activeDhikr.transliteration && activeDhikr.transliteration !== activeDhikr.name && (
-              <p className="text-xs italic text-muted mt-0.5">{activeDhikr.transliteration}</p>
-            )}
-            {activeDhikr.meaning && (
-              <p className="text-xs text-muted mt-0.5">{activeDhikr.meaning}</p>
-            )}
           </div>
           <ChevronDown size={20} className="text-muted flex-shrink-0 ml-3" />
         </button>
