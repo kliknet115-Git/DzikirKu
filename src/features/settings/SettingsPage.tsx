@@ -430,7 +430,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
             </span>
           </div>
 
-          <div className="bg-background rounded-xl p-3.5 text-left text-xs text-muted space-y-2 border border-border/60">
+          <div className="bg-background rounded-xl p-3.5 text-left text-xs text-muted space-y-1.5 border border-border/60">
             <div className="flex items-center gap-2 text-text font-medium">
               <ShieldCheck size={16} className="text-primary" />
               <span>Privasi & Keamanan:</span>
@@ -438,14 +438,16 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
             <p>
               • 100% Offline-First: Semua data disimpan secara lokal di ponsel Anda melalui IndexedDB.
             </p>
-            <p>
-              • Tidak ada login, analitik, pelacakan pihak ketiga, atau pengiriman data ke server eksternal.
-            </p>
           </div>
 
-          <p className="text-xs text-muted leading-relaxed">
-            Dibuat untuk membantu menghitung dzikir harian dengan antarmuka yang bersih, tenang, dan mudah digunakan dengan satu tangan di ponsel iPhone.
-          </p>
+          <div className="space-y-1.5 text-xs text-muted leading-relaxed">
+            <p>
+              Dibuat oleh Edi Supriatna, Vibe Coding Developer, Ai enthusiast, 3D Mechanical Designer.
+            </p>
+            <p>
+              Mudah-mudahan menjadi amal jariyah yang mengalir terus.
+            </p>
+          </div>
         </div>
       </Modal>
 
