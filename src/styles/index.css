@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B5A3B;
+  --color-primary-dark: #123D2A;
+  --color-primary-soft: #EAF1E3;
+  --color-background: #FBF8F1;
+  --color-surface: #FFFFFF;
+  --color-gold: #D8B65C;
+  --color-text: #202820;
+  --color-muted: #737A72;
+  --color-border: #E8E4D9;
+  --color-danger: #B42318;
+  --color-primary-light: #e0eeda;
+}
+
+:root {
+  --sat: env(safe-area-inset-top);
+  --sab: env(safe-area-inset-bottom);
+  --sal: env(safe-area-inset-left);
+  --sar: env(safe-area-inset-right);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+html {
+  background-color: #FBF8F1;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', Roboto, sans-serif;
+  background-color: #FBF8F1;
+  color: #202820;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.arabic-text {
+  font-family: 'Noto Naskh Arabic', 'Geeza Pro', 'Amiri', 'Traditional Arabic', 'Simplified Arabic', serif;
+  direction: rtl;
+  line-height: 2.2;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Progress ring animation */
+@keyframes progress-fill {
+  from { stroke-dashoffset: var(--circumference); }
+  to { stroke-dashoffset: var(--offset); }
+}
+
+/* Target reached animation */
+@keyframes target-reached {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.target-reached-animation {
+  animation: target-reached 0.5s ease-in-out;
+}
+
+/* Count button press effect */
+@keyframes count-press {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.count-press {
+  animation: count-press 0.1s ease-in-out;
+}
+
+/* Smooth tab transitions */
+.tab-content {
+  animation: fade-in 0.2s ease-out;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  animation: fade-backdrop 0.2s ease-out;
+}
+
+@keyframes fade-backdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  animation: slide-up 0.25s ease-out;
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
