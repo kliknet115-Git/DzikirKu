@@ -232,5 +232,22 @@ export const doaCategories: DoaCategory[] = [
       },
     ],
   },
+  {
+    id: 'rezeki-halal',
+    icon: '۞',
+    title: 'Doa Memohon Kecukupan Rezeki Halal',
+    subtitle: 'Memohon rezeki halal dan terbebas dari ketergantungan kepada selain Allah',
+    countLabel: '1 DOA',
+    items: [
+      {
+        title: 'Doa Memohon Kecukupan Rezeki Halal',
+        subtitle: 'Memohon rezeki halal dan terbebas dari ketergantungan kepada selain Allah',
+        arabic: 'اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ،\nوَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ',
+        latin: 'Allāhummak-finī bi ḥalālika ‘an ḥarāmika, wa aghninī bi faḍlika ‘amman siwāka.',
+        meaning: 'Ya Allah, cukupkanlah aku dengan rezeki-Mu yang halal sehingga aku terhindar dari yang haram, dan cukupkanlah aku dengan karunia-Mu sehingga aku tidak bergantung kepada selain-Mu.',
+        note: 'HR. At-Tirmidzi no. 3563, diriwayatkan dari Ali bin Abi Thalib radhiyallahu ‘anhu.',
+      },
+    ],
+  },
 ];
 
