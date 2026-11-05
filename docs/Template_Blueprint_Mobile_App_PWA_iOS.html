@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Master Blueprint & Template Pengembangan Mobile App PWA (iOS Optimized)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0B5A3B;
+      --primary-dark: #123D2A;
+      --primary-soft: #EAF1E3;
+      --accent: #D8B65C;
+      --bg: #F8FAF9;
+      --card: #FFFFFF;
+      --text: #1E2922;
+      --muted: #64746B;
+      --border: #E5EBE7;
+      --code-bg: #111A15;
+      --code-text: #EAF2EC;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Sticky Header */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 16px 24px;
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      background: var(--primary-soft);
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(145deg, #123D2A, #0B5A3B);
+      color: white;
+      border-radius: 28px;
+      padding: 40px 32px;
+      margin-bottom: 32px;
+      box-shadow: 0 12px 36px rgba(11, 90, 59, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 15px;
+      max-width: 760px;
+      line-height: 1.6;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .hero-tag {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 8px;
+    }
+
+    /* Quick Jump Grid */
+    .nav-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .nav-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 16px;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    }
+
+    .nav-card .num {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .nav-card .label {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    /* Content Cards */
+    .section-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+
+    .section-card h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-card p.desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin: 24px 0 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Code Blocks */
+    .code-container {
+      background: var(--code-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      margin: 14px 0 20px;
+      border: 1px solid #1E2E25;
+    }
+
+    .code-header {
+      background: #18241D;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #23352A;
+    }
+
+    .file-path {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #9AB2A3;
+      font-weight: 500;
+    }
+
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #EAF2EC;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    pre {
+      padding: 16px;
+      overflow-x: auto;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--code-text);
+      line-height: 1.55;
+    }
+
+    /* Spec Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      background: #F4F7F5;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    /* Feature Checklists */
+    .checklist {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 10px;
+      margin: 16px 0;
+    }
+
+    .checklist li {
+      background: #F7FAF8;
+      border: 1px solid var(--border);
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .checklist li span.icon {
+      color: var(--primary);
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    /* Alert Box */
+    .alert {
+      padding: 14px 18px;
+      border-radius: 14px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin: 16px 0;
+    }
+
+    .alert.info {
+      background: #EAF3EF;
+      border: 1px solid #D2E4DA;
+      color: #17422D;
+    }
+
+    .alert.warning {
+      background: #FEF9EB;
+      border: 1px solid #F5E5BA;
+      color: #6C4C0C;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      color: var(--muted);
+      font-size: 13px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Header -->
+  <header>
+    <div class="header-container">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 20px;">📱</span>
+        <strong style="font-size: 15px; color: var(--primary-dark);">PWA Mobile Blueprint Template</strong>
+      </div>
+      <span class="badge">iOS-Optimized • 100% Offline-First</span>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <span class="badge" style="background: rgba(255,255,255,0.2); color: #fff; margin-bottom: 12px;">Standard Blueprint</span>
+      <h1>Template Spesifikasi & Arsitektur Mobile App PWA</h1>
+      <p>
+        Panduan teknis dan cetak biru (blueprint) komprehensif untuk membangun aplikasi mobile modern menggunakan stack <strong>React + TypeScript + Vite + Tailwind CSS + IndexedDB</strong> yang dioptimalkan untuk iPhone/iOS Safari (Add to Home Screen) serta Android dengan kapabilitas 100% offline-first.
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">React 19</span>
+        <span class="hero-tag">TypeScript Strict</span>
+        <span class="hero-tag">Vite 8</span>
+        <span class="hero-tag">Tailwind CSS</span>
+        <span class="hero-tag">IndexedDB (idb)</span>
+        <span class="hero-tag">Service Worker PWA</span>
+        <span class="hero-tag">iOS Safe Areas</span>
+        <span class="hero-tag">GitHub Pages Deploy</span>
+      </div>
+    </div>
+
+    <!-- Quick Navigation Grid -->
+    <div class="nav-grid">
+      <a href="#section-stack" class="nav-card">
+        <span class="num">01</span>
+        <span class="label">Tech Stack & Prinsip</span>
+      </a>
+      <a href="#section-project" class="nav-card">
+        <span class="num">02</span>
+        <span class="label">Struktur Folder & Setup</span>
+      </a>
+      <a href="#section-pwa" class="nav-card">
+        <span class="num">03</span>
+        <span class="label">PWA & Offline Service Worker</span>
+      </a>
+      <a href="#section-ios" class="nav-card">
+        <span class="num">04</span>
+        <span class="label">Komponen & iOS UX Patterns</span>
+      </a>
+      <a href="#section-database" class="nav-card">
+        <span class="num">05</span>
+        <span class="label">Penyimpanan Lokal (IndexedDB)</span>
+      </a>
+      <a href="#section-deploy" class="nav-card">
+        <span class="num">06</span>
+        <span class="label">Deployment GitHub Pages</span>
+      </a>
+    </div>
+
+    <!-- ================= SECTION 1: TECH STACK & CORE PRINCIPLES ================= -->
+    <section id="section-stack" class="section-card">
+      <h2><span>01.</span> Tech Stack & Prinsip Arsitektur</h2>
+      <p class="desc">Daftar pustaka inti yang dipilih karena kecepatan, stabilitas, dan ketiadaan dependensi backend.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Komponen</th>
+            <th>Teknologi Terpilih</th>
+            <th>Peran & Alasan Pemilihan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>UI Framework</strong></td>
+            <td>React 19 + TypeScript</td>
+            <td>Type safety penuh, ekosistem kaya, dan rendering state reaktif yang cepat.</td>
+          </tr>
+          <tr>
+            <td><strong>Bundler & Dev Server</strong></td>
+            <td>Vite 8</td>
+            <td>Build secepat kilat (&lt; 1 detik), Hot Module Replacement (HMR) instan, bundling ringan.</td>
+          </tr>
+          <tr>
+            <td><strong>Styling System</strong></td>
+            <td>Tailwind CSS</td>
+            <td>Desain utilitas konsisten, mudah dipadukan dengan iOS Design Tokens & Dark/Light mode.</td>
+          </tr>
+          <tr>
+            <td><strong>Ikonografi</strong></td>
+            <td>Lucide React</td>
+            <td>Koleksi ikon SVG outline konsisten, ringan, dan cocok dengan gaya native iOS.</td>
+          </tr>
+          <tr>
+            <td><strong>Penyimpanan Lokal</strong></td>
+            <td>IndexedDB (via library <code>idb</code>)</td>
+            <td>Kapasitas penyimpanan besar (&gt;50MB), terstruktur, tidak terhapus saat refresh browser.</td>
+          </tr>
+          <tr>
+            <td><strong>Feedback Haptik & Audio</strong></td>
+            <td>Web Audio API + Vibrate API</td>
+            <td>Klik sintetis instan tanpa beban file audio besar; fallback haptik otomatis di iOS Safari.</td>
+          </tr>
+          <tr>
+            <td><strong>Pengujian Unit</strong></td>
+            <td>Vitest</td>
+            <td>Unit testing cepat tanpa konfigurasi berat, kompatibel 100% dengan syntax Jest.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Prinsip Desain Utama:</h3>
+      <ul class="checklist">
+        <li><span class="icon">✓</span> <strong>100% Offline-First:</strong> Semua fitur utama wajib berfungsi sempurna tanpa internet setelah instalasi awal.</li>
+        <li><span class="icon">✓</span> <strong>Tanpa Backend / Tanpa Login:</strong> Pengguna dapat langsung menggunakan aplikasi dalam 1 detik tanpa registrasi.</li>
+        <li><span class="icon">✓</span> <strong>One-Hand Thumb Zone:</strong> Tombol aksi utama ditempatkan di area bawah layar yang mudah dijangkau jempol.</li>
+        <li><span class="icon">✓</span> <strong>Zero Double-Tap Zoom:</strong> Memakai <code>touch-action: manipulation</code> untuk mematikan zoom double tap iOS yang mengganggu.</li>
+      </ul>
+    </section>
+
+    <!-- ================= SECTION 2: PROJECT STRUCTURE & SETUP ================= -->
+    <section id="section-project" class="section-card">
+      <h2><span>02.</span> Struktur Folder & Konfigurasi Inti Proyek</h2>
+      <p class="desc">Struktur direktori modular yang memisahkan fitur, komponen tata letak, logika data, dan tipe data.</p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="file-path">Struktur Direktori Standar</span>
+          <button class="copy-btn" onclick="copySnippet('dir-tree')">Salin</button>
+        </div>
+        <pre id="dir-tree"><code>app-name/
+├── public/
+│   ├── icons/                  # Ikon aplikasi: icon-180.png, icon-192.png, icon-512.png, icon.svg
+│   ├── favicon.svg             # Favicon browser
+│   ├── apple-touch-icon.png    # Ikon khusus iPhone Home Screen (180x180)
+│   ├── manifest.webmanifest    # Metadata PWA (nama, tema, ikon, mode standalone)
+│   └── sw.js                   # Service Worker Cache-First untuk fungsi offline
+├── src/
+│   ├── components/
+│   │   ├── layout/             # Header.tsx, BottomNav.tsx
+│   │   └── ui/                 # Modal.tsx, ConfirmDialog.tsx
+│   ├── features/               # Halaman-halaman fitur aplikasi (1 folder per fitur)
+│   │   ├── home/               # HomePage.tsx
+│   │   ├── feature-a/          # FeatureAPage.tsx
+│   │   └── settings/           # SettingsPage.tsx
+│   ├── lib/                    # Logika murni & utilitas (database, haptics, validation)
+│   │   ├── database.ts         # Inisialisasi IndexedDB & operasi CRUD
+│   │   ├── haptics.ts          # Feedback getar & audio click sintetis
+│   │   └── validation.ts       # Validasi input pengguna
+│   ├── styles/
+│   │   └── index.css           # Token desain & Tailwind import
+│   ├── types/
+│   │   └── index.ts            # Definisi TypeScript interface
+│   ├── App.tsx                 # Root component, router state & modal switch
+│   └── main.tsx                # Entry point React
+├── tests/                      # Pengujian unit Vitest
+├── index.html                  # Template HTML utama dengan meta PWA & viewport iOS
+├── package.json
+├── tsconfig.json
+└── vite.config.ts              # Konfigurasi Vite dengan base relatif ('./')</code></pre>
+      </div>
+
+      <h3>Konfigurasi <code>vite.config.ts</code> (Paling Krusial):</h3>
+      <div class="alert info">
+        <strong>PENTING:</strong> Selalu gunakan <code>base: './'</code> agar berkas hasil build (JS/CSS) menggunakan path relatif. Ini memastikan aplikasi berjalan normal di domain utama maupun subfolder hosting seperti GitHub Pages (<code>domain.github.io/repo-name/</code>).
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="file-path">vite.config.ts</span>
+          <button class="copy-btn" onclick="copySnippet('vite-config')">Salin</button>
+        </div>
+        <pre id="vite-config"><code>import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
+
+export default defineConfig({
+  base: './', // WAJIB relatif agar kompatibel dengan GitHub Pages
+  plugins: [
+    tailwindcss(),
+    react(),
+  ],
+  server: {
+    host: true, // Memungkinkan akses via IP Wi-Fi lokal di HP (0.0.0.0)
+    port: 5173,
+  },
+  build: {
+    chunkSizeWarningLimit: 1000,
+  },
+});</code></pre>
+      </div>
+
+      <h3>Konfigurasi <code>index.html</code> (Viewport & PWA Meta):</h3>
+      <div class="code-container">
+        <div class="code-header">
+          <span class="file-path">index.html</span>
+          <button class="copy-btn" onclick="copySnippet('index-html')">Salin</button>
+        </div>
+        <pre id="index-html"><code>&lt;!doctype html&gt;
+&lt;html lang="id"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8" /&gt;
+    &lt;!-- viewport-fit=cover wajib untuk menangani Safe Area notch/Home bar iPhone --&gt;
+    &lt;meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    /&gt;
+    &lt;title&gt;Nama Aplikasi&lt;/title&gt;
+    
+    &lt;!-- PWA & Mobile Web App Meta --&gt;
+    &lt;meta name="description" content="Deskripsi singkat aplikasi mobile" /&gt;
+    &lt;meta name="theme-color" content="#0B5A3B" /&gt;
+    &lt;meta name="application-name" content="NamaApp" /&gt;
+    &lt;meta name="mobile-web-app-capable" content="yes" /&gt;
+    &lt;meta name="apple-mobile-web-app-capable" content="yes" /&gt;
+    &lt;meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /&gt;
+    &lt;meta name="apple-mobile-web-app-title" content="NamaApp" /&gt;
+
+    &lt;!-- Manifest & Icons (Wajib path relatif ./) --&gt;
+    &lt;link rel="manifest" href="./manifest.webmanifest" /&gt;
+    &lt;link rel="icon" type="image/svg+xml" href="./icons/icon.svg" /&gt;
+    &lt;link rel="apple-touch-icon" href="./icons/icon-192.png" /&gt;
+    &lt;link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png" /&gt;
+    &lt;link rel="apple-touch-icon" sizes="192x192" href="./icons/icon-192.png" /&gt;
+    &lt;link rel="apple-touch-icon" sizes="512x512" href="./icons/icon-512.png" /&gt;
+  &lt;/head&gt;
+  &lt;body class="bg-background text-text select-none"&gt;
+    &lt;div id="root"&gt;&lt;/div&gt;
+    &lt;script type="module" src="/src/main.tsx"&gt;&lt;/script&gt;
+    &lt;script&gt;
+      // Service worker registration dengan path relatif ./sw.js
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js').catch((err) => {
+            console.log('SW registration failed:', err);
+          });
+        });
+      }
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 3: PWA & SERVICE WORKER ================= -->
+    <section id="section-pwa" class="section-card">
+      <h2><span>03.</span> PWA & Service Worker 100% Offline</h2>
+      <p class="desc">Konfigurasi manifest web dan service worker caching agar aplikasi dapat dibuka dalam Mode Pesawat.</p>
+
+      <h3>Template <code>public/manifest.webmanifest</code>:</h3>
+      <div class="code-container">
+        <div class="code-header">
+          <span class="file-path">public/manifest.webmanifest</span>
+          <button class="copy-btn" onclick="copySnippet('manifest-json')">Salin</button>
+        </div>
+        <pre id="manifest-json"><code>{
+  "name": "Nama Aplikasi Lengkap",
+  "short_name": "NamaApp",
+  "description": "Aplikasi Mobile Offline-First",
+  "start_url": "./",
+  "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
+  "background_color": "#FBF8F1",
+  "theme_color": "#0B5A3B",
+  "orientation": "portrait",
+  "lang": "id",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["utilities", "productivity"]
+}</code></pre>
+      </div>
+
+      <h3>Template <code>public/sw.js</code> (Cache-First + External Fonts Caching):</h3>
+      <div class="code-container">
+        <div class="code-header">
+          <span class="file-path">public/sw.js</span>
+          <button class="copy-btn" onclick="copySnippet('sw-js')">Salin</button>
+        </div>
+        <pre id="sw-js"><code>const CACHE_NAME = 'app-cache-v1';
+const ASSETS_TO_CACHE = [
+  './',
+  './index.html',
+  './manifest.webmanifest',
+  './icons/icon.svg',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
+];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(ASSETS_TO_CACHE).catch((err) => {
+        console.warn('Precache warning:', err);
+      });
+    })
+  );
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
+      );
+    })
+  );
+  self.clients.claim();
+});
+
+self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET') return;
+
+  const url = new URL(event.request.url);
+
+  // Navigasi HTML: coba network dahulu, fallback ke cached index.html
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        return caches.match('./index.html') || caches.match('./') || caches.match(self.registration.scope);
+      })
+    );
+    return;
+  }
+
+  // Cache aset lokal + font eksternal (Google Fonts)
+  const isGoogleFont = url.origin === 'https://fonts.googleapis.com' || url.origin === 'https://fonts.gstatic.com';
+
+  if (url.origin === self.location.origin || isGoogleFont) {
+    event.respondWith(
+      caches.match(event.request).then((cachedResponse) => {
+        if (cachedResponse) {
+          // Update cache di background jika online
+          fetch(event.request)
+            .then((networkResponse) => {
+              if (networkResponse && (networkResponse.status === 200 || networkResponse.type === 'opaque')) {
+                const responseToCache = networkResponse.clone();
+                caches.open(CACHE_NAME).then((cache) => {
+                  cache.put(event.request, responseToCache);
+                });
+              }
+            })
+            .catch(() => {});
+          return cachedResponse;
+        }
+
+        return fetch(event.request)
+          .then((networkResponse) => {
+            if (!networkResponse || (networkResponse.status !== 200 && networkResponse.type !== 'opaque')) {
+              return networkResponse;
+            }
+            const responseToCache = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, responseToCache);
+            });
+            return networkResponse;
+          })
+          .catch(() => caches.match(event.request));
+      })
+    );
+  }
+});</code></pre>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 4: IOS UX & UI PATTERNS ================= -->
+    <section id="section-ios" class="section-card">
+      <h2><span>04.</span> Komponen & Pola Desain UX iOS</h2>
+      <p class="desc">Standar implementasi Safe Area Insets, Bottom Navigation, Modal Dialog, dan Feedback Getar/Audio.</p>
+
+      <h3>1. Penanganan Safe Area Insets (Notch & Home Bar):</h3>
+      <p style="font-size: 13px; color: var(--muted); margin-bottom: 10px;">
+        iPhone memiliki notch/Dynamic Island di atas dan bilah garis Home indicator di bawah. Gunakan variabel CSS <code>env()</code> pada header dan bottom nav:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="file-path">Contoh Safe Area Header & Nav</span>
+          <button class="copy-btn" onclick="copySnippet('safe-area')">Salin</button>
+        </div>
+        <pre id="safe-area"><code>// Header Atas
+&lt;header
+  className="sticky top-0 z-30 bg-surface/95 backdrop-blur-md border-b border-border"
+  style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 12px)' }}
+&gt;
+  ...
+&lt;/header&gt;
+
+// Bottom Navigation Bawah
+&lt;nav
+  className="fixed bottom-0 left-0 right-0 bg-surface/95 backdrop-blur-md border-t border-border z-50"
+  style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
+&gt;
+  &lt;div className="max-w-lg mx-auto flex items-center justify-around h-16 px-1"&gt;
+    ...
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <h3>2. Audio Feedback Sintetis (Web Audio API):</h3>
+      <p style="font-size: 13px; color: var(--muted); margin-bottom: 10px;">
+        iOS Safari sering menolak getaran <code>navigator.vibrate()</code>. Sebagai gantinya, gunakan Web Audio API sintetis untuk menghasilkan suara klik lembut instan tanpa lag:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="file-path">src/lib/haptics.ts</span>
+          <button class="copy-btn" onclick="copySnippet('haptics-ts')">Salin</button>
+        </div>
+        <pre id="haptics-ts"><code>// Audio klik sintetis (kompatibel penuh dengan iOS Safari)
+export const playClickSound = () => {
+  try {
+    const AudioCtx = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+    if (!AudioCtx) return;
+
+    const ctx = new AudioCtx();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(800, ctx.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(300, ctx.currentTime + 0.04);
+
+    gain.gain.setValueAtTime(0.12, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.04);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+    osc.stop(ctx.currentTime + 0.04);
+  } catch {
+    // Ignore audio errors jika perangkat mute
+  }
+};
+
+// Haptic vibration (Android & browser yang mendukung)
+export const triggerHaptic = (durationMs = 15) => {
+  if ('vibrate' in navigator) {
+    try {
+      navigator.vibrate(durationMs);
+    } catch {}
+  }
+};</code></pre>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 5: DATA LAYER & INDEXEDDB ================= -->
+    <section id="section-database" class="section-card">
+      <h2><span>05.</span> Penyimpanan Data Lokal (IndexedDB)</h2>
+      <p class="desc">Pola implementasi penyimpanan lokal persisten dengan IndexedDB menggunakan pustaka <code>idb</code>.</p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="file-path">src/lib/database.ts</span>
+          <button class="copy-btn" onclick="copySnippet('database-ts')">Salin</button>
+        </div>
+        <pre id="database-ts"><code>import { openDB, DBSchema, IDBPDatabase } from 'idb';
+
+interface AppDB extends DBSchema {
+  items: {
+    key: string;
+    value: {
+      id: string;
+      title: string;
+      createdAt: string;
+      updatedAt: string;
+    };
+  };
+  settings: {
+    key: string;
+    value: {
+      id: string;
+      soundEnabled: boolean;
+      hapticsEnabled: boolean;
+      theme: string;
+    };
+  };
+}
+
+const DB_NAME = 'MyMobileAppDB';
+const DB_VERSION = 1;
+
+let dbPromise: Promise&lt;IDBPDatabase&lt;AppDB&gt;&gt; | null = null;
+
+export const getDB = (): Promise&lt;IDBPDatabase&lt;AppDB&gt;&gt; => {
+  if (!dbPromise) {
+    dbPromise = openDB&lt;AppDB&gt;(DB_NAME, DB_VERSION, {
+      upgrade(db) {
+        if (!db.objectStoreNames.contains('items')) {
+          db.createObjectStore('items', { keyPath: 'id' });
+        }
+        if (!db.objectStoreNames.contains('settings')) {
+          db.createObjectStore('settings', { keyPath: 'id' });
+        }
+      },
+    });
+  }
+  return dbPromise;
+};
+
+// Ekspor & Impor Cadangan Data (JSON)
+export const exportDataAsJSON = async () => {
+  const db = await getDB();
+  const items = await db.getAll('items');
+  const settings = await db.get('settings', 'app-settings');
+
+  const backup = {
+    appName: 'MyMobileApp',
+    exportedAt: new Date().toISOString(),
+    data: { items, settings },
+  };
+
+  const blob = new Blob([JSON.stringify(backup, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `backup-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+};</code></pre>
+      </div>
+    </section>
+
+    <!-- ================= SECTION 6: GITHUB PAGES DEPLOYMENT ================= -->
+    <section id="section-deploy" class="section-card">
+      <h2><span>06.</span> Alur Deployment Otomatis ke GitHub Pages</h2>
+      <p class="desc">Cara merilis aplikasi ke GitHub Pages dengan dukungan HTTPS resmi dan branch <code>gh-pages</code>.</p>
+
+      <ol style="padding-left: 20px; font-size: 13px; line-height: 1.8; color: var(--text);">
+        <li>
+          <strong>Inisialisasi Git Lokal:</strong>
+          <pre style="background: #18241D; padding: 8px 12px; border-radius: 8px; margin: 6px 0;"><code>git init -b main
+git add .
+git commit -m "feat: Inisialisasi awal proyek mobile app"</code></pre>
+        </li>
+        <li>
+          <strong>Hubungkan ke Repository GitHub:</strong>
+          <pre style="background: #18241D; padding: 8px 12px; border-radius: 8px; margin: 6px 0;"><code>git remote add origin https://github.com/USERNAME/REPO-NAME.git
+git push -u origin main</code></pre>
+        </li>
+        <li>
+          <strong>Build & Deploy ke branch <code>gh-pages</code>:</strong>
+          <pre style="background: #18241D; padding: 8px 12px; border-radius: 8px; margin: 6px 0;"><code>npm run build
+cd dist
+git init -b gh-pages
+git add -A
+git commit -m "deploy: Release GitHub Pages"
+git remote add origin https://github.com/USERNAME/REPO-NAME.git
+git push -f origin gh-pages</code></pre>
+        </li>
+        <li>
+          <strong>Aktifkan GitHub Pages di Web:</strong>
+          Buka <code>https://github.com/USERNAME/REPO-NAME/settings/pages</code> ➔ Pilih Source: <strong>Deploy from a branch</strong> ➔ Branch: <strong><code>gh-pages</code> / <code>/(root)</code></strong> ➔ Klik <strong>Save</strong>.
+        </li>
+      </ol>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Dibuat sebagai standar cetak biru pengembangan mobile apps mandiri berbasis web (PWA) oleh Google Antigravity.</p>
+  </footer>
+
+  <script>
+    function copySnippet(elementId) {
+      const codeElement = document.getElementById(elementId);
+      if (!codeElement) return;
+      
+      const textToCopy = codeElement.innerText;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        alert('Kode berhasil disalin ke clipboard!');
+      }).catch(err => {
+        console.error('Gagal menyalin:', err);
+      });
+    }
+  </script>
+</body>
+</html>
