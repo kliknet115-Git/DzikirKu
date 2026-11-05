@@ -18,14 +18,14 @@
     <meta name="apple-mobile-web-app-title" content="DzikirKu" />
 
     <!-- Manifest -->
-    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="manifest" href="./manifest.webmanifest" />
 
     <!-- Icons -->
-    <link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
-    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/icon-180.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512.png" />
+    <link rel="icon" type="image/svg+xml" href="./icons/icon.svg" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="./icons/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="./icons/icon-512.png" />
 
     <!-- Arabic Typography Enhancement -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,7 +42,7 @@
       // Service worker registration
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js').catch((err) => {
+          navigator.serviceWorker.register('./sw.js').catch((err) => {
             console.log('SW registration failed:', err);
           });
         });
