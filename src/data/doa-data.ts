@@ -82,7 +82,7 @@ export const doaCategories: DoaCategory[] = [
   {
     id: 'umrah',
     icon: '☾',
-    title: 'Doa Umroh',
+    title: 'Doa-doa Umroh',
     subtitle: 'Rangkaian doa perjalanan, tawaf, dan sa’i sesuai urutan',
     countLabel: '22 DOA / BACAAN',
     items: [
