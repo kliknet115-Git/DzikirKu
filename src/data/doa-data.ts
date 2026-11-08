@@ -263,5 +263,22 @@ export const doaCategories: DoaCategory[] = [
       },
     ],
   },
+  {
+    id: 'protection-anxiety',
+    icon: '❖',
+    title: 'Doa Memohon Perlindungan dari Kegelisahan dan Kesedihan',
+    subtitle: 'Perlindungan dari kegelisahan, kesedihan, kelemahan, kemalasan, utang, dan tekanan orang lain',
+    countLabel: '1 DOA',
+    items: [
+      {
+        title: 'Doa Memohon Perlindungan dari Kegelisahan dan Kesedihan',
+        subtitle: 'Doa Rasulullah ﷺ yang diriwayatkan dari Anas bin Malik radhiyallahu ‘anhu',
+        arabic: 'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ،\nوَالْعَجْزِ وَالْكَسَلِ،\nوَالْجُبْنِ وَالْبُخْلِ،\nوَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ.',
+        latin: 'Allāhumma innī a‘ūdzu bika minal-hammi wal-ḥazani, wal-‘ajzi wal-kasali, wal-jubni wal-bukhli, wa ḍala‘id-dayni wa ghalabatir-rijāl.',
+        meaning: '“Ya Allah, sesungguhnya aku berlindung kepada-Mu dari kegelisahan dan kesedihan, dari ketidakmampuan dan kemalasan, dari sifat pengecut dan kekikiran, dari beratnya beban utang, serta dari penguasaan orang lain.”',
+        note: 'HR. Bukhari no. 6369, diriwayatkan dari Anas bin Malik radhiyallahu ‘anhu.',
+      },
+    ],
+  },
 ];
 
