@@ -141,13 +141,15 @@ export const HomePage: React.FC<HomePageProps> = ({
           onClick={onNavigateToDhikr}
           className="w-full mt-3 p-4 bg-surface rounded-2xl border border-border flex items-center justify-between shadow-sm"
         >
-          <div className="text-left">
+          <div className="text-left flex-1 min-w-0 pr-2">
             {activeDhikr.arabicText && (
               <p className="arabic-text text-2xl text-primary-dark mb-1 leading-relaxed">
                 {activeDhikr.arabicText}
               </p>
             )}
-            <p className="text-sm font-semibold text-text">{activeDhikr.name || activeDhikr.transliteration}</p>
+            <p className="text-sm font-semibold text-text leading-snug break-words">
+              {activeDhikr.name || activeDhikr.transliteration}
+            </p>
           </div>
           <ChevronDown size={20} className="text-muted flex-shrink-0 ml-3" />
         </button>

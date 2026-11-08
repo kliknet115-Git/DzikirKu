@@ -203,7 +203,7 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
 
         {/* Title Block */}
         <div className="px-1">
-          <h2 className="text-xl font-extrabold text-primary-dark leading-snug tracking-tight">
+          <h2 className="text-xl font-extrabold text-primary-dark leading-snug tracking-tight break-words">
             {currentEntry.title}
           </h2>
         </div>
@@ -395,11 +395,11 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
                       {String(item.no).padStart(2, '0')}
                     </span>
 
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-bold text-primary-dark leading-snug truncate">
+                    <div className="flex-1 min-w-0 pr-1">
+                      <p className="text-sm font-bold text-primary-dark leading-snug break-words">
                         {item.title}
                       </p>
-                      <p className="text-xs text-muted mt-0.5 truncate">
+                      <p className="text-xs text-muted mt-0.5 leading-relaxed break-words">
                         {item.frequency}
                       </p>
                     </div>

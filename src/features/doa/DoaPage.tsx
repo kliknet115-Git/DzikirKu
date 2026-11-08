@@ -204,11 +204,11 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                   <div className="w-12 h-12 rounded-2xl bg-[#EAF2F3] text-[#287A7B] flex items-center justify-center text-xl font-bold flex-shrink-0">
                     {c.icon}
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <span className="block text-[15px] font-bold text-[#18344D] leading-snug">
+                  <div className="flex-1 min-w-0 pr-1">
+                    <span className="block text-[15px] font-bold text-[#18344D] leading-snug break-words">
                       {c.title}
                     </span>
-                    <span className="block text-xs text-[#7C8A93] mt-0.5 leading-snug">
+                    <span className="block text-xs text-[#7C8A93] mt-0.5 leading-snug break-words">
                       {c.subtitle}
                     </span>
                     <span className="inline-block text-[10px] font-extrabold text-[#287A7B] tracking-wider mt-1.5 uppercase bg-[#EAF2F3] px-2 py-0.5 rounded-md">
@@ -255,10 +255,10 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
             </div>
 
             <section className="px-1">
-              <h2 className="text-2xl font-extrabold text-[#18344D] tracking-tight">
+              <h2 className="text-2xl font-extrabold text-[#18344D] tracking-tight leading-tight break-words">
                 {activeCategory.title}
               </h2>
-              <p className="text-xs text-[#7B8992] leading-relaxed mt-1">
+              <p className="text-xs text-[#7B8992] leading-relaxed mt-1 break-words">
                 {activeCategory.subtitle}
               </p>
             </section>
@@ -270,16 +270,16 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                   key={idx}
                   type="button"
                   onClick={() => handleOpenDetail(idx)}
-                  className="w-full bg-white rounded-2xl p-3.5 border border-[#EDF0EF] shadow-[0_2px_10px_rgba(20,48,66,0.03)] flex items-center gap-3 hover:border-[#287A7B]/40 active:scale-[0.99] transition-all text-left"
+                  className="w-full bg-white rounded-2xl p-3.5 border border-[#EDF0EF] shadow-[0_2px_10px_rgba(20,48,66,0.03)] flex items-center gap-3 hover:border-[#287A7B]/40 active:scale-[0.99] transition-all text-left overflow-hidden"
                 >
                   <span className="w-8 h-8 rounded-xl bg-[#EDF3F3] text-[#287A7B] text-xs font-black flex items-center justify-center tabular-nums flex-shrink-0">
                     {String(idx + 1).padStart(2, '0')}
                   </span>
-                  <div className="flex-1 min-w-0">
-                    <span className="block text-sm font-bold text-[#18344D] leading-snug">
+                  <div className="flex-1 min-w-0 pr-1">
+                    <span className="block text-sm font-bold text-[#18344D] leading-snug break-words">
                       {item.title}
                     </span>
-                    <span className="block text-xs text-[#829098] mt-0.5 truncate">
+                    <span className="block text-xs text-[#829098] mt-1 leading-relaxed break-words">
                       {item.subtitle || 'Bacaan doa'}
                     </span>
                   </div>
@@ -318,11 +318,11 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
             {/* Title Header */}
             <section className="px-1">
-              <h2 className="text-xl font-bold text-[#18344D] leading-snug">
+              <h2 className="text-xl font-bold text-[#18344D] leading-snug break-words">
                 {activeItem.title}
               </h2>
               {activeItem.subtitle && (
-                <p className="text-xs text-[#8A969D] mt-1 font-medium">
+                <p className="text-xs text-[#8A969D] mt-1 font-medium leading-relaxed break-words">
                   {activeItem.subtitle}
                 </p>
               )}
@@ -511,11 +511,11 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                       {String(idx + 1).padStart(2, '0')}
                     </span>
 
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm font-bold text-[#18344D] leading-snug truncate">
+                    <div className="flex-1 min-w-0 pr-1">
+                      <p className="text-sm font-bold text-[#18344D] leading-snug break-words">
                         {item.title}
                       </p>
-                      <p className="text-xs text-[#829098] mt-0.5 truncate">
+                      <p className="text-xs text-[#829098] mt-0.5 leading-relaxed break-words">
                         {item.subtitle || activeCategory.title}
                       </p>
                     </div>

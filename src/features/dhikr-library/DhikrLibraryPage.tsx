@@ -174,21 +174,21 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
                         {dhikr.arabicText}
                       </p>
                     )}
-                    <div className="flex items-center gap-2">
-                      <p className="text-base font-semibold text-text">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <p className="text-base font-semibold text-text leading-snug break-words">
                         {dhikr.name || dhikr.transliteration}
                       </p>
                       {dhikr.isBuiltIn && (
-                        <span className="text-[10px] font-medium bg-primary-soft text-primary px-2 py-0.5 rounded-full">
+                        <span className="text-[10px] font-medium bg-primary-soft text-primary px-2 py-0.5 rounded-full flex-shrink-0">
                           Bawaan
                         </span>
                       )}
                     </div>
                     {dhikr.transliteration && dhikr.transliteration !== dhikr.name && (
-                      <p className="text-xs italic text-muted mt-0.5">{dhikr.transliteration}</p>
+                      <p className="text-xs italic text-muted mt-0.5 leading-relaxed break-words">{dhikr.transliteration}</p>
                     )}
                     {dhikr.meaning && (
-                      <p className="text-xs text-muted mt-0.5 leading-snug">{dhikr.meaning}</p>
+                      <p className="text-xs text-muted mt-0.5 leading-relaxed break-words">{dhikr.meaning}</p>
                     )}
                     <p className="text-xs font-medium text-primary mt-1.5">
                       Target: {dhikr.defaultTarget}x

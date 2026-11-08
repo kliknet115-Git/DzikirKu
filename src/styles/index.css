@@ -24,6 +24,7 @@
 * {
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
+  overflow-wrap: break-word;
 }
 
 html {
