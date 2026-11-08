@@ -107,7 +107,12 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
   const isTargetMet = currentTaps >= currentEntry.targetCount;
 
   return (
-    <div className="min-h-screen bg-background pb-32 flex flex-col">
+    <div
+      className="min-h-screen bg-background flex flex-col"
+      style={{
+        paddingBottom: 'calc(14rem + env(safe-area-inset-bottom, 0px))',
+      }}
+    >
       {/* Top Bar */}
       <header
         className="px-5 pt-3 pb-2.5 bg-background/95 backdrop-blur-md sticky top-0 z-20 border-b border-border/40"
@@ -297,8 +302,8 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
 
       {/* Fixed Bottom Pager Navigation Bar */}
       <nav
-        className="fixed bottom-16 left-0 right-0 bg-surface/95 backdrop-blur-md border-t border-border z-40 px-5 py-3"
-        style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 8px)' }}
+        className="fixed left-0 right-0 bg-surface/95 backdrop-blur-md border-t border-border z-40 px-5 py-3"
+        style={{ bottom: 'calc(4rem + env(safe-area-inset-bottom, 0px))' }}
         aria-label="Navigasi bacaan"
       >
         <div className="max-w-lg mx-auto flex items-center justify-between gap-2.5">

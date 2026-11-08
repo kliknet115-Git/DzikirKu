@@ -115,7 +115,10 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-background pb-28">
+    <div
+      className="min-h-screen bg-background"
+      style={{ paddingBottom: 'calc(7rem + env(safe-area-inset-bottom, 0px))' }}
+    >
       <header
         className="px-5 pt-3 pb-4 bg-background sticky top-0 z-10 backdrop-blur-md bg-background/90 border-b border-border/40"
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 12px)' }}

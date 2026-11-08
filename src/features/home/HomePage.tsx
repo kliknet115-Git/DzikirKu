@@ -132,7 +132,10 @@ export const HomePage: React.FC<HomePageProps> = ({
   const reached = isTargetReached(activeSession.count, activeSession.target);
 
   return (
-    <div className="min-h-screen bg-background pb-24">
+    <div
+      className="min-h-screen bg-background"
+      style={{ paddingBottom: 'calc(7rem + env(safe-area-inset-bottom, 0px))' }}
+    >
       <Header />
 
       <div className="max-w-lg mx-auto px-5">

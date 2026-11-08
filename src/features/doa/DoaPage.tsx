@@ -111,7 +111,15 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#F3F6F6] text-[#233444] pb-32">
+    <div
+      className="min-h-screen bg-[#F3F6F6] text-[#233444]"
+      style={{
+        paddingBottom:
+          view === 'detail'
+            ? 'calc(14rem + env(safe-area-inset-bottom, 0px))'
+            : 'calc(6rem + env(safe-area-inset-bottom, 0px))',
+      }}
+    >
       {/* Sticky Header Topbar */}
       <header
         className="sticky top-0 z-30 bg-[#F3F6F6]/95 backdrop-blur-md border-b border-[#E6EBEB] px-5 py-3"
@@ -402,8 +410,8 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
       {/* ================= FIXED BOTTOM PAGER (FOR DETAIL VIEW) ================= */}
       {view === 'detail' && (
         <nav
-          className="fixed bottom-16 left-0 right-0 bg-[#F3F6F6]/95 backdrop-blur-md border-t border-[#E6EBEB] z-40 px-5 py-3"
-          style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 8px)' }}
+          className="fixed left-0 right-0 bg-[#F3F6F6]/95 backdrop-blur-md border-t border-[#E6EBEB] z-40 px-5 py-3"
+          style={{ bottom: 'calc(4rem + env(safe-area-inset-bottom, 0px))' }}
           aria-label="Navigasi bacaan doa"
         >
           <div className="max-w-lg mx-auto flex items-center justify-between gap-2.5">
