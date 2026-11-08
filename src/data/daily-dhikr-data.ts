@@ -223,9 +223,9 @@ export const PETANG_ENTRIES: DailyDhikrEntry[] = [
     "id": "petang-5",
     "no": 5,
     "title": "Allahumma bika amsayna wa bika asbahna",
-    "arabic": "اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ.",
+    "arabic": "اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ.",
     "frequency": "1 kali pada petang hari.",
-    "meaning": "Ya Allah, dengan pertolongan dan kehendak-Mu kami memasuki petang dan pagi. Dengan kehendak-Mu kami hidup dan mati, dan kepada-Mu kami kembali.",
+    "meaning": "Ya Allah, hanya dengan rahmat dan pertolongan-Mu kami memasuki sore, dan dengan rahmat dan pertolongan-Mu kami memasuki pagi. Hanya dengan rahmat dan kehendak-Mu kami hidup, dan dengan rahmat dan kehendak-Mu kami mati. Dan, hanya kepada-Mulah tempat kembali (semua makhluk).",
     "targetCount": 1
   },
   {
