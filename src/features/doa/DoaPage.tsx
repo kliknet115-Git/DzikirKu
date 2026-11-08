@@ -373,7 +373,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                   <span className="w-4 h-[1px] bg-[#C29A55]" />
                   <span>ARTI / MAKNA</span>
                 </div>
-                <p className="text-[15px] text-[#263847] leading-relaxed font-normal">
+                <p className="text-[15px] text-[#263847] leading-relaxed font-normal whitespace-pre-line">
                   {activeItem.meaning}
                 </p>
               </div>
