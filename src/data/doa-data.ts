@@ -84,7 +84,7 @@ export const doaCategories: DoaCategory[] = [
     icon: '☾',
     title: 'Doa Umroh',
     subtitle: 'Rangkaian doa perjalanan, tawaf, dan sa’i sesuai urutan',
-    countLabel: '21 DOA / BACAAN',
+    countLabel: '22 DOA / BACAAN',
     items: [
       {
         title: 'Doa Keluar Rumah',
@@ -196,6 +196,13 @@ export const doaCategories: DoaCategory[] = [
         arabic: 'السَّلَامُ عَلَيْكَ يَا رَسُولَ اللَّهِ، وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ. صَلَّى اللَّهُ وَسَلَّمَ وَبَارَكَ عَلَيْكَ، وَجَزَاكَ أَفْضَلَ مَا جَزَى نَبِيًّا عَنْ أُمَّتِهِ.\n\nالسَّلَامُ عَلَيْكَ يَا أَبَا بَكْرٍ، وَجَزَاكَ اللَّهُ عَنْ أُمَّةِ الْإِسْلَامِ خَيْرَ الْجَزَاءِ.\n\nالسَّلَامُ عَلَيْكَ يَا عُمَرُ، وَجَزَاكَ اللَّهُ عَنْ أُمَّةِ الْإِسْلَامِ خَيْرَ الْجَزَاءِ.',
         meaning: '1. Salam kepada Rasulullah ﷺ:\n“Salam sejahtera ke atasmu, wahai Rasulullah, serta rahmat Allah dan keberkatan-Nya. Semoga Allah melimpahkan selawat, salam, dan keberkahan ke atasmu, serta membalasmu dengan sebaik-baik ganjaran yang diberikan kepada seorang nabi atas jasanya kepada umatnya.”\n\n2. Salam kepada Abu Bakar رضي الله عنه:\n“Salam sejahtera ke atasmu, wahai Abu Bakar. Semoga Allah membalasmu bagi pihak umat Islam dengan sebaik-baik balasan.”\n\n3. Salam kepada Umar رضي الله عنه:\n“Salam sejahtera ke atasmu, wahai Umar. Semoga Allah membalasmu bagi pihak umat Islam dengan sebaik-baik balasan.”',
         note: 'Dibaca ketika berziarah ke makam Rasulullah ﷺ, Abu Bakar Ash-Shiddiq, dan Umar bin Al-Khattab di Madinah Munawwarah.',
+      },
+      {
+        title: 'Doa Dziarah Kubur',
+        subtitle: 'Doa salam dan permohonan keselamatan bagi penghuni kubur',
+        arabic: 'السَّلَامُ عَلَيْكُمْ يَا أَهْلَ الدِّيَارِ مِنَ الْمُؤْمِنِينَ وَالْمُسْلِمِينَ،\nوَإِنَّا إِنْ شَاءَ اللَّهُ بِكُمْ لَاحِقُونَ،\nوَنَسْأَلُ اللَّهَ لَنَا وَلَكُمُ الْعَافِيَةَ.',
+        meaning: '“Salam sejahtera ke atas kamu, wahai penghuni tempat tinggal dari kalangan orang yang beriman dan orang Islam.\n\nSesungguhnya kami, insyaAllah, akan menyusul kamu. Kami memohon kepada Allah kesejahteraan untuk kami dan untuk kamu.”',
+        note: 'Doa ziarah kubur (salam kepada ahli kubur), HR. Muslim no. 975.',
       },
     ],
   },
