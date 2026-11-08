@@ -232,5 +232,22 @@ export const doaCategories: DoaCategory[] = [
       },
     ],
   },
+  {
+    id: 'doa-nabi-muhammad',
+    icon: '۞',
+    title: 'Doa yang diminta Nabi Muhammad',
+    subtitle: 'Memohon kebaikan yang diminta Nabi Muhammad ﷺ dan perlindungan dari keburukan',
+    countLabel: '1 DOA',
+    items: [
+      {
+        title: 'Doa yang diminta Nabi Muhammad',
+        subtitle: 'Memohon kebaikan dan perlindungan dari segala keburukan',
+        arabic: 'اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ مِنْهُ نَبِيُّكَ مُحَمَّدٌ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ،\nوَأَعُوذُ بِكَ مِنْ شَرِّ مَا اسْتَعَاذَ مِنْهُ نَبِيُّكَ مُحَمَّدٌ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ،\nوَأَنْتَ الْمُسْتَعَانُ، وَعَلَيْكَ الْبَلَاغُ،\nوَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ.',
+        latin: 'Allāhumma innī as-aluka min khayri mā sa-alaka minhu nabiyyuka Muḥammadun ṣallallāhu ‘alayhi wa sallam, wa a‘ūdzu bika min syarri masta‘ādza minhu nabiyyuka Muḥammadun ṣallallāhu ‘alayhi wa sallam, wa antal-musta‘ān, wa ‘alaykal-balāgh, wa lā ḥawla wa lā quwwata illā billāh.',
+        meaning: 'Ya Allah, sesungguhnya aku memohon kepada-Mu kebaikan apa saja yang pernah diminta oleh Nabi-Mu Muhammad shallallahu \'alaihi wa sallam. Dan aku berlindung kepada-Mu dari keburukan apa saja yang Nabi-Mu Muhammad shallallahu \'alaihi wa sallam pernah berlindung darinya. Dan Engkaulah tempat meminta pertolongan, dan di tangan-Mulah penyampaian (keberhasilan), serta tidak ada daya dan kekuatan kecuali dengan pertolongan Allah.',
+        note: 'HR. At-Tirmidzi no. 3521.',
+      },
+    ],
+  },
 ];
 
