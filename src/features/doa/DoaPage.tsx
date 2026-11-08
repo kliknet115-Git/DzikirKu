@@ -366,19 +366,6 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
               )}
             </div>
 
-            {/* Latin / Transliterasi Card */}
-            {activeItem.latin && (
-              <div className="bg-white rounded-3xl p-5 border border-[#EDF0EF] shadow-[0_4px_16px_rgba(20,48,66,0.04)]">
-                <div className="flex items-center gap-2 text-[#287A7B] text-[11px] font-black tracking-wider mb-2">
-                  <span className="w-4 h-[1px] bg-[#C29A55]" />
-                  <span>TRANSLITERASI</span>
-                </div>
-                <p className="font-serif italic text-sm text-[#596B76] leading-relaxed">
-                  {activeItem.latin}
-                </p>
-              </div>
-            )}
-
             {/* Arti / Makna Card */}
             {activeItem.meaning && activeItem.arabic && (
               <div className="bg-white rounded-3xl p-5 border border-[#EDF0EF] shadow-[0_4px_16px_rgba(20,48,66,0.04)]">
