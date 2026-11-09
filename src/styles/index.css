@@ -44,8 +44,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-family: 'LPMQ Isep Misbah';
+  src: url('../assets/fonts/LPMQ-IsepMisbah.woff2') format('woff2'),
+       url('../assets/fonts/LPMQ-IsepMisbah.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .arabic-text {
-  font-family: 'Amiri', 'Traditional Arabic', 'Simplified Arabic', serif;
+  font-family: 'LPMQ Isep Misbah', 'Amiri', 'Traditional Arabic', 'Simplified Arabic', serif;
   direction: rtl;
   line-height: 2.2;
   font-feature-settings: "cv01" on, "cv02" on;
