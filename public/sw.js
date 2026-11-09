@@ -1,9 +1,8 @@
-const CACHE_NAME = 'dzikirku-v17';
+const CACHE_NAME = 'dzikirku-v16';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './manifest.webmanifest',
-  './fonts/LPMQ-IsepMisbah.woff2',
   './icons/icon.svg',
   './icons/icon-192.png',
   './icons/icon-512.png',
