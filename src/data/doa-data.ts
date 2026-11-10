@@ -76,193 +76,6 @@ export const doaCategories: DoaCategory[] = [
     ]
   },
   {
-    "id": "umrah",
-    "icon": "☾",
-    "title": "Doa-doa Umroh",
-    "subtitle": "Rangkaian doa perjalanan, tawaf, dan sa’i sesuai urutan",
-    "countLabel": "22 DOA / BACAAN",
-    "items": [
-      {
-        "title": "Doa Keluar Rumah",
-        "arabic": "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ،\nوَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ.",
-        "meaning": "Dengan nama Allah, aku bertawakal kepada Allah. Tidak ada daya dan kekuatan kecuali dengan (pertolongan) Allah.",
-        "note": "HR. Abu Dawud no. 5095 & HR. At-Tirmidzi no. 3426 dari Anas bin Malik radhiyallahu ‘anhu (Shahih) · Sumber: https://hadits.in/"
-      },
-      {
-        "title": "Doa Setelah Duduk dalam Kendaraan",
-        "arabic": "بِسْمِ اللَّهِ مَجْرَاهَا وَمُرْسَاهَا،\nإِنَّ رَبِّي لَغَفُورٌ رَحِيمٌ.",
-        "meaning": "Dengan (menyebut) nama Allah pada waktu berlayar dan berlabuhnya. Sesungguhnya Tuhanku Maha Pengampun, Maha Penyayang.",
-        "note": "QS Hud: 41 · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Doa Ketika Kendaraan Mulai Bergerak",
-        "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ.\nاللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ.\nسُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا\nوَمَا كُنَّا لَهُ مُقْرِنِينَ،\nوَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ.",
-        "meaning": "Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Allah Mahabesar. Allah Mahabesar. Allah Mahabesar. Mahasuci Allah yang telah menggerakkan untuk kami kendaraan ini, padahal kami tidak kuasa menggerakkannya. Dan sesungguhnya kepada Tuhan kami pasti akan kembali.",
-        "note": "QS Az-Zukhruf [43]: 13–14 & HR. Muslim no. 1342 dari Ibnu Umar radhiyallahu ‘anhuma · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Niat Umroh",
-        "arabic": "لَبَّيْكَ اللَّهُمَّ عُمْرَةً.",
-        "meaning": "Aku penuhi panggilan-Mu, ya Allah, untuk menunaikan ibadah umrah.",
-        "note": "HR. Muslim no. 1251 & HR. Bukhari no. 1551 (Manasik Umroh Nabi ﷺ) · Sumber: https://www.hadits.id/"
-      },
-      {
-        "title": "Bacaan Talbiyah",
-        "arabic": "لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ،\nلَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ،\nإِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ،\nلَا شَرِيكَ لَكَ.",
-        "meaning": "Aku datang memenuhi panggilan-Mu, ya Allah. Aku datang memenuhi panggilan-Mu. Tiada sekutu bagi-Mu. Aku datang memenuhi panggilan-Mu. Sungguh, segala puji, nikmat, dan segala kekuasaan adalah milik-Mu. Tiada sekutu bagi-Mu.",
-        "note": "HR. Bukhari no. 1549 & HR. Muslim no. 1184 dari Abdullah bin Umar radhiyallahu ‘anhuma (Shahih) · Sumber: https://hadits.in/"
-      },
-      {
-        "title": "Doa Masuk Masjid",
-        "arabic": "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ.",
-        "meaning": "Ya Allah, bukakanlah bagiku segala pintu rahmat-Mu.",
-        "note": "HR. Muslim no. 713 & HR. Abu Dawud no. 465 dari Abu Usaid radhiyallahu ‘anhu · Sumber: https://hadits.in/"
-      },
-      {
-        "title": "Doa Keluar Masjid",
-        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ.",
-        "meaning": "Ya Allah, sesungguhnya aku memohon fadilah kepada-Mu.",
-        "note": "HR. Muslim no. 713 & HR. Abu Dawud no. 465 dari Abu Usaid radhiyallahu ‘anhu · Sumber: https://hadits.in/"
-      },
-      {
-        "title": "Doa Ketika Melihat Ka’bah",
-        "arabic": "اللَّهُمَّ زِدْ هَذَا الْبَيْتَ تَشْرِيفًا\nوَتَعْظِيمًا وَتَكْرِيمًا وَمَهَابَةً،\nوَزِدْ مَنْ شَرَّفَهُ وَكَرَّمَهُ مِمَّنْ حَجَّهُ\nأَوِ اعْتَمَرَهُ تَشْرِيفًا وَتَكْرِيمًا\nوَتَعْظِيمًا وَبِرًّا.",
-        "meaning": "Ya Allah, tambahkanlah kemuliaan, kehormatan, keagungan, dan kehebatan pada Baitullah ini; dan tambahkanlah pula kepada orang-orang yang memuliakan, menghormati, dan mengagungkannya di antara mereka yang berhaji atau yang berumrah kemuliaan, kehormatan, kebesaran, dan kebaikan.",
-        "note": "Riwayat Imam Asy-Syafi‘i dalam Kitab Al-Umm 1/394 & Al-Bayhaqi dalam As-Sunan Al-Kubra 5/73 · Sumber: https://ilmuislam.id/"
-      },
-      {
-        "title": "Doa Ketika Akan Memulai Tawaf",
-        "arabic": "اللَّهُمَّ إِيمَانًا بِكَ، وَتَصْدِيقًا بِكِتَابِكَ،\nوَوَفَاءً بِعَهْدِكَ، وَاتِّبَاعًا لِسُنَّةِ نَبِيِّكَ\nمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ.",
-        "meaning": "Ya Allah, seraya iman kepada-Mu, membenarkan kitab-Mu, menepati janji kepada-Mu, serta mengikuti sunah Nabi-Mu, Muhammad ﷺ.",
-        "note": "Riwayat Ath-Thabrani dalam Al-Mu‘jam Al-Awsath no. 3254 & Al-Bayhaqi dalam As-Sunan Al-Kubra 5/79 · Sumber: https://ilmuislam.id/"
-      },
-      {
-        "title": "Doa Tawaf di Setiap Posisi Hajar Aswad",
-        "arabic": "بِسْمِ اللَّهِ، اللَّهُ أَكْبَرُ.",
-        "meaning": "Dengan nama Allah, Allah Mahabesar.",
-        "note": "HR. Bukhari no. 1612 & no. 1613 dari Ibnu Abbas radhiyallahu ‘anhuma · Sumber: https://hadits.in/"
-      },
-      {
-        "title": "Doa Tawaf dari Hajar Aswad ke Maqam Ibrahim",
-        "arabic": "سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ،\nوَلَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَرُ.\nوَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ.",
-        "meaning": "Mahasuci Allah. Segala pujian hanya pantas disanjungkan kepada Allah. Tiada Tuhan selain Allah. Allah Mahabesar. Tidak ada daya dan kekuatan kecuali (pertolongan) dari Allah Yang Mahaluhur lagi Mahaagung.",
-        "note": "HR. Ibnu Majah no. 2957 & HR. Ahmad no. 15468 dari Abu Hurairah radhiyallahu ‘anhu · Sumber: https://hadits.in/"
-      },
-      {
-        "title": "Doa Tawaf dari Maqam Ibrahim ke Rukun Yamani",
-        "arabic": "",
-        "meaning": "Berdo’a Bebas",
-        "note": "Lampiran tidak mencantumkan lafaz khusus untuk bagian ini · Sumber: https://ilmuislam.id/"
-      },
-      {
-        "title": "Doa Tawaf dari Rukun Yamani ke Hajar Aswad",
-        "arabic": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً،\nوَفِي الْآخِرَةِ حَسَنَةً،\nوَقِنَا عَذَابَ النَّارِ.",
-        "meaning": "Wahai Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan hindarkanlah kami dari siksa neraka.",
-        "note": "QS Al-Baqarah [2]: 201 & HR. Abu Dawud no. 1892 dari Abdullah bin As-Sa’ib radhiyallahu ‘anhu (Shahih) · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Doa Menuju Maqam Ibrahim",
-        "arabic": "وَاتَّخِذُوا مِنْ مَقَامِ إِبْرَاهِيمَ مُصَلًّى.",
-        "meaning": "Dan jadikanlah bagian dari maqam Ibrahim itu sebagai tempat salat.",
-        "note": "QS Al-Baqarah: 125 · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Doa Minum Air Zamzam",
-        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا،\nوَرِزْقًا وَاسِعًا، وَشِفَاءً مِنْ كُلِّ دَاءٍ\nوَسَقَمٍ بِرَحْمَتِكَ يَا أَرْحَمَ الرَّاحِمِينَ.",
-        "meaning": "Ya Allah, sesungguhnya aku bermohon kepada-Mu ilmu yang bermanfaat, rezeki yang luas, dan penawar bagi segala penyakit; dengan rahmat-Mu, wahai Tuhan Yang Maha Pengasih lagi Maha Penyayang.",
-        "note": "HR. Ad-Daraquthni 2/288 no. 238 & Al-Hakim dalam Al-Mustadrak no. 1739 dari Ibnu Abbas radhiyallahu ‘anhuma · Sumber: https://hadits.arina.id/"
-      },
-      {
-        "title": "Doa Menuju Bukit Shafa",
-        "arabic": "إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ.",
-        "meaning": "Sesungguhnya Shafa dan Marwah merupakan sebagian syiar (agama) Allah.",
-        "note": "QS Al-Baqarah [2]: 158 & HR. Muslim no. 1218 (Sunnah Manasik Haji/Umroh Nabi ﷺ) · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Doa Menaiki Bukit Shafa",
-        "arabic": "أَبْدَأُ بِمَا بَدَأَ اللَّهُ بِهِ.",
-        "meaning": "Aku memulai sa’i dengan apa yang didahulukan oleh Allah.",
-        "note": "HR. Muslim no. 1218 & HR. An-Nasa’i no. 2974 dari Jabir bin Abdillah radhiyallahu ‘anhu · Sumber: https://hadits.in/"
-      },
-      {
-        "title": "Doa Ketika Berada di Bukit Shafa dan Marwah",
-        "arabic": "اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ.\nلَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ،\nلَهُ الْمُلْكُ وَلَهُ الْحَمْدُ،\nوَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.\nلَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ،\nأَنْجَزَ وَعْدَهُ، وَنَصَرَ عَبْدَهُ،\nوَهَزَمَ الْأَحْزَابَ وَحْدَهُ.",
-        "meaning": "Allah Mahabesar (3 kali). Tiada Tuhan yang berhak disembah selain Allah, Yang Maha Esa, tiada sekutu bagi-Nya. Bagi-Nya kerajaan dan pujian. Dia-lah Yang Mahakuasa atas segala sesuatu. Tiada Tuhan yang berhak disembah selain Allah Yang Maha Esa, yang melaksanakan janji-Nya, membela hamba-Nya (Muhammad), dan mengalahkan golongan musuh sendirian.",
-        "note": "HR. Muslim no. 1218 dari Jabir bin Abdillah radhiyallahu ‘anhu (Dzikir Sunnah Nabi ﷺ di Bukit Shafa & Marwah) · Sumber: https://hadits.in/"
-      },
-      {
-        "title": "Doa Sa’i dari Bukit Shafa ke Marwah",
-        "arabic": "",
-        "meaning": "Berdo’a Bebas",
-        "note": "Lampiran tidak mencantumkan lafaz khusus untuk bagian ini · Sumber: https://ilmuislam.id/"
-      },
-      {
-        "title": "Doa Sa’i di Pilar Lampu Hijau",
-        "arabic": "اللَّهُمَّ اغْفِرْ وَارْحَمْ،\nوَأَنْتَ الْأَعَزُّ الْأَكْرَمُ.",
-        "meaning": "Ya Rabbku, ampuni dan rahmatilah aku. Sesungguhnya Engkaulah Yang Maha Perkasa dan Maha Pemurah.",
-        "note": "Atsar riwayat Ibnu Abi Syaibah dalam Al-Mushannaf no. 13247 & Al-Bayhaqi 5/95 dari Ibnu Umar dan Ibnu Mas’ud radhiyallahu ‘anhum · Sumber: https://ilmuislam.id/"
-      },
-      {
-        "title": "Salam Rasulullah, Abu Bakar & Umar",
-        "subtitle": "Salam ketika berziarah ke makam Rasulullah ﷺ, Abu Bakar, dan Umar",
-        "arabic": "السَّلَامُ عَلَيْكَ يَا رَسُولَ اللَّهِ، وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ. صَلَّى اللَّهُ وَسَلَّمَ وَبَارَكَ عَلَيْكَ، وَجَزَاكَ أَفْضَلَ مَا جَزَى نَبِيًّا عَنْ أُمَّتِهِ.\n\nالسَّلَامُ عَلَيْكَ يَا أَبَا بَكْرٍ، وَجَزَاكَ اللَّهُ عَنْ أُمَّةِ الْإِسْلَامِ خَيْرَ الْجَزَاءِ.\n\nالسَّلَامُ عَلَيْكَ يَا عُمَرُ، وَجَزَاكَ اللَّهُ عَنْ أُمَّةِ الْإِسْلَامِ خَيْرَ الْجَزَاءِ.",
-        "meaning": "1. Salam kepada Rasulullah ﷺ:\n“Salam sejahtera ke atasmu, wahai Rasulullah, serta rahmat Allah dan keberkatan-Nya. Semoga Allah melimpahkan selawat, salam, dan keberkahan ke atasmu, serta membalasmu dengan sebaik-baik ganjaran yang diberikan kepada seorang nabi atas jasanya kepada umatnya.”\n\n2. Salam kepada Abu Bakar رضي الله عنه:\n“Salam sejahtera ke atasmu, wahai Abu Bakar. Semoga Allah membalasmu bagi pihak umat Islam dengan sebaik-baik balasan.”\n\n3. Salam kepada Umar رضي الله عنه:\n“Salam sejahtera ke atasmu, wahai Umar. Semoga Allah membalasmu bagi pihak umat Islam dengan sebaik-baik balasan.”",
-        "note": "Dibaca ketika berziarah ke makam Rasulullah ﷺ, Abu Bakar Ash-Shiddiq, dan Umar bin Al-Khattab di Madinah Munawwarah · Sumber: https://ilmuislam.id/"
-      },
-      {
-        "title": "Doa Dziarah Kubur",
-        "subtitle": "Doa salam dan permohonan keselamatan bagi penghuni kubur",
-        "arabic": "السَّلَامُ عَلَيْكُمْ يَا أَهْلَ الدِّيَارِ مِنَ الْمُؤْمِنِينَ وَالْمُسْلِمِينَ،\nوَإِنَّا إِنْ شَاءَ اللَّهُ بِكُمْ لَاحِقُونَ،\nوَنَسْأَلُ اللَّهَ لَنَا وَلَكُمُ الْعَافِيَةَ.",
-        "meaning": "“Salam sejahtera ke atas kamu, wahai penghuni tempat tinggal dari kalangan orang yang beriman dan orang Islam.\n\nSesungguhnya kami, insyaAllah, akan menyusul kamu. Kami memohon kepada Allah kesejahteraan untuk kami dan untuk kamu.”",
-        "note": "Doa ziarah kubur (salam kepada ahli kubur), HR. Muslim no. 975 · Sumber: https://hadits.in/"
-      }
-    ]
-  },
-  {
-    "id": "janazah",
-    "icon": "☼",
-    "title": "Sholat Jenazah",
-    "subtitle": "Bacaan pada empat takbir dan salam",
-    "countLabel": "4 TAKBIR + SALAM",
-    "items": [
-      {
-        "title": "Takbir Pertama — Al-Fatihah",
-        "subtitle": "Membaca Surah Al-Fatihah",
-        "arabic": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ.\nبِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ.\nالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ.\nالرَّحْمَٰنِ الرَّحِيمِ.\nمَالِكِ يَوْمِ الدِّينِ.\nإِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ.\nاهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ.\nصِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ\nغَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ.",
-        "meaning": "Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang. Segala puji bagi Allah, Tuhan semesta alam. Maha Pemurah lagi Maha Penyayang. Yang Menguasai Hari Pembalasan. Hanya Engkaulah yang kami sembah dan hanya kepada Engkaulah kami meminta pertolongan. Tunjukilah kami jalan yang lurus, (yaitu) jalan orang-orang yang telah Engkau beri nikmat kepada mereka; bukan (jalan) mereka yang dimurkai dan bukan (pula) mereka yang sesat.",
-        "note": "QS Al-Fatihah: 1–7 · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Takbir Kedua — Sholawat",
-        "subtitle": "Sholawat kepada Nabi Muhammad ﷺ",
-        "arabic": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ،\nكَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ،\nإِنَّكَ حَمِيدٌ مَجِيدٌ.\nاللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ،\nكَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ،\nإِنَّكَ حَمِيدٌ مَجِيدٌ.",
-        "meaning": "Ya Allah, berilah rahmat kepada Nabi Muhammad dan keluarga Nabi Muhammad sebagaimana Engkau telah memberikan rahmat kepada Nabi Ibrahim dan keluarga Nabi Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia. Ya Allah, berilah keberkahan kepada Nabi Muhammad dan keluarga Nabi Muhammad sebagaimana Engkau telah memberikan keberkahan kepada Nabi Ibrahim dan keluarga Nabi Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.",
-        "note": "HR. Bukhari no. 3370 & HR. Muslim no. 406 (Sholawat Ibrahimiyah; Sunnah Sholat Jenazah HR. Al-Hakim 1/360) · Sumber: https://hadits.in/"
-      },
-      {
-        "title": "Takbir Ketiga — Doa untuk Jenazah",
-        "subtitle": "Memohon ampunan dan rahmat bagi jenazah",
-        "arabic": "اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ وَاعْفُ عَنْهُ،\nوَأَكْرِمْ نُزُلَهُ، وَوَسِّعْ مُدْخَلَهُ،\nوَاغْسِلْهُ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ،\nوَنَقِّهِ مِنَ الْخَطَايَا كَمَا نَقَّيْتَ الثَّوْبَ الْأَبْيَضَ مِنَ الدَّنَسِ،\nوَأَبْدِلْهُ دَارًا خَيْرًا مِنْ دَارِهِ،\nوَأَهْلًا خَيْرًا مِنْ أَهْلِهِ،\nوَزَوْجًا خَيْرًا مِنْ زَوْجِهِ، وَأَدْخِلْهُ الْجَنَّةَ،\nوَأَعِذْهُ مِنْ عَذَابِ الْقَبْرِ أَوْ مِنْ عَذَابِ النَّارِ.",
-        "meaning": "Ya Allah, ampunilah dan rahmatilah dia. Bebaskanlah dan maafkanlah dia. Luaskanlah kuburnya dan mandikanlah ia dengan air, salju, dan embun. Sucikan ia dari seluruh kesalahan seperti dibersihkannya kain putih dari kotoran. Berikan ia rumah yang lebih baik dari rumahnya (di dunia), keluarga yang lebih baik dari keluarganya, pasangan yang lebih baik dari pasangannya. Lalu masukkanlah ia ke dalam surga dan lindungilah ia dari cobaan kubur dan azab neraka.",
-        "note": "HR. Muslim no. 963 dari ‘Auf bin Malik radhiyallahu ‘anhu (Shahih) · Sumber: https://hadits.in/"
-      },
-      {
-        "title": "Takbir Keempat — Doa",
-        "subtitle": "Memohon pahala dan ampunan",
-        "arabic": "اللَّهُمَّ لَا تَحْرِمْنَا أَجْرَهُ،\nوَلَا تَفْتِنَّا بَعْدَهُ،\nوَاغْفِرْ لَنَا وَلَهُ.",
-        "meaning": "Ya Allah, jangan haramkan kami dari pahalanya dan jangan cobai kami sepeninggalnya. Ampunilah kami dan ampunilah dia.",
-        "note": "HR. Abu Dawud no. 3201 & HR. Ibnu Majah no. 1498 dari Abu Hurairah radhiyallahu ‘anhu (Hasan) · Sumber: https://www.hadits.id/"
-      },
-      {
-        "title": "Salam",
-        "subtitle": "Penutup sholat jenazah",
-        "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ.",
-        "meaning": "Semoga keselamatan, rahmat Allah, dan berkah-Nya dilimpahkan kepada kalian.",
-        "note": "HR. Al-Bayhaqi dalam As-Sunan Al-Kubra 4/43 & Al-Hakim 1/360 dari Abdullah bin Mas’ud radhiyallahu ‘anhu · Sumber: https://hadits.arina.id/"
-      }
-    ]
-  },
-  {
     "id": "doa-nabi-muhammad",
     "icon": "۞",
     "title": "Doa yang diminta Nabi Muhammad",
@@ -544,6 +357,193 @@ export const doaCategories: DoaCategory[] = [
         "latin": "Allahumma ighfir lī dhanbi, wa wassi‘ lī fī dārī, wa bārik lī fī rizqī.",
         "meaning": "Ya Allah, ampunilah dosa-dosaku, luaskanlah rumahku untukku, dan berkahilah rezekiku.",
         "note": "HR. At-Tirmidzi no. 3500 & HR. Ahmad no. 16599 dari Abu Musa Al-Asy‘ari (Hasan) · Sumber: https://hadits.in/"
+      }
+    ]
+  },
+  {
+    "id": "umrah",
+    "icon": "☾",
+    "title": "Doa-doa Umroh",
+    "subtitle": "Rangkaian doa perjalanan, tawaf, dan sa’i sesuai urutan",
+    "countLabel": "22 DOA / BACAAN",
+    "items": [
+      {
+        "title": "Doa Keluar Rumah",
+        "arabic": "بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ،\nوَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ.",
+        "meaning": "Dengan nama Allah, aku bertawakal kepada Allah. Tidak ada daya dan kekuatan kecuali dengan (pertolongan) Allah.",
+        "note": "HR. Abu Dawud no. 5095 & HR. At-Tirmidzi no. 3426 dari Anas bin Malik radhiyallahu ‘anhu (Shahih) · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Setelah Duduk dalam Kendaraan",
+        "arabic": "بِسْمِ اللَّهِ مَجْرَاهَا وَمُرْسَاهَا،\nإِنَّ رَبِّي لَغَفُورٌ رَحِيمٌ.",
+        "meaning": "Dengan (menyebut) nama Allah pada waktu berlayar dan berlabuhnya. Sesungguhnya Tuhanku Maha Pengampun, Maha Penyayang.",
+        "note": "QS Hud: 41 · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Doa Ketika Kendaraan Mulai Bergerak",
+        "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ.\nاللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ.\nسُبْحَانَ الَّذِي سَخَّرَ لَنَا هَذَا\nوَمَا كُنَّا لَهُ مُقْرِنِينَ،\nوَإِنَّا إِلَى رَبِّنَا لَمُنْقَلِبُونَ.",
+        "meaning": "Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang. Allah Mahabesar. Allah Mahabesar. Allah Mahabesar. Mahasuci Allah yang telah menggerakkan untuk kami kendaraan ini, padahal kami tidak kuasa menggerakkannya. Dan sesungguhnya kepada Tuhan kami pasti akan kembali.",
+        "note": "QS Az-Zukhruf [43]: 13–14 & HR. Muslim no. 1342 dari Ibnu Umar radhiyallahu ‘anhuma · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Niat Umroh",
+        "arabic": "لَبَّيْكَ اللَّهُمَّ عُمْرَةً.",
+        "meaning": "Aku penuhi panggilan-Mu, ya Allah, untuk menunaikan ibadah umrah.",
+        "note": "HR. Muslim no. 1251 & HR. Bukhari no. 1551 (Manasik Umroh Nabi ﷺ) · Sumber: https://www.hadits.id/"
+      },
+      {
+        "title": "Bacaan Talbiyah",
+        "arabic": "لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ،\nلَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ،\nإِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ،\nلَا شَرِيكَ لَكَ.",
+        "meaning": "Aku datang memenuhi panggilan-Mu, ya Allah. Aku datang memenuhi panggilan-Mu. Tiada sekutu bagi-Mu. Aku datang memenuhi panggilan-Mu. Sungguh, segala puji, nikmat, dan segala kekuasaan adalah milik-Mu. Tiada sekutu bagi-Mu.",
+        "note": "HR. Bukhari no. 1549 & HR. Muslim no. 1184 dari Abdullah bin Umar radhiyallahu ‘anhuma (Shahih) · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Masuk Masjid",
+        "arabic": "اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ.",
+        "meaning": "Ya Allah, bukakanlah bagiku segala pintu rahmat-Mu.",
+        "note": "HR. Muslim no. 713 & HR. Abu Dawud no. 465 dari Abu Usaid radhiyallahu ‘anhu · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Keluar Masjid",
+        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ.",
+        "meaning": "Ya Allah, sesungguhnya aku memohon fadilah kepada-Mu.",
+        "note": "HR. Muslim no. 713 & HR. Abu Dawud no. 465 dari Abu Usaid radhiyallahu ‘anhu · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Ketika Melihat Ka’bah",
+        "arabic": "اللَّهُمَّ زِدْ هَذَا الْبَيْتَ تَشْرِيفًا\nوَتَعْظِيمًا وَتَكْرِيمًا وَمَهَابَةً،\nوَزِدْ مَنْ شَرَّفَهُ وَكَرَّمَهُ مِمَّنْ حَجَّهُ\nأَوِ اعْتَمَرَهُ تَشْرِيفًا وَتَكْرِيمًا\nوَتَعْظِيمًا وَبِرًّا.",
+        "meaning": "Ya Allah, tambahkanlah kemuliaan, kehormatan, keagungan, dan kehebatan pada Baitullah ini; dan tambahkanlah pula kepada orang-orang yang memuliakan, menghormati, dan mengagungkannya di antara mereka yang berhaji atau yang berumrah kemuliaan, kehormatan, kebesaran, dan kebaikan.",
+        "note": "Riwayat Imam Asy-Syafi‘i dalam Kitab Al-Umm 1/394 & Al-Bayhaqi dalam As-Sunan Al-Kubra 5/73 · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Doa Ketika Akan Memulai Tawaf",
+        "arabic": "اللَّهُمَّ إِيمَانًا بِكَ، وَتَصْدِيقًا بِكِتَابِكَ،\nوَوَفَاءً بِعَهْدِكَ، وَاتِّبَاعًا لِسُنَّةِ نَبِيِّكَ\nمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ.",
+        "meaning": "Ya Allah, seraya iman kepada-Mu, membenarkan kitab-Mu, menepati janji kepada-Mu, serta mengikuti sunah Nabi-Mu, Muhammad ﷺ.",
+        "note": "Riwayat Ath-Thabrani dalam Al-Mu‘jam Al-Awsath no. 3254 & Al-Bayhaqi dalam As-Sunan Al-Kubra 5/79 · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Doa Tawaf di Setiap Posisi Hajar Aswad",
+        "arabic": "بِسْمِ اللَّهِ، اللَّهُ أَكْبَرُ.",
+        "meaning": "Dengan nama Allah, Allah Mahabesar.",
+        "note": "HR. Bukhari no. 1612 & no. 1613 dari Ibnu Abbas radhiyallahu ‘anhuma · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Tawaf dari Hajar Aswad ke Maqam Ibrahim",
+        "arabic": "سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ،\nوَلَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَرُ.\nوَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ.",
+        "meaning": "Mahasuci Allah. Segala pujian hanya pantas disanjungkan kepada Allah. Tiada Tuhan selain Allah. Allah Mahabesar. Tidak ada daya dan kekuatan kecuali (pertolongan) dari Allah Yang Mahaluhur lagi Mahaagung.",
+        "note": "HR. Ibnu Majah no. 2957 & HR. Ahmad no. 15468 dari Abu Hurairah radhiyallahu ‘anhu · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Tawaf dari Maqam Ibrahim ke Rukun Yamani",
+        "arabic": "",
+        "meaning": "Berdo’a Bebas",
+        "note": "Lampiran tidak mencantumkan lafaz khusus untuk bagian ini · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Doa Tawaf dari Rukun Yamani ke Hajar Aswad",
+        "arabic": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً،\nوَفِي الْآخِرَةِ حَسَنَةً،\nوَقِنَا عَذَابَ النَّارِ.",
+        "meaning": "Wahai Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, dan hindarkanlah kami dari siksa neraka.",
+        "note": "QS Al-Baqarah [2]: 201 & HR. Abu Dawud no. 1892 dari Abdullah bin As-Sa’ib radhiyallahu ‘anhu (Shahih) · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Doa Menuju Maqam Ibrahim",
+        "arabic": "وَاتَّخِذُوا مِنْ مَقَامِ إِبْرَاهِيمَ مُصَلًّى.",
+        "meaning": "Dan jadikanlah bagian dari maqam Ibrahim itu sebagai tempat salat.",
+        "note": "QS Al-Baqarah: 125 · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Doa Minum Air Zamzam",
+        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا،\nوَرِزْقًا وَاسِعًا، وَشِفَاءً مِنْ كُلِّ دَاءٍ\nوَسَقَمٍ بِرَحْمَتِكَ يَا أَرْحَمَ الرَّاحِمِينَ.",
+        "meaning": "Ya Allah, sesungguhnya aku bermohon kepada-Mu ilmu yang bermanfaat, rezeki yang luas, dan penawar bagi segala penyakit; dengan rahmat-Mu, wahai Tuhan Yang Maha Pengasih lagi Maha Penyayang.",
+        "note": "HR. Ad-Daraquthni 2/288 no. 238 & Al-Hakim dalam Al-Mustadrak no. 1739 dari Ibnu Abbas radhiyallahu ‘anhuma · Sumber: https://hadits.arina.id/"
+      },
+      {
+        "title": "Doa Menuju Bukit Shafa",
+        "arabic": "إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ.",
+        "meaning": "Sesungguhnya Shafa dan Marwah merupakan sebagian syiar (agama) Allah.",
+        "note": "QS Al-Baqarah [2]: 158 & HR. Muslim no. 1218 (Sunnah Manasik Haji/Umroh Nabi ﷺ) · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Doa Menaiki Bukit Shafa",
+        "arabic": "أَبْدَأُ بِمَا بَدَأَ اللَّهُ بِهِ.",
+        "meaning": "Aku memulai sa’i dengan apa yang didahulukan oleh Allah.",
+        "note": "HR. Muslim no. 1218 & HR. An-Nasa’i no. 2974 dari Jabir bin Abdillah radhiyallahu ‘anhu · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Ketika Berada di Bukit Shafa dan Marwah",
+        "arabic": "اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ، اللَّهُ أَكْبَرُ.\nلَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ،\nلَهُ الْمُلْكُ وَلَهُ الْحَمْدُ،\nوَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ.\nلَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ،\nأَنْجَزَ وَعْدَهُ، وَنَصَرَ عَبْدَهُ،\nوَهَزَمَ الْأَحْزَابَ وَحْدَهُ.",
+        "meaning": "Allah Mahabesar (3 kali). Tiada Tuhan yang berhak disembah selain Allah, Yang Maha Esa, tiada sekutu bagi-Nya. Bagi-Nya kerajaan dan pujian. Dia-lah Yang Mahakuasa atas segala sesuatu. Tiada Tuhan yang berhak disembah selain Allah Yang Maha Esa, yang melaksanakan janji-Nya, membela hamba-Nya (Muhammad), dan mengalahkan golongan musuh sendirian.",
+        "note": "HR. Muslim no. 1218 dari Jabir bin Abdillah radhiyallahu ‘anhu (Dzikir Sunnah Nabi ﷺ di Bukit Shafa & Marwah) · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Sa’i dari Bukit Shafa ke Marwah",
+        "arabic": "",
+        "meaning": "Berdo’a Bebas",
+        "note": "Lampiran tidak mencantumkan lafaz khusus untuk bagian ini · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Doa Sa’i di Pilar Lampu Hijau",
+        "arabic": "اللَّهُمَّ اغْفِرْ وَارْحَمْ،\nوَأَنْتَ الْأَعَزُّ الْأَكْرَمُ.",
+        "meaning": "Ya Rabbku, ampuni dan rahmatilah aku. Sesungguhnya Engkaulah Yang Maha Perkasa dan Maha Pemurah.",
+        "note": "Atsar riwayat Ibnu Abi Syaibah dalam Al-Mushannaf no. 13247 & Al-Bayhaqi 5/95 dari Ibnu Umar dan Ibnu Mas’ud radhiyallahu ‘anhum · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Salam Rasulullah, Abu Bakar & Umar",
+        "subtitle": "Salam ketika berziarah ke makam Rasulullah ﷺ, Abu Bakar, dan Umar",
+        "arabic": "السَّلَامُ عَلَيْكَ يَا رَسُولَ اللَّهِ، وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ. صَلَّى اللَّهُ وَسَلَّمَ وَبَارَكَ عَلَيْكَ، وَجَزَاكَ أَفْضَلَ مَا جَزَى نَبِيًّا عَنْ أُمَّتِهِ.\n\nالسَّلَامُ عَلَيْكَ يَا أَبَا بَكْرٍ، وَجَزَاكَ اللَّهُ عَنْ أُمَّةِ الْإِسْلَامِ خَيْرَ الْجَزَاءِ.\n\nالسَّلَامُ عَلَيْكَ يَا عُمَرُ، وَجَزَاكَ اللَّهُ عَنْ أُمَّةِ الْإِسْلَامِ خَيْرَ الْجَزَاءِ.",
+        "meaning": "1. Salam kepada Rasulullah ﷺ:\n“Salam sejahtera ke atasmu, wahai Rasulullah, serta rahmat Allah dan keberkatan-Nya. Semoga Allah melimpahkan selawat, salam, dan keberkahan ke atasmu, serta membalasmu dengan sebaik-baik ganjaran yang diberikan kepada seorang nabi atas jasanya kepada umatnya.”\n\n2. Salam kepada Abu Bakar رضي الله عنه:\n“Salam sejahtera ke atasmu, wahai Abu Bakar. Semoga Allah membalasmu bagi pihak umat Islam dengan sebaik-baik balasan.”\n\n3. Salam kepada Umar رضي الله عنه:\n“Salam sejahtera ke atasmu, wahai Umar. Semoga Allah membalasmu bagi pihak umat Islam dengan sebaik-baik balasan.”",
+        "note": "Dibaca ketika berziarah ke makam Rasulullah ﷺ, Abu Bakar Ash-Shiddiq, dan Umar bin Al-Khattab di Madinah Munawwarah · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Doa Dziarah Kubur",
+        "subtitle": "Doa salam dan permohonan keselamatan bagi penghuni kubur",
+        "arabic": "السَّلَامُ عَلَيْكُمْ يَا أَهْلَ الدِّيَارِ مِنَ الْمُؤْمِنِينَ وَالْمُسْلِمِينَ،\nوَإِنَّا إِنْ شَاءَ اللَّهُ بِكُمْ لَاحِقُونَ،\nوَنَسْأَلُ اللَّهَ لَنَا وَلَكُمُ الْعَافِيَةَ.",
+        "meaning": "“Salam sejahtera ke atas kamu, wahai penghuni tempat tinggal dari kalangan orang yang beriman dan orang Islam.\n\nSesungguhnya kami, insyaAllah, akan menyusul kamu. Kami memohon kepada Allah kesejahteraan untuk kami dan untuk kamu.”",
+        "note": "Doa ziarah kubur (salam kepada ahli kubur), HR. Muslim no. 975 · Sumber: https://hadits.in/"
+      }
+    ]
+  },
+  {
+    "id": "janazah",
+    "icon": "☼",
+    "title": "Sholat Jenazah",
+    "subtitle": "Bacaan pada empat takbir dan salam",
+    "countLabel": "4 TAKBIR + SALAM",
+    "items": [
+      {
+        "title": "Takbir Pertama — Al-Fatihah",
+        "subtitle": "Membaca Surah Al-Fatihah",
+        "arabic": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ.\nبِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ.\nالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ.\nالرَّحْمَٰنِ الرَّحِيمِ.\nمَالِكِ يَوْمِ الدِّينِ.\nإِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ.\nاهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ.\nصِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ\nغَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ.",
+        "meaning": "Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang. Segala puji bagi Allah, Tuhan semesta alam. Maha Pemurah lagi Maha Penyayang. Yang Menguasai Hari Pembalasan. Hanya Engkaulah yang kami sembah dan hanya kepada Engkaulah kami meminta pertolongan. Tunjukilah kami jalan yang lurus, (yaitu) jalan orang-orang yang telah Engkau beri nikmat kepada mereka; bukan (jalan) mereka yang dimurkai dan bukan (pula) mereka yang sesat.",
+        "note": "QS Al-Fatihah: 1–7 · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Takbir Kedua — Sholawat",
+        "subtitle": "Sholawat kepada Nabi Muhammad ﷺ",
+        "arabic": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ،\nكَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ،\nإِنَّكَ حَمِيدٌ مَجِيدٌ.\nاللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ،\nكَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ،\nإِنَّكَ حَمِيدٌ مَجِيدٌ.",
+        "meaning": "Ya Allah, berilah rahmat kepada Nabi Muhammad dan keluarga Nabi Muhammad sebagaimana Engkau telah memberikan rahmat kepada Nabi Ibrahim dan keluarga Nabi Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia. Ya Allah, berilah keberkahan kepada Nabi Muhammad dan keluarga Nabi Muhammad sebagaimana Engkau telah memberikan keberkahan kepada Nabi Ibrahim dan keluarga Nabi Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.",
+        "note": "HR. Bukhari no. 3370 & HR. Muslim no. 406 (Sholawat Ibrahimiyah; Sunnah Sholat Jenazah HR. Al-Hakim 1/360) · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Takbir Ketiga — Doa untuk Jenazah",
+        "subtitle": "Memohon ampunan dan rahmat bagi jenazah",
+        "arabic": "اللَّهُمَّ اغْفِرْ لَهُ وَارْحَمْهُ وَعَافِهِ وَاعْفُ عَنْهُ،\nوَأَكْرِمْ نُزُلَهُ، وَوَسِّعْ مُدْخَلَهُ،\nوَاغْسِلْهُ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ،\nوَنَقِّهِ مِنَ الْخَطَايَا كَمَا نَقَّيْتَ الثَّوْبَ الْأَبْيَضَ مِنَ الدَّنَسِ،\nوَأَبْدِلْهُ دَارًا خَيْرًا مِنْ دَارِهِ،\nوَأَهْلًا خَيْرًا مِنْ أَهْلِهِ،\nوَزَوْجًا خَيْرًا مِنْ زَوْجِهِ، وَأَدْخِلْهُ الْجَنَّةَ،\nوَأَعِذْهُ مِنْ عَذَابِ الْقَبْرِ أَوْ مِنْ عَذَابِ النَّارِ.",
+        "meaning": "Ya Allah, ampunilah dan rahmatilah dia. Bebaskanlah dan maafkanlah dia. Luaskanlah kuburnya dan mandikanlah ia dengan air, salju, dan embun. Sucikan ia dari seluruh kesalahan seperti dibersihkannya kain putih dari kotoran. Berikan ia rumah yang lebih baik dari rumahnya (di dunia), keluarga yang lebih baik dari keluarganya, pasangan yang lebih baik dari pasangannya. Lalu masukkanlah ia ke dalam surga dan lindungilah ia dari cobaan kubur dan azab neraka.",
+        "note": "HR. Muslim no. 963 dari ‘Auf bin Malik radhiyallahu ‘anhu (Shahih) · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Takbir Keempat — Doa",
+        "subtitle": "Memohon pahala dan ampunan",
+        "arabic": "اللَّهُمَّ لَا تَحْرِمْنَا أَجْرَهُ،\nوَلَا تَفْتِنَّا بَعْدَهُ،\nوَاغْفِرْ لَنَا وَلَهُ.",
+        "meaning": "Ya Allah, jangan haramkan kami dari pahalanya dan jangan cobai kami sepeninggalnya. Ampunilah kami dan ampunilah dia.",
+        "note": "HR. Abu Dawud no. 3201 & HR. Ibnu Majah no. 1498 dari Abu Hurairah radhiyallahu ‘anhu (Hasan) · Sumber: https://www.hadits.id/"
+      },
+      {
+        "title": "Salam",
+        "subtitle": "Penutup sholat jenazah",
+        "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ.",
+        "meaning": "Semoga keselamatan, rahmat Allah, dan berkah-Nya dilimpahkan kepada kalian.",
+        "note": "HR. Al-Bayhaqi dalam As-Sunan Al-Kubra 4/43 & Al-Hakim 1/360 dari Abdullah bin Mas’ud radhiyallahu ‘anhu · Sumber: https://hadits.arina.id/"
       }
     ]
   }
