@@ -306,6 +306,23 @@ export const doaCategories: DoaCategory[] = [
     ]
   },
   {
+    "id": "kesulitan-hidup",
+    "icon": "◈",
+    "title": "Doa ketika dalam kesulitan hidup",
+    "subtitle": "Dzikir kalimat tauhid saat menghadapi kesulitan dan kesusahan berat (Doa Al-Karb)",
+    "countLabel": "1 DOA",
+    "items": [
+      {
+        "title": "Dzikir Kalimat Tauhid",
+        "subtitle": "Doa Rasulullah ﷺ saat tertimpa kesulitan dan kesusahan hidup",
+        "arabic": "لَا إِلَٰهَ إِلَّا اللَّهُ الْعَظِيمُ الْحَلِيمُ،\nلَا إِلَٰهَ إِلَّا اللَّهُ رَبُّ الْعَرْشِ الْعَظِيمِ،\nلَا إِلَٰهَ إِلَّا اللَّهُ رَبُّ السَّمَاوَاتِ وَرَبُّ الْأَرْضِ وَرَبُّ الْعَرْشِ الْكَرِيمِ.",
+        "latin": "Lā ilāha illallāhul-‘aẓīmul-ḥalīm, lā ilāha illallāhu rabbul-‘arsyil-‘aẓīm, lā ilāha illallāhu rabbus-samāwāti wa rabbul-arḍi wa rabbul-‘arsyil-karīm.",
+        "meaning": "Tidak ada sesembahan yang berhak disembah selain Allah Yang Maha Agung lagi Maha Penyantun; Tidak ada sesembahan yang berhak disembah selain Allah, Rabb pemilik ‘Arsy yang agung. Tidak ada sesembahan yang berhak disembah selain Allah, Rabb langit dan bumi serta Rabb pemilik ‘Arsy yang mulia.",
+        "note": "HR. Bukhari no. 6345 & Muslim no. 2730 dari Ibnu Abbas radhiyallahu 'anhuma · Sumber: https://hadits.in/"
+      }
+    ]
+  },
+  {
     "id": "doa-pilihan",
     "icon": "✦",
     "title": "Doa-doa Pilihan",

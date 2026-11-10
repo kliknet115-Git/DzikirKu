@@ -18,3 +18,4 @@ Setiap kali menambahkan doa atau dzikir baru ke dalam aplikasi (baik pada `doa-d
      `HR. Bukhari no. 6306 · Sumber: https://hadits.in/`
 4. **Pembaruan Service Worker & Deploy**:
    - Setiap ada penambahan konten baru, naikkan versi cache di `public/sw.js` (bump version), jalankan tes `npm test`, lalu build dan deploy ke GitHub.
+
