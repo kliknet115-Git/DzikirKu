@@ -9,6 +9,7 @@ import {
   RotateCcw,
   X,
   Sparkles,
+  Info,
 } from 'lucide-react';
 import {
   PAGI_ENTRIES,
@@ -298,6 +299,37 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
             {currentEntry.meaning}
           </p>
         </div>
+
+        {/* Card 4: Catatan / Note Card */}
+        {currentEntry.note && (
+          <div className="bg-[#EAF2F3] border border-[#DBE8E9] rounded-2xl p-4 flex gap-3 items-start shadow-xs">
+            <div className="w-7 h-7 rounded-lg bg-[#D8E9E9] text-[#287A7B] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <Info size={16} />
+            </div>
+            <div className="min-w-0">
+              <div className="text-[10px] font-black text-[#287477] tracking-wider uppercase mb-0.5">
+                CATATAN
+              </div>
+              <p className="text-xs text-[#2E4A59] font-medium leading-relaxed">
+                {currentEntry.note.split(/(https?:\/\/[^\s)]+)/g).map((part, i) =>
+                  part.match(/^https?:\/\//) ? (
+                    <a
+                      key={i}
+                      href={part}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-[#1e5a5c] hover:text-[#18344D] font-bold break-all"
+                    >
+                      {part}
+                    </a>
+                  ) : (
+                    part
+                  )
+                )}
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Fixed Bottom Pager Navigation Bar */}
