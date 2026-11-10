@@ -398,7 +398,21 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                     CATATAN
                   </div>
                   <p className="text-xs text-[#2E4A59] font-medium leading-relaxed">
-                    {activeItem.note}
+                    {activeItem.note.split(/(https?:\/\/[^\s)]+)/g).map((part, i) =>
+                      part.match(/^https?:\/\//) ? (
+                        <a
+                          key={i}
+                          href={part}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline text-[#1e5a5c] hover:text-[#18344D] font-bold break-all"
+                        >
+                          {part}
+                        </a>
+                      ) : (
+                        part
+                      )
+                    )}
                   </p>
                 </div>
               </div>
