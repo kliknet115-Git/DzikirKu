@@ -59,23 +59,6 @@ export const doaCategories: DoaCategory[] = [
     ]
   },
   {
-    "id": "forgiveness",
-    "icon": "♡",
-    "title": "Doa Meminta Ampunan dan Rezeki",
-    "subtitle": "Memohon ampunan, kelapangan rumah, dan keberkahan rezeki",
-    "countLabel": "1 DOA",
-    "items": [
-      {
-        "title": "Doa Meminta Ampunan dan Rezeki",
-        "subtitle": "Ampunan dosa, kelapangan rumah, dan keberkahan rezeki",
-        "arabic": "اللَّهُمَّ اغْفِرْ لِي ذَنْبِي،\nوَوَسِّعْ لِي فِي دَارِي،\nوَبَارِكْ لِي فِي رِزْقِي.",
-        "latin": "Allahumma ighfir lī dhanbi, wa wassi‘ lī fī dārī, wa bārik lī fī rizqī.",
-        "meaning": "Ya Allah, ampunilah dosa-dosaku, luaskanlah rumahku untukku, dan berkahilah rezekiku.",
-        "note": "HR. At-Tirmidzi no. 3500 & HR. Ahmad no. 16599 dari Abu Musa Al-Asy‘ari (Hasan) · Sumber: https://hadits.in/"
-      }
-    ]
-  },
-  {
     "id": "help",
     "icon": "✧",
     "title": "Doa Memohon Pertolongan",
@@ -334,8 +317,8 @@ export const doaCategories: DoaCategory[] = [
     "id": "doa-pilihan",
     "icon": "✦",
     "title": "Doa-doa Pilihan",
-    "subtitle": "Kumpulan 31 doa pilihan dari Al-Qur’an dan hadis shahih",
-    "countLabel": "31 DOA",
+    "subtitle": "Kumpulan 32 doa pilihan dari Al-Qur’an dan hadis shahih",
+    "countLabel": "32 DOA",
     "items": [
       {
         "title": "Kebaikan dunia dan akhirat",
@@ -553,6 +536,14 @@ export const doaCategories: DoaCategory[] = [
         "arabic": "رَبِّ أَنْزِلْنِي مُنْزَلًا مُبَارَكًا وَأَنْتَ خَيْرُ الْمُنْزِلِينَ",
         "meaning": "“Ya Tuhanku, tempatkanlah aku pada tempat yang diberkahi, dan Engkau adalah sebaik-baik pemberi tempat.”",
         "note": "QS Al-Mu'minun [23]: 29 · Doa Nabi Nuh 'alaihis salam memohon tempat yang penuh keberkahan · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Doa Meminta Ampunan dan Rezeki",
+        "subtitle": "HR. At-Tirmidzi no. 3500 & HR. Ahmad no. 16599",
+        "arabic": "اللَّهُمَّ اغْفِرْ لِي ذَنْبِي،\nوَوَسِّعْ لِي فِي دَارِي،\nوَبَارِكْ لِي فِي رِزْقِي.",
+        "latin": "Allahumma ighfir lī dhanbi, wa wassi‘ lī fī dārī, wa bārik lī fī rizqī.",
+        "meaning": "Ya Allah, ampunilah dosa-dosaku, luaskanlah rumahku untukku, dan berkahilah rezekiku.",
+        "note": "HR. At-Tirmidzi no. 3500 & HR. Ahmad no. 16599 dari Abu Musa Al-Asy‘ari (Hasan) · Sumber: https://hadits.in/"
       }
     ]
   }
