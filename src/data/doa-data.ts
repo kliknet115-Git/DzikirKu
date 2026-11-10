@@ -334,8 +334,8 @@ export const doaCategories: DoaCategory[] = [
     "id": "doa-pilihan",
     "icon": "✦",
     "title": "Doa-doa Pilihan",
-    "subtitle": "Kumpulan 30 doa pilihan dari Al-Qur’an dan hadis shahih",
-    "countLabel": "30 DOA",
+    "subtitle": "Kumpulan 31 doa pilihan dari Al-Qur’an dan hadis shahih",
+    "countLabel": "31 DOA",
     "items": [
       {
         "title": "Kebaikan dunia dan akhirat",
@@ -546,6 +546,13 @@ export const doaCategories: DoaCategory[] = [
         "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ الْفِرْدَوْسَ الْأَعْلَى بِغَيْرِ حِسَابٍ وَلَا عَذَابٍ",
         "meaning": "“Ya Allah, sesungguhnya aku memohon kepada-Mu Surga Firdaus yang paling tinggi, tanpa dihisab dan tanpa diazab.”",
         "note": "HR. Bukhari No. 7423 · Doa Akhirat & Memohon Surga · Sumber: https://www.hadits.id/"
+      },
+      {
+        "title": "Doa Memohon Tempat yang Diberkahi",
+        "subtitle": "QS Al-Mu’minun [23]: 29",
+        "arabic": "رَبِّ أَنْزِلْنِي مُنْزَلًا مُبَارَكًا وَأَنْتَ خَيْرُ الْمُنْزِلِينَ",
+        "meaning": "“Ya Tuhanku, tempatkanlah aku pada tempat yang diberkahi, dan Engkau adalah sebaik-baik pemberi tempat.”",
+        "note": "QS Al-Mu'minun [23]: 29 · Doa Nabi Nuh 'alaihis salam memohon tempat yang penuh keberkahan · Sumber: https://quran.kemenag.go.id/"
       }
     ]
   }
