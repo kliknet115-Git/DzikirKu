@@ -57,7 +57,12 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
     if (settings?.hapticsEnabled) triggerHaptic();
     setActiveCatId(catId);
     setActiveIndex(0);
-    setView('category');
+    const cat = doaCategories.find((c) => c.id === catId);
+    if (cat && cat.items.length === 1) {
+      setView('detail');
+    } else {
+      setView('category');
+    }
   };
 
   const handleOpenDetail = (index: number) => {
@@ -154,9 +159,17 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setIsSheetOpen(true)}
+                  onClick={() => {
+                    if (settings?.hapticsEnabled) triggerHaptic();
+                    if (activeCategory.items.length === 1) {
+                      setView('home');
+                    } else {
+                      setIsSheetOpen(true);
+                    }
+                  }}
                   className="w-9 h-9 rounded-xl bg-white border border-[#E7EDED] text-[#287A7B] flex items-center justify-center hover:bg-[#EAF2F3] transition-colors shadow-xs"
-                  aria-label="Buka daftar doa"
+                  aria-label={activeCategory.items.length === 1 ? 'Kembali ke semua kategori' : 'Buka daftar doa'}
+                  title={activeCategory.items.length === 1 ? 'Semua Kategori' : 'Ukuran Font'}
                 >
                   <List size={18} />
                 </button>
@@ -301,16 +314,25 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
         {/* ================= VIEW 3: DETAIL PRAYER VIEW ================= */}
         {view === 'detail' && activeItem && (
           <div className="space-y-4">
-            {/* Back to Category Button */}
+            {/* Back to Category / Home Button */}
             <button
               type="button"
-              onClick={() => setView('category')}
+              onClick={() => {
+                if (settings?.hapticsEnabled) triggerHaptic();
+                if (activeCategory.items.length === 1) {
+                  setView('home');
+                } else {
+                  setView('category');
+                }
+              }}
               className="inline-flex items-center gap-1.5 text-xs font-bold text-[#7B8992] hover:text-[#18344D] transition-colors py-1"
             >
               <div className="w-7 h-7 rounded-lg bg-white border border-[#E7EDED] flex items-center justify-center text-[#18344D]">
                 <ChevronLeft size={16} />
               </div>
-              <span className="truncate max-w-[240px]">{activeCategory.title}</span>
+              <span className="truncate max-w-[240px]">
+                {activeCategory.items.length === 1 ? 'Semua kategori doa' : activeCategory.title}
+              </span>
             </button>
 
             {/* Progress Row */}
@@ -440,12 +462,20 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
               <ChevronLeft size={20} />
             </button>
 
-            {/* List Drawer Button */}
+            {/* List Drawer / Back to Categories Button */}
             <button
               type="button"
-              onClick={() => setIsSheetOpen(true)}
+              onClick={() => {
+                if (settings?.hapticsEnabled) triggerHaptic();
+                if (activeCategory.items.length === 1) {
+                  setView('home');
+                } else {
+                  setIsSheetOpen(true);
+                }
+              }}
               className="w-13 h-12 rounded-2xl bg-white border border-[#E7EDED] text-[#287A7B] font-bold flex items-center justify-center hover:bg-black/5 active:scale-95 transition-all shadow-xs"
-              aria-label="Daftar bacaan"
+              aria-label={activeCategory.items.length === 1 ? 'Kembali ke semua kategori' : 'Daftar bacaan'}
+              title={activeCategory.items.length === 1 ? 'Semua Kategori' : 'Daftar Bacaan'}
             >
               <List size={20} />
             </button>
