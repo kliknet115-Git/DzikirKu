@@ -22,8 +22,16 @@ export const doaCategories: DoaCategory[] = [
     "icon": "◉",
     "title": "Sebelum dan Sesudah Berdoa",
     "subtitle": "Bacaan pembuka dan penutup saat berdoa",
-    "countLabel": "3 BACAAN",
+    "countLabel": "4 BACAAN",
     "items": [
+      {
+        "title": "Memuji Alloh sebelum berdoa",
+        "subtitle": "Memohon kepada Allah dengan mengagungkan pujian, nama, dan sifat-Nya (Ismul A'zhom)",
+        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّ لَكَ الْحَمْدُ لَا إِلَهَ إِلَّا أَنْتَ الْمَنَّانُ بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ، يَا ذَا الْجَلَالِ وَالْإِكْرَامِ، يَا حَيُّ يَا قَيُّومُ.",
+        "latin": "Allāhumma innī as-aluka bi-anna lakal-ḥamda lā ilāha illā antal-mannānu badī‘us-samāwāti wal-arḍi, yā dzal-jalāli wal-ikrām, yā ḥayyu yā qayyūm.",
+        "meaning": "Ya Allah, sesungguhnya aku memohon kepada-Mu karena segala puji hanya milik-Mu. Tidak ada sesembahan yang berhak disembah selain Engkau. Engkaulah Yang Maha Pemberi karunia, Pencipta langit dan bumi. Wahai Tuhan yang memiliki keagungan dan kemuliaan. Wahai Yang Mahahidup, wahai Yang Maha Mengurus seluruh makhluk.",
+        "note": "HR. Abu Dawud no. 1495, At-Tirmidzi no. 3544 & An-Nasa'i no. 1300 dari Anas bin Malik radhiyallahu 'anhu (Doa dengan Ismul A'zhom sebelum berdoa) · Sumber: https://hadits.in/"
+      },
       {
         "title": "Doa Sebelum Berdoa",
         "subtitle": "Memohon pengabulan doa dengan mengingat janji Allah",
