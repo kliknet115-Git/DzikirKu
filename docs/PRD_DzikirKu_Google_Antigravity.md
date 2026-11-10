@@ -113,7 +113,7 @@ Bilah navigasi bawah (*Bottom Navigation Bar*) dirancang fixed dengan dukungan i
 #### 6 Dzikir Bawaan Resmi (Urutan Standar):
 1. **Subhanallah** (سُبْحَانَ ٱللَّهِ) — Target bawaan: **33x**
 2. **Alhamdulillah** (الْحَمْدُ لِلَّهِ) — Target bawaan: **33x**
-3. **Allohuakbar** (اللَّهُ أَكْبَرُ) — Target bawaan: **33x**
+3. **Allahuakbar** (اللَّهُ أَكْبَرُ) — Target bawaan: **33x**
 4. **Lailaha illallah** (لَا إِلَٰهَ إِلَّا اللَّهُ) — Target bawaan: **100x**
 5. **Subhanallahi wabihamdihi** (سُبْحَانَ اللهِ وَبِحَمْدِهِ) — Target bawaan: **100x**
 6. **Astagfirullaha waatubu ilaih** (أَسْتَغْفِرُ اللهَ وَأَتُوْبُ إِلَيْهِ) — Target bawaan: **100x**

@@ -25,7 +25,7 @@ export const doaCategories: DoaCategory[] = [
     "countLabel": "4 BACAAN",
     "items": [
       {
-        "title": "Memuji Alloh sebelum berdoa",
+        "title": "Memuji Allah sebelum berdoa",
         "subtitle": "Memohon kepada Allah dengan mengagungkan pujian, nama, dan sifat-Nya (Ismul A'zhom)",
         "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّ لَكَ الْحَمْدُ لَا إِلَهَ إِلَّا أَنْتَ الْمَنَّانُ بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ، يَا ذَا الْجَلَالِ وَالْإِكْرَامِ، يَا حَيُّ يَا قَيُّومُ.",
         "latin": "Allāhumma innī as-aluka bi-anna lakal-ḥamda lā ilāha illā antal-mannānu badī‘us-samāwāti wal-arḍi, yā dzal-jalāli wal-ikrām, yā ḥayyu yā qayyūm.",

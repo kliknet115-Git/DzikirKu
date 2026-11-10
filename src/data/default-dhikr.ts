@@ -29,9 +29,9 @@ export const DEFAULT_DHIKR: Dhikr[] = [
   },
   {
     id: 'builtin-allohuakbar',
-    name: 'Allohuakbar',
+    name: 'Allahuakbar',
     arabicText: 'اللَّهُ أَكْبَرُ',
-    transliteration: 'Allohuakbar',
+    transliteration: 'Allahuakbar',
     meaning: 'Allah Maha Besar',
     defaultTarget: 33,
     isBuiltIn: true,

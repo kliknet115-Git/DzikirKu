@@ -25,7 +25,7 @@ Aplikasi tasbih digital modern dan tenang yang dirancang khusus untuk penggunaan
    - 6 Dzikir Bawaan standar (terurut):
      1. **Subhanallah** (سُبْحَانَ ٱللَّهِ) — Target 33
      2. **Alhamdulillah** (الْحَمْدُ لِلَّهِ) — Target 33
-     3. **Allohuakbar** (اللَّهُ أَكْبَرُ) — Target 33
+     3. **Allahuakbar** (اللَّهُ أَكْبَرُ) — Target 33
      4. **Lailaha illallah** (لَا إِلَٰهَ إِلَّا اللَّهُ) — Target 100
      5. **Subhanallahi wabihamdihi** (سُبْحَانَ اللهِ وَبِحَمْدِهِ) — Target 100
      6. **Astagfirullaha waatubu ilaih** (أَسْتَغْفِرُ اللهَ وَأَتُوْبُ إِلَيْهِ) — Target 100
