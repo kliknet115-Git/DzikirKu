@@ -284,8 +284,8 @@ export const doaCategories: DoaCategory[] = [
     id: 'doa-pilihan',
     icon: '✦',
     title: 'Doa-doa Pilihan',
-    subtitle: 'Kumpulan 29 doa pilihan dari Al-Qur’an dan hadis shahih',
-    countLabel: '29 DOA',
+    subtitle: 'Kumpulan 30 doa pilihan dari Al-Qur’an dan hadis shahih',
+    countLabel: '30 DOA',
     items: [
       {
         title: "Kebaikan dunia dan akhirat",
@@ -489,6 +489,13 @@ export const doaCategories: DoaCategory[] = [
         arabic: "رَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ",
         meaning: "Ya Tuhan kami, terimalah amal dari kami. Sesungguhnya Engkaulah Yang Maha Mendengar lagi Maha Mengetahui.",
         note: "QS Al-Baqarah [2]: 127 · Ibadah & Amal Diterima",
+      },
+      {
+        title: "Doa Memohon Surga Firdaus",
+        subtitle: "HR. Bukhari No. 7423",
+        arabic: "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ الْفِرْدَوْسَ الْأَعْلَى بِغَيْرِ حِسَابٍ وَلَا عَذَابٍ",
+        meaning: "“Ya Allah, sesungguhnya aku memohon kepada-Mu Surga Firdaus yang paling tinggi, tanpa dihisab dan tanpa diazab.”",
+        note: "HR. Bukhari No. 7423 · Doa Akhirat & Memohon Surga",
       },
     ],
   },
