@@ -130,8 +130,8 @@ export const doaCategories: DoaCategory[] = [
     "id": "doa-pilihan",
     "icon": "✦",
     "title": "Doa-doa Pilihan",
-    "subtitle": "Kumpulan 32 doa pilihan dari Al-Qur’an dan hadis shahih",
-    "countLabel": "32 DOA",
+    "subtitle": "Kumpulan 37 doa pilihan dari Al-Qur’an dan hadis shahih",
+    "countLabel": "37 DOA",
     "items": [
       {
         "title": "Kebaikan dunia dan akhirat",
@@ -218,11 +218,12 @@ export const doaCategories: DoaCategory[] = [
         "note": "QS Al-Qasas [28]: 24 · Rezeki & Kecukupan · Sumber: https://quran.kemenag.go.id/"
       },
       {
-        "title": "Memohon Petunjuk, Takwa, Kehormatan dan Kecukupan",
-        "subtitle": "HR Muslim no. 2721",
+        "title": "Memohon Petunjuk, Ketakwaan dan Sifat Qanaah",
+        "subtitle": "HR. Muslim no. 2721",
         "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى",
-        "meaning": "“Ya Allah, aku memohon kepada-Mu petunjuk, ketakwaan, kesucian diri, dan kecukupan (hati yang tidak bergantung kepada manusia).”",
-        "note": "HR Muslim no. 2721 · Rezeki & Kecukupan · Sumber: https://ilmuislam.id/"
+        "latin": "Allāhumma innī as-alukal-hudā, wat-tuqā, wal-‘afāfa, wal-ghinā.",
+        "meaning": "“Ya Allah, aku memohon kepada-Mu petunjuk, ketakwaan, penjagaan kehormatan dan kesucian diri, serta kecukupan (hati yang merasa cukup dengan karunia Allah / qanaah).”",
+        "note": "HR. Muslim no. 2721 · Ketakwaan & Qanaah · Sumber: https://ilmuislam.id/"
       },
       {
         "title": "Memohon Dicukupkan dengan yang Halal",
@@ -357,6 +358,46 @@ export const doaCategories: DoaCategory[] = [
         "latin": "Allahumma ighfir lī dhanbi, wa wassi‘ lī fī dārī, wa bārik lī fī rizqī.",
         "meaning": "Ya Allah, ampunilah dosa-dosaku, luaskanlah rumahku untukku, dan berkahilah rezekiku.",
         "note": "HR. At-Tirmidzi no. 3500 & HR. Ahmad no. 16599 dari Abu Musa Al-Asy‘ari (Hasan) · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Ruqyah untuk Diri Sendiri",
+        "subtitle": "HR. Muslim no. 2202",
+        "arabic": "بِسْمِ اللَّهِ (3x)\n\nأَعُوذُ بِاللَّهِ وَقُدْرَتِهِ مِنْ شَرِّ مَا أَجِدُ وَأُحَاذِرُ (7x)",
+        "latin": "Bismillāh (3x). A‘ūdzu billāhi wa qudratihī min syarri mā ajidu wa uḥādzir (7x).",
+        "meaning": "“Dengan nama Allah” (dibaca 3 kali), lalu: “Aku berlindung kepada Allah dan kekuasaan-Nya dari keburukan yang aku rasakan dan yang aku khawatirkan” (dibaca 7 kali).",
+        "note": "HR. Muslim no. 2202 dari Utsman bin Abil ‘Ash radhiyallahu ‘anhu. Tata cara: Letakkan tangan pada bagian tubuh yang terasa sakit, baca Bismillah 3 kali lalu baca doa perlindungan di atas 7 kali · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Memohon Husnul Khatimah",
+        "subtitle": "Memohon akhir kehidupan yang baik dan diridai Allah",
+        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ حُسْنَ الْخَاتِمَةِ",
+        "latin": "Allāhumma innī as-aluka ḥusnal-khātimah.",
+        "meaning": "“Ya Allah, sesungguhnya aku memohon kepada-Mu akhir kehidupan yang baik (husnul khatimah).”",
+        "note": "Doa masyhur memohon wafat dalam keadaan husnul khatimah dan diridai Allah · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Doa Memohon Rezeki untuk Umrah dan Haji",
+        "subtitle": "Memohon rezeki dan kesempatan berziarah ke Baitullah",
+        "arabic": "اللَّهُمَّ ارْزُقْنَا زِيَارَةَ بَيْتِكَ الْمُعَظَّمِ وَرَسُولِكَ الْمُكَرَّمِ فِي هَذَا الْعَامِ وَفِي كُلِّ عَامٍ بِأَحْسَنِ الْحَالِ",
+        "latin": "Allāhummar-zuqnā ziyārata baitikal-mu‘aẓẓami wa rasūlikal-mukarrami fī hādzal-‘āmi wa fī kulli ‘āmin bi-aḥsanil-ḥāl.",
+        "meaning": "“Ya Allah, anugerahkanlah kepada kami rezeki dan kesempatan untuk mengunjungi rumah-Mu yang agung (Baitullah) serta Rasul-Mu yang mulia, pada tahun ini dan setiap tahun, dalam keadaan sebaik-baiknya.”",
+        "note": "Doa masyhur memohon kemudahan rezeki dan panggilan untuk menunaikan ibadah haji serta umrah · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Doa Memohon Mati Syahid dan Wafat di Madinah",
+        "subtitle": "HR. Bukhari no. 1890 · Doa Umar bin al-Khattab رضي الله عنه",
+        "arabic": "اللَّهُمَّ ارْزُقْنِي شَهَادَةً فِي سَبِيلِكَ، وَاجْعَلْ مَوْتِي فِي بَلَدِ رَسُولِكَ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ",
+        "latin": "Allāhummar-zuqnī syahādatan fī sabīlik, waj‘al mawtī fī baladi rasūlika ṣallallāhu ‘alayhi wa sallam.",
+        "meaning": "“Ya Allah, karuniakanlah kepadaku kesyahidan di jalan-Mu, dan jadikanlah wafatku di negeri Rasul-Mu (shallallahu ‘alaihi wa sallam).”",
+        "note": "HR. Bukhari no. 1890 (Kitab Keutamaan Madinah) dari riwayat Umar bin al-Khattab radhiyallahu 'anhu · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Memohon Rezeki kepada Allah",
+        "subtitle": "Asmaul Husna — QS Az-Zariyat [51]: 58",
+        "arabic": "يَا رَزَّاقُ، يَا ذَا الْقُوَّةِ الْمَتِينِ، ارْزُقْنِي",
+        "latin": "Yā Razzāqu, yā dzal-quwwatil-matīn, urzuqnī.",
+        "meaning": "“Wahai Allah Yang Maha Pemberi rezeki, wahai Pemilik kekuatan yang sangat kokoh, karuniakanlah rezeki kepadaku.”",
+        "note": "Landasan Asmaul Husna dalam QS Az-Zariyat [51]: 58 (إِنَّ اللَّهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ) · Rezeki & Kecukupan · Sumber: https://quran.kemenag.go.id/"
       }
     ]
   },
