@@ -369,10 +369,12 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                 <div className="absolute top-0 left-6 right-6 h-[3px] rounded-b bg-gradient-to-r from-[#C29A55] to-[#DFC58C]" />
               )}
 
-              <div className="flex items-center gap-2 text-[#287A7B] text-[11px] font-black tracking-wider mb-3">
-                <span className="w-4 h-[1px] bg-[#C29A55]" />
-                <span>{activeItem.arabic ? 'BACAAN ARAB' : 'KETERANGAN'}</span>
-              </div>
+              {!activeItem.arabic && (
+                <div className="flex items-center gap-2 text-[#287A7B] text-[11px] font-black tracking-wider mb-3">
+                  <span className="w-4 h-[1px] bg-[#C29A55]" />
+                  <span>KETERANGAN</span>
+                </div>
+              )}
 
               {activeItem.arabic ? (
                 <div

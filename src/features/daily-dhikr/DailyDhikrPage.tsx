@@ -219,12 +219,6 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
           {/* Top Golden Gradient Line */}
           <div className="absolute top-0 left-6 right-6 h-[3px] bg-gradient-to-r from-gold/60 via-gold to-gold/60 rounded-b-full" />
 
-          {/* Arabic Label */}
-          <div className="flex items-center gap-2 text-primary font-bold text-[11px] tracking-widest uppercase mb-3 pt-1">
-            <span className="w-4 h-[2px] bg-gold rounded-full" />
-            <span>BACAAN ARAB</span>
-          </div>
-
           {/* Arabic Paragraph */}
           <div className="py-2">
             <p
