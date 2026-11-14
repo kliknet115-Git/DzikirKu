@@ -548,5 +548,13 @@ export const doaCategories: DoaCategory[] = [
         "note": "HR. Al-Bayhaqi dalam As-Sunan Al-Kubra 4/43 & Al-Hakim 1/360 dari Abdullah bin Mas’ud radhiyallahu ‘anhu · Sumber: https://hadits.arina.id/"
       }
     ]
+  },
+  {
+    "id": "my-doa",
+    "icon": "★",
+    "title": "Doa Saya",
+    "subtitle": "Koleksi doa pilihan pribadi yang dapat disesuaikan urutan dan judulnya",
+    "countLabel": "0 DOA",
+    "items": []
   }
 ];

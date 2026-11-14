@@ -6,11 +6,22 @@ import {
   Type,
   Info,
   RotateCcw,
+  Plus,
+  SlidersHorizontal,
+  Pencil,
+  Sparkles,
 } from 'lucide-react';
 import { doaCategories } from '../../data/doa-data';
 import type { DoaCategory, DoaItem } from '../../data/doa-data';
 import type { AppSettings } from '../../types';
 import { triggerHaptic, playClickSound } from '../../lib/haptics';
+import {
+  loadMyDoaList,
+  saveMyDoaList,
+  DEFAULT_MY_DOA,
+  type MyDoaItem,
+} from './myDoaUtils';
+import { MyDoaModals } from './MyDoaModals';
 
 interface DoaPageProps {
   settings?: AppSettings;
@@ -24,11 +35,35 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
   const [fontSizeLevel, setFontSizeLevel] = useState<'normal' | 'large' | 'xlarge'>('large');
   const [isSheetOpen, setIsSheetOpen] = useState<boolean>(false);
 
+  // My Doa state
+  const [myDoaList, setMyDoaList] = useState<MyDoaItem[]>(() => loadMyDoaList());
+  const [isPickerOpen, setIsPickerOpen] = useState<boolean>(false);
+  const [isManageOpen, setIsManageOpen] = useState<boolean>(false);
+  const [editingIndex, setEditingIndex] = useState<number | null>(null);
+
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
-  const activeCategory: DoaCategory =
-    doaCategories.find((c) => c.id === activeCatId) || doaCategories[0];
+  const isMyDoa = activeCatId === 'my-doa';
+
+  const activeCategory: DoaCategory = isMyDoa
+    ? {
+        id: 'my-doa',
+        icon: '★',
+        title: 'Doa Saya',
+        subtitle: 'Koleksi doa pilihan pribadi yang dapat disesuaikan urutan dan judulnya',
+        countLabel: `${myDoaList.length} DOA`,
+        items: myDoaList,
+      }
+    : (doaCategories.find((c) => c.id === activeCatId) || doaCategories[0]);
   const activeItem: DoaItem | undefined = activeCategory.items[activeIndex];
+
+  const handleUpdateMyDoaList = (newList: MyDoaItem[]) => {
+    setMyDoaList(newList);
+    saveMyDoaList(newList);
+    if (activeIndex >= newList.length) {
+      setActiveIndex(Math.max(0, newList.length - 1));
+    }
+  };
 
   // Scroll to top on view or item change
   useEffect(() => {
@@ -215,30 +250,57 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
             {/* Category Cards List */}
             <div className="grid gap-3 pt-1">
-              {doaCategories.map((c) => (
-                <button
-                  key={c.id}
-                  type="button"
-                  onClick={() => handleOpenCategory(c.id)}
-                  className="w-full bg-white rounded-2xl p-4 border border-[#EDF0EF] shadow-[0_4px_16px_rgba(20,48,66,0.04)] flex items-center gap-3.5 hover:border-[#287A7B]/40 active:scale-[0.985] transition-all text-left"
-                >
-                  <div className="w-12 h-12 rounded-2xl bg-[#EAF2F3] text-[#287A7B] flex items-center justify-center text-xl font-bold flex-shrink-0">
-                    {c.icon}
-                  </div>
-                  <div className="flex-1 min-w-0 pr-1">
-                    <span className="block text-[15px] font-bold text-[#18344D] leading-snug break-words">
-                      {c.title}
-                    </span>
-                    <span className="block text-xs text-[#7C8A93] mt-0.5 leading-snug break-words">
-                      {c.subtitle}
-                    </span>
-                    <span className="inline-block text-[10px] font-extrabold text-[#287A7B] tracking-wider mt-1.5 uppercase bg-[#EAF2F3] px-2 py-0.5 rounded-md">
-                      {c.countLabel}
-                    </span>
-                  </div>
-                  <ChevronRight size={20} className="text-[#9AA9B0] flex-shrink-0" />
-                </button>
-              ))}
+              {doaCategories.map((c) => {
+                const isCustom = c.id === 'my-doa';
+                const countLabel = isCustom ? `${myDoaList.length} DOA` : c.countLabel;
+                return (
+                  <button
+                    key={c.id}
+                    type="button"
+                    onClick={() => handleOpenCategory(c.id)}
+                    className={`w-full bg-white rounded-2xl p-4 border shadow-[0_4px_16px_rgba(20,48,66,0.04)] flex items-center gap-3.5 hover:border-[#287A7B]/40 active:scale-[0.985] transition-all text-left ${
+                      isCustom
+                        ? 'border-[#C29A55]/40 bg-gradient-to-r from-white via-white to-[#FDFBF7]'
+                        : 'border-[#EDF0EF]'
+                    }`}
+                  >
+                    <div
+                      className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0 ${
+                        isCustom
+                          ? 'bg-[#FCF5E5] text-[#A2772E]'
+                          : 'bg-[#EAF2F3] text-[#287A7B]'
+                      }`}
+                    >
+                      {c.icon}
+                    </div>
+                    <div className="flex-1 min-w-0 pr-1">
+                      <div className="flex items-center gap-2">
+                        <span className="block text-[15px] font-bold text-[#18344D] leading-snug break-words">
+                          {c.title}
+                        </span>
+                        {isCustom && (
+                          <span className="text-[9px] font-black text-[#A2772E] bg-[#FCF5E5] px-1.5 py-0.5 rounded tracking-wider uppercase">
+                            Pribadi
+                          </span>
+                        )}
+                      </div>
+                      <span className="block text-xs text-[#7C8A93] mt-0.5 leading-snug break-words">
+                        {c.subtitle}
+                      </span>
+                      <span
+                        className={`inline-block text-[10px] font-extrabold tracking-wider mt-1.5 uppercase px-2 py-0.5 rounded-md ${
+                          isCustom
+                            ? 'bg-[#FCF5E5] text-[#A2772E]'
+                            : 'bg-[#EAF2F3] text-[#287A7B]'
+                        }`}
+                      >
+                        {countLabel}
+                      </span>
+                    </div>
+                    <ChevronRight size={20} className="text-[#9AA9B0] flex-shrink-0" />
+                  </button>
+                );
+              })}
             </div>
 
             {/* Tip Card */}
@@ -284,58 +346,128 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
               </p>
             </section>
 
-            {/* Item Rows */}
-            <div className="grid gap-2.5 pt-1">
-              {activeCategory.items.map((item, idx) => (
-                <React.Fragment key={idx}>
-                  {activeCategory.id === 'doa-pilihan' && (
-                    idx === 0 ? (
-                      <div className="flex items-center gap-2 pt-1 pb-0.5">
-                        <div className="h-px bg-[#D6E3E3] flex-1" />
-                        <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
-                          1. DOA PERMOHONAN AMPUNAN
-                        </span>
-                        <div className="h-px bg-[#D6E3E3] flex-1" />
-                      </div>
-                    ) : idx === 9 ? (
-                      <div className="flex items-center gap-2 pt-3 pb-0.5">
-                        <div className="h-px bg-[#D6E3E3] flex-1" />
-                        <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
-                          2. DOA PERMOHONAN REZEKI
-                        </span>
-                        <div className="h-px bg-[#D6E3E3] flex-1" />
-                      </div>
-                    ) : idx === 16 ? (
-                      <div className="flex items-center gap-2 pt-3 pb-0.5">
-                        <div className="h-px bg-[#D6E3E3] flex-1" />
-                        <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
-                          3. DOA LAINNYA
-                        </span>
-                        <div className="h-px bg-[#D6E3E3] flex-1" />
-                      </div>
-                    ) : null
-                  )}
+            {/* Action Bar for My Doa */}
+            {isMyDoa && (
+              <div className="flex items-center gap-2 pt-1">
+                <button
+                  type="button"
+                  onClick={() => setIsPickerOpen(true)}
+                  className="flex-1 py-2.5 px-3.5 rounded-xl bg-[#287A7B] text-white text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-[#1f6364] active:scale-[0.98] transition-all shadow-xs"
+                >
+                  <Plus size={16} />
+                  <span>Tambah Doa</span>
+                </button>
+                {myDoaList.length > 0 && (
                   <button
                     type="button"
-                    onClick={() => handleOpenDetail(idx)}
-                    className="w-full bg-white rounded-2xl p-3.5 border border-[#EDF0EF] shadow-[0_2px_10px_rgba(20,48,66,0.03)] flex items-center gap-3 hover:border-[#287A7B]/40 active:scale-[0.99] transition-all text-left overflow-hidden"
+                    onClick={() => setIsManageOpen(true)}
+                    className="py-2.5 px-3.5 rounded-xl bg-white border border-[#D5E2E2] text-[#18344D] text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-[#F0F6F6] active:scale-[0.98] transition-all shadow-xs"
                   >
-                    <span className="w-8 h-8 rounded-xl bg-[#EDF3F3] text-[#287A7B] text-xs font-black flex items-center justify-center tabular-nums flex-shrink-0">
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
-                    <div className="flex-1 min-w-0 pr-1">
-                      <span className="block text-sm font-bold text-[#18344D] leading-snug break-words">
-                        {item.title}
-                      </span>
-                      <span className="block text-xs text-[#829098] mt-1 leading-relaxed break-words">
-                        {item.subtitle || 'Bacaan doa'}
-                      </span>
-                    </div>
-                    <ChevronRight size={18} className="text-[#A2AFB5] flex-shrink-0" />
+                    <SlidersHorizontal size={15} />
+                    <span>Atur & Urutkan</span>
                   </button>
-                </React.Fragment>
-              ))}
-            </div>
+                )}
+              </div>
+            )}
+
+            {/* Empty State for My Doa */}
+            {isMyDoa && myDoaList.length === 0 && (
+              <div className="bg-white rounded-3xl p-6 text-center border border-[#E7EDED] shadow-sm my-2">
+                <div className="w-14 h-14 rounded-2xl bg-[#FCF5E5] text-[#A2772E] flex items-center justify-center text-2xl mx-auto mb-3">
+                  ★
+                </div>
+                <h3 className="text-base font-bold text-[#18344D]">
+                  Belum Ada Doa di Kategori Ini
+                </h3>
+                <p className="text-xs text-[#7B8992] leading-relaxed max-w-xs mx-auto mt-1 mb-5">
+                  Kumpulkan doa-doa pilihan Anda dari seluruh doa dalam aplikasi ini. Anda dapat mengatur urutan dan mengganti judul doa sesuai kenyamanan Anda.
+                </p>
+                <div className="flex flex-col gap-2 max-w-xs mx-auto">
+                  <button
+                    type="button"
+                    onClick={() => setIsPickerOpen(true)}
+                    className="w-full py-3 px-4 rounded-xl bg-[#287A7B] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm"
+                  >
+                    <Plus size={16} />
+                    <span>Pilih Doa Sekarang</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => handleUpdateMyDoaList(DEFAULT_MY_DOA)}
+                    className="w-full py-2.5 px-4 rounded-xl bg-[#F0F6F6] text-[#287A7B] text-xs font-bold flex items-center justify-center gap-2 hover:bg-[#E3EFEF]"
+                  >
+                    <Sparkles size={14} />
+                    <span>Gunakan Doa Rekomendasi</span>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Item Rows */}
+            {activeCategory.items.length > 0 && (
+              <div className="grid gap-2.5 pt-1">
+                {activeCategory.items.map((item, idx) => (
+                  <React.Fragment key={idx}>
+                    {activeCategory.id === 'doa-pilihan' && (
+                      idx === 0 ? (
+                        <div className="flex items-center gap-2 pt-1 pb-0.5">
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
+                            1. DOA PERMOHONAN AMPUNAN
+                          </span>
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                        </div>
+                      ) : idx === 9 ? (
+                        <div className="flex items-center gap-2 pt-3 pb-0.5">
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
+                            2. DOA PERMOHONAN REZEKI
+                          </span>
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                        </div>
+                      ) : idx === 16 ? (
+                        <div className="flex items-center gap-2 pt-3 pb-0.5">
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
+                            3. DOA LAINNYA
+                          </span>
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                        </div>
+                      ) : null
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => handleOpenDetail(idx)}
+                      className="w-full bg-white rounded-2xl p-3.5 border border-[#EDF0EF] shadow-[0_2px_10px_rgba(20,48,66,0.03)] flex items-center gap-3 hover:border-[#287A7B]/40 active:scale-[0.99] transition-all text-left overflow-hidden"
+                    >
+                      <span className="w-8 h-8 rounded-xl bg-[#EDF3F3] text-[#287A7B] text-xs font-black flex items-center justify-center tabular-nums flex-shrink-0">
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
+                      <div className="flex-1 min-w-0 pr-1">
+                        <span className="block text-sm font-bold text-[#18344D] leading-snug break-words">
+                          {item.title}
+                        </span>
+                        <span className="block text-xs text-[#829098] mt-1 leading-relaxed break-words">
+                          {item.subtitle || 'Bacaan doa'}
+                        </span>
+                      </div>
+                      <ChevronRight size={18} className="text-[#A2AFB5] flex-shrink-0" />
+                    </button>
+                  </React.Fragment>
+                ))}
+
+                {isMyDoa && activeCategory.items.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setIsPickerOpen(true)}
+                    className="w-full py-3.5 px-4 rounded-2xl border-2 border-dashed border-[#BCD5D5] text-[#287A7B] bg-[#F7FAFA] hover:bg-[#EDF5F5] text-xs font-bold flex items-center justify-center gap-2 transition-colors mt-1"
+                  >
+                    <Plus size={16} />
+                    <span>Tambah Doa Pilihan Lainnya</span>
+                  </button>
+                )}
+              </div>
+            )}
           </div>
         )}
 
@@ -381,14 +513,27 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
             </div>
 
             {/* Title Header */}
-            <section className="px-1">
-              <h2 className="text-xl font-bold text-[#18344D] leading-snug break-words">
-                {activeItem.title}
-              </h2>
-              {activeItem.subtitle && (
-                <p className="text-xs text-[#8A969D] mt-1 font-medium leading-relaxed break-words">
-                  {activeItem.subtitle}
-                </p>
+            <section className="px-1 flex items-start justify-between gap-3">
+              <div className="flex-1 min-w-0">
+                <h2 className="text-xl font-bold text-[#18344D] leading-snug break-words">
+                  {activeItem.title}
+                </h2>
+                {activeItem.subtitle && (
+                  <p className="text-xs text-[#8A969D] mt-1 font-medium leading-relaxed break-words">
+                    {activeItem.subtitle}
+                  </p>
+                )}
+              </div>
+              {isMyDoa && (
+                <button
+                  type="button"
+                  onClick={() => setEditingIndex(activeIndex)}
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#D5E4E4] text-[#287A7B] text-xs font-bold hover:bg-[#EAF2F3] transition-all flex-shrink-0 shadow-xs active:scale-95"
+                  title="Ubah judul doa ini"
+                >
+                  <Pencil size={13} />
+                  <span>Ubah Nama</span>
+                </button>
               )}
             </section>
 
@@ -644,6 +789,19 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
           </div>
         </div>
       )}
+      {/* ================= MY DOA MODALS ================= */}
+      <MyDoaModals
+        myDoaList={myDoaList}
+        onUpdateList={handleUpdateMyDoaList}
+        isPickerOpen={isPickerOpen}
+        onClosePicker={() => setIsPickerOpen(false)}
+        isManageOpen={isManageOpen}
+        onCloseManage={() => setIsManageOpen(false)}
+        editingIndex={editingIndex}
+        onCloseRename={() => setEditingIndex(null)}
+        onStartRename={(idx) => setEditingIndex(idx)}
+        settings={settings}
+      />
     </div>
   );
 };
