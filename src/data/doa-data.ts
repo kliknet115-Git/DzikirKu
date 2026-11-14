@@ -83,45 +83,11 @@ export const doaCategories: DoaCategory[] = [
     ]
   },
   {
-    "id": "help",
-    "icon": "✧",
-    "title": "Doa Memohon Pertolongan",
-    "subtitle": "Memohon kekuatan, bantuan, kemenangan, dan petunjuk Allah",
-    "countLabel": "1 DOA",
-    "items": [
-      {
-        "title": "Doa Memohon Pertolongan",
-        "subtitle": "Doa Nabi ﷺ memohon pertolongan, kemenangan, dan petunjuk (HR. Abu Dawud no. 1510)",
-        "arabic": "رَبِّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ،\nوَانْصُرْنِي وَلَا تَنْصُرْ عَلَيَّ،\nوَامْكُرْ لِي وَلَا تَمْكُرْ عَلَيَّ،\nوَاهْدِنِي وَيَسِّرْ هُدَايَ إِلَيَّ،\nوَانْصُرْنِي عَلَى مَنْ بَغَى عَلَيَّ.",
-        "latin": "Rabbi a‘innī wa lā tu‘in ‘alayya, wan-ṣurnī wa lā tan-ṣur ‘alayya, wam-kur lī wa lā tam-kur ‘alayya, wahdinī wa yassir hudāya ilayya, wan-ṣurnī ‘alā mam baghā ‘alayya.",
-        "meaning": "“Wahai Tuhanku, tolonglah aku dan jangan tolong musuh atas diriku; menangkanlah aku dan jangan menangkan musuh atas diriku; buatlah tipu daya yang membelaku dan jangan buat tipu daya yang mencelakakanku; berilah aku petunjuk dan mudahkanlah petunjuk itu bagiku; serta tolonglah aku terhadap orang yang berbuat aniaya kepadaku.”",
-        "note": "HR. Abu Dawud no. 1510, HR. At-Tirmidzi no. 3551 & HR. Ibnu Majah no. 3830 dari Abdullah bin Abbas radhiyallahu ‘anhuma (Shahih) · Sumber: https://hadits.in/"
-      }
-    ]
-  },
-  {
-    "id": "doa-nabi-muhammad",
-    "icon": "۞",
-    "title": "Doa yang diminta Nabi Muhammad",
-    "subtitle": "Memohon kebaikan yang diminta Nabi Muhammad ﷺ dan perlindungan dari keburukan",
-    "countLabel": "1 DOA",
-    "items": [
-      {
-        "title": "Doa yang diminta Nabi Muhammad",
-        "subtitle": "Memohon kebaikan dan perlindungan dari segala keburukan",
-        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ مِنْهُ نَبِيُّكَ مُحَمَّدٌ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ،\nوَأَعُوذُ بِكَ مِنْ شَرِّ مَا اسْتَعَاذَ مِنْهُ نَبِيُّكَ مُحَمَّدٌ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ،\nوَأَنْتَ الْمُسْتَعَانُ، وَعَلَيْكَ الْبَلَاغُ،\nوَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ.",
-        "latin": "Allāhumma innī as-aluka min khayri mā sa-alaka minhu nabiyyuka Muḥammadun ṣallallāhu ‘alayhi wa sallam, wa a‘ūdzu bika min syarri masta‘ādza minhu nabiyyuka Muḥammadun ṣallallāhu ‘alayhi wa sallam, wa antal-musta‘ān, wa ‘alaykal-balāgh, wa lā ḥawla wa lā quwwata illā billāh.",
-        "meaning": "Ya Allah, sesungguhnya aku memohon kepada-Mu kebaikan apa saja yang pernah diminta oleh Nabi-Mu Muhammad shallallahu 'alaihi wa sallam. Dan aku berlindung kepada-Mu dari keburukan apa saja yang Nabi-Mu Muhammad shallallahu 'alaihi wa sallam pernah berlindung darinya. Dan Engkaulah tempat meminta pertolongan, dan di tangan-Mulah penyampaian (keberhasilan), serta tidak ada daya dan kekuatan kecuali dengan pertolongan Allah.",
-        "note": "HR. At-Tirmidzi no. 3521 · Sumber: https://hadits.in/"
-      }
-    ]
-  },
-  {
     "id": "doa-pilihan",
     "icon": "✦",
     "title": "Doa-doa Pilihan",
-    "subtitle": "Kumpulan 34 doa pilihan dari Al-Qur’an dan hadis shahih",
-    "countLabel": "34 DOA",
+    "subtitle": "Kumpulan 36 doa pilihan dari Al-Qur’an dan hadis shahih",
+    "countLabel": "36 DOA",
     "items": [
       {
         "title": "Mengakui kesalahan dan memohon ampunan",
@@ -369,6 +335,22 @@ export const doaCategories: DoaCategory[] = [
         "latin": "Lā ilāha illallāhul-‘aẓīmul-ḥalīm, lā ilāha illallāhu rabbul-‘arsyil-‘aẓīm, lā ilāha illallāhu rabbus-samāwāti wa rabbul-arḍi wa rabbul-‘arsyil-karīm.",
         "meaning": "“Tidak ada sesembahan yang berhak disembah selain Allah Yang Maha Agung lagi Maha Penyantun; Tidak ada sesembahan yang berhak disembah selain Allah, Rabb pemilik ‘Arsy yang agung. Tidak ada sesembahan yang berhak disembah selain Allah, Rabb langit dan bumi serta Rabb pemilik ‘Arsy yang mulia.”",
         "note": "HR. Bukhari no. 6345 & HR. Muslim no. 2730 dari Ibnu Abbas radhiyallahu 'anhuma (Doa Al-Karb saat tertimpa kesulitan hidup) · Sumber: https://hadits.in/bukhari/6345"
+      },
+      {
+        "title": "Doa Memohon Pertolongan dan Petunjuk",
+        "subtitle": "Doa Nabi ﷺ memohon pertolongan, kemenangan, dan kemudahan petunjuk (HR. Abu Dawud no. 1510)",
+        "arabic": "رَبِّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ،\nوَانْصُرْنِي وَلَا تَنْصُرْ عَلَيَّ،\nوَامْكُرْ لِي وَلَا تَمْكُرْ عَلَيَّ،\nوَاهْدِنِي وَيَسِّرْ هُدَايَ إِلَيَّ،\nوَانْصُرْنِي عَلَى مَنْ بَغَى عَلَيَّ.",
+        "latin": "Rabbi a‘innī wa lā tu‘in ‘alayya, wan-ṣurnī wa lā tan-ṣur ‘alayya, wam-kur lī wa lā tam-kur ‘alayya, wahdinī wa yassir hudāya ilayya, wan-ṣurnī ‘alā mam baghā ‘alayya.",
+        "meaning": "“Wahai Tuhanku, tolonglah aku dan jangan tolong musuh atas diriku; menangkanlah aku dan jangan menangkan musuh atas diriku; buatlah tipu daya yang membelaku dan jangan buat tipu daya yang mencelakakanku; berilah aku petunjuk dan mudahkanlah petunjuk itu bagiku; serta tolonglah aku terhadap orang yang berbuat aniaya kepadaku.”",
+        "note": "HR. Abu Dawud no. 1510, HR. At-Tirmidzi no. 3551 & HR. Ibnu Majah no. 3830 dari Abdullah bin Abbas radhiyallahu ‘anhuma (Shahih) · Sumber: https://hadits.in/abu-daud/1510"
+      },
+      {
+        "title": "Doa yang Diminta Nabi Muhammad ﷺ",
+        "subtitle": "Memohon seluruh kebaikan yang pernah diminta Nabi ﷺ dan perlindungan dari keburukan (HR. At-Tirmidzi no. 3521)",
+        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ مَا سَأَلَكَ مِنْهُ نَبِيُّكَ مُحَمَّدٌ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ،\nوَأَعُوذُ بِكَ مِنْ شَرِّ مَا اسْتَعَاذَ مِنْهُ نَبِيُّكَ مُحَمَّدٌ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ،\nوَأَنْتَ الْمُسْتَعَانُ، وَعَلَيْكَ الْبَلَاغُ،\nوَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ.",
+        "latin": "Allāhumma innī as-aluka min khayri mā sa-alaka minhu nabiyyuka Muḥammadun ṣallallāhu ‘alayhi wa sallam, wa a‘ūdzu bika min syarri masta‘ādza minhu nabiyyuka Muḥammadun ṣallallāhu ‘alayhi wa sallam, wa antal-musta‘ān, wa ‘alaykal-balāgh, wa lā ḥawla wa lā quwwata illā billāh.",
+        "meaning": "“Ya Allah, sesungguhnya aku memohon kepada-Mu kebaikan apa saja yang pernah diminta oleh Nabi-Mu Muhammad shallallahu 'alaihi wa sallam. Dan aku berlindung kepada-Mu dari keburukan apa saja yang Nabi-Mu Muhammad shallallahu 'alaihi wa sallam pernah berlindung darinya. Dan Engkaulah tempat meminta pertolongan, dan di tangan-Mulah penyampaian (keberhasilan), serta tidak ada daya dan kekuatan kecuali dengan pertolongan Allah.”",
+        "note": "HR. At-Tirmidzi no. 3521 dari Abu Umamah radhiyallahu 'anhu (Hasan Shahih) · Sumber: https://hadits.in/tirmidzi/3521"
       }
     ]
   },
