@@ -208,7 +208,7 @@ export const PETANG_ENTRIES: DailyDhikrEntry[] = [
     "no": 1,
     "title": "Ayat Kursi - Surah Al-Baqarah ayat 255",
     "arabic": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ.\nاللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ.",
-    "frequency": "1 kali pada pagi hari. Ayat ini adalah Al-Qur’an, Surah Al-Baqarah [2]:255.",
+    "frequency": "1 kali pada petang hari (menjelang Maghrib hingga malam). Ayat ini adalah Al-Qur’an, Surah Al-Baqarah [2]:255.",
     "meaning": "Allah, tidak ada sesembahan yang berhak disembah selain Dia, Yang Maha Hidup dan terus-menerus mengurus makhluk-Nya. Dia tidak mengantuk dan tidak tidur. Milik-Nya segala yang ada di langit dan di bumi. Tidak ada yang dapat memberi syafaat di sisi-Nya kecuali dengan izin-Nya. Dia mengetahui apa yang ada di hadapan dan di belakang mereka. Mereka tidak mengetahui apa pun dari ilmu-Nya kecuali apa yang Dia kehendaki. Kursi-Nya meliputi langit dan bumi. Dia tidak merasa berat memelihara keduanya. Dia Mahatinggi lagi Mahaagung.",
     "targetCount": 1,
     "note": "QS. Al-Baqarah [2]: 255 · HR. An-Nasa'i dalam 'Amalul Yaum wal Lailah no. 100 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/"
@@ -358,17 +358,17 @@ export const PETANG_ENTRIES: DailyDhikrEntry[] = [
     "no": 16,
     "title": "A‘udzu bi kalimatillahi at-tammati",
     "arabic": "أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ.",
-    "frequency": "Dibaca 3 kali.",
+    "frequency": "Dibaca 3 kali pada petang hari.",
     "meaning": "Aku berlindung dengan kalimat-kalimat Allah yang sempurna dari kejahatan sesuatu yang diciptakan-Nya.",
     "targetCount": 3,
-    "note": "HR. Muslim no. 2709 · Sumber: https://hadits.in/"
+    "note": "HR. At-Tirmidzi no. 3604 & Ahmad no. 7898 dari Abu Hurairah radhiyallahu ‘anhu (Shahih, 3x waktu petang). Keutamaan umum juga diriwayatkan HR. Muslim no. 2709 · Sumber: https://hadits.in/"
   },
   {
     "id": "petang-17",
     "no": 17,
     "title": "Subhanallahi wa bihamdihi",
     "arabic": "سُبْحَانَ اللَّهِ وَبِحَمْدِهِ.",
-    "frequency": "100 kali dalam sehari. Lampiran menempatkannya dalam rangkaian dzikir pagi.",
+    "frequency": "100 kali pada petang hari.",
     "meaning": "Mahasuci Allah dan segala puji bagi-Nya.",
     "targetCount": 100,
     "note": "HR. Muslim no. 2692 & Bukhari no. 6405 · Sumber: https://hadits.in/"

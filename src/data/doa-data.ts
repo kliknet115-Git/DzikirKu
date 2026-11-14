@@ -27,7 +27,7 @@ export const doaCategories: DoaCategory[] = [
       {
         "title": "Memuji Allah sebelum berdoa",
         "subtitle": "Memohon kepada Allah dengan mengagungkan pujian, nama, dan sifat-Nya (Ismul A'zhom)",
-        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّ لَكَ الْحَمْدُ لَا إِلَهَ إِلَّا أَنْتَ الْمَنَّانُ بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ، يَا ذَا الْجَلَالِ وَالْإِكْرَامِ، يَا حَيُّ يَا قَيُّومُ.",
+        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّ لَكَ الْحَمْدَ لَا إِلَهَ إِلَّا أَنْتَ الْمَنَّانُ بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ، يَا ذَا الْجَلَالِ وَالْإِكْرَامِ، يَا حَيُّ يَا قَيُّومُ.",
         "latin": "Allāhumma innī as-aluka bi-anna lakal-ḥamda lā ilāha illā antal-mannānu badī‘us-samāwāti wal-arḍi, yā dzal-jalāli wal-ikrām, yā ḥayyu yā qayyūm.",
         "meaning": "Ya Allah, sesungguhnya aku memohon kepada-Mu karena segala puji hanya milik-Mu. Tidak ada sesembahan yang berhak disembah selain Engkau. Engkaulah Yang Maha Pemberi karunia, Pencipta langit dan bumi. Wahai Tuhan yang memiliki keagungan dan kemuliaan. Wahai Yang Mahahidup, wahai Yang Maha Mengurus seluruh makhluk.",
         "note": "HR. Abu Dawud no. 1495, At-Tirmidzi no. 3544 & An-Nasa'i no. 1300 dari Anas bin Malik radhiyallahu 'anhu (Doa dengan Ismul A'zhom sebelum berdoa) · Sumber: https://hadits.in/"
@@ -67,11 +67,11 @@ export const doaCategories: DoaCategory[] = [
     "items": [
       {
         "title": "Doa Memohon Pertolongan",
-        "subtitle": "Bersandar kepada daya dan kekuatan Allah",
-        "arabic": "اللَّهُمَّ إِنِّي أَتَبَرَّأُ مِنْ حَوْلِي وَقُوَّتِي،\nوَأَلْتَجِئُ إِلَى حَوْلِكَ وَقُوَّتِكَ.\nاللَّهُمَّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ،\nوَانْصُرْنِي وَلَا تَنْصُرْ عَلَيَّ،\nوَاهْدِنِي وَيَسِّرِ الْهُدَى لِي.",
-        "latin": "Allāhumma innī atabarra'u min hawlī wa quwwatī, wa alta-ji'u ilā hawlika wa quwwatika. Allāhumma a'innī wa lā tu'in 'alayya, wanshurnī wa lā tanshur 'alayya, wahdinī wa yassiril hudā lī.",
-        "meaning": "Ya Allah, aku berlepas diri dari daya dan kekuatanku, dan aku bersandar kepada daya dan kekuatan-Mu. Ya Allah, bantulah aku dan jangan biarkan aku, tolonglah aku dan jangan Engkau lemahkan aku. Berilah aku petunjuk dan mudahkan petunjuk itu bagiku.",
-        "note": "HR. Abu Dawud no. 1510, HR. At-Tirmidzi no. 3551 & HR. Ibnu Majah no. 3830 dari Ibnu Abbas radhiyallahu ‘anhuma (Shahih) · Sumber: https://hadits.in/"
+        "subtitle": "Doa Nabi ﷺ memohon pertolongan, kemenangan, dan petunjuk (HR. Abu Dawud no. 1510)",
+        "arabic": "رَبِّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ،\nوَانْصُرْنِي وَلَا تَنْصُرْ عَلَيَّ،\nوَامْكُرْ لِي وَلَا تَمْكُرْ عَلَيَّ،\nوَاهْدِنِي وَيَسِّرْ هُدَايَ إِلَيَّ،\nوَانْصُرْنِي عَلَى مَنْ بَغَى عَلَيَّ.",
+        "latin": "Rabbi a‘innī wa lā tu‘in ‘alayya, wan-ṣurnī wa lā tan-ṣur ‘alayya, wam-kur lī wa lā tam-kur ‘alayya, wahdinī wa yassir hudāya ilayya, wan-ṣurnī ‘alā mam baghā ‘alayya.",
+        "meaning": "“Wahai Tuhanku, tolonglah aku dan jangan tolong musuh atas diriku; menangkanlah aku dan jangan menangkan musuh atas diriku; buatlah tipu daya yang membelaku dan jangan buat tipu daya yang mencelakakanku; berilah aku petunjuk dan mudahkanlah petunjuk itu bagiku; serta tolonglah aku terhadap orang yang berbuat aniaya kepadaku.”",
+        "note": "HR. Abu Dawud no. 1510, HR. At-Tirmidzi no. 3551 & HR. Ibnu Majah no. 3830 dari Abdullah bin Abbas radhiyallahu ‘anhuma (Shahih) · Sumber: https://hadits.in/"
       }
     ]
   },
@@ -339,10 +339,10 @@ export const doaCategories: DoaCategory[] = [
       },
       {
         "title": "Doa Memohon Surga Firdaus",
-        "subtitle": "HR. Bukhari No. 7423",
+        "subtitle": "Doa Susunan Ulama · Berdasarkan HR. Bukhari no. 7423",
         "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ الْفِرْدَوْسَ الْأَعْلَى بِغَيْرِ حِسَابٍ وَلَا عَذَابٍ",
         "meaning": "“Ya Allah, sesungguhnya aku memohon kepada-Mu Surga Firdaus yang paling tinggi, tanpa dihisab dan tanpa diazab.”",
-        "note": "HR. Bukhari No. 7423 · Doa Akhirat & Memohon Surga · Sumber: https://www.hadits.id/"
+        "note": "Doa Susunan (Custom Dua) berdasarkan anjuran Nabi ﷺ dalam HR. Bukhari no. 7423 / 2790 · Doa Akhirat & Memohon Surga · Sumber: https://www.hadits.id/"
       },
       {
         "title": "Doa Memohon Tempat yang Diberkahi",
@@ -385,11 +385,11 @@ export const doaCategories: DoaCategory[] = [
       },
       {
         "title": "Doa Memohon Mati Syahid dan Wafat di Madinah",
-        "subtitle": "HR. Bukhari no. 1890 · Doa Umar bin al-Khattab رضي الله عنه",
+        "subtitle": "Atsar Sahabat · Doa Umar bin al-Khattab رضي الله عنه (HR. Bukhari no. 1890)",
         "arabic": "اللَّهُمَّ ارْزُقْنِي شَهَادَةً فِي سَبِيلِكَ، وَاجْعَلْ مَوْتِي فِي بَلَدِ رَسُولِكَ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ",
         "latin": "Allāhummar-zuqnī syahādatan fī sabīlik, waj‘al mawtī fī baladi rasūlika ṣallallāhu ‘alayhi wa sallam.",
         "meaning": "“Ya Allah, karuniakanlah kepadaku kesyahidan di jalan-Mu, dan jadikanlah wafatku di negeri Rasul-Mu (shallallahu ‘alaihi wa sallam).”",
-        "note": "HR. Bukhari no. 1890 (Kitab Keutamaan Madinah) dari riwayat Umar bin al-Khattab radhiyallahu 'anhu · Sumber: https://hadits.in/"
+        "note": "Atsar Sahabat (Doa Umar bin Al-Khattab radhiyallahu 'anhu) diriwayatkan dalam Shahih Al-Bukhari no. 1890 (Kitab Fadha'ilul Madinah) · Sumber: https://hadits.in/"
       },
       {
         "title": "Doa Memohon Rezeki kepada Allah",
@@ -460,7 +460,7 @@ export const doaCategories: DoaCategory[] = [
         "title": "Doa Ketika Akan Memulai Tawaf",
         "arabic": "اللَّهُمَّ إِيمَانًا بِكَ، وَتَصْدِيقًا بِكِتَابِكَ،\nوَوَفَاءً بِعَهْدِكَ، وَاتِّبَاعًا لِسُنَّةِ نَبِيِّكَ\nمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ.",
         "meaning": "Ya Allah, seraya iman kepada-Mu, membenarkan kitab-Mu, menepati janji kepada-Mu, serta mengikuti sunah Nabi-Mu, Muhammad ﷺ.",
-        "note": "Riwayat Ath-Thabrani dalam Al-Mu‘jam Al-Awsath no. 3254 & Al-Bayhaqi dalam As-Sunan Al-Kubra 5/79 · Sumber: https://ilmuislam.id/"
+        "note": "Atsar Sahabat (Mauquf Shahih dari Ali bin Abi Thalib & Ibnu Umar, diriwayatkan Abdurrazzaq no. 8847; sanad marfu' Ath-Thabrani Al-Awsath no. 3254 dhaif) · Sumber: https://ilmuislam.id/"
       },
       {
         "title": "Doa Tawaf di Setiap Posisi Hajar Aswad",
@@ -472,7 +472,7 @@ export const doaCategories: DoaCategory[] = [
         "title": "Doa Tawaf dari Hajar Aswad ke Maqam Ibrahim",
         "arabic": "سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ،\nوَلَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَرُ.\nوَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ.",
         "meaning": "Mahasuci Allah. Segala pujian hanya pantas disanjungkan kepada Allah. Tiada Tuhan selain Allah. Allah Mahabesar. Tidak ada daya dan kekuatan kecuali (pertolongan) dari Allah Yang Mahaluhur lagi Mahaagung.",
-        "note": "HR. Ibnu Majah no. 2957 & HR. Ahmad no. 15468 dari Abu Hurairah radhiyallahu ‘anhu · Sumber: https://hadits.in/"
+        "note": "HR. Ibnu Majah no. 2957 & HR. Ahmad no. 15468 dari Abu Hurairah radhiyallahu ‘anhu (Derajat Hadits: Dhaif menurut Al-Bushiri & Al-Albani) · Sumber: https://hadits.in/"
       },
       {
         "title": "Doa Tawaf dari Maqam Ibrahim ke Rukun Yamani",
@@ -494,9 +494,9 @@ export const doaCategories: DoaCategory[] = [
       },
       {
         "title": "Doa Minum Air Zamzam",
-        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا،\nوَرِزْقًا وَاسِعًا، وَشِفَاءً مِنْ كُلِّ دَاءٍ\nوَسَقَمٍ بِرَحْمَتِكَ يَا أَرْحَمَ الرَّاحِمِينَ.",
-        "meaning": "Ya Allah, sesungguhnya aku bermohon kepada-Mu ilmu yang bermanfaat, rezeki yang luas, dan penawar bagi segala penyakit; dengan rahmat-Mu, wahai Tuhan Yang Maha Pengasih lagi Maha Penyayang.",
-        "note": "HR. Ad-Daraquthni 2/288 no. 238 & Al-Hakim dalam Al-Mustadrak no. 1739 dari Ibnu Abbas radhiyallahu ‘anhuma · Sumber: https://hadits.arina.id/"
+        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا،\nوَرِزْقًا وَاسِعًا،\nوَشِفَاءً مِنْ كُلِّ دَاءٍ.",
+        "meaning": "“Ya Allah, sesungguhnya aku memohon kepada-Mu ilmu yang bermanfaat, rezeki yang luas, dan kesembuhan dari segala penyakit.”",
+        "note": "Atsar Sahabat (Mauquf Hasan) riwayat Ad-Daraquthni 2/288 no. 238 & Al-Hakim no. 1739 dari Abdullah bin Abbas radhiyallahu ‘anhuma · Sumber: https://hadits.arina.id/"
       },
       {
         "title": "Doa Menuju Bukit Shafa",
@@ -577,7 +577,7 @@ export const doaCategories: DoaCategory[] = [
         "subtitle": "Memohon pahala dan ampunan",
         "arabic": "اللَّهُمَّ لَا تَحْرِمْنَا أَجْرَهُ،\nوَلَا تَفْتِنَّا بَعْدَهُ،\nوَاغْفِرْ لَنَا وَلَهُ.",
         "meaning": "Ya Allah, jangan haramkan kami dari pahalanya dan jangan cobai kami sepeninggalnya. Ampunilah kami dan ampunilah dia.",
-        "note": "HR. Abu Dawud no. 3201 & HR. Ibnu Majah no. 1498 dari Abu Hurairah radhiyallahu ‘anhu (Hasan) · Sumber: https://www.hadits.id/"
+        "note": "HR. Abu Dawud no. 3199, HR. Ibnu Majah no. 1498 & Al-Hakim 1/359 dari Abu Hurairah radhiyallahu ‘anhu (Hasan) · Sumber: https://www.hadits.id/"
       },
       {
         "title": "Salam",

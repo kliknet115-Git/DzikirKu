@@ -80,7 +80,7 @@ export const DEFAULT_DHIKR: Dhikr[] = [
     name: 'Doa Memohon Kecukupan Rezeki Halal',
     arabicText: 'اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ',
     transliteration: 'Allāhummak-finī bi ḥalālika ‘an ḥarāmika, wa aghninī bi faḍlika ‘amman siwāka',
-    meaning: 'Ya Allah, cukupkanlah aku dengan rezeki-Mu yang halal sehingga aku terhindar dari yang haram, dan cukupkanlah aku dengan karunia-Mu sehingga aku tidak bergantung kepada selain-Mu.',
+    meaning: 'Ya Allah, cukupkanlah aku dengan rezeki-Mu yang halal sehingga aku terhindar dari yang haram, dan cukupkanlah aku dengan karunia-Mu sehingga aku tidak bergantung kepada selain-Mu. (HR. At-Tirmidzi no. 3563, Hasan · Anjuran ulama 70x ba\'da shalat Jumat)',
     defaultTarget: 70,
     isBuiltIn: true,
     sortOrder: 7,
