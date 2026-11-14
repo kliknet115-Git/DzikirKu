@@ -123,4 +123,16 @@ export const DEFAULT_DHIKR: Dhikr[] = [
     createdAt: now,
     updatedAt: now,
   },
+  {
+    id: 'builtin-doa-setelah-sholat-dhuha',
+    name: 'Doa Setelah Sholat Dhuha',
+    arabicText: 'اللَّهُمَّ اغْفِرْ لِي، وَتُبْ عَلَيَّ، إِنَّكَ أَنْتَ التَّوَّابُ الرَّحِيمُ',
+    transliteration: 'Allāhummagh-fir lī, wa tub ‘alayya, innaka antat-tawwābur-raḥīm',
+    meaning: 'Ya Allah, ampunilah aku dan terimalah tobatku. Sesungguhnya Engkau Maha Penerima tobat lagi Maha Penyayang. (HR. Al-Bukhari dalam Al-Adab Al-Mufrad no. 619, Shahih menurut Syaikh Al-Albani · Dibaca 100x seusai shalat Dhuha)',
+    defaultTarget: 100,
+    isBuiltIn: true,
+    sortOrder: 11,
+    createdAt: now,
+    updatedAt: now,
+  },
 ];
