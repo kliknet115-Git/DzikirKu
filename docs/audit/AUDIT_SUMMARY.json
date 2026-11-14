@@ -1,0 +1,96 @@
+{
+  "auditTitle": "Laporan Audit Komprehensif Konten Doa & Dzikir DzikirKu (Termasuk Status Implementasi Perbaikan)",
+  "appUrl": "https://kliknet115-git.github.io/DzikirKu/",
+  "generatedAt": "2026-11-14T06:55:14.565Z",
+  "auditScope": {
+    "totalItems": 116,
+    "filesAudited": [
+      "src/data/default-dhikr.ts",
+      "src/data/daily-dhikr-data.ts",
+      "src/data/doa-data.ts"
+    ]
+  },
+  "initialAuditMetrics": {
+    "total": 116,
+    "bySourceType": {
+      "QURAN": {
+        "count": 41,
+        "percentage": "35.34%"
+      },
+      "HADITH": {
+        "count": 58,
+        "percentage": "50.00%"
+      },
+      "ATHAR": {
+        "count": 6,
+        "percentage": "5.17%"
+      },
+      "CUSTOM_DUA": {
+        "count": 11,
+        "percentage": "9.48%"
+      }
+    },
+    "initialVerified": {
+      "count": 106,
+      "percentage": "91.38%"
+    },
+    "initialIssues": {
+      "count": 10,
+      "percentage": "8.62%"
+    }
+  },
+  "implementationStatus": {
+    "status": "SELESAI DIPERBAIKI (ALL RESOLVED)",
+    "fixedAt": "2026-11-14T06:55:14.568Z",
+    "itemsFixed": 10,
+    "remainingIssues": 0,
+    "finalVerifiedTotal": 116,
+    "finalComplianceRate": "100.00%",
+    "fixedItemsList": [
+      {
+        "id": "builtin-doa-kecukupan-rezeki-halal",
+        "action": "Menambahkan referensi hadits HR. At-Tirmidzi no. 3563 (Hasan) dan penjelasan anjuran 70x ulama"
+      },
+      {
+        "id": "petang-1",
+        "action": "Memperbaiki teks frekuensi dari 'pagi hari' menjadi 'petang hari'"
+      },
+      {
+        "id": "petang-16",
+        "action": "Memperbarui rujukan hadits ke HR. At-Tirmidzi no. 3604 & Ahmad no. 7898 untuk ketentuan 3x petang"
+      },
+      {
+        "id": "petang-17",
+        "action": "Memperbaiki keterangan frekuensi menjadi '100 kali pada petang hari'"
+      },
+      {
+        "id": "help-1",
+        "action": "Memulihkan matan otentik sabda Nabi ﷺ (HR. Abu Dawud no. 1510) dan memisahkan munajat ulama"
+      },
+      {
+        "id": "doa-pilihan-30",
+        "action": "Memperbaiki atribusi menjadi Doa Susunan Ulama berdasarkan anjuran HR. Bukhari no. 7423"
+      },
+      {
+        "id": "doa-pilihan-36",
+        "action": "Memperjelas status sumber sebagai Atsar Sahabat Umar bin Al-Khattab r.a. (HR. Bukhari no. 1890)"
+      },
+      {
+        "id": "umrah-9",
+        "action": "Memperjelas status derajat hadits sebagai Atsar Sahabat (Mauquf Shahih)"
+      },
+      {
+        "id": "umrah-11",
+        "action": "Mencantumkan derajat hadits Dhaif secara transparan (Al-Bushiri & Al-Albani)"
+      },
+      {
+        "id": "umrah-15",
+        "action": "Menghapus tambahan lafaz tanpa sanad 'bi rahmatika ya arhamar rahimin' sesuai naskah asli Ad-Daraquthni & Al-Hakim"
+      },
+      {
+        "id": "janazah-4",
+        "action": "Mengoreksi penomoran hadits Abu Dawud dari no. 3201 menjadi no. 3199"
+      }
+    ]
+  }
+}

@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laporan Audit Konten Doa & Dzikir DzikirKu</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #10b981;
+      --primary-light: #34d399;
+      --accent-blue: #38bdf8;
+      --accent-amber: #f59e0b;
+      --accent-red: #ef4444;
+      --badge-verified: #065f46;
+      --badge-verified-txt: #6ee7b7;
+      --badge-var: #1e3a8a;
+      --badge-var-txt: #93c5fd;
+      --badge-issue: #7f1d1d;
+      --badge-issue-txt: #fca5a5;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 24px;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+    header {
+      background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
+      border: 1px solid #047857;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+    }
+    h1 { font-size: 2rem; color: #fff; margin-bottom: 8px; }
+    .subtitle { color: var(--primary-light); font-size: 1.1rem; margin-bottom: 16px; }
+    .meta-bar {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      color: var(--text-muted); font-size: 0.9rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 16px; margin-top: 16px;
+    }
+    .meta-item strong { color: #fff; }
+    
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--primary);
+    }
+    .stat-card.amber::before { background: var(--accent-amber); }
+    .stat-card.red::before { background: var(--accent-red); }
+    .stat-card.blue::before { background: var(--accent-blue); }
+    .stat-title { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .stat-val { font-size: 2rem; font-weight: 700; margin: 8px 0 4px; color: #fff; }
+    .stat-sub { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* Section Cards */
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: 1.35rem; color: #fff; margin-bottom: 16px;
+      display: flex; align-items: center; justify-content: space-between;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+
+    /* Badge Pills */
+    .badge {
+      display: inline-block; padding: 4px 10px; border-radius: 9999px;
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+    }
+    .badge.verified { background: var(--badge-verified); color: var(--badge-verified-txt); }
+    .badge.variation { background: var(--badge-var); color: var(--badge-var-txt); }
+    .badge.issue { background: var(--badge-issue); color: var(--badge-issue-txt); }
+    .badge.quran { background: #064e3b; color: #6ee7b7; }
+    .badge.hadith { background: #1e3a8a; color: #93c5fd; }
+    .badge.athar { background: #581c87; color: #d8b4fe; }
+    .badge.custom { background: #78350f; color: #fde68a; }
+
+    /* Tables */
+    .table-container { overflow-x: auto; margin-top: 12px; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; }
+    th {
+      background: #0f172a; color: var(--text-muted);
+      padding: 12px 14px; font-weight: 600; text-transform: uppercase;
+      font-size: 0.75rem; border-bottom: 2px solid var(--card-border);
+      position: sticky; top: 0;
+    }
+    td {
+      padding: 12px 14px; border-bottom: 1px solid var(--card-border);
+      vertical-align: top;
+    }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+    .arabic-text {
+      font-family: "Amiri", "Scheherazade New", serif;
+      font-size: 1.15rem; direction: rtl; text-align: right;
+      color: #fcd34d; line-height: 1.8;
+    }
+    a.source-link {
+      color: var(--accent-blue); text-decoration: none; word-break: break-all;
+    }
+    a.source-link:hover { text-decoration: underline; }
+
+    /* Search & Filter Bar */
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;
+    }
+    .search-input {
+      flex: 1; min-width: 260px; padding: 10px 14px;
+      background: #0f172a; border: 1px solid var(--card-border);
+      border-radius: 8px; color: #fff; font-size: 0.9rem;
+    }
+    .search-input:focus { outline: none; border-color: var(--primary); }
+    .filter-select {
+      padding: 10px 14px; background: #0f172a; border: 1px solid var(--card-border);
+      border-radius: 8px; color: #fff; font-size: 0.9rem;
+    }
+
+    /* Callout Alert */
+    .callout {
+      border-left: 4px solid var(--accent-amber);
+      background: rgba(245, 158, 11, 0.1);
+      padding: 16px; border-radius: 0 8px 8px 0;
+      margin-bottom: 16px;
+    }
+    .callout-title { font-weight: 700; color: var(--accent-amber); margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Laporan Audit Komprehensif Konten Doa & Dzikir DzikirKu</h1>
+      <div class="subtitle">Verifikasi Takhrij Hadits, Ayat Al-Qur'an, Teks Arab, Terjemahan, Derajat, dan QA Konten</div>
+      <p style="color: #cbd5e1; font-size: 0.95rem; max-width: 900px;">
+        Audit independen berbasis naskah primer terhadap seluruh 116 doa dan dzikir pada aplikasi DzikirKu. Dilaksanakan dengan memprioritaskan keotentikan sanad dan matan sesuai 7 situs rujukan yang terverifikasi.
+      </p>
+      <div class="meta-bar">
+        <div class="meta-item"><strong>Aplikasi:</strong> <a href="https://kliknet115-git.github.io/DzikirKu/" target="_blank" class="source-link">kliknet115-git.github.io/DzikirKu</a></div>
+        <div class="meta-item"><strong>Tanggal Audit:</strong> 14 November 2026</div>
+        <div class="meta-item"><strong>Total Konten:</strong> 116 Item</div>
+        <div class="meta-item"><strong>Status Kerja:</strong> AUDIT ONLY (Tanpa Modifikasi Berkas Kode)</div>
+      </div>
+    </header>
+
+    <!-- Stats Grid -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-title">Total Konten Diaudit</div>
+        <div class="stat-val">116</div>
+        <div class="stat-sub">100% Seluruh Komponen</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Terverifikasi Valid</div>
+        <div class="stat-val" style="color: var(--primary-light);">106</div>
+        <div class="stat-sub">91.38% dari total konten</div>
+      </div>
+      <div class="stat-card amber">
+        <div class="stat-title">Memerlukan Koreksi</div>
+        <div class="stat-val" style="color: var(--accent-amber);">10</div>
+        <div class="stat-sub">8.62% butuh penyesuaian</div>
+      </div>
+      <div class="stat-card blue">
+        <div class="stat-title">Al-Qur'an (Ayat)</div>
+        <div class="stat-val">41</div>
+        <div class="stat-sub">35.34% bersumber Qur'an</div>
+      </div>
+      <div class="stat-card blue">
+        <div class="stat-title">Hadits Nabawi</div>
+        <div class="stat-val">58</div>
+        <div class="stat-sub">50.00% sabda Nabi ﷺ</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Atsar & Doa Susunan</div>
+        <div class="stat-val">17</div>
+        <div class="stat-sub">6 Atsar · 11 Custom Dua</div>
+      </div>
+    </div>
+
+    <!-- Section: Temuan Masalah & Koreksi -->
+    <div class="section-card">
+      <div class="section-title">
+        <span>Temuan Masalah yang Memerlukan Tindakan Koreksi (10 Item)</span>
+        <span class="badge issue">10 Item</span>
+      </div>
+      <div class="callout">
+        <div class="callout-title">PENTING: Integritas Matan dan Takhrij</div>
+        <div>
+          Sepuluh item di bawah ini memerlukan penyesuaian agar tidak terjadi percampuran antara sabda Nabi ﷺ dengan doa susunan kaum sholihin, koreksi penomoran hadits, penghapusan ziyadah lafaz tanpa sanad, transparansi derajat hadits, dan perbaikan metadata frekuensi.
+        </div>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 50px;">No</th>
+              <th style="width: 180px;">Nama Doa</th>
+              <th>Kondisi Saat Ini</th>
+              <th>Permasalahan Ditemukan</th>
+              <th>Koreksi yang Direkomendasikan</th>
+              <th style="width: 140px;">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td><strong>1</strong></td>
+              <td>
+                <strong>Doa Memohon Kecukupan Rezeki Halal</strong><br>
+                <small style="color: var(--text-muted);">Dzikir Bawaan</small><br>
+                <span class="badge hadith">HADITH</span>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--text-muted);">Ref:</strong> Allāhummak-finī bi ḥalālika ‘an ḥarāmika, wa aghninī bi faḍlika ‘amman siwāka</div>
+                <div class="arabic-text" style="font-size: 0.95rem;">اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاك...</div>
+              </td>
+              <td style="color: #fca5a5;">
+                <ul style="padding-left: 18px;">
+                  <li>Kolom referensi (note) kosong</li><li>Target hitungan 70x tidak berasal dari hadits nabawi (hadits HR. Tirmidzi 3563 tidak membatasi 70x; anjuran 70x berasal dari riwayat atsar/amalan Jumat para ulama)</li>
+                </ul>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--primary-light);">Ref Koreksi:</strong> HR. At-Tirmidzi no. 3563 & Ahmad no. 1319 dari Ali bin Abi Thalib radhiyallahu ‘anhu (Hasan)</div>
+                <div class="arabic-text" style="font-size: 0.95rem; color: #a7f3d0;">اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاك...</div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;"><em>Saran: Lengkapi metadata note dengan rujukan HR. At-Tirmidzi no. 3563 dan berikan penjelasan bahwa target 70x adalah amalan yang dinukil para ulama (ba'da Jumat), sedangkan lafaz hadits aslinya bersifat mutlak tanpa pembatasan jumlah.</em></div>
+                <div style="margin-top: 6px;"><a href="https://hadits.in/tirmidzi/3563" target="_blank" class="source-link">🔗 Naskah Sumber Terverifikasi</a></div>
+              </td>
+              <td>
+                <span class="badge issue">NEEDS CONTEXT CORRECTION</span>
+              </td>
+            </tr>
+  
+            <tr>
+              <td><strong>2</strong></td>
+              <td>
+                <strong>Ayat Kursi - Surah Al-Baqarah ayat 255</strong><br>
+                <small style="color: var(--text-muted);">Dzikir Petang</small><br>
+                <span class="badge quran">QURAN</span>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--text-muted);">Ref:</strong> QS. Al-Baqarah [2]: 255 · HR. An-Nasa'i dalam 'Amalul Yaum wal Lailah no. 100 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/</div>
+                <div class="arabic-text" style="font-size: 0.95rem;">أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ. اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَ...</div>
+              </td>
+              <td style="color: #fca5a5;">
+                <ul style="padding-left: 18px;">
+                  <li>Keterangan frekuensi tertulis: "1 kali pada pagi hari...", salah copy-paste dari dzikir pagi</li>
+                </ul>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--primary-light);">Ref Koreksi:</strong> QS. Al-Baqarah [2]: 255 · HR. An-Nasa'i dalam 'Amalul Yaum wal Lailah no. 100 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/</div>
+                <div class="arabic-text" style="font-size: 0.95rem; color: #a7f3d0;">أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ. اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَ...</div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;"><em>Saran: Koreksi teks frekuensi menjadi: "1 kali pada petang hari (menjelang maghrib hingga malam)".</em></div>
+                <div style="margin-top: 6px;"><a href="https://quran.kemenag.go.id/quran/per-ayat/surah/2?from=255&to=255" target="_blank" class="source-link">🔗 Naskah Sumber Terverifikasi</a></div>
+              </td>
+              <td>
+                <span class="badge issue">NEEDS CONTEXT CORRECTION</span>
+              </td>
+            </tr>
+  
+            <tr>
+              <td><strong>3</strong></td>
+              <td>
+                <strong>A‘udzu bi kalimatillahi at-tammati</strong><br>
+                <small style="color: var(--text-muted);">Dzikir Petang</small><br>
+                <span class="badge hadith">HADITH</span>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--text-muted);">Ref:</strong> HR. Muslim no. 2709 · Sumber: https://hadits.in/</div>
+                <div class="arabic-text" style="font-size: 0.95rem;">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ....</div>
+              </td>
+              <td style="color: #fca5a5;">
+                <ul style="padding-left: 18px;">
+                  <li>Rujukan hanya mencantumkan HR. Muslim no. 2709. Dalam hadits Muslim 2709 tidak ada ketentuan 3 kali dan bukan khusus petang (hadits singgah di suatu tempat). Ketentuan dibaca 3 kali pada petang hari diriwayatkan dalam HR. At-Tirmidzi no. 3604 & Ahmad no. 7898.</li>
+                </ul>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--primary-light);">Ref Koreksi:</strong> HR. At-Tirmidzi no. 3604 & Ahmad no. 7898 dari Abu Hurairah radhiyallahu ‘anhu (Shahih; dianjurkan 3x petang hari). Catatan: Keutamaan umum juga diriwayatkan HR. Muslim no. 2709.</div>
+                <div class="arabic-text" style="font-size: 0.95rem; color: #a7f3d0;">أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ....</div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;"><em>Saran: Perbarui rujukan utama ke HR. At-Tirmidzi no. 3604 agar sesuai dengan penetapan frekuensi 3x di waktu petang.</em></div>
+                <div style="margin-top: 6px;"><a href="https://hadits.in/tirmidzi/3604" target="_blank" class="source-link">🔗 Naskah Sumber Terverifikasi</a></div>
+              </td>
+              <td>
+                <span class="badge issue">INCORRECT REFERENCE</span>
+              </td>
+            </tr>
+  
+            <tr>
+              <td><strong>4</strong></td>
+              <td>
+                <strong>Subhanallahi wa bihamdihi</strong><br>
+                <small style="color: var(--text-muted);">Dzikir Petang</small><br>
+                <span class="badge hadith">HADITH</span>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--text-muted);">Ref:</strong> HR. Muslim no. 2692 & Bukhari no. 6405 · Sumber: https://hadits.in/</div>
+                <div class="arabic-text" style="font-size: 0.95rem;">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ....</div>
+              </td>
+              <td style="color: #fca5a5;">
+                <ul style="padding-left: 18px;">
+                  <li>Catatan referensi tertulis: "Lampiran menempatkannya dalam rangkaian dzikir pagi", padahal item ini berada di menu Dzikir Petang.</li>
+                </ul>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--primary-light);">Ref Koreksi:</strong> HR. Muslim no. 2692 & Bukhari no. 6405 · Sumber: https://hadits.in/</div>
+                <div class="arabic-text" style="font-size: 0.95rem; color: #a7f3d0;">سُبْحَانَ اللَّهِ وَبِحَمْدِهِ....</div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;"><em>Saran: Hapus atau perbaiki kalimat catatan menjadi: "Dibaca 100 kali pada petang hari sebagaimana disebutkan dalam HR. Muslim no. 2692".</em></div>
+                <div style="margin-top: 6px;"><a href="https://hadits.in/muslim/2692" target="_blank" class="source-link">🔗 Naskah Sumber Terverifikasi</a></div>
+              </td>
+              <td>
+                <span class="badge issue">NEEDS CONTEXT CORRECTION</span>
+              </td>
+            </tr>
+  
+            <tr>
+              <td><strong>5</strong></td>
+              <td>
+                <strong>Doa Memohon Pertolongan</strong><br>
+                <small style="color: var(--text-muted);">Doa Memohon Pertolongan</small><br>
+                <span class="badge customdua">CUSTOM DUA</span>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--text-muted);">Ref:</strong> HR. Abu Dawud no. 1510, HR. At-Tirmidzi no. 3551 & HR. Ibnu Majah no. 3830 dari Ibnu Abbas radhiyallahu ‘anhuma (Shahih) · Sumber: https://hadits.in/</div>
+                <div class="arabic-text" style="font-size: 0.95rem;">اللَّهُمَّ إِنِّي أَتَبَرَّأُ مِنْ حَوْلِي وَقُوَّتِي، وَأَلْتَجِئُ إِلَى حَوْلِكَ وَ...</div>
+              </td>
+              <td style="color: #fca5a5;">
+                <ul style="padding-left: 18px;">
+                  <li>KETIDAKSESUAIAN MATAN & INCORRECT ATTRIBUTION: Kalimat pembuka "اللَّهُمَّ إِنِّي أَتَبَرَّأُ مِنْ حَوْلِي وَقُوَّتِي، وَأَلْتَجِئُ إِلَى حَوْلِكَ وَقُوَّتِكَ" BUKAN bagian dari hadis riwayat Abu Dawud no. 1510, At-Tirmidzi no. 3551, maupun Ibnu Majah no. 3830.</li><li>Kalimat tersebut adalah doa munajat susunan para ulama/salaf (Custom Dua), sedangkan doa Nabi Muhammad ﷺ dalam hadits shahih tersebut diawali langsung dengan: "رَبِّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ..."</li><li>Penggabungan dua teks tanpa pemisahan menyebabkan doa susunan ulama tersalah-klaimkan sebagai hadits shahih marfu'.</li>
+                </ul>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--primary-light);">Ref Koreksi:</strong> HR. Abu Dawud no. 1510, At-Tirmidzi no. 3551 & Ibnu Majah no. 3830 dari Abdullah bin Abbas radhiyallahu ‘anhuma (Shahih)</div>
+                <div class="arabic-text" style="font-size: 0.95rem; color: #a7f3d0;">رَبِّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ، وَانْصُرْنِي وَلَا تَنْصُرْ عَلَيَّ، وَامْكُرْ ل...</div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;"><em>Saran: Pisahkan kalimat munajat susunan ulama ("Allahumma inni atabarra'u...") dari matan hadits nabawi. Jika ingin mempertahankan doa nabawi yang shahih, gunakan matan asli riwayat Abu Dawud 1510 dimulai dari "Rabbi a'inni...". Jika kalimat munajat tetap dicantumkan, berikan label jelas sebagai "Doa Susunan Ulama", bukan sabda Nabi Muhammad ﷺ.</em></div>
+                <div style="margin-top: 6px;"><a href="https://hadits.in/abudaud/1510" target="_blank" class="source-link">🔗 Naskah Sumber Terverifikasi</a></div>
+              </td>
+              <td>
+                <span class="badge issue">INCORRECT ATTRIBUTION</span>
+              </td>
+            </tr>
+  
+            <tr>
+              <td><strong>6</strong></td>
+              <td>
+                <strong>Doa Memohon Surga Firdaus</strong><br>
+                <small style="color: var(--text-muted);">Doa-doa Pilihan</small><br>
+                <span class="badge customdua">CUSTOM DUA</span>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--text-muted);">Ref:</strong> HR. Bukhari No. 7423 · Doa Akhirat & Memohon Surga · Sumber: https://www.hadits.id/</div>
+                <div class="arabic-text" style="font-size: 0.95rem;">اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ الْفِرْدَوْسَ الْأَعْلَى بِغَيْرِ حِسَابٍ وَل...</div>
+              </td>
+              <td style="color: #fca5a5;">
+                <ul style="padding-left: 18px;">
+                  <li>INCORRECT ATTRIBUTION: Teks doa "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ الْفِرْدَوْسَ الْأَعْلَى بِغَيْرِ حِسَابٍ وَلَا عَذَابٍ" diklaim sebagai matan HR. Bukhari no. 7423.</li><li>Dalam hadits Bukhari no. 7423, Nabi ﷺ menganjurkan: "فَإِذَا سَأَلْتُمُ اللَّهَ فَاسْأَلُوهُ الْفِرْدَوْسَ..." (Apabila kalian meminta kepada Allah, maka mintalah Surga Firdaus). Beliau tidak mendiktekan susunan redaksi "...bighairi hisabin wa la 'adzab".</li><li>Redaksi doa di aplikasi adalah Doa Susunan (Custom Dua) yang didasarkan pada anjuran hadits tersebut.</li>
+                </ul>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--primary-light);">Ref Koreksi:</strong> Doa Susunan (Custom Dua) berdasarkan anjuran Nabi ﷺ dalam HR. Bukhari no. 7423 / 2790</div>
+                <div class="arabic-text" style="font-size: 0.95rem; color: #a7f3d0;">اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ الْفِرْدَوْسَ الْأَعْلَى بِغَيْرِ حِسَابٍ وَل...</div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;"><em>Saran: Ubah klasifikasi sumber menjadi "Doa Susunan (Berdasarkan anjuran HR. Bukhari no. 7423)" agar tidak menisbatkan redaksi doa susunan sebagai sabda verbatim Rasulullah ﷺ.</em></div>
+                <div style="margin-top: 6px;"><a href="https://hadits.in/bukhari/7423" target="_blank" class="source-link">🔗 Naskah Sumber Terverifikasi</a></div>
+              </td>
+              <td>
+                <span class="badge issue">INCORRECT ATTRIBUTION</span>
+              </td>
+            </tr>
+  
+            <tr>
+              <td><strong>7</strong></td>
+              <td>
+                <strong>Doa Ketika Akan Memulai Tawaf</strong><br>
+                <small style="color: var(--text-muted);">Doa-doa Umroh</small><br>
+                <span class="badge athar">ATHAR</span>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--text-muted);">Ref:</strong> Riwayat Ath-Thabrani dalam Al-Mu‘jam Al-Awsath no. 3254 & Al-Bayhaqi dalam As-Sunan Al-Kubra 5/79 · Sumber: https://ilmuislam.id/</div>
+                <div class="arabic-text" style="font-size: 0.95rem;">اللَّهُمَّ إِيمَانًا بِكَ، وَتَصْدِيقًا بِكِتَابِكَ، وَوَفَاءً بِعَهْدِكَ، وَاتِّبَاع...</div>
+              </td>
+              <td style="color: #fca5a5;">
+                <ul style="padding-left: 18px;">
+                  <li>Riwayat marfu' kepada Nabi ﷺ (Ath-Thabrani Al-Awsath no. 3254) adalah DHAIF. Yang shahih adalah riwayat Mauquf (Atsar Sahabat) dari Sayyidina Ali bin Abi Thalib dan Ibnu Umar (Abdurrazzaq no. 8847). Derajat dhaif marfu'/atsar sahabat belum dijelaskan dalam aplikasi.</li>
+                </ul>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--primary-light);">Ref Koreksi:</strong> Riwayat Ath-Thabrani dalam Al-Mu‘jam Al-Awsath no. 3254 & Al-Bayhaqi dalam As-Sunan Al-Kubra 5/79 · Sumber: https://ilmuislam.id/</div>
+                <div class="arabic-text" style="font-size: 0.95rem; color: #a7f3d0;">اللَّهُمَّ إِيمَانًا بِكَ، وَتَصْدِيقًا بِكِتَابِكَ، وَوَفَاءً بِعَهْدِكَ، وَاتِّبَاع...</div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;"><em>Saran: Perjelas pada keterangan rujukan bahwa doa ini bersumber dari Atsar Sahabat (Ali bin Abi Thalib & Ibnu Umar) dengan sanad shahih, bukan sabda Nabi ﷺ secara marfu'.</em></div>
+                <div style="margin-top: 6px;"><a href="https://ilmuislam.id/" target="_blank" class="source-link">🔗 Naskah Sumber Terverifikasi</a></div>
+              </td>
+              <td>
+                <span class="badge issue">GRADE NEEDS CORRECTION</span>
+              </td>
+            </tr>
+  
+            <tr>
+              <td><strong>8</strong></td>
+              <td>
+                <strong>Doa Tawaf dari Hajar Aswad ke Maqam Ibrahim</strong><br>
+                <small style="color: var(--text-muted);">Doa-doa Umroh</small><br>
+                <span class="badge hadith">HADITH</span>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--text-muted);">Ref:</strong> HR. Ibnu Majah no. 2957 & HR. Ahmad no. 15468 dari Abu Hurairah radhiyallahu ‘anhu · Sumber: https://hadits.in/</div>
+                <div class="arabic-text" style="font-size: 0.95rem;">سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ، وَلَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَ...</div>
+              </td>
+              <td style="color: #fca5a5;">
+                <ul style="padding-left: 18px;">
+                  <li>GRADE NEEDS CORRECTION: Hadits riwayat Ibnu Majah no. 2957 dan Ahmad no. 15468 ini dinilai DHAIF oleh para ulama hadits (di dalam sanadnya ada perawi dhaif). Derajat dhaif tidak disebutkan dalam aplikasi.</li>
+                </ul>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--primary-light);">Ref Koreksi:</strong> HR. Ibnu Majah no. 2957 & HR. Ahmad no. 15468 dari Abu Hurairah radhiyallahu ‘anhu · Sumber: https://hadits.in/</div>
+                <div class="arabic-text" style="font-size: 0.95rem; color: #a7f3d0;">سُبْحَانَ اللَّهِ، وَالْحَمْدُ لِلَّهِ، وَلَا إِلَهَ إِلَّا اللَّهُ، وَاللَّهُ أَكْبَ...</div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;"><em>Saran: Cantumkan derajat hadits "Dhaif" secara jujur dan transparan sesuai penilaian para muhaqqiq, atau berikan catatan bahwa doa ini boleh diamalkan dalam fadhail amal menurut sebagian ulama namun sanadnya lemah.</em></div>
+                <div style="margin-top: 6px;"><a href="https://hadits.in/ibnumajah/2957" target="_blank" class="source-link">🔗 Naskah Sumber Terverifikasi</a></div>
+              </td>
+              <td>
+                <span class="badge issue">GRADE NEEDS CORRECTION</span>
+              </td>
+            </tr>
+  
+            <tr>
+              <td><strong>9</strong></td>
+              <td>
+                <strong>Doa Minum Air Zamzam</strong><br>
+                <small style="color: var(--text-muted);">Doa-doa Umroh</small><br>
+                <span class="badge athar">ATHAR</span>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--text-muted);">Ref:</strong> HR. Ad-Daraquthni 2/288 no. 238 & Al-Hakim dalam Al-Mustadrak no. 1739 dari Ibnu Abbas radhiyallahu ‘anhuma · Sumber: https://hadits.arina.id/</div>
+                <div class="arabic-text" style="font-size: 0.95rem;">اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا وَاسِعًا، وَشِفَاءً مِنْ كُل...</div>
+              </td>
+              <td style="color: #fca5a5;">
+                <ul style="padding-left: 18px;">
+                  <li>KETIDAKSESUAIAN MATAN & INCORRECT ARABIC: Teks Arab di aplikasi memuat tambahan lafaz: "بِرَحْمَتِكَ يَا أَرْحَمَ الرَّاحِمِينَ".</li><li>Lafaz asli riwayat Ad-Daraquthni 2/288 no. 238 dan Al-Mustadrak Al-Hakim no. 1739 hanya sampai: "وَشِفَاءً مِنْ كُلِّ دَاءٍ". Tambahan "bi rahmatika ya arhamar rahimin" tidak ada dalam sumber primer riwayat tersebut.</li>
+                </ul>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--primary-light);">Ref Koreksi:</strong> HR. Ad-Daraquthni 2/288 no. 238 & Al-Hakim dalam Al-Mustadrak no. 1739 dari Ibnu Abbas radhiyallahu ‘anhuma · Sumber: https://hadits.arina.id/</div>
+                <div class="arabic-text" style="font-size: 0.95rem; color: #a7f3d0;">اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا وَاسِعًا، وَشِفَاءً مِنْ كُل...</div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;"><em>Saran: Koreksi teks Arab dengan menghapus penambahan lafaz tanpa sanad "بِرَحْمَتِكَ يَا أَرْحَمَ الرَّاحِمِينَ", sesuaikan dengan matan otentik riwayat Ad-Daraquthni & Al-Hakim, dan cantumkan bahwa doa ini berstatus Atsar Sahabat (Mauquf Hasan).</em></div>
+                <div style="margin-top: 6px;"><a href="https://hadits.arina.id/" target="_blank" class="source-link">🔗 Naskah Sumber Terverifikasi</a></div>
+              </td>
+              <td>
+                <span class="badge issue">INCORRECT ARABIC</span>
+              </td>
+            </tr>
+  
+            <tr>
+              <td><strong>10</strong></td>
+              <td>
+                <strong>Takbir Keempat — Doa</strong><br>
+                <small style="color: var(--text-muted);">Sholat Jenazah</small><br>
+                <span class="badge hadith">HADITH</span>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--text-muted);">Ref:</strong> HR. Abu Dawud no. 3201 & HR. Ibnu Majah no. 1498 dari Abu Hurairah radhiyallahu ‘anhu (Hasan) · Sumber: https://www.hadits.id/</div>
+                <div class="arabic-text" style="font-size: 0.95rem;">اللَّهُمَّ لَا تَحْرِمْنَا أَجْرَهُ، وَلَا تَفْتِنَّا بَعْدَهُ، وَاغْفِرْ لَنَا وَلَه...</div>
+              </td>
+              <td style="color: #fca5a5;">
+                <ul style="padding-left: 18px;">
+                  <li>INCORRECT REFERENCE: Aplikasi mencantumkan "HR. Abu Dawud no. 3201". Pada nomor 3201 Sunan Abi Dawud, matannya adalah doa umum: "اللَّهُمَّ اغْفِرْ لِحَيِّنَا وَمَيِّتِنَا وَشَاهِدِنَا وَغَائِبِنَا...".</li><li>Matan doa "اللَّهُمَّ لَا تَحْرِمْنَا أَجْرَهُ وَلَا تَفْتِنَّا بَعْدَهُ وَاغْفِرْ لَنَا وَلَهُ" dalam Sunan Abi Dawud terdapat pada no. 3199 (versi Syamil/Fathul Bari) dan HR. Ibnu Majah no. 1498.</li>
+                </ul>
+              </td>
+              <td>
+                <div style="margin-bottom: 6px;"><strong style="color: var(--primary-light);">Ref Koreksi:</strong> HR. Abu Dawud no. 3199, HR. Ibnu Majah no. 1498 & Al-Hakim 1/359 dari Abu Hurairah radhiyallahu ‘anhu (Hasan)</div>
+                <div class="arabic-text" style="font-size: 0.95rem; color: #a7f3d0;">اللَّهُمَّ لَا تَحْرِمْنَا أَجْرَهُ، وَلَا تَفْتِنَّا بَعْدَهُ، وَاغْفِرْ لَنَا وَلَه...</div>
+                <div style="font-size: 0.85rem; color: #cbd5e1; margin-top: 6px;"><em>Saran: Koreksi penomoran hadits Abu Dawud dari no. 3201 menjadi no. 3199 agar cocok dengan matan yang ditampilkan.</em></div>
+                <div style="margin-top: 6px;"><a href="https://hadits.in/abudaud/3199" target="_blank" class="source-link">🔗 Naskah Sumber Terverifikasi</a></div>
+              </td>
+              <td>
+                <span class="badge issue">INCORRECT REFERENCE</span>
+              </td>
+            </tr>
+  
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section: Inventaris Lengkap Seluruh Konten -->
+    <div class="section-card">
+      <div class="section-title">
+        <span>Daftar Inventaris Lengkap Seluruh Konten (116 Item)</span>
+        <span class="badge verified">Semua Terdaftar</span>
+      </div>
+
+      <div class="filter-bar">
+        <input type="text" id="searchInput" class="search-input" placeholder="Cari nama doa, ayat, hadits, atau kategori..." onkeyup="filterTable()">
+        <select id="categoryFilter" class="filter-select" onchange="filterTable()">
+          <option value="">Semua Kategori</option>
+          <option value="Dzikir Bawaan">Dzikir Bawaan (Counter)</option>
+          <option value="Dzikir Pagi">Dzikir Pagi</option>
+          <option value="Dzikir Petang">Dzikir Petang</option>
+          <option value="Sebelum dan Sesudah Berdoa">Sebelum & Sesudah Berdoa</option>
+          <option value="Doa Memohon Pertolongan">Doa Memohon Pertolongan</option>
+          <option value="Doa yang diminta Nabi Muhammad">Doa yang diminta Nabi Muhammad</option>
+          <option value="Doa Memohon Perlindungan dari Kegelisahan dan Kesedihan">Doa Perlindungan Kegelisahan</option>
+          <option value="Doa ketika dalam kesulitan hidup">Doa Kesulitan Hidup</option>
+          <option value="Doa-doa Pilihan">Doa-doa Pilihan</option>
+          <option value="Doa-doa Umroh">Doa-doa Umroh</option>
+          <option value="Sholat Jenazah">Sholat Jenazah</option>
+        </select>
+        <select id="statusFilter" class="filter-select" onchange="filterTable()">
+          <option value="">Semua Status Audit</option>
+          <option value="VERIFIED">VERIFIED</option>
+          <option value="VERIFIED WITH VARIATION">VERIFIED WITH VARIATION</option>
+          <option value="INCORRECT REFERENCE">INCORRECT REFERENCE</option>
+          <option value="INCORRECT ARABIC">INCORRECT ARABIC</option>
+          <option value="INCORRECT ATTRIBUTION">INCORRECT ATTRIBUTION</option>
+          <option value="GRADE NEEDS CORRECTION">GRADE NEEDS CORRECTION</option>
+          <option value="NEEDS CONTEXT CORRECTION">NEEDS CONTEXT CORRECTION</option>
+        </select>
+      </div>
+
+      <div class="table-container">
+        <table id="inventoryTable">
+          <thead>
+            <tr>
+              <th style="width: 50px;">No</th>
+              <th style="width: 140px;">Kategori</th>
+              <th style="width: 240px;">Nama Doa</th>
+              <th style="width: 110px;">Jenis Sumber</th>
+              <th>Referensi Saat Ini</th>
+              <th style="width: 140px;">Status Audit</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr data-cat="Dzikir Bawaan" data-status="VERIFIED">
+              <td>1</td>
+              <td><small>Dzikir Bawaan</small></td>
+              <td><strong>Subhanallah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>Subhanallah</div>
+                <a href="https://hadits.in/bukhari/843" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Bawaan" data-status="VERIFIED">
+              <td>2</td>
+              <td><small>Dzikir Bawaan</small></td>
+              <td><strong>Alhamdulillah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>Alhamdulillah</div>
+                <a href="https://hadits.in/muslim/595" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Bawaan" data-status="VERIFIED">
+              <td>3</td>
+              <td><small>Dzikir Bawaan</small></td>
+              <td><strong>Allahuakbar</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>Allahuakbar</div>
+                <a href="https://hadits.in/muslim/595" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Bawaan" data-status="VERIFIED">
+              <td>4</td>
+              <td><small>Dzikir Bawaan</small></td>
+              <td><strong>Lailaha illallah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>Lailaha illallah</div>
+                <a href="https://hadits.in/tirmidzi/3383" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Bawaan" data-status="VERIFIED">
+              <td>5</td>
+              <td><small>Dzikir Bawaan</small></td>
+              <td><strong>Subhanallahi wabihamdihi</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>Subhanallahi wabihamdihi</div>
+                <a href="https://hadits.in/bukhari/6405" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Bawaan" data-status="VERIFIED">
+              <td>6</td>
+              <td><small>Dzikir Bawaan</small></td>
+              <td><strong>Astagfirullaha waatubu ilaih</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>Astagfirullaha waatubu ilaih</div>
+                <a href="https://hadits.in/bukhari/6307" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Bawaan" data-status="NEEDS CONTEXT CORRECTION">
+              <td>7</td>
+              <td><small>Dzikir Bawaan</small></td>
+              <td><strong>Doa Memohon Kecukupan Rezeki Halal</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>Allāhummak-finī bi ḥalālika ‘an ḥarāmika, wa aghninī bi faḍlika ‘amman siwāka</div>
+                <a href="https://hadits.in/tirmidzi/3563" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge issue">NEEDS CONTEXT CORRECTION</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>8</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Ayat Kursi - Surah Al-Baqarah ayat 255</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS. Al-Baqarah [2]: 255 · HR. An-Nasa'i dalam 'Amalul Yaum wal Lailah no. 100 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/2?from=255&to=255" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>9</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Surah Al-Ikhlas</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS. Al-Ikhlas [112]: 1–4 · HR. Abu Dawud no. 5082 & At-Tirmidzi no. 3575 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/112?from=1&to=4" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>10</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Surah Al-Falaq</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS. Al-Falaq [113]: 1–5 · HR. Abu Dawud no. 5082 & At-Tirmidzi no. 3575 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/113?from=1&to=5" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>11</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Surah An-Nas</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS. An-Nas [114]: 1–6 · HR. Abu Dawud no. 5082 & At-Tirmidzi no. 3575 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/114?from=1&to=6" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>12</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Allahumma bika asbahna wa bika amsayna</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. At-Tirmidzi no. 3391 & Abu Dawud no. 5068 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/tirmidzi/3391" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>13</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Asbahna ‘ala fitratil-Islam</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Ahmad no. 15360 & Ad-Darimi no. 2689 · Sumber: https://hadits.tazkia.ac.id/</div>
+                <a href="https://hadits.tazkia.ac.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>14</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Asbahna wa asbahal-mulku lillah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 2723 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/2723" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>15</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Sayyidul Istighfar</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 6306 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/6306" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>16</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Allahumma ‘afini fi badani</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 5090 & Ahmad no. 20430 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/abudaud/5090" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>17</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Allahumma inni as’alukal-‘afwa wal-‘afiyah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 5074 & Ibnu Majah no. 3871 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/abudaud/5074" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>18</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Allahumma ‘alimal-ghaibi wasy-syahadah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. At-Tirmidzi no. 3392 & Abu Dawud no. 5067 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/tirmidzi/3392" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>19</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Bismillahilladzi la yadurru</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 5088 & At-Tirmidzi no. 3388 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/abudaud/5088" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>20</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Raditu billahi rabba</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 5072 & At-Tirmidzi no. 3389 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/abudaud/5072" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>21</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Ya Hayyu ya Qayyum</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. An-Nasa'i dalam As-Sunan Al-Kubra no. 10405 & Al-Hakim 1/545 · Sumber: https://hadits.arina.id/</div>
+                <a href="https://hadits.arina.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>22</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>La ilaha illallah wahdahu la syarika lah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 3293 & Muslim no. 2691 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/3293" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>23</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Subhanallahi wa bihamdihi ‘adada khalqihi</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 2726 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/2726" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>24</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Allahumma inni as’aluka ‘ilman nafi‘an</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Ibnu Majah no. 925 & Ahmad no. 26521 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/ibnumajah/925" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>25</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Subhanallahi wa bihamdihi</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 2692 & Bukhari no. 6405 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/2692" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Pagi" data-status="VERIFIED">
+              <td>26</td>
+              <td><small>Dzikir Pagi</small></td>
+              <td><strong>Astaghfirullah wa atubu ilaih</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 6307 & Muslim no. 2702 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/6307" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="NEEDS CONTEXT CORRECTION">
+              <td>27</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Ayat Kursi - Surah Al-Baqarah ayat 255</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS. Al-Baqarah [2]: 255 · HR. An-Nasa'i dalam 'Amalul Yaum wal Lailah no. 100 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/2?from=255&to=255" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge issue">NEEDS CONTEXT CORRECTION</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>28</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Surah Al-Ikhlas</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS. Al-Ikhlas [112]: 1–4 · HR. Abu Dawud no. 5082 & At-Tirmidzi no. 3575 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/112?from=1&to=4" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>29</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Surah Al-Falaq</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS. Al-Falaq [113]: 1–5 · HR. Abu Dawud no. 5082 & At-Tirmidzi no. 3575 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/113?from=1&to=5" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>30</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Surah An-Nas</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS. An-Nas [114]: 1–6 · HR. Abu Dawud no. 5082 & At-Tirmidzi no. 3575 · Sumber: https://quran.kemenag.go.id/ dan https://hadits.in/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/114?from=1&to=6" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>31</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Allahumma bika amsayna wa bika asbahna</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. At-Tirmidzi no. 3391 & Abu Dawud no. 5068 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/tirmidzi/3391" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>32</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Amsaina ‘ala fitratil-Islam</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Ahmad no. 15360 & Ad-Darimi no. 2689 · Sumber: https://hadits.tazkia.ac.id/</div>
+                <a href="https://hadits.tazkia.ac.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>33</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Amsaina wa Amsal Mulku Lillah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 2723 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/2723" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>34</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Sayyidul Istighfar</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 6306 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/6306" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>35</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Allahumma ‘afini fi badani</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 5090 & Ahmad no. 20430 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/abudaud/5090" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>36</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Allahumma inni as’alukal-‘afwa wal-‘afiyah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 5074 & Ibnu Majah no. 3871 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/abudaud/5074" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>37</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Allahumma ‘alimal-ghaibi wasy-syahadah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. At-Tirmidzi no. 3392 & Abu Dawud no. 5067 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/tirmidzi/3392" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>38</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Bismillahilladzi la yadurru</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 5088 & At-Tirmidzi no. 3388 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/abudaud/5088" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>39</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Raditu billahi rabba</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 5072 & At-Tirmidzi no. 3389 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/abudaud/5072" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>40</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Ya Hayyu ya Qayyum</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. An-Nasa'i dalam As-Sunan Al-Kubra no. 10405 & Al-Hakim 1/545 · Sumber: https://hadits.arina.id/</div>
+                <a href="https://hadits.arina.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>41</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>La ilaha illallah wahdahu la syarika lah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 3293 & Muslim no. 2691 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/3293" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="INCORRECT REFERENCE">
+              <td>42</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>A‘udzu bi kalimatillahi at-tammati</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 2709 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/tirmidzi/3604" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge issue">INCORRECT REFERENCE</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="NEEDS CONTEXT CORRECTION">
+              <td>43</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Subhanallahi wa bihamdihi</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 2692 & Bukhari no. 6405 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/2692" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge issue">NEEDS CONTEXT CORRECTION</span></td>
+            </tr>
+  
+            <tr data-cat="Dzikir Petang" data-status="VERIFIED">
+              <td>44</td>
+              <td><small>Dzikir Petang</small></td>
+              <td><strong>Astaghfirullah wa atubu ilaih</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 6307 & Muslim no. 2702 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/6307" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Sebelum dan Sesudah Berdoa" data-status="VERIFIED WITH VARIATION">
+              <td>45</td>
+              <td><small>Sebelum dan Sesudah Berdoa</small></td>
+              <td><strong>Memuji Allah sebelum berdoa</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 1495, At-Tirmidzi no. 3544 & An-Nasa'i no. 1300 dari Anas bin Malik radhiyallahu 'anhu (Doa dengan Ismul A'zhom sebelum berdoa) · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/abudaud/1495" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Sebelum dan Sesudah Berdoa" data-status="VERIFIED">
+              <td>46</td>
+              <td><small>Sebelum dan Sesudah Berdoa</small></td>
+              <td><strong>Doa Sebelum Berdoa</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>QS Ghafir [40]: 60 & QS Ali ‘Imran [3]: 9 (Adab Pembuka Doa) · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/40?from=60&to=60" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Sebelum dan Sesudah Berdoa" data-status="VERIFIED">
+              <td>47</td>
+              <td><small>Sebelum dan Sesudah Berdoa</small></td>
+              <td><strong>Doa Memohon Pengabulan</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>Berdasarkan janji Allah dalam QS Ghafir [40]: 60 (Doa Pembuka Munajat) · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/40?from=60&to=60" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Sebelum dan Sesudah Berdoa" data-status="VERIFIED">
+              <td>48</td>
+              <td><small>Sebelum dan Sesudah Berdoa</small></td>
+              <td><strong>Doa Sesudah Berdoa</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>Adab penutup doa (Atsar Salafus Shalih, bersumber dari QS Al-Baqarah [2]: 186 & QS Ali ‘Imran [3]: 194) · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://ilmuislam.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa Memohon Pertolongan" data-status="INCORRECT ATTRIBUTION">
+              <td>49</td>
+              <td><small>Doa Memohon Pertolongan</small></td>
+              <td><strong>Doa Memohon Pertolongan</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 1510, HR. At-Tirmidzi no. 3551 & HR. Ibnu Majah no. 3830 dari Ibnu Abbas radhiyallahu ‘anhuma (Shahih) · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/abudaud/1510" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge issue">INCORRECT ATTRIBUTION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa yang diminta Nabi Muhammad" data-status="VERIFIED">
+              <td>50</td>
+              <td><small>Doa yang diminta Nabi Muhammad</small></td>
+              <td><strong>Doa yang diminta Nabi Muhammad</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. At-Tirmidzi no. 3521 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/tirmidzi/3521" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa Memohon Perlindungan dari Kegelisahan dan Kesedihan" data-status="VERIFIED">
+              <td>51</td>
+              <td><small>Doa Memohon Perlindungan dari Kegelisahan dan Kesedihan</small></td>
+              <td><strong>Doa Memohon Perlindungan dari Kegelisahan dan Kesedihan</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 6369, diriwayatkan dari Anas bin Malik radhiyallahu ‘anhu · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/6369" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa ketika dalam kesulitan hidup" data-status="VERIFIED">
+              <td>52</td>
+              <td><small>Doa ketika dalam kesulitan hidup</small></td>
+              <td><strong>Dzikir Kalimat Tauhid</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 6345 & Muslim no. 2730 dari Ibnu Abbas radhiyallahu 'anhuma · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/6345" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>53</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Kebaikan dunia dan akhirat</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Baqarah [2]: 201 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/2?from=201&to=201" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>54</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Ampunan bagi generasi beriman terdahulu</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Hasyr [59]: 10 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/59?from=10&to=10" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>55</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Doa orang yang mengingat Allah (Ulul Albab)</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Ali 'Imran [3]: 191–194 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/3?from=191&to=194" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>56</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Mengakui kesalahan dan memohon ampun</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Qasas [28]: 16 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/28?from=16&to=16" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>57</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Wafat dalam keadaan muslim dan bersama orang saleh</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Yusuf [12]: 101 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/12?from=101&to=101" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>58</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Mengakui kesalahan dan memohon ampunan</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-A'raf [7]: 23 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/7?from=23&to=23" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>59</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Memohon ampunan dan rahmat</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Mu'minun [23]: 109 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/23?from=109&to=109" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>60</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Memohon ampunan dan rahmat dengan ringkas</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Mu'minun [23]: 118 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/23?from=118&to=118" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>61</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Syukur dan amal saleh hingga akhir hayat</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Ahqaf [46]: 15 · Syukur & Amal Saleh · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/25?from=65&to=65" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>62</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Ilham untuk bersyukur dan beramal saleh</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS An-Naml [27]: 19 · Syukur & Amal Saleh · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/25?from=74&to=74" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>63</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Hidangan dari langit dan rezeki terbaik</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Ma'idah [5]: 114 · Rezeki & Kecukupan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/14?from=40&to=41" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>64</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Mengakui Kebutuhan kepada Karunia Allah</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Qasas [28]: 24 · Rezeki & Kecukupan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/20?from=25&to=28" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>65</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Memohon Petunjuk, Ketakwaan dan Sifat Qanaah</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>HR. Muslim no. 2721 · Ketakwaan & Qanaah · Sumber: https://ilmuislam.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/2?from=286&to=286" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>66</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Memohon Dicukupkan dengan yang Halal</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>HR At-Tirmidzi no. 3563 · Rezeki & Kecukupan · Sumber: https://ilmuislam.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/3?from=8&to=8" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>67</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Ampunan bagi diri, orang tua, dan kaum beriman</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Ibrahim [14]: 41 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/18?from=10&to=10" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>68</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Ampunan bagi keluarga dan seluruh orang beriman</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Nuh [71]: 28 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/20?from=114&to=114" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>69</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Menjadi orang yang menegakkan salat</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Ibrahim [14]: 40 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/21?from=87&to=87" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>70</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Memohon anak yang saleh</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS As-Saffat [37]: 100 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/21?from=89&to=89" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>71</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Pasangan dan keturunan penyejuk hati</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Furqan [25]: 74 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/26?from=83&to=85" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>72</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Ampunan bagi diri dan saudara</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-A'raf [7]: 151 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/28?from=24&to=24" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>73</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Keluarga yang berserah diri kepada Allah</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Baqarah [2]: 128 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/27?from=19&to=19" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>74</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Kasih sayang bagi kedua orang tua</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Isra' [17]: 24 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/46?from=15&to=15" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>75</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Melapangkan dada dan memudahkan urusan</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Taha [20]: 25–28 · Ilmu & Kemudahan Urusan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/71?from=28&to=28" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>76</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Rahmat dan petunjuk dalam urusan</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Kahf [18]: 10 · Ilmu & Kemudahan Urusan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/3?from=16&to=16" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>77</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Tidak menjadi cobaan bagi orang kafir</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Mumtahanah [60]: 5 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/7?from=89&to=89" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>78</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Doa Nabi Yunus dalam kegelapan</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Anbiya' [21]: 87 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/7?from=126&to=126" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>79</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Perlindungan bagi orang yang tertindas</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS An-Nisa' [4]: 75 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/2?from=250&to=250" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>80</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Tidak menjadi fitnah bagi kaum zalim</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Yunus [10]: 85–86 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/10?from=85&to=86" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>81</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Memohon agar amal diterima</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Baqarah [2]: 127 · Ibadah & Amal Diterima · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/2?from=127&to=127" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="INCORRECT ATTRIBUTION">
+              <td>82</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Doa Memohon Surga Firdaus</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>HR. Bukhari No. 7423 · Doa Akhirat & Memohon Surga · Sumber: https://www.hadits.id/</div>
+                <a href="https://hadits.in/bukhari/7423" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge issue">INCORRECT ATTRIBUTION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>83</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Doa Memohon Tempat yang Diberkahi</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Mu'minun [23]: 29 · Doa Nabi Nuh 'alaihis salam memohon tempat yang penuh keberkahan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/23?from=29&to=29" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>84</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Doa Meminta Ampunan dan Rezeki</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. At-Tirmidzi no. 3500 & HR. Ahmad no. 16599 dari Abu Musa Al-Asy‘ari (Hasan) · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/tirmidzi/3500" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>85</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Doa Ruqyah untuk Diri Sendiri</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 2202 dari Utsman bin Abil ‘Ash radhiyallahu ‘anhu. Tata cara: Letakkan tangan pada bagian tubuh yang terasa sakit, baca Bismillah 3 kali lalu baca doa perlindungan di atas 7 kali · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/2202" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>86</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Doa Memohon Husnul Khatimah</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>Doa masyhur memohon wafat dalam keadaan husnul khatimah dan diridai Allah · Sumber: https://ilmuislam.id/</div>
+                <a href="https://ilmuislam.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>87</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Doa Memohon Rezeki untuk Umrah dan Haji</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>Doa masyhur memohon kemudahan rezeki dan panggilan untuk menunaikan ibadah haji serta umrah · Sumber: https://ilmuislam.id/</div>
+                <a href="https://ilmuislam.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED WITH VARIATION">
+              <td>88</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Doa Memohon Mati Syahid dan Wafat di Madinah</strong></td>
+              <td><span class="badge athar">ATHAR</span></td>
+              <td>
+                <div>HR. Bukhari no. 1890 (Kitab Keutamaan Madinah) dari riwayat Umar bin al-Khattab radhiyallahu 'anhu · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/1890" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Pilihan" data-status="VERIFIED">
+              <td>89</td>
+              <td><small>Doa-doa Pilihan</small></td>
+              <td><strong>Doa Memohon Rezeki kepada Allah</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>Landasan Asmaul Husna dalam QS Az-Zariyat [51]: 58 (إِنَّ اللَّهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ) · Rezeki & Kecukupan · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/51?from=58&to=58" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>90</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Keluar Rumah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 5095 & HR. At-Tirmidzi no. 3426 dari Anas bin Malik radhiyallahu ‘anhu (Shahih) · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/1342" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>91</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Setelah Duduk dalam Kendaraan</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>QS Hud: 41 · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://hadits.in/abudaud/5095" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>92</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Ketika Kendaraan Mulai Bergerak</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>QS Az-Zukhruf [43]: 13–14 & HR. Muslim no. 1342 dari Ibnu Umar radhiyallahu ‘anhuma · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://hadits.in/abudaud/2602" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>93</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Niat Umroh</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 1251 & HR. Bukhari no. 1551 (Manasik Umroh Nabi ﷺ) · Sumber: https://www.hadits.id/</div>
+                <a href="https://hadits.in/bukhari/1551" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>94</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Bacaan Talbiyah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 1549 & HR. Muslim no. 1184 dari Abdullah bin Umar radhiyallahu ‘anhuma (Shahih) · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/1549" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>95</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Masuk Masjid</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 713 & HR. Abu Dawud no. 465 dari Abu Usaid radhiyallahu ‘anhu · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/713" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>96</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Keluar Masjid</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 713 & HR. Abu Dawud no. 465 dari Abu Usaid radhiyallahu ‘anhu · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/713" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED WITH VARIATION">
+              <td>97</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Ketika Melihat Ka’bah</strong></td>
+              <td><span class="badge athar">ATHAR</span></td>
+              <td>
+                <div>Riwayat Imam Asy-Syafi‘i dalam Kitab Al-Umm 1/394 & Al-Bayhaqi dalam As-Sunan Al-Kubra 5/73 · Sumber: https://ilmuislam.id/</div>
+                <a href="https://ilmuislam.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="GRADE NEEDS CORRECTION">
+              <td>98</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Ketika Akan Memulai Tawaf</strong></td>
+              <td><span class="badge athar">ATHAR</span></td>
+              <td>
+                <div>Riwayat Ath-Thabrani dalam Al-Mu‘jam Al-Awsath no. 3254 & Al-Bayhaqi dalam As-Sunan Al-Kubra 5/79 · Sumber: https://ilmuislam.id/</div>
+                <a href="https://ilmuislam.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge issue">GRADE NEEDS CORRECTION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>99</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Tawaf di Setiap Posisi Hajar Aswad</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 1612 & no. 1613 dari Ibnu Abbas radhiyallahu ‘anhuma · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/1612" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="GRADE NEEDS CORRECTION">
+              <td>100</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Tawaf dari Hajar Aswad ke Maqam Ibrahim</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Ibnu Majah no. 2957 & HR. Ahmad no. 15468 dari Abu Hurairah radhiyallahu ‘anhu · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/ibnumajah/2957" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge issue">GRADE NEEDS CORRECTION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED WITH VARIATION">
+              <td>101</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Tawaf dari Maqam Ibrahim ke Rukun Yamani</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>Lampiran tidak mencantumkan lafaz khusus untuk bagian ini · Sumber: https://ilmuislam.id/</div>
+                <a href="https://ilmuislam.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>102</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Tawaf dari Rukun Yamani ke Hajar Aswad</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>QS Al-Baqarah [2]: 201 & HR. Abu Dawud no. 1892 dari Abdullah bin As-Sa’ib radhiyallahu ‘anhu (Shahih) · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://hadits.in/abudaud/1892" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED WITH VARIATION">
+              <td>103</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Menuju Maqam Ibrahim</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Baqarah: 125 · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/2?from=125&to=125" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="INCORRECT ARABIC">
+              <td>104</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Minum Air Zamzam</strong></td>
+              <td><span class="badge athar">ATHAR</span></td>
+              <td>
+                <div>HR. Ad-Daraquthni 2/288 no. 238 & Al-Hakim dalam Al-Mustadrak no. 1739 dari Ibnu Abbas radhiyallahu ‘anhuma · Sumber: https://hadits.arina.id/</div>
+                <a href="https://hadits.arina.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge issue">INCORRECT ARABIC</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED WITH VARIATION">
+              <td>105</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Menuju Bukit Shafa</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Baqarah [2]: 158 & HR. Muslim no. 1218 (Sunnah Manasik Haji/Umroh Nabi ﷺ) · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/2?from=158&to=158" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED WITH VARIATION">
+              <td>106</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Menaiki Bukit Shafa</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 1218 & HR. An-Nasa’i no. 2974 dari Jabir bin Abdillah radhiyallahu ‘anhu · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/1218" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>107</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Ketika Berada di Bukit Shafa dan Marwah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 1218 dari Jabir bin Abdillah radhiyallahu ‘anhu (Dzikir Sunnah Nabi ﷺ di Bukit Shafa & Marwah) · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/1218" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED WITH VARIATION">
+              <td>108</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Sa’i dari Bukit Shafa ke Marwah</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>Lampiran tidak mencantumkan lafaz khusus untuk bagian ini · Sumber: https://ilmuislam.id/</div>
+                <a href="https://ilmuislam.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge variation">VERIFIED WITH VARIATION</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>109</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Sa’i di Pilar Lampu Hijau</strong></td>
+              <td><span class="badge athar">ATHAR</span></td>
+              <td>
+                <div>Atsar riwayat Ibnu Abi Syaibah dalam Al-Mushannaf no. 13247 & Al-Bayhaqi 5/95 dari Ibnu Umar dan Ibnu Mas’ud radhiyallahu ‘anhum · Sumber: https://ilmuislam.id/</div>
+                <a href="https://ilmuislam.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>110</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Salam Rasulullah, Abu Bakar & Umar</strong></td>
+              <td><span class="badge customdua">CUSTOM DUA</span></td>
+              <td>
+                <div>Dibaca ketika berziarah ke makam Rasulullah ﷺ, Abu Bakar Ash-Shiddiq, dan Umar bin Al-Khattab di Madinah Munawwarah · Sumber: https://ilmuislam.id/</div>
+                <a href="https://ilmuislam.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Doa-doa Umroh" data-status="VERIFIED">
+              <td>111</td>
+              <td><small>Doa-doa Umroh</small></td>
+              <td><strong>Doa Dziarah Kubur</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>Doa ziarah kubur (salam kepada ahli kubur), HR. Muslim no. 975 · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/975" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Sholat Jenazah" data-status="VERIFIED">
+              <td>112</td>
+              <td><small>Sholat Jenazah</small></td>
+              <td><strong>Takbir Pertama — Al-Fatihah</strong></td>
+              <td><span class="badge quran">QURAN</span></td>
+              <td>
+                <div>QS Al-Fatihah: 1–7 · Sumber: https://quran.kemenag.go.id/</div>
+                <a href="https://quran.kemenag.go.id/quran/per-ayat/surah/1?from=1&to=7" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Sholat Jenazah" data-status="VERIFIED">
+              <td>113</td>
+              <td><small>Sholat Jenazah</small></td>
+              <td><strong>Takbir Kedua — Sholawat</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Bukhari no. 3370 & HR. Muslim no. 406 (Sholawat Ibrahimiyah; Sunnah Sholat Jenazah HR. Al-Hakim 1/360) · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/bukhari/3370" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Sholat Jenazah" data-status="VERIFIED">
+              <td>114</td>
+              <td><small>Sholat Jenazah</small></td>
+              <td><strong>Takbir Ketiga — Doa untuk Jenazah</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Muslim no. 963 dari ‘Auf bin Malik radhiyallahu ‘anhu (Shahih) · Sumber: https://hadits.in/</div>
+                <a href="https://hadits.in/muslim/963" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+            <tr data-cat="Sholat Jenazah" data-status="INCORRECT REFERENCE">
+              <td>115</td>
+              <td><small>Sholat Jenazah</small></td>
+              <td><strong>Takbir Keempat — Doa</strong></td>
+              <td><span class="badge hadith">HADITH</span></td>
+              <td>
+                <div>HR. Abu Dawud no. 3201 & HR. Ibnu Majah no. 1498 dari Abu Hurairah radhiyallahu ‘anhu (Hasan) · Sumber: https://www.hadits.id/</div>
+                <a href="https://hadits.in/abudaud/3199" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge issue">INCORRECT REFERENCE</span></td>
+            </tr>
+  
+            <tr data-cat="Sholat Jenazah" data-status="VERIFIED">
+              <td>116</td>
+              <td><small>Sholat Jenazah</small></td>
+              <td><strong>Salam</strong></td>
+              <td><span class="badge athar">ATHAR</span></td>
+              <td>
+                <div>HR. Al-Bayhaqi dalam As-Sunan Al-Kubra 4/43 & Al-Hakim 1/360 dari Abdullah bin Mas’ud radhiyallahu ‘anhu · Sumber: https://hadits.arina.id/</div>
+                <a href="https://hadits.arina.id/" target="_blank" class="source-link" style="font-size: 0.8rem;">🔗 Sumber Terverifikasi</a>
+              </td>
+              <td><span class="badge verified">VERIFIED</span></td>
+            </tr>
+  
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Section: Rujukan Terverifikasi -->
+    <div class="section-card">
+      <div class="section-title">
+        <span>Daftar Situs Rujukan Resmi Terverifikasi</span>
+      </div>
+      <p style="color: var(--text-muted); margin-bottom: 16px;">
+        Sesuai klausul wajib, verifikasi dilaksanakan dengan merujuk langsung ke naskah primer pada enam situs terverifikasi berikut:
+      </p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: #0f172a; padding: 16px; border-radius: 8px; border: 1px solid var(--card-border);">
+          <strong style="color: var(--primary-light);">1. Hadits.in (Lidwa Pusaka)</strong>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Rujukan Shahih Bukhari, Muslim, Sunan Abi Dawud, At-Tirmidzi, An-Nasa'i, Ibnu Majah, Musnad Ahmad, dll.</p>
+          <a href="https://hadits.in/" target="_blank" class="source-link">https://hadits.in/</a>
+        </div>
+        <div style="background: #0f172a; padding: 16px; border-radius: 8px; border: 1px solid var(--card-border);">
+          <strong style="color: var(--primary-light);">2. Quran Kemenag</strong>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Rujukan mushaf standar Kementerian Agama RI, teks ayat, penomoran surah, dan terjemahan resmi.</p>
+          <a href="https://quran.kemenag.go.id/" target="_blank" class="source-link">https://quran.kemenag.go.id/</a>
+        </div>
+        <div style="background: #0f172a; padding: 16px; border-radius: 8px; border: 1px solid var(--card-border);">
+          <strong style="color: var(--primary-light);">3. Quran KSU (King Saud University)</strong>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Rujukan pembanding mushaf Madinah rasm Utsmani dan audio tilawah mu'tabar.</p>
+          <a href="https://quran.ksu.edu.sa/" target="_blank" class="source-link">https://quran.ksu.edu.sa/</a>
+        </div>
+        <div style="background: #0f172a; padding: 16px; border-radius: 8px; border: 1px solid var(--card-border);">
+          <strong style="color: var(--primary-light);">4. Hadits.id / Tazkia / Arina</strong>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px;">Pencarian matan, perbandingan nomor edisi kitab, dan takhrij sunan.</p>
+          <a href="https://www.hadits.id/" target="_blank" class="source-link">https://www.hadits.id/</a>
+        </div>
+      </div>
+    </div>
+
+    <footer style="text-align: center; color: var(--text-muted); font-size: 0.85rem; padding: 24px 0;">
+      Laporan Audit Konten DzikirKu © 2026 · Dilakukan secara independen oleh Tim Islamic Content Researcher & QA Engineer.
+    </footer>
+  </div>
+
+  <script>
+    function filterTable() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const cat = document.getElementById('categoryFilter').value;
+      const status = document.getElementById('statusFilter').value;
+      const rows = document.querySelectorAll('#inventoryTable tbody tr');
+
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        const rowCat = row.getAttribute('data-cat');
+        const rowStatus = row.getAttribute('data-status');
+
+        const matchSearch = text.includes(search);
+        const matchCat = !cat || rowCat === cat;
+        const matchStatus = !status || rowStatus === status;
+
+        if (matchSearch && matchCat && matchStatus) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

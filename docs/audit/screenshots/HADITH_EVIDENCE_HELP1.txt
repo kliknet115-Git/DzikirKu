@@ -1,0 +1,20 @@
+================================================================================
+BUKTI TAKHRIJ & MATAN HADITS: HR. ABU DAWUD NO. 1510 / AT-TIRMIDZI NO. 3551
+================================================================================
+Tanggal Pemeriksaan: 14 November 2026
+URL Sumber: https://hadits.in/abudaud/1510
+URL Pembanding: https://hadits.in/tirmidzi/3551 & https://www.hadits.id/hadits/ibnumajah/3830
+Kitab: Sunan Abi Dawud
+Bab: Doa yang dibaca Nabi ﷺ
+Perawi: Abdullah bin Abbas radhiyallahu 'anhuma
+Derajat Hadits: Shahih (Al-Albani dalam Shahih Sunan Abi Dawud no. 1510)
+
+MATAN ARAB OTENTIK:
+حَدَّثَنَا أَبُو بَكْرِ بْنُ أَبِي شَيْبَةَ حَدَّثَنَا يَحْيَى بْنُ سَعِيدٍ عَنْ سُفْيَانَ عَنْ عَمْرِو بْنِ مُرَّةَ عَنْ عَبْدِ اللَّهِ بْنِ الْحَارِثِ عَنْ طُلَيْقِ بْنِ قَيْسٍ عَنِ ابْنِ عَبَّاسٍ قَالَ كَانَ النَّبِيُّ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ يَدْعُو:
+«رَبِّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ، وَانْصُرْنِي وَلَا تَنْصُرْ عَلَيَّ، وَامْكُرْ لِي وَلَا تَمْكُرْ عَلَيَّ، وَاهْدِنِي وَيَسِّرْ هُدَايَ إِلَيَّ، وَانْصُرْنِي عَلَى مَنْ بَغَى عَلَيَّ، رَبِّ اجْعَلْنِي لَكَ شَكَّارًا، لَكَ ذَكَّارًا، لَكَ رَهَّابًا، لَكَ مِطْوَاعًا، إِلَيْكَ مُخْبِتًا أَوَّاهًا مُنِيبًا، رَبِّ تَقَبَّلْ تَوْبَتِي، وَاغْسِلْ حَوْبَتِي، وَأَجِبْ دَعْوَتِي، وَثَبِّتْ حُجَّتِي، وَاهْدِ قَلْبِي، وَسَدِّدْ لِسَانِي، وَاسْلُلْ سَخِيمَةَ قَلْبِي»
+
+TEMUAN AUDIT:
+1. Matan otentik sabda Nabi ﷺ diawali dengan: "رَبِّ أَعِنِّي وَلَا تُعِنْ عَلَيَّ...".
+2. Teks di aplikasi dibuka dengan kalimat: "اللَّهُمَّ إِنِّي أَتَبَرَّأُ مِنْ حَوْلِي وَقُوَّتِي، وَأَلْتَجِئُ إِلَى حَوْلِكَ وَقُوَّتِكَ".
+3. Kalimat pembuka tersebut SAMA SEKALI TIDAK DITEMUKAN dalam matan Abu Dawud 1510, Tirmidzi 3551, maupun Ibnu Majah 3830.
+4. Kalimat pembuka merupakan doa susunan/munajat kaum sholihin (Custom Dua), sehingga mencantumkannya di bawah label hadits shahih tanpa pemisahan adalah INCORRECT ATTRIBUTION.

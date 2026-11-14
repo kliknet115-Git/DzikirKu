@@ -1,0 +1,18 @@
+================================================================================
+BUKTI TAKHRIJ & MATAN HADITS: DZIKIR PETANG PERLINDUNGAN 3 KALI
+================================================================================
+Tanggal Pemeriksaan: 14 November 2026
+URL Sumber: https://hadits.in/tirmidzi/3604 & https://hadits.in/muslim/2709
+Kitab Pembanding: Sunan At-Tirmidzi no. 3604 vs Shahih Muslim no. 2709
+Perawi: Abu Hurairah radhiyallahu 'anhu
+Derajat: Shahih
+
+MATAN SUNAN AT-TIRMIDZI NO. 3604:
+عَنْ أَبِي هُرَيْرَةَ قَالَ: قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ:
+«مَنْ قَالَ حِينَ يُمْسِي ثَلَاثَ مَرَّاتٍ: أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ، لَمْ يَضُرَّهُ حُمَةٌ تِلْكَ اللَّيْلَةَ»
+
+TEMUAN AUDIT:
+1. Aplikasi mencantumkan "HR. Muslim no. 2709".
+2. Hadits Muslim 2709 berbicara tentang keutamaan singgah di suatu tempat (*man nazala manzilan...*), tanpa batasan waktu sore dan tanpa bilangan 3 kali.
+3. Rujukan yang menetapkan dibaca 3 KALI di WAKTU PETANG (hina yumsi) adalah HR. At-Tirmidzi no. 3604 dan HR. Ahmad no. 7898.
+4. Status rujukan: INCORRECT REFERENCE (perlu diperbarui ke HR. At-Tirmidzi no. 3604).

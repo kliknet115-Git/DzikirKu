@@ -269,3 +269,41 @@ export interface AppSettings {
 - **Aplikasi Web Publik**: [https://kliknet115-git.github.io/DzikirKu/](https://kliknet115-git.github.io/DzikirKu/)
 - **Cara Pasang di iPhone**:
   Buka tautan di Safari ➔ Ketuk tombol **Share** ➔ Pilih **"Add to Home Screen"** ➔ Ketuk **"Add"**.
+
+
+---
+
+## 8. Standar Validasi, Catatan, & Takhrij Konten Doa/Dzikir Baru (Islamic Content Audit Protocol)
+
+Untuk setiap penambahan, unggahan (*upload*), atau pembaruan konten bacaan doa maupun dzikir (baik di menu Beranda, Pagi Petang, Dzikir, maupun Kumpulan Doa), **WAJIB** menerapkan aturan baku audit konten Islam berikut:
+
+### 8.1. Tujuh (7) Situs Rujukan Terverifikasi
+Pencarian dan verifikasi teks Arab, takhrij, nomor hadits, derajat sanad, atau nomor ayat **HANYA** boleh merujuk ke 7 situs resmi berikut:
+1. **Hadits.in**: [https://hadits.in/](https://hadits.in/) (Kutubut Tis'ah)
+2. **Hadits.id**: [https://www.hadits.id/](https://www.hadits.id/) (Koleksi Hadits Sahih & Sunan)
+3. **Hadits Tazkia**: [https://hadits.tazkia.ac.id/](https://hadits.tazkia.ac.id/) (Basis Data Hadits Tazkia)
+4. **Hadits Arina**: [https://hadits.arina.id/](https://hadits.arina.id/) (Portal Hadits & Takhrij)
+5. **Ilmu Islam**: [https://ilmuislam.id/](https://ilmuislam.id/) (Kajian & Takhrij Terverifikasi)
+6. **Qur'an Kemenag**: [https://quran.kemenag.go.id/](https://quran.kemenag.go.id/) (Lajnah Pentashihan Kemenag RI)
+7. **Ayah Quran KSU**: [https://quran.ksu.edu.sa/](https://quran.ksu.edu.sa/index.php?l=id#aya=1_1&m=hafs&qaree=husary&trans=id_indonesian) (King Saud University Electronic Quran)
+
+*Dilarang keras menggunakan blog pribadi, media sosial, forum, atau situs di luar 7 situs rujukan resmi tersebut.*
+
+### 8.2. Klasifikasi Kategori Sumber (Anti-Misatribusi)
+Setiap doa/dzikir wajib dikategorikan secara tegas:
+- **`QURAN`**: Bersumber dari ayat Al-Qur'an. Wajib menyertakan nama surah dan nomor ayat. Jika hanya potongan ayat, wajib dicantumkan keterangan *(Potongan QS. ...)*.
+- **`HADITH`**: Bersumber dari sabda Nabi Muhammad ﷺ. Wajib menyertakan kitab, nama sahabat perawi jika ada, nomor hadits, kesesuaian matan, dan derajat hadits beserta ulama penilai.
+- **`ATHAR`**: Bersumber dari perkataan/amalan sahabat atau tabi'in. Dilarang diklaim sebagai hadits marfu' Nabi ﷺ.
+- **`CUSTOM DUA`**: Doa susunan ulama atau doa umum. Boleh dibaca tetapi dilarang dinisbatkan sebagai sabda Nabi ﷺ.
+
+### 8.3. Matan Matching & Kejujuran Derajat Hadits
+- **Kesesuaian Matan**: Matan teks Arab yang ditampilkan wajib cocok dengan lafaz pada kitab rujukan, tanpa ada sisipan lafaz manusia (*ziyadah*) yang dicampuradukkan.
+- **Derajat Hadits**: Penilaian derajat (Sahih/Hasan/Dhaif) harus menyertakan nama ulama yang menilai (misal: Syaikh Al-Albani, Imam At-Tirmidzi, dll.). Jika belum ada penelitian sanad yang jelas, beri keterangan "Belum Terverifikasi".
+
+### 8.4. Format Standar Teks Catatan & Presentasi UI
+- Setiap entri doa memiliki properti `note` yang memuat keterangan sumber valid.
+- Tautan URL dalam catatan otomatis diparsing sebagai link aktif yang dapat diklik langsung (`target="_blank" rel="noopener noreferrer"`).
+- Contoh format rujukan:
+  - `QS. Al-Baqarah [2]: 201 · Sumber: https://quran.kemenag.go.id/`
+  - `HR. Abu Dawud no. 1510 (Dishahihkan oleh Syaikh Al-Albani) · Sumber: https://hadits.in/`
+  - `HR. At-Tirmidzi no. 3524 (Derajat Hasan menurut At-Tirmidzi) · Sumber: https://hadits.id/`
