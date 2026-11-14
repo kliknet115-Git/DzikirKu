@@ -134,25 +134,11 @@ export const doaCategories: DoaCategory[] = [
     "countLabel": "37 DOA",
     "items": [
       {
-        "title": "Kebaikan dunia dan akhirat",
-        "subtitle": "QS Al-Baqarah [2]: 201",
-        "arabic": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
-        "meaning": "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, serta lindungilah kami dari azab neraka.",
-        "note": "QS Al-Baqarah [2]: 201 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Ampunan bagi generasi beriman terdahulu",
-        "subtitle": "QS Al-Hasyr [59]: 10",
-        "arabic": "رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا الَّذِينَ سَبَقُونَا بِالْإِيمَانِ وَلَا تَجْعَلْ فِي قُلُوبِنَا غِلًّا لِلَّذِينَ آمَنُوا رَبَّنَا إِنَّكَ رَءُوفٌ رَحِيمٌ",
-        "meaning": "Ya Tuhan kami, ampunilah kami dan saudara-saudara kami yang telah beriman lebih dahulu daripada kami. Janganlah Engkau tanamkan kedengkian dalam hati kami terhadap orang-orang beriman. Sungguh Engkau Maha Penyantun lagi Maha Penyayang.",
-        "note": "QS Al-Hasyr [59]: 10 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Doa orang yang mengingat Allah (Ulul Albab)",
-        "subtitle": "QS Ali 'Imran [3]: 191–194",
-        "arabic": "رَبَّنَا مَا خَلَقْتَ هَٰذَا بَاطِلًا سُبْحَانَكَ فَقِنَا عَذَابَ النَّارِ ۝ رَبَّنَا إِنَّكَ مَنْ تُدْخِلِ النَّارَ فَقَدْ أَخْزَيْتَهُ وَمَا لِلظَّالِمِينَ مِنْ أَنْصَارٍ ۝ رَبَّنَا إِنَّنَا سَمِعْنَا مُنَادِيًا يُنَادِي لِلْإِيمَانِ أَنْ آمِنُوا بِرَبِّكُمْ فَآمَنَّا رَبَّنَا فَاغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّئَاتِنَا وَتَوَفَّنَا مَعَ الْأَبْرَارِ ۝ رَبَّنَا وَآتِنَا مَا وَعَدْتَنَا عَلَىٰ رُسُلِكَ وَلَا تُخْزِنَا يَوْمَ الْقِيَامَةِ إِنَّكَ لَا تُخْلِفُ الْمِيعَادَ",
-        "meaning": "Ya Tuhan kami, tidaklah Engkau menciptakan semua ini sia-sia; Mahasuci Engkau, lindungilah kami dari azab neraka. Ya Tuhan kami, ampunilah dosa kami, hapuskan kesalahan kami, wafatkan kami bersama orang yang berbakti, berikan apa yang Engkau janjikan melalui para rasul, dan jangan hinakan kami pada hari Kiamat.",
-        "note": "QS Ali 'Imran [3]: 191–194 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
+        "title": "Mengakui kesalahan dan memohon ampunan",
+        "subtitle": "QS Al-A'raf [7]: 23",
+        "arabic": "رَبَّنَا ظَلَمْنَا أَنْفُسَنَا وَإِنْ لَمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
+        "meaning": "Ya Tuhan kami, kami telah menzalimi diri kami sendiri. Jika Engkau tidak mengampuni kami dan tidak merahmati kami, niscaya kami termasuk orang-orang yang rugi.",
+        "note": "QS Al-A'raf [7]: 23 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
       },
       {
         "title": "Mengakui kesalahan dan memohon ampun",
@@ -162,18 +148,11 @@ export const doaCategories: DoaCategory[] = [
         "note": "QS Al-Qasas [28]: 16 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
       },
       {
-        "title": "Wafat dalam keadaan muslim dan bersama orang saleh",
-        "subtitle": "QS Yusuf [12]: 101",
-        "arabic": "رَبِّ قَدْ آتَيْتَنِي مِنَ الْمُلْكِ وَعَلَّمْتَنِي مِنْ تَأْوِيلِ الْأَحَادِيثِ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ أَنْتَ وَلِيِّي فِي الدُّنْيَا وَالْآخِرَةِ تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ",
-        "meaning": "Wahai Tuhanku, Engkau telah menganugerahkan kepadaku sebagian kekuasaan dan mengajarkan takwil mimpi. Wahai Pencipta langit dan bumi, Engkaulah Pelindungku di dunia dan akhirat. Wafatkanlah aku dalam keadaan muslim dan gabungkanlah aku dengan orang-orang saleh.",
-        "note": "QS Yusuf [12]: 101 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Mengakui kesalahan dan memohon ampunan",
-        "subtitle": "QS Al-A'raf [7]: 23",
-        "arabic": "رَبَّنَا ظَلَمْنَا أَنْفُسَنَا وَإِنْ لَمْ تَغْفِرْ لَنَا وَتَرْحَمْنَا لَنَكُونَنَّ مِنَ الْخَاسِرِينَ",
-        "meaning": "Ya Tuhan kami, kami telah menzalimi diri kami sendiri. Jika Engkau tidak mengampuni kami dan tidak merahmati kami, niscaya kami termasuk orang-orang yang rugi.",
-        "note": "QS Al-A'raf [7]: 23 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
+        "title": "Doa Nabi Yunus dalam kegelapan",
+        "subtitle": "QS Al-Anbiya' [21]: 87",
+        "arabic": "لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ",
+        "meaning": "Tidak ada tuhan selain Engkau. Mahasuci Engkau. Sesungguhnya aku termasuk orang-orang yang zalim.",
+        "note": "QS Al-Anbiya' [21]: 87 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/"
       },
       {
         "title": "Memohon ampunan dan rahmat",
@@ -190,18 +169,47 @@ export const doaCategories: DoaCategory[] = [
         "note": "QS Al-Mu'minun [23]: 118 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
       },
       {
-        "title": "Syukur dan amal saleh hingga akhir hayat",
-        "subtitle": "QS Al-Ahqaf [46]: 15",
-        "arabic": "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَصْلِحْ لِي فِي ذُرِّيَّتِي إِنِّي تُبْتُ إِلَيْكَ وَإِنِّي مِنَ الْمُسْلِمِينَ",
-        "meaning": "Ya Tuhanku, ilhamkanlah aku agar selalu mensyukuri nikmat-Mu yang Engkau anugerahkan kepadaku dan kepada kedua orang tuaku, serta agar aku mengerjakan amal saleh yang Engkau ridai. Perbaikilah keturunanku. Sesungguhnya aku bertaubat kepada-Mu dan termasuk orang-orang muslim.",
-        "note": "QS Al-Ahqaf [46]: 15 · Syukur & Amal Saleh · Sumber: https://quran.kemenag.go.id/"
+        "title": "Doa orang yang mengingat Allah (Ulul Albab)",
+        "subtitle": "QS Ali 'Imran [3]: 191–194",
+        "arabic": "رَبَّنَا مَا خَلَقْتَ هَٰذَا بَاطِلًا سُبْحَانَكَ فَقِنَا عَذَابَ النَّارِ ۝ رَبَّنَا إِنَّكَ مَنْ تُدْخِلِ النَّارَ فَقَدْ أَخْزَيْتَهُ وَمَا لِلظَّالِمِينَ مِنْ أَنْصَارٍ ۝ رَبَّنَا إِنَّنَا سَمِعْنَا مُنَادِيًا يُنَادِي لِلْإِيمَانِ أَنْ آمِنُوا بِرَبِّكُمْ فَآمَنَّا رَبَّنَا فَاغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّئَاتِنَا وَتَوَفَّنَا مَعَ الْأَبْرَارِ ۝ رَبَّنَا وَآتِنَا مَا وَعَدْتَنَا عَلَىٰ رُسُلِكَ وَلَا تُخْزِنَا يَوْمَ الْقِيَامَةِ إِنَّكَ لَا تُخْلِفُ الْمِيعَادَ",
+        "meaning": "Ya Tuhan kami, tidaklah Engkau menciptakan semua ini sia-sia; Mahasuci Engkau, lindungilah kami dari azab neraka. Ya Tuhan kami, ampunilah dosa kami, hapuskan kesalahan kami, wafatkan kami bersama orang yang berbakti, berikan apa yang Engkau janjikan melalui para rasul, dan jangan hinakan kami pada hari Kiamat.",
+        "note": "QS Ali 'Imran [3]: 191–194 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
       },
       {
-        "title": "Ilham untuk bersyukur dan beramal saleh",
-        "subtitle": "QS An-Naml [27]: 19",
-        "arabic": "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَدْخِلْنِي بِرَحْمَتِكَ فِي عِبَادِكَ الصَّالِحِينَ",
-        "meaning": "Ya Tuhanku, ilhamkanlah aku untuk mensyukuri nikmat-Mu yang Engkau anugerahkan kepadaku dan kedua orang tuaku, mengerjakan amal saleh yang Engkau ridai, dan masukkanlah aku dengan rahmat-Mu ke dalam golongan hamba-hamba-Mu yang saleh. (Doa Nabi Sulaiman).",
-        "note": "QS An-Naml [27]: 19 · Syukur & Amal Saleh · Sumber: https://quran.kemenag.go.id/"
+        "title": "Ampunan bagi generasi beriman terdahulu",
+        "subtitle": "QS Al-Hasyr [59]: 10",
+        "arabic": "رَبَّنَا اغْفِرْ لَنَا وَلِإِخْوَانِنَا الَّذِينَ سَبَقُونَا بِالْإِيمَانِ وَلَا تَجْعَلْ فِي قُلُوبِنَا غِلًّا لِلَّذِينَ آمَنُوا رَبَّنَا إِنَّكَ رَءُوفٌ رَحِيمٌ",
+        "meaning": "Ya Tuhan kami, ampunilah kami dan saudara-saudara kami yang telah beriman lebih dahulu daripada kami. Janganlah Engkau tanamkan kedengkian dalam hati kami terhadap orang-orang beriman. Sungguh Engkau Maha Penyantun lagi Maha Penyayang.",
+        "note": "QS Al-Hasyr [59]: 10 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Ampunan bagi diri, orang tua, dan kaum beriman",
+        "subtitle": "QS Ibrahim [14]: 41",
+        "arabic": "رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ",
+        "meaning": "Ya Tuhan kami, ampunilah aku, kedua orang tuaku, dan seluruh orang beriman pada hari berlangsungnya perhitungan. (Doa Nabi Ibrahim).",
+        "note": "QS Ibrahim [14]: 41 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Ampunan bagi keluarga dan seluruh orang beriman",
+        "subtitle": "QS Nuh [71]: 28",
+        "arabic": "رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَنْ دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ وَلَا تَزِدِ الظَّالِمِينَ إِلَّا تَبَارًا",
+        "meaning": "Ya Tuhanku, ampunilah aku, kedua orang tuaku, orang yang masuk ke rumahku dalam keadaan beriman, serta seluruh laki-laki dan perempuan yang beriman. Janganlah Engkau tambahkan bagi orang-orang zalim selain kebinasaan.",
+        "note": "QS Nuh [71]: 28 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Ampunan bagi diri dan saudara",
+        "subtitle": "QS Al-A'raf [7]: 151",
+        "arabic": "رَبِّ اغْفِرْ لِي وَلِأَخِي وَأَدْخِلْنَا فِي رَحْمَتِكَ وَأَنْتَ أَرْحَمُ الرَّاحِمِينَ",
+        "meaning": "Ya Tuhanku, ampunilah aku dan saudaraku, serta masukkanlah kami ke dalam rahmat-Mu. Engkaulah Yang Maha Penyayang di antara para penyayang.",
+        "note": "QS Al-A'raf [7]: 151 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Doa Memohon Rezeki kepada Allah",
+        "subtitle": "Asmaul Husna — QS Az-Zariyat [51]: 58",
+        "arabic": "يَا رَزَّاقُ، يَا ذَا الْقُوَّةِ الْمَتِينِ، ارْزُقْنِي",
+        "latin": "Yā Razzāqu, yā dzal-quwwatil-matīn, urzuqnī.",
+        "meaning": "“Wahai Allah Yang Maha Pemberi rezeki, wahai Pemilik kekuatan yang sangat kokoh, karuniakanlah rezeki kepadaku.”",
+        "note": "Landasan Asmaul Husna dalam QS Az-Zariyat [51]: 58 (إِنَّ اللَّهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ) · Rezeki & Kecukupan · Sumber: https://quran.kemenag.go.id/"
       },
       {
         "title": "Hidangan dari langit dan rezeki terbaik",
@@ -218,6 +226,43 @@ export const doaCategories: DoaCategory[] = [
         "note": "QS Al-Qasas [28]: 24 · Rezeki & Kecukupan · Sumber: https://quran.kemenag.go.id/"
       },
       {
+        "title": "Memohon Dicukupkan dengan yang Halal",
+        "subtitle": "HR At-Tirmidzi no. 3563",
+        "arabic": "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ",
+        "meaning": "“Ya Allah, cukupkanlah aku dengan yang halal sehingga terhindar dari yang haram, dan cukupkanlah aku dengan karunia-Mu sehingga tidak bergantung kepada selain-Mu.”",
+        "note": "HR At-Tirmidzi no. 3563 · Rezeki & Kecukupan · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Doa Meminta Ampunan dan Rezeki",
+        "subtitle": "HR. At-Tirmidzi no. 3500 & HR. Ahmad no. 16599",
+        "arabic": "اللَّهُمَّ اغْفِرْ لِي ذَنْبِي،\nوَوَسِّعْ لِي فِي دَارِي،\nوَبَارِكْ لِي فِي رِزْقِي.",
+        "latin": "Allahumma ighfir lī dhanbi, wa wassi‘ lī fī dārī, wa bārik lī fī rizqī.",
+        "meaning": "Ya Allah, ampunilah dosa-dosaku, luaskanlah rumahku untukku, dan berkahilah rezekiku.",
+        "note": "HR. At-Tirmidzi no. 3500 & HR. Ahmad no. 16599 dari Abu Musa Al-Asy‘ari (Hasan) · Sumber: https://hadits.in/"
+      },
+      {
+        "title": "Doa Memohon Tempat yang Diberkahi",
+        "subtitle": "QS Al-Mu’minun [23]: 29",
+        "arabic": "رَبِّ أَنْزِلْنِي مُنْزَلًا مُبَارَكًا وَأَنْتَ خَيْرُ الْمُنْزِلِينَ",
+        "meaning": "“Ya Tuhanku, tempatkanlah aku pada tempat yang diberkahi, dan Engkau adalah sebaik-baik pemberi tempat.”",
+        "note": "QS Al-Mu'minun [23]: 29 · Doa Nabi Nuh 'alaihis salam memohon tempat yang penuh keberkahan · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Doa Memohon Rezeki untuk Umrah dan Haji",
+        "subtitle": "Memohon rezeki dan kesempatan berziarah ke Baitullah",
+        "arabic": "اللَّهُمَّ ارْزُقْنَا زِيَارَةَ بَيْتِكَ الْمُعَظَّمِ وَرَسُولِكَ الْمُكَرَّمِ فِي هَذَا الْعَامِ وَفِي كُلِّ عَامٍ بِأَحْسَنِ الْحَالِ",
+        "latin": "Allāhummar-zuqnā ziyārata baitikal-mu‘aẓẓami wa rasūlikal-mukarrami fī hādzal-‘āmi wa fī kulli ‘āmin bi-aḥsanil-ḥāl.",
+        "meaning": "“Ya Allah, anugerahkanlah kepada kami rezeki dan kesempatan untuk mengunjungi rumah-Mu yang agung (Baitullah) serta Rasul-Mu yang mulia, pada tahun ini dan setiap tahun, dalam keadaan sebaik-baiknya.”",
+        "note": "Doa masyhur memohon kemudahan rezeki dan panggilan untuk menunaikan ibadah haji serta umrah · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Kebaikan dunia dan akhirat",
+        "subtitle": "QS Al-Baqarah [2]: 201",
+        "arabic": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+        "meaning": "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, serta lindungilah kami dari azab neraka.",
+        "note": "QS Al-Baqarah [2]: 201 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
         "title": "Memohon Petunjuk, Ketakwaan dan Sifat Qanaah",
         "subtitle": "HR. Muslim no. 2721",
         "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْهُدَى وَالتُّقَى وَالْعَفَافَ وَالْغِنَى",
@@ -226,25 +271,39 @@ export const doaCategories: DoaCategory[] = [
         "note": "HR. Muslim no. 2721 · Ketakwaan & Qanaah · Sumber: https://ilmuislam.id/"
       },
       {
-        "title": "Memohon Dicukupkan dengan yang Halal",
-        "subtitle": "HR At-Tirmidzi no. 3563",
-        "arabic": "اللَّهُمَّ اكْفِنِي بِحَلَالِكَ عَنْ حَرَامِكَ، وَأَغْنِنِي بِفَضْلِكَ عَمَّنْ سِوَاكَ",
-        "meaning": "“Ya Allah, cukupkanlah aku dengan yang halal sehingga terhindar dari yang haram, dan cukupkanlah aku dengan karunia-Mu sehingga tidak bergantung kepada selain-Mu.”",
-        "note": "HR At-Tirmidzi no. 3563 · Rezeki & Kecukupan · Sumber: https://ilmuislam.id/"
+        "title": "Melapangkan dada dan memudahkan urusan",
+        "subtitle": "QS Taha [20]: 25–28",
+        "arabic": "قَالَ رَبِّ اشْرَحْ لِي صَدْرِي ۝ وَيَسِّرْ لِي أَمْرِي ۝ وَاحْلُلْ عُقْدَةً مِنْ لِسَانِي ۝ يَفْقَهُوا قَوْلِي",
+        "meaning": "Musa berkata, “Wahai Tuhanku, lapangkanlah dadaku, mudahkanlah urusanku, lepaskanlah kekakuan dari lidahku, agar mereka memahami perkataanku.”",
+        "note": "QS Taha [20]: 25–28 · Ilmu & Kemudahan Urusan · Sumber: https://quran.kemenag.go.id/"
       },
       {
-        "title": "Ampunan bagi diri, orang tua, dan kaum beriman",
-        "subtitle": "QS Ibrahim [14]: 41",
-        "arabic": "رَبَّنَا اغْفِرْ لِي وَلِوَالِدَيَّ وَلِلْمُؤْمِنِينَ يَوْمَ يَقُومُ الْحِسَابُ",
-        "meaning": "Ya Tuhan kami, ampunilah aku, kedua orang tuaku, dan seluruh orang beriman pada hari berlangsungnya perhitungan. (Doa Nabi Ibrahim).",
-        "note": "QS Ibrahim [14]: 41 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/"
+        "title": "Rahmat dan petunjuk dalam urusan",
+        "subtitle": "QS Al-Kahf [18]: 10",
+        "arabic": "رَبَّنَا آتِنَا مِنْ لَدُنْكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا",
+        "meaning": "Ya Tuhan kami, berikanlah rahmat kepada kami dari sisi-Mu dan sempurnakanlah petunjuk yang lurus bagi kami dalam urusan kami.",
+        "note": "QS Al-Kahf [18]: 10 · Ilmu & Kemudahan Urusan · Sumber: https://quran.kemenag.go.id/"
       },
       {
-        "title": "Ampunan bagi keluarga dan seluruh orang beriman",
-        "subtitle": "QS Nuh [71]: 28",
-        "arabic": "رَبِّ اغْفِرْ لِي وَلِوَالِدَيَّ وَلِمَنْ دَخَلَ بَيْتِيَ مُؤْمِنًا وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ وَلَا تَزِدِ الظَّالِمِينَ إِلَّا تَبَارًا",
-        "meaning": "Ya Tuhanku, ampunilah aku, kedua orang tuaku, orang yang masuk ke rumahku dalam keadaan beriman, serta seluruh laki-laki dan perempuan yang beriman. Janganlah Engkau tambahkan bagi orang-orang zalim selain kebinasaan.",
-        "note": "QS Nuh [71]: 28 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/"
+        "title": "Syukur dan amal saleh hingga akhir hayat",
+        "subtitle": "QS Al-Ahqaf [46]: 15",
+        "arabic": "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَصْلِحْ لِي فِي ذُرِّيَّتِي إِنِّي تُبْتُ إِلَيْكَ وَإِنِّي مِنَ الْمُسْلِمِينَ",
+        "meaning": "Ya Tuhanku, ilhamkanlah aku agar selalu mensyukuri nikmat-Mu yang Engkau anugerahkan kepadaku dan kepada kedua orang tuaku, serta agar aku mengerjakan amal saleh yang Engkau ridai. Perbaikilah keturunanku. Sesungguhnya aku bertaubat kepada-Mu dan termasuk orang-orang muslim.",
+        "note": "QS Al-Ahqaf [46]: 15 · Syukur & Amal Saleh · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Ilham untuk bersyukur dan beramal saleh",
+        "subtitle": "QS An-Naml [27]: 19",
+        "arabic": "رَبِّ أَوْزِعْنِي أَنْ أَشْكُرَ نِعْمَتَكَ الَّتِي أَنْعَمْتَ عَلَيَّ وَعَلَىٰ وَالِدَيَّ وَأَنْ أَعْمَلَ صَالِحًا تَرْضَاهُ وَأَدْخِلْنِي بِرَحْمَتِكَ فِي عِبَادِكَ الصَّالِحِينَ",
+        "meaning": "Ya Tuhanku, ilhamkanlah aku untuk mensyukuri nikmat-Mu yang Engkau anugerahkan kepadaku dan kedua orang tuaku, mengerjakan amal saleh yang Engkau ridai, dan masukkanlah aku dengan rahmat-Mu ke dalam golongan hamba-hamba-Mu yang saleh. (Doa Nabi Sulaiman).",
+        "note": "QS An-Naml [27]: 19 · Syukur & Amal Saleh · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Kasih sayang bagi kedua orang tua",
+        "subtitle": "QS Al-Isra' [17]: 24",
+        "arabic": "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
+        "meaning": "Ya Tuhanku, sayangilah keduanya sebagaimana mereka berdua telah mendidik aku pada waktu kecil.",
+        "note": "QS Al-Isra' [17]: 24 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/"
       },
       {
         "title": "Menjadi orang yang menegakkan salat",
@@ -268,67 +327,11 @@ export const doaCategories: DoaCategory[] = [
         "note": "QS Al-Furqan [25]: 74 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/"
       },
       {
-        "title": "Ampunan bagi diri dan saudara",
-        "subtitle": "QS Al-A'raf [7]: 151",
-        "arabic": "رَبِّ اغْفِرْ لِي وَلِأَخِي وَأَدْخِلْنَا فِي رَحْمَتِكَ وَأَنْتَ أَرْحَمُ الرَّاحِمِينَ",
-        "meaning": "Ya Tuhanku, ampunilah aku dan saudaraku, serta masukkanlah kami ke dalam rahmat-Mu. Engkaulah Yang Maha Penyayang di antara para penyayang.",
-        "note": "QS Al-A'raf [7]: 151 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
         "title": "Keluarga yang berserah diri kepada Allah",
         "subtitle": "QS Al-Baqarah [2]: 128",
         "arabic": "رَبَّنَا وَاجْعَلْنَا مُسْلِمَيْنِ لَكَ وَمِنْ ذُرِّيَّتِنَا أُمَّةً مُسْلِمَةً لَكَ وَأَرِنَا مَنَاسِكَنَا وَتُبْ عَلَيْنَا إِنَّكَ أَنْتَ التَّوَّابُ الرَّحِيمُ",
         "meaning": "Ya Tuhan kami, jadikanlah kami orang yang berserah diri kepada-Mu, dan dari keturunan kami umat yang berserah diri kepada-Mu. Tunjukkanlah kepada kami tata cara ibadah kami dan terimalah taubat kami.",
         "note": "QS Al-Baqarah [2]: 128 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Kasih sayang bagi kedua orang tua",
-        "subtitle": "QS Al-Isra' [17]: 24",
-        "arabic": "رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا",
-        "meaning": "Ya Tuhanku, sayangilah keduanya sebagaimana mereka berdua telah mendidik aku pada waktu kecil.",
-        "note": "QS Al-Isra' [17]: 24 · Keluarga & Keturunan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Melapangkan dada dan memudahkan urusan",
-        "subtitle": "QS Taha [20]: 25–28",
-        "arabic": "قَالَ رَبِّ اشْرَحْ لِي صَدْرِي ۝ وَيَسِّرْ لِي أَمْرِي ۝ وَاحْلُلْ عُقْدَةً مِنْ لِسَانِي ۝ يَفْقَهُوا قَوْلِي",
-        "meaning": "Musa berkata, “Wahai Tuhanku, lapangkanlah dadaku, mudahkanlah urusanku, lepaskanlah kekakuan dari lidahku, agar mereka memahami perkataanku.”",
-        "note": "QS Taha [20]: 25–28 · Ilmu & Kemudahan Urusan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Rahmat dan petunjuk dalam urusan",
-        "subtitle": "QS Al-Kahf [18]: 10",
-        "arabic": "رَبَّنَا آتِنَا مِنْ لَدُنْكَ رَحْمَةً وَهَيِّئْ لَنَا مِنْ أَمْرِنَا رَشَدًا",
-        "meaning": "Ya Tuhan kami, berikanlah rahmat kepada kami dari sisi-Mu dan sempurnakanlah petunjuk yang lurus bagi kami dalam urusan kami.",
-        "note": "QS Al-Kahf [18]: 10 · Ilmu & Kemudahan Urusan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Tidak menjadi cobaan bagi orang kafir",
-        "subtitle": "QS Al-Mumtahanah [60]: 5",
-        "arabic": "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِلَّذِينَ كَفَرُوا وَاغْفِرْ لَنَا رَبَّنَا إِنَّكَ أَنْتَ الْعَزِيزُ الْحَكِيمُ",
-        "meaning": "Ya Tuhan kami, janganlah Engkau jadikan kami sasaran fitnah bagi orang-orang kafir. Ampunilah kami. Sesungguhnya Engkau Mahaperkasa lagi Mahabijaksana.",
-        "note": "QS Al-Mumtahanah [60]: 5 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Doa Nabi Yunus dalam kegelapan",
-        "subtitle": "QS Al-Anbiya' [21]: 87",
-        "arabic": "لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ",
-        "meaning": "Tidak ada tuhan selain Engkau. Mahasuci Engkau. Sesungguhnya aku termasuk orang-orang yang zalim.",
-        "note": "QS Al-Anbiya' [21]: 87 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Perlindungan bagi orang yang tertindas",
-        "subtitle": "QS An-Nisa' [4]: 75",
-        "arabic": "رَبَّنَا أَخْرِجْنَا مِنْ هَٰذِهِ الْقَرْيَةِ الظَّالِمِ أَهْلُهَا وَاجْعَلْ لَنَا مِنْ لَدُنْكَ وَلِيًّا وَاجْعَلْ لَنَا مِنْ لَدُنْكَ نَصِيرًا",
-        "meaning": "Ya Tuhan kami, keluarkanlah kami dari negeri yang penduduknya zalim ini. Berikanlah kepada kami pelindung dan penolong dari sisi-Mu.",
-        "note": "QS An-Nisa' [4]: 75 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/"
-      },
-      {
-        "title": "Tidak menjadi fitnah bagi kaum zalim",
-        "subtitle": "QS Yunus [10]: 85–86",
-        "arabic": "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِلْقَوْمِ الظَّالِمِينَ ۝ وَنَجِّنَا بِرَحْمَتِكَ مِنَ الْقَوْمِ الْكَافِرِينَ",
-        "meaning": "Ya Tuhan kami, janganlah Engkau jadikan kami sasaran fitnah bagi kaum yang zalim. Selamatkanlah kami dengan rahmat-Mu dari kaum yang kafir.",
-        "note": "QS Yunus [10]: 85–86 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/"
       },
       {
         "title": "Memohon agar amal diterima",
@@ -338,26 +341,25 @@ export const doaCategories: DoaCategory[] = [
         "note": "QS Al-Baqarah [2]: 127 · Ibadah & Amal Diterima · Sumber: https://quran.kemenag.go.id/"
       },
       {
-        "title": "Doa Memohon Surga Firdaus",
-        "subtitle": "Doa Susunan Ulama · Berdasarkan HR. Bukhari no. 7423",
-        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ الْفِرْدَوْسَ الْأَعْلَى بِغَيْرِ حِسَابٍ وَلَا عَذَابٍ",
-        "meaning": "“Ya Allah, sesungguhnya aku memohon kepada-Mu Surga Firdaus yang paling tinggi, tanpa dihisab dan tanpa diazab.”",
-        "note": "Doa Susunan (Custom Dua) berdasarkan anjuran Nabi ﷺ dalam HR. Bukhari no. 7423 / 2790 · Doa Akhirat & Memohon Surga · Sumber: https://www.hadits.id/"
+        "title": "Tidak menjadi fitnah bagi kaum zalim",
+        "subtitle": "QS Yunus [10]: 85–86",
+        "arabic": "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِلْقَوْمِ الظَّالِمِينَ ۝ وَنَجِّنَا بِرَحْمَتِكَ مِنَ الْقَوْمِ الْكَافِرِينَ",
+        "meaning": "Ya Tuhan kami, janganlah Engkau jadikan kami sasaran fitnah bagi kaum yang zalim. Selamatkanlah kami dengan rahmat-Mu dari kaum yang kafir.",
+        "note": "QS Yunus [10]: 85–86 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/"
       },
       {
-        "title": "Doa Memohon Tempat yang Diberkahi",
-        "subtitle": "QS Al-Mu’minun [23]: 29",
-        "arabic": "رَبِّ أَنْزِلْنِي مُنْزَلًا مُبَارَكًا وَأَنْتَ خَيْرُ الْمُنْزِلِينَ",
-        "meaning": "“Ya Tuhanku, tempatkanlah aku pada tempat yang diberkahi, dan Engkau adalah sebaik-baik pemberi tempat.”",
-        "note": "QS Al-Mu'minun [23]: 29 · Doa Nabi Nuh 'alaihis salam memohon tempat yang penuh keberkahan · Sumber: https://quran.kemenag.go.id/"
+        "title": "Tidak menjadi cobaan bagi orang kafir",
+        "subtitle": "QS Al-Mumtahanah [60]: 5",
+        "arabic": "رَبَّنَا لَا تَجْعَلْنَا فِتْنَةً لِلَّذِينَ كَفَرُوا وَاغْفِرْ لَنَا رَبَّنَا إِنَّكَ أَنْتَ الْعَزِيزُ الْحَكِيمُ",
+        "meaning": "Ya Tuhan kami, janganlah Engkau jadikan kami sasaran fitnah bagi orang-orang kafir. Ampunilah kami. Sesungguhnya Engkau Mahaperkasa lagi Mahabijaksana.",
+        "note": "QS Al-Mumtahanah [60]: 5 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/"
       },
       {
-        "title": "Doa Meminta Ampunan dan Rezeki",
-        "subtitle": "HR. At-Tirmidzi no. 3500 & HR. Ahmad no. 16599",
-        "arabic": "اللَّهُمَّ اغْفِرْ لِي ذَنْبِي،\nوَوَسِّعْ لِي فِي دَارِي،\nوَبَارِكْ لِي فِي رِزْقِي.",
-        "latin": "Allahumma ighfir lī dhanbi, wa wassi‘ lī fī dārī, wa bārik lī fī rizqī.",
-        "meaning": "Ya Allah, ampunilah dosa-dosaku, luaskanlah rumahku untukku, dan berkahilah rezekiku.",
-        "note": "HR. At-Tirmidzi no. 3500 & HR. Ahmad no. 16599 dari Abu Musa Al-Asy‘ari (Hasan) · Sumber: https://hadits.in/"
+        "title": "Perlindungan bagi orang yang tertindas",
+        "subtitle": "QS An-Nisa' [4]: 75",
+        "arabic": "رَبَّنَا أَخْرِجْنَا مِنْ هَٰذِهِ الْقَرْيَةِ الظَّالِمِ أَهْلُهَا وَاجْعَلْ لَنَا مِنْ لَدُنْكَ وَلِيًّا وَاجْعَلْ لَنَا مِنْ لَدُنْكَ نَصِيرًا",
+        "meaning": "Ya Tuhan kami, keluarkanlah kami dari negeri yang penduduknya zalim ini. Berikanlah kepada kami pelindung dan penolong dari sisi-Mu.",
+        "note": "QS An-Nisa' [4]: 75 · Perlindungan & Keselamatan · Sumber: https://quran.kemenag.go.id/"
       },
       {
         "title": "Doa Ruqyah untuk Diri Sendiri",
@@ -376,12 +378,11 @@ export const doaCategories: DoaCategory[] = [
         "note": "Doa masyhur memohon wafat dalam keadaan husnul khatimah dan diridai Allah · Sumber: https://ilmuislam.id/"
       },
       {
-        "title": "Doa Memohon Rezeki untuk Umrah dan Haji",
-        "subtitle": "Memohon rezeki dan kesempatan berziarah ke Baitullah",
-        "arabic": "اللَّهُمَّ ارْزُقْنَا زِيَارَةَ بَيْتِكَ الْمُعَظَّمِ وَرَسُولِكَ الْمُكَرَّمِ فِي هَذَا الْعَامِ وَفِي كُلِّ عَامٍ بِأَحْسَنِ الْحَالِ",
-        "latin": "Allāhummar-zuqnā ziyārata baitikal-mu‘aẓẓami wa rasūlikal-mukarrami fī hādzal-‘āmi wa fī kulli ‘āmin bi-aḥsanil-ḥāl.",
-        "meaning": "“Ya Allah, anugerahkanlah kepada kami rezeki dan kesempatan untuk mengunjungi rumah-Mu yang agung (Baitullah) serta Rasul-Mu yang mulia, pada tahun ini dan setiap tahun, dalam keadaan sebaik-baiknya.”",
-        "note": "Doa masyhur memohon kemudahan rezeki dan panggilan untuk menunaikan ibadah haji serta umrah · Sumber: https://ilmuislam.id/"
+        "title": "Wafat dalam keadaan muslim dan bersama orang saleh",
+        "subtitle": "QS Yusuf [12]: 101",
+        "arabic": "رَبِّ قَدْ آتَيْتَنِي مِنَ الْمُلْكِ وَعَلَّمْتَنِي مِنْ تَأْوِيلِ الْأَحَادِيثِ فَاطِرَ السَّمَاوَاتِ وَالْأَرْضِ أَنْتَ وَلِيِّي فِي الدُّنْيَا وَالْآخِرَةِ تَوَفَّنِي مُسْلِمًا وَأَلْحِقْنِي بِالصَّالِحِينَ",
+        "meaning": "Wahai Tuhanku, Engkau telah menganugerahkan kepadaku sebagian kekuasaan dan mengajarkan takwil mimpi. Wahai Pencipta langit dan bumi, Engkaulah Pelindungku di dunia dan akhirat. Wafatkanlah aku dalam keadaan muslim dan gabungkanlah aku dengan orang-orang saleh.",
+        "note": "QS Yusuf [12]: 101 · Iman, Taubat & Ampunan · Sumber: https://quran.kemenag.go.id/"
       },
       {
         "title": "Doa Memohon Mati Syahid dan Wafat di Madinah",
@@ -392,12 +393,11 @@ export const doaCategories: DoaCategory[] = [
         "note": "Atsar Sahabat (Doa Umar bin Al-Khattab radhiyallahu 'anhu) diriwayatkan dalam Shahih Al-Bukhari no. 1890 (Kitab Fadha'ilul Madinah) · Sumber: https://hadits.in/"
       },
       {
-        "title": "Doa Memohon Rezeki kepada Allah",
-        "subtitle": "Asmaul Husna — QS Az-Zariyat [51]: 58",
-        "arabic": "يَا رَزَّاقُ، يَا ذَا الْقُوَّةِ الْمَتِينِ، ارْزُقْنِي",
-        "latin": "Yā Razzāqu, yā dzal-quwwatil-matīn, urzuqnī.",
-        "meaning": "“Wahai Allah Yang Maha Pemberi rezeki, wahai Pemilik kekuatan yang sangat kokoh, karuniakanlah rezeki kepadaku.”",
-        "note": "Landasan Asmaul Husna dalam QS Az-Zariyat [51]: 58 (إِنَّ اللَّهَ هُوَ الرَّزَّاقُ ذُو الْقُوَّةِ الْمَتِينُ) · Rezeki & Kecukupan · Sumber: https://quran.kemenag.go.id/"
+        "title": "Doa Memohon Surga Firdaus",
+        "subtitle": "Doa Susunan Ulama · Berdasarkan HR. Bukhari no. 7423",
+        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ الْفِرْدَوْسَ الْأَعْلَى بِغَيْرِ حِسَابٍ وَلَا عَذَابٍ",
+        "meaning": "“Ya Allah, sesungguhnya aku memohon kepada-Mu Surga Firdaus yang paling tinggi, tanpa dihisab dan tanpa diazab.”",
+        "note": "Doa Susunan (Custom Dua) berdasarkan anjuran Nabi ﷺ dalam HR. Bukhari no. 7423 / 2790 · Doa Akhirat & Memohon Surga · Sumber: https://www.hadits.id/"
       }
     ]
   },

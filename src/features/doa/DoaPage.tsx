@@ -287,25 +287,53 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
             {/* Item Rows */}
             <div className="grid gap-2.5 pt-1">
               {activeCategory.items.map((item, idx) => (
-                <button
-                  key={idx}
-                  type="button"
-                  onClick={() => handleOpenDetail(idx)}
-                  className="w-full bg-white rounded-2xl p-3.5 border border-[#EDF0EF] shadow-[0_2px_10px_rgba(20,48,66,0.03)] flex items-center gap-3 hover:border-[#287A7B]/40 active:scale-[0.99] transition-all text-left overflow-hidden"
-                >
-                  <span className="w-8 h-8 rounded-xl bg-[#EDF3F3] text-[#287A7B] text-xs font-black flex items-center justify-center tabular-nums flex-shrink-0">
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
-                  <div className="flex-1 min-w-0 pr-1">
-                    <span className="block text-sm font-bold text-[#18344D] leading-snug break-words">
-                      {item.title}
+                <React.Fragment key={idx}>
+                  {activeCategory.id === 'doa-pilihan' && (
+                    idx === 0 ? (
+                      <div className="flex items-center gap-2 pt-1 pb-0.5">
+                        <div className="h-px bg-[#D6E3E3] flex-1" />
+                        <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
+                          1. DOA PERMOHONAN AMPUNAN
+                        </span>
+                        <div className="h-px bg-[#D6E3E3] flex-1" />
+                      </div>
+                    ) : idx === 10 ? (
+                      <div className="flex items-center gap-2 pt-3 pb-0.5">
+                        <div className="h-px bg-[#D6E3E3] flex-1" />
+                        <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
+                          2. DOA PERMOHONAN REZEKI
+                        </span>
+                        <div className="h-px bg-[#D6E3E3] flex-1" />
+                      </div>
+                    ) : idx === 17 ? (
+                      <div className="flex items-center gap-2 pt-3 pb-0.5">
+                        <div className="h-px bg-[#D6E3E3] flex-1" />
+                        <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
+                          3. DOA LAINNYA
+                        </span>
+                        <div className="h-px bg-[#D6E3E3] flex-1" />
+                      </div>
+                    ) : null
+                  )}
+                  <button
+                    type="button"
+                    onClick={() => handleOpenDetail(idx)}
+                    className="w-full bg-white rounded-2xl p-3.5 border border-[#EDF0EF] shadow-[0_2px_10px_rgba(20,48,66,0.03)] flex items-center gap-3 hover:border-[#287A7B]/40 active:scale-[0.99] transition-all text-left overflow-hidden"
+                  >
+                    <span className="w-8 h-8 rounded-xl bg-[#EDF3F3] text-[#287A7B] text-xs font-black flex items-center justify-center tabular-nums flex-shrink-0">
+                      {String(idx + 1).padStart(2, '0')}
                     </span>
-                    <span className="block text-xs text-[#829098] mt-1 leading-relaxed break-words">
-                      {item.subtitle || 'Bacaan doa'}
-                    </span>
-                  </div>
-                  <ChevronRight size={18} className="text-[#A2AFB5] flex-shrink-0" />
-                </button>
+                    <div className="flex-1 min-w-0 pr-1">
+                      <span className="block text-sm font-bold text-[#18344D] leading-snug break-words">
+                        {item.title}
+                      </span>
+                      <span className="block text-xs text-[#829098] mt-1 leading-relaxed break-words">
+                        {item.subtitle || 'Bacaan doa'}
+                      </span>
+                    </div>
+                    <ChevronRight size={18} className="text-[#A2AFB5] flex-shrink-0" />
+                  </button>
+                </React.Fragment>
               ))}
             </div>
           </div>
@@ -337,8 +365,14 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
             {/* Progress Row */}
             <div className="flex justify-between items-center px-1">
-              <span className="text-[11px] font-black tracking-[1.4px] text-[#287A7B] uppercase truncate max-w-[200px]">
-                {activeCategory.title}
+              <span className="text-[11px] font-black tracking-[1.4px] text-[#287A7B] uppercase truncate max-w-[220px]">
+                {activeCategory.id === 'doa-pilihan'
+                  ? (activeIndex < 10
+                      ? '1. Doa Permohonan Ampunan'
+                      : activeIndex < 17
+                      ? '2. Doa Permohonan Rejeki'
+                      : '3. Doa Lainnya')
+                  : activeCategory.title}
               </span>
               <span className="text-xs font-bold text-[#81909A] tabular-nums">
                 {String(activeIndex + 1).padStart(2, '0')} /{' '}
@@ -541,41 +575,69 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
               {activeCategory.items.map((item, idx) => {
                 const isSelected = idx === activeIndex;
                 return (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={() => {
-                      setActiveIndex(idx);
-                      setIsSheetOpen(false);
-                      if (settings?.hapticsEnabled) triggerHaptic();
-                    }}
-                    className={`w-full p-3.5 rounded-2xl border text-left flex items-center gap-3 transition-all ${
-                      isSelected
-                        ? 'bg-[#EDF6F4] border-[#8AB6B3] shadow-xs'
-                        : 'bg-white border-[#EDF0EF] hover:border-[#DDE7E7]'
-                    }`}
-                  >
-                    <span
-                      className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold tabular-nums flex-shrink-0 ${
+                  <React.Fragment key={idx}>
+                    {activeCategory.id === 'doa-pilihan' && (
+                      idx === 0 ? (
+                        <div className="flex items-center gap-2 pt-1 pb-0.5">
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <span className="text-[10px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-2.5 py-0.5 rounded-md">
+                            1. DOA PERMOHONAN AMPUNAN
+                          </span>
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                        </div>
+                      ) : idx === 10 ? (
+                        <div className="flex items-center gap-2 pt-2.5 pb-0.5">
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <span className="text-[10px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-2.5 py-0.5 rounded-md">
+                            2. DOA PERMOHONAN REZEKI
+                          </span>
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                        </div>
+                      ) : idx === 17 ? (
+                        <div className="flex items-center gap-2 pt-2.5 pb-0.5">
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <span className="text-[10px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-2.5 py-0.5 rounded-md">
+                            3. DOA LAINNYA
+                          </span>
+                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                        </div>
+                      ) : null
+                    )}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setActiveIndex(idx);
+                        setIsSheetOpen(false);
+                        if (settings?.hapticsEnabled) triggerHaptic();
+                      }}
+                      className={`w-full p-3.5 rounded-2xl border text-left flex items-center gap-3 transition-all ${
                         isSelected
-                          ? 'bg-[#287A7B] text-white'
-                          : 'bg-[#EDF3F3] text-[#287A7B]'
+                          ? 'bg-[#EDF6F4] border-[#8AB6B3] shadow-xs'
+                          : 'bg-white border-[#EDF0EF] hover:border-[#DDE7E7]'
                       }`}
                     >
-                      {String(idx + 1).padStart(2, '0')}
-                    </span>
+                      <span
+                        className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold tabular-nums flex-shrink-0 ${
+                          isSelected
+                            ? 'bg-[#287A7B] text-white'
+                            : 'bg-[#EDF3F3] text-[#287A7B]'
+                        }`}
+                      >
+                        {String(idx + 1).padStart(2, '0')}
+                      </span>
 
-                    <div className="flex-1 min-w-0 pr-1">
-                      <p className="text-sm font-bold text-[#18344D] leading-snug break-words">
-                        {item.title}
-                      </p>
-                      <p className="text-xs text-[#829098] mt-0.5 leading-relaxed break-words">
-                        {item.subtitle || activeCategory.title}
-                      </p>
-                    </div>
+                      <div className="flex-1 min-w-0 pr-1">
+                        <p className="text-sm font-bold text-[#18344D] leading-snug break-words">
+                          {item.title}
+                        </p>
+                        <p className="text-xs text-[#829098] mt-0.5 leading-relaxed break-words">
+                          {item.subtitle || activeCategory.title}
+                        </p>
+                      </div>
 
-                    <ChevronRight size={18} className="text-[#A2AFB5] flex-shrink-0" />
-                  </button>
+                      <ChevronRight size={18} className="text-[#A2AFB5] flex-shrink-0" />
+                    </button>
+                  </React.Fragment>
                 );
               })}
             </div>
