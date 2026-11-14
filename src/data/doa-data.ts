@@ -130,8 +130,8 @@ export const doaCategories: DoaCategory[] = [
     "id": "doa-pilihan",
     "icon": "✦",
     "title": "Doa-doa Pilihan",
-    "subtitle": "Kumpulan 32 doa pilihan dari Al-Qur’an dan hadis shahih",
-    "countLabel": "32 DOA",
+    "subtitle": "Kumpulan 33 doa pilihan dari Al-Qur’an dan hadis shahih",
+    "countLabel": "33 DOA",
     "items": [
       {
         "title": "Mengakui kesalahan dan memohon ampunan",
@@ -232,6 +232,14 @@ export const doaCategories: DoaCategory[] = [
         "arabic": "رَبِّ أَنْزِلْنِي مُنْزَلًا مُبَارَكًا وَأَنْتَ خَيْرُ الْمُنْزِلِينَ",
         "meaning": "“Ya Tuhanku, tempatkanlah aku pada tempat yang diberkahi, dan Engkau adalah sebaik-baik pemberi tempat.”",
         "note": "QS Al-Mu'minun [23]: 29 · Doa Nabi Nuh 'alaihis salam memohon tempat yang penuh keberkahan · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "Doa Pelunas Utang dan Penghilang Kegelisahan",
+        "subtitle": "Doa Abu Umamah radhiyallahu 'anhu · HR. Abu Dawud no. 1555",
+        "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَأَعُوذُ بِكَ مِنَ الْعَجْزِ وَالْكَسَلِ، وَأَعُوذُ بِكَ مِنَ الْجُبْنِ وَالْبُخْلِ، وَأَعُوذُ بِكَ مِنْ غَلَبَةِ الدَّيْنِ وَقَهْرِ الرِّجَالِ",
+        "latin": "Allāhumma innī a‘ūdzu bika minal-hammi wal-ḥazan, wa a‘ūdzu bika minal-‘ajzi wal-kasal, wa a‘ūdzu bika minal-jubni wal-bukhl, wa a‘ūdzu bika min ghalabatid-daini wa qahrir-rijāl.",
+        "meaning": "“Ya Allah, sesungguhnya aku berlindung kepada-Mu dari rasa gelisah dan sedih, aku berlindung kepada-Mu dari kelemahan dan kemalasan, aku berlindung kepada-Mu dari sifat pengecut dan kikir, dan aku berlindung kepada-Mu dari lilitan utang serta tekanan orang lain.”",
+        "note": "HR. Abu Dawud no. 1555 dari Abu Sa'id Al-Khudri radhiyallahu 'anhu. Diajarkan Rasulullah ﷺ kepada Abu Umamah radhiyallahu 'anhu untuk dibaca pada waktu pagi dan petang · Sumber: https://hadits.in/abu-daud/1555"
       },
       {
         "title": "Kebaikan dunia dan akhirat",
