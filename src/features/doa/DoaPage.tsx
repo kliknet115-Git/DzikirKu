@@ -297,7 +297,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                         </span>
                         <div className="h-px bg-[#D6E3E3] flex-1" />
                       </div>
-                    ) : idx === 10 ? (
+                    ) : idx === 9 ? (
                       <div className="flex items-center gap-2 pt-3 pb-0.5">
                         <div className="h-px bg-[#D6E3E3] flex-1" />
                         <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
@@ -305,7 +305,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                         </span>
                         <div className="h-px bg-[#D6E3E3] flex-1" />
                       </div>
-                    ) : idx === 17 ? (
+                    ) : idx === 15 ? (
                       <div className="flex items-center gap-2 pt-3 pb-0.5">
                         <div className="h-px bg-[#D6E3E3] flex-1" />
                         <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">

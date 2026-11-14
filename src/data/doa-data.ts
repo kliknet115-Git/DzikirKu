@@ -21,40 +21,64 @@ export const doaCategories: DoaCategory[] = [
     "id": "before",
     "icon": "◉",
     "title": "Sebelum dan Sesudah Berdoa",
-    "subtitle": "Bacaan pembuka dan penutup saat berdoa",
-    "countLabel": "4 BACAAN",
+    "subtitle": "Panduan urutan adab doa pembuka hingga penutup",
+    "countLabel": "7 BACAAN",
     "items": [
       {
-        "title": "Memuji Allah sebelum berdoa",
+        "title": "1. Memuji dan Mengagungkan Allah (Tahmid)",
         "subtitle": "Memohon kepada Allah dengan mengagungkan pujian, nama, dan sifat-Nya (Ismul A'zhom)",
-        "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّ لَكَ الْحَمْدَ لَا إِلَهَ إِلَّا أَنْتَ الْمَنَّانُ بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ، يَا ذَا الْجَلَالِ وَالْإِكْرَامِ، يَا حَيُّ يَا قَيُّومُ.",
-        "latin": "Allāhumma innī as-aluka bi-anna lakal-ḥamda lā ilāha illā antal-mannānu badī‘us-samāwāti wal-arḍi, yā dzal-jalāli wal-ikrām, yā ḥayyu yā qayyūm.",
-        "meaning": "Ya Allah, sesungguhnya aku memohon kepada-Mu karena segala puji hanya milik-Mu. Tidak ada sesembahan yang berhak disembah selain Engkau. Engkaulah Yang Maha Pemberi karunia, Pencipta langit dan bumi. Wahai Tuhan yang memiliki keagungan dan kemuliaan. Wahai Yang Mahahidup, wahai Yang Maha Mengurus seluruh makhluk.",
-        "note": "HR. Abu Dawud no. 1495, At-Tirmidzi no. 3544 & An-Nasa'i no. 1300 dari Anas bin Malik radhiyallahu 'anhu (Doa dengan Ismul A'zhom sebelum berdoa) · Sumber: https://hadits.in/"
+        "arabic": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ، حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ.\nاللَّهُمَّ إِنِّي أَسْأَلُكَ بِأَنَّ لَكَ الْحَمْدَ لَا إِلَهَ إِلَّا أَنْتَ الْمَنَّانُ بَدِيعُ السَّمَاوَاتِ وَالْأَرْضِ، يَا ذَا الْجَلَالِ وَالْإِكْرَامِ، يَا حَيُّ يَا قَيُّومُ.",
+        "latin": "Alḥamdu lillāhi rabbil-‘ālamīn, ḥamdan kaṡīran ṭayyiban mubārakan fīh. Allāhumma innī as-aluka bi-anna lakal-ḥamda lā ilāha illā antal-mannānu badī‘us-samāwāti wal-arḍi, yā dzal-jalāli wal-ikrām, yā ḥayyu yā qayyūm.",
+        "meaning": "Segala puji bagi Allah, Tuhan semesta alam, pujian yang banyak, baik, lagi penuh berkah. Ya Allah, sesungguhnya aku memohon kepada-Mu karena segala puji hanya milik-Mu. Tidak ada sesembahan yang berhak disembah selain Engkau. Engkaulah Yang Maha Pemberi karunia, Pencipta langit dan bumi. Wahai Tuhan yang memiliki keagungan dan kemuliaan. Wahai Yang Mahahidup, wahai Yang Maha Mengurus seluruh makhluk.",
+        "note": "HR. Abu Dawud no. 1495, At-Tirmidzi no. 3544 & An-Nasa'i no. 1300 dari Anas bin Malik (Doa dengan Ismul A'zhom sebelum berdoa · Shahih) · Tahmid: HR. Bukhari no. 799 · Sumber: https://hadits.in/"
       },
       {
-        "title": "Doa Sebelum Berdoa",
-        "subtitle": "Memohon pengabulan doa dengan mengingat janji Allah",
-        "arabic": "يَا رَبِّ،\nأَنْتَ قُلْتَ وَقَوْلُكَ الْحَقُّ،\nاُدْعُونِي أَسْتَجِبْ لَكُمْ،\nوَأَنْتَ لَا تُخْلِفُ الْمِيعَادَ.",
-        "latin": "Ya Rabb, Anta qulta wa qawlukal haq. 'Ud'uni astajib lakum, wa anta la tukhliful mi'ad.",
-        "meaning": "Wahai Tuhanku, Engkau telah berfirman dan firman-Mu adalah benar: “Berdoalah kepada-Ku, niscaya akan Aku perkenankan bagimu”, dan Engkau tidak pernah mengingkari janji.",
-        "note": "QS Ghafir [40]: 60 & QS Ali ‘Imran [3]: 9 (Adab Pembuka Doa) · Sumber: https://quran.kemenag.go.id/"
+        "title": "2. Bersholawat kepada Nabi Muhammad ﷺ",
+        "subtitle": "Sholawat Ibrahimiyyah — Lafaz sholawat paling afdhal yang diajarkan Rasulullah ﷺ",
+        "arabic": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ.\nاللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ.",
+        "latin": "Allāhumma ṣalli ‘alā Muḥammadiw wa ‘alā āli Muḥammad, kamā ṣallaita ‘alā Ibrāhīma wa ‘alā āli Ibrāhīm, innaka ḥamīdum majīd. Allāhumma bārik ‘alā Muḥammadiw wa ‘alā āli Muḥammad, kamā bārakta ‘alā Ibrāhīma wa ‘alā āli Ibrāhīm, innaka ḥamīdum majīd.",
+        "meaning": "Ya Allah, limpahkanlah sholawat kepada Nabi Muhammad dan kepada keluarga Nabi Muhammad, sebagaimana Engkau telah melimpahkan sholawat kepada Nabi Ibrahim dan kepada keluarga Nabi Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia. Ya Allah, limpahkanlah keberkahan kepada Nabi Muhammad dan kepada keluarga Nabi Muhammad, sebagaimana Engkau telah melimpahkan keberkahan kepada Nabi Ibrahim dan kepada keluarga Nabi Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.",
+        "note": "HR. Al-Bukhari no. 3370 & HR. Muslim no. 406 dari Ka'ab bin 'Ujrah radhiyallahu 'anhu (Derajat: Shahih) · Sumber: https://hadits.in/"
       },
       {
-        "title": "Doa Memohon Pengabulan",
-        "subtitle": "Bacaan lanjutan sebelum memanjatkan doa",
-        "arabic": "اللَّهُمَّ اسْتَجِبْ كَمَا وَعَدْتَ.",
-        "latin": "Allāhumma-stajib kamā wa‘adta.",
-        "meaning": "Ya Allah, kabulkanlah sebagaimana Engkau telah berjanji.",
-        "note": "Berdasarkan janji Allah dalam QS Ghafir [40]: 60 (Doa Pembuka Munajat) · Sumber: https://quran.kemenag.go.id/"
+        "title": "3. Beristighfar dan Mengakui Dosa",
+        "subtitle": "Sayyidul Istighfar & Doa Nabi Yunus — Membersihkan penghalang terkabulnya doa",
+        "arabic": "اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَى عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ لَكَ بِذَنْبِي، فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ.\n\nلَا إِلَهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ.",
+        "latin": "Allāhumma anta rabbī lā ilāha illā anta, khalaqtanī wa anā ‘abduka, wa anā ‘alā ‘ahdika wa wa‘dika mastaṭa‘tu, a‘ūdzu bika min syarri mā ṣana‘tu, abū-u laka bini‘matika ‘alayya, wa abū-u laka bidzambī, faghfir lī fa-innahū lā yaghfirudz-dzunūba illā anta.\n\nLā ilāha illā anta subḥānaka innī kuntu minaẓ-ẓālimīn.",
+        "meaning": "Ya Allah, Engkaulah Rabbku, tidak ada sesembahan yang berhak disembah selain Engkau. Engkaulah yang menciptakanku dan aku adalah hamba-Mu. Aku senantiasa memegang perjanjian-Mu dan janji-Mu semampuku. Aku berlindung kepada-Mu dari keburukan apa yang telah kuperbuat. Aku mengakui kenikmatan-Mu kepadaku dan aku mengakui dosaku kepada-Mu, maka ampunilah aku, karena sesungguhnya tidak ada yang mengampuni dosa-dosa selain Engkau.\n\nTidak ada sesembahan yang berhak disembah selain Engkau. Mahasuci Engkau, sesungguhnya aku adalah termasuk orang-orang yang zalim.",
+        "note": "Sayyidul Istighfar: HR. Al-Bukhari no. 6306 dari Syaddad bin Aus (Shahih) · Doa Nabi Yunus: QS. Al-Anbiya' [21]: 87 & HR. At-Tirmidzi no. 3505 (Shahih) · Sumber: https://hadits.in/ dan https://quran.kemenag.go.id/"
       },
       {
-        "title": "Doa Sesudah Berdoa",
-        "subtitle": "Memohon agar doa diterima dan dikabulkan",
-        "arabic": "اللَّهُمَّ تَقَبَّلْ دَعْوَانَا كَمَا أَمَرْتَنَا،\nفَاسْتَجِبْ كَمَا وَعَدْتَنَا،\nفَأَنْتَ يَا رَبِّ لَا تُخْلِفُ الْمِيعَادَ.",
-        "latin": "Allāhumma taqabbal da'awnāka kamā amartanā, fastajib kamā wa‘adtanā, fa anta yā rabbī lā tukhliful mi‘ād.",
-        "meaning": "Ya Allah, terimalah doa kami sebagaimana Engkau telah perintahkan kami. Dan kabulkanlah doa kami sebagaimana Engkau telah menjanjikan kepada kami. Sesungguhnya Engkau, wahai Rabb, tidak pernah mengingkari janji.",
-        "note": "Adab penutup doa (Atsar Salafus Shalih, bersumber dari QS Al-Baqarah [2]: 186 & QS Ali ‘Imran [3]: 194) · Sumber: https://quran.kemenag.go.id/"
+        "title": "4. Mengingat Janji Allah & Memohon Pengabulan",
+        "subtitle": "Memohon pengabulan doa dengan mengingat janji Allah dalam Al-Qur'an",
+        "arabic": "يَا رَبِّ،\nأَنْتَ قُلْتَ وَقَوْلُكَ الْحَقُّ:\n«ادْعُونِي أَسْتَجِبْ لَكُمْ»\nوَأَنْتَ لَا تُخْلِفُ الْمِيعَادَ.\nاللَّهُمَّ اسْتَجِبْ كَمَا وَعَدْتَ.",
+        "latin": "Yā Rabb, Anta qulta wa qawlukal-ḥaqq: 'Ud‘ūnī astajib lakum', wa Anta lā tukhliful-mī‘ād. Allāhummas-tajib kamā wa‘adta.",
+        "meaning": "Wahai Tuhanku, Engkau telah berfirman dan firman-Mu adalah benar: 'Berdoalah kepada-Ku, niscaya akan Aku perkenankan bagimu', dan Engkau tidak pernah mengingkari janji. Ya Allah, kabulkanlah sebagaimana Engkau telah berjanji.",
+        "note": "Berdasarkan firman Allah dalam QS. Ghafir [40]: 60 & QS. Ali ‘Imran [3]: 9 (Adab pembuka munajat) · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "5. Menyampaikan Inti Hajat & Doa Sapujagat",
+        "subtitle": "Doa Sapujagat — Diikuti dengan permohonan hajat khusus masing-masing",
+        "arabic": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ.",
+        "latin": "Rabbanā ātinā fid-dunyā ḥasanataw wa fil-ākhirati ḥasanataw wa qinā ‘adzāban-nār.",
+        "meaning": "Wahai Tuhan kami, berikanlah kepada kami kebaikan di dunia dan kebaikan di akhirat, dan lindungilah kami dari siksa neraka.\n\n[Silakan lanjutkan dengan menyampaikan hajat pribadi Anda kepada Allah dengan penuh ketundukan dan keyakinan].",
+        "note": "QS. Al-Baqarah [2]: 201 & HR. Al-Bukhari no. 6389, HR. Muslim no. 2690 dari Anas bin Malik (Doa yang paling sering dipanjatkan Nabi ﷺ) · Sumber: https://hadits.in/ dan https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "6. Menutup dengan Sholawat dan Hamdalah",
+        "subtitle": "Adab penutup doa agar hajat diapit di antara dua sholawat yang maqbul",
+        "arabic": "وَصَلَّى اللَّهُ عَلَى سَيِّدِنَا مُحَمَّدٍ وَعَلَى آلِهِ وَصَحْبِهِ وَسَلَّمَ،\nسُبْحَانَ رَبِّكَ رَبِّ الْعِزَّةِ عَمَّا يَصِفُونَ،\nوَسَلَامٌ عَلَى الْمُرْسَلِينَ،\nوَالْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ.",
+        "latin": "Wa ṣallallāhu ‘alā sayyidinā Muḥammadiw wa ‘alā ālihī wa ṣaḥbihī wa sallam. Subḥāna rabbika rabbil-‘izzati ‘ammā yaṣifūn, wa salāmun ‘alal-mursalīn, wal-ḥamdu lillāhi rabbil-‘ālamīn.",
+        "meaning": "Dan semoga Allah melimpahkan sholawat serta salam kepada junjungan kami Nabi Muhammad, beserta keluarga dan para sahabatnya. Mahasuci Tuhanmu, Tuhan Yang Memiliki Keperkasaan dari apa yang mereka sifatkan. Dan salam sejahtera atas para rasul. Dan segala puji bagi Allah, Tuhan semesta alam.",
+        "note": "QS. Ash-Shaffat [37]: 180–182 (Ayat penutup majelis dan doa) & QS. Yunus [10]: 10 (Penutup ucapan ahli surga) · Atsar Salafus Shalih dinukil oleh Imam An-Nawawi dalam Al-Adzkar · Sumber: https://quran.kemenag.go.id/"
+      },
+      {
+        "title": "7. Doa Penerimaan dan Penutup Munajat",
+        "subtitle": "Memohon agar seluruh rangkaian doa diterima dan dikabulkan oleh Allah",
+        "arabic": "اللَّهُمَّ تَقَبَّلْ دَعْوَانَا كَمَا أَمَرْتَنَا، فَاسْتَجِبْ كَمَا وَعَدْتَنَا، فَأَنْتَ يَا رَبِّ لَا تُخْلِفُ الْمِيعَادَ.\n\nرَبَّنَا تَقَبَّلْ مِنَّا إِنَّكَ أَنْتَ السَّمِيعُ الْعَلِيمُ، وَتُبْ عَلَيْنَا إِنَّكَ أَنْتَ التَّوَّابُ الرَّحِيمُ.",
+        "latin": "Allāhumma taqabbal da‘wānā kamā amartanā, fastajib kamā wa‘adtanā, fa anta yā rabbī lā tukhliful-mī‘ād.\n\nRabbanā taqabbal minnā innaka antas-samī‘ul-‘alīm, wa tub ‘alaynā innaka antat-tawwābur-raḥīm.",
+        "meaning": "Ya Allah, terimalah doa kami sebagaimana Engkau telah perintahkan kami. Dan kabulkanlah doa kami sebagaimana Engkau telah menjanjikan kepada kami. Sesungguhnya Engkau, wahai Rabb, tidak pernah mengingkari janji.\n\nWahai Tuhan kami, terimalah (amal dan doa) dari kami, sungguh Engkaulah Yang Maha Mendengar lagi Maha Mengetahui, dan terimalah tobat kami, sungguh Engkaulah Yang Maha Penerima tobat lagi Maha Penyayang.",
+        "note": "QS. Al-Baqarah [2]: 127–128 (Doa Nabi Ibrahim & Nabi Ismail memohon penerimaan) & Atsar Salafus Shalih · Sumber: https://quran.kemenag.go.id/"
       }
     ]
   },

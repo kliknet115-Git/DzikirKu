@@ -671,3 +671,14 @@ Transkrip matan dan perbandingan naskah lengkap telah disimpan dalam direktori `
 
 ---
 *Laporan ini disusun secara independen dan objektif dengan memprioritaskan keabsahan sanad dan matan di atas kelengkapan jumlah bacaan.*
+
+## 8. Pembaruan Kategori "Sebelum dan Sesudah Berdoa" (Audit Protocol November 2026)
+
+Kategori **"Sebelum dan Sesudah Berdoa"** disempurnakan menjadi 7 tahapan urutan adab berdoa yang utuh, sesuai tuntunan sunnah Rasulullah ﷺ (HR. Abu Dawud no. 1481 & At-Tirmidzi no. 3477) dan atsar salaf:
+1. **Langkah 1 — Memuji dan Mengagungkan Allah (Tahmid & Ismul A'zhom)**: HR. Al-Bukhari no. 799 & HR. Abu Dawud no. 1495 (`HADITH`, `VERIFIED`).
+2. **Langkah 2 — Bersholawat kepada Nabi Muhammad ﷺ**: Sholawat Ibrahimiyyah — HR. Al-Bukhari no. 3370 & HR. Muslim no. 406 (`HADITH`, `VERIFIED`).
+3. **Langkah 3 — Beristighfar dan Mengakui Dosa**: Sayyidul Istighfar (HR. Al-Bukhari no. 6306) & Doa Nabi Yunus (QS. Al-Anbiya' [21]: 87 & HR. At-Tirmidzi no. 3505) (`HADITH` & `QURAN`, `VERIFIED`).
+4. **Langkah 4 — Mengingat Janji Allah & Memohon Pengabulan**: QS. Ghafir [40]: 60 & QS. Ali ‘Imran [3]: 9 (`QURAN`, `VERIFIED`).
+5. **Langkah 5 — Menyampaikan Inti Hajat & Doa Sapujagat**: QS. Al-Baqarah [2]: 201 & HR. Al-Bukhari no. 6389, Muslim no. 2690 (`QURAN` & `HADITH`, `VERIFIED`).
+6. **Langkah 6 — Menutup dengan Sholawat dan Hamdalah**: QS. Ash-Shaffat [37]: 180–182, QS. Yunus [10]: 10, & Atsar Salafus Shalih dinukil oleh Imam An-Nawawi (`QURAN` & `ATHAR`, `VERIFIED`).
+7. **Langkah 7 — Doa Penerimaan dan Penutup Munajat**: QS. Al-Baqarah [2]: 127–128 & Atsar Salafus Shalih (`QURAN` & `ATHAR`, `VERIFIED`).
