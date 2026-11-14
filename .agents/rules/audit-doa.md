@@ -22,3 +22,4 @@ Setiap penambahan atau modifikasi doa dan dzikir dalam aplikasi DzikirKu **WAJIB
 - **Dilarang** mencantumkan derajat hadits tanpa sumber penilaian ulama terverifikasi.
 - **Kecocokan matan** teks Arab adalah prioritas utama daripada sekadar angka nomor hadits.
 - Jika doa mengutip sebagian ayat Al-Qur'an, wajib dicantumkan keterangan bahwa teks merupakan potongan ayat.
+

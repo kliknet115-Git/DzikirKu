@@ -130,8 +130,8 @@ export const doaCategories: DoaCategory[] = [
     "id": "doa-pilihan",
     "icon": "✦",
     "title": "Doa-doa Pilihan",
-    "subtitle": "Kumpulan 37 doa pilihan dari Al-Qur’an dan hadis shahih",
-    "countLabel": "37 DOA",
+    "subtitle": "Kumpulan 39 doa pilihan dari Al-Qur’an dan hadis shahih",
+    "countLabel": "39 DOA",
     "items": [
       {
         "title": "Mengakui kesalahan dan memohon ampunan",
@@ -398,6 +398,22 @@ export const doaCategories: DoaCategory[] = [
         "arabic": "اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ الْفِرْدَوْسَ الْأَعْلَى بِغَيْرِ حِسَابٍ وَلَا عَذَابٍ",
         "meaning": "“Ya Allah, sesungguhnya aku memohon kepada-Mu Surga Firdaus yang paling tinggi, tanpa dihisab dan tanpa diazab.”",
         "note": "Doa Susunan (Custom Dua) berdasarkan anjuran Nabi ﷺ dalam HR. Bukhari no. 7423 / 2790 · Doa Akhirat & Memohon Surga · Sumber: https://www.hadits.id/"
+      },
+      {
+        "title": "Doa Menjenguk Orang Sakit — Memohon Kesembuhan",
+        "subtitle": "Doa Rasulullah ﷺ saat menjenguk orang sakit (HR. Bukhari no. 5743 & HR. Muslim no. 2191)",
+        "arabic": "اللَّهُمَّ رَبَّ النَّاسِ، أَذْهِبِ الْبَاسَ، اشْفِ أَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا",
+        "latin": "Allāhumma rabban-nās, ażhibil-ba'sa, isyfi antasy-syāfī, lā syifā'a illā syifā'uk, syifā'an lā yughādiru saqamā.",
+        "meaning": "“Ya Allah, Rabb seluruh manusia, hilangkanlah penyakit ini. Berikanlah kesembuhan, Engkaulah Maha Penyembuh. Tidak ada kesembuhan selain kesembuhan dari-Mu, kesembuhan yang tidak meninggalkan penyakit sedikit pun.”",
+        "note": "HR. Bukhari no. 5743 & HR. Muslim no. 2191 dari ‘Aisyah radhiyallahu ‘anha (Shahih / Muttafaq ‘Alaih) · Sumber: https://hadits.in/bukhari/5743"
+      },
+      {
+        "title": "Doa Menjenguk Orang Sakit — Dibaca 7 Kali",
+        "subtitle": "Dibaca 7 kali di dekat orang sakit (HR. Abu Dawud no. 3106 & HR. At-Tirmidzi no. 2083)",
+        "arabic": "أَسْأَلُ اللَّهَ الْعَظِيمَ رَبَّ الْعَرْشِ الْعَظِيمِ أَنْ يَشْفِيَكَ",
+        "latin": "As'alullāhal-‘azhīma rabbal-‘arsyil-‘azhīmi an yasyfiyak.",
+        "meaning": "“Aku memohon kepada Allah Yang Maha Agung, Rabb Pemilik ‘Arsy yang agung, agar berkenan menyembuhkanmu.” (Dibaca 7 kali. Jika yang sakit perempuan, akhiran kata dibaca an yasyfiyaki / أَنْ يَشْفِيَكِ).",
+        "note": "HR. Abu Dawud no. 3106 & HR. At-Tirmidzi no. 2083 dari Ibnu Abbas radhiyallahu ‘anhuma. Syaikh Al-Albani menyatakan hadits ini shahih (Shahih Sunan Abi Dawud no. 3106) · Sumber: https://hadits.in/abu-daud/3106"
       }
     ]
   },

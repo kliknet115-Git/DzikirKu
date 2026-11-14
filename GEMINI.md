@@ -111,3 +111,4 @@ Ketika menambahkan doa yang telah lolos audit ke dalam file TypeScript (`dzikirk
    ```
 2. **Review & Konfirmasi**:
    - Jika doa yang diunggah pengguna memiliki status selain `VERIFIED` (misalnya tergolong doa susunan atau ada matan yang rancu), beritahukan hasil audit kepada pengguna terlebih dahulu sebelum mengintegrasikannya ke aplikasi.
+
