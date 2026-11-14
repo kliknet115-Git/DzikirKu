@@ -305,7 +305,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                         </span>
                         <div className="h-px bg-[#D6E3E3] flex-1" />
                       </div>
-                    ) : idx === 15 ? (
+                    ) : idx === 16 ? (
                       <div className="flex items-center gap-2 pt-3 pb-0.5">
                         <div className="h-px bg-[#D6E3E3] flex-1" />
                         <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
@@ -369,7 +369,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                 {activeCategory.id === 'doa-pilihan'
                   ? (activeIndex < 9
                       ? '1. Doa Permohonan Ampunan'
-                      : activeIndex < 15
+                      : activeIndex < 16
                       ? '2. Doa Permohonan Rejeki'
                       : '3. Doa Lainnya')
                   : activeCategory.title}
@@ -593,7 +593,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                           </span>
                           <div className="h-px bg-[#D6E3E3] flex-1" />
                         </div>
-                      ) : idx === 15 ? (
+                      ) : idx === 16 ? (
                         <div className="flex items-center gap-2 pt-2.5 pb-0.5">
                           <div className="h-px bg-[#D6E3E3] flex-1" />
                           <span className="text-[10px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-2.5 py-0.5 rounded-md">

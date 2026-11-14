@@ -86,8 +86,8 @@ export const doaCategories: DoaCategory[] = [
     "id": "doa-pilihan",
     "icon": "✦",
     "title": "Doa-doa Pilihan",
-    "subtitle": "Kumpulan 36 doa pilihan dari Al-Qur’an dan hadis shahih",
-    "countLabel": "36 DOA",
+    "subtitle": "Kumpulan 37 doa pilihan dari Al-Qur’an dan hadis shahih",
+    "countLabel": "37 DOA",
     "items": [
       {
         "title": "Mengakui kesalahan dan memohon ampunan",
@@ -196,6 +196,14 @@ export const doaCategories: DoaCategory[] = [
         "latin": "Allāhumma innī a‘ūdzu bika minal-hammi wal-ḥazan, wa a‘ūdzu bika minal-‘ajzi wal-kasal, wa a‘ūdzu bika minal-jubni wal-bukhl, wa a‘ūdzu bika min ghalabatid-daini wa qahrir-rijāl.",
         "meaning": "“Ya Allah, sesungguhnya aku berlindung kepada-Mu dari rasa gelisah dan sedih, aku berlindung kepada-Mu dari kelemahan dan kemalasan, aku berlindung kepada-Mu dari sifat pengecut dan kikir, dan aku berlindung kepada-Mu dari lilitan utang serta tekanan orang lain.”",
         "note": "HR. Abu Dawud no. 1555 dari Abu Sa'id Al-Khudri radhiyallahu 'anhu. Diajarkan Rasulullah ﷺ kepada Abu Umamah radhiyallahu 'anhu untuk dibaca pada waktu pagi dan petang · Sumber: https://hadits.in/abu-daud/1555"
+      },
+      {
+        "title": "Doa Keberkahan Harta, Kebaikan Amal, dan Ampunan",
+        "subtitle": "Berdasarkan doa Nabi ﷺ untuk Anas bin Malik & HR. At-Tirmidzi no. 2329",
+        "arabic": "اللَّهُمَّ أَكْثِرْ مَالِي، وَبَارِكْ لِي فِيمَا أَعْطَيْتَنِي، وَأَحْسِنْ عَمَلِي، وَاغْفِرْ لِي",
+        "latin": "Allāhumma aktsir mālī, wa bārik lī fīmā a‘ṭaytanī, wa aḥsin ‘amalī, waghfir lī.",
+        "meaning": "“Ya Allah, perbanyaklah hartaku, berkahilah apa yang telah Engkau anugerahkan kepadaku, perbaikilah amal perbuatanku, dan ampunilah (dosa-dosa)ku.”",
+        "note": "Doa Iqtibas / Ma'tsur Bi Al-Ma'na: Gabungan doa Nabi ﷺ untuk Anas bin Malik (HR. Al-Bukhari no. 6378, HR. Muslim no. 2480 & Al-Adab Al-Mufrad no. 653) dan hadits anjuran amal saleh (HR. At-Tirmidzi no. 2329) · Sumber: https://hadits.in/bukhari/6378"
       },
       {
         "title": "Kebaikan dunia dan akhirat",
