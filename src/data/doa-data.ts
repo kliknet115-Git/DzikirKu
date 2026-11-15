@@ -86,8 +86,8 @@ export const doaCategories: DoaCategory[] = [
     "id": "doa-pilihan",
     "icon": "✦",
     "title": "Doa-doa Pilihan",
-    "subtitle": "Kumpulan 37 doa pilihan dari Al-Qur’an dan hadis shahih",
-    "countLabel": "37 DOA",
+    "subtitle": "Kumpulan 38 doa pilihan dari Al-Qur’an dan hadis shahih",
+    "countLabel": "38 DOA",
     "items": [
       {
         "title": "Mengakui kesalahan dan memohon ampunan",
@@ -219,6 +219,14 @@ export const doaCategories: DoaCategory[] = [
         "latin": "Allāhumma innī as-alukal-hudā, wat-tuqā, wal-‘afāfa, wal-ghinā.",
         "meaning": "“Ya Allah, aku memohon kepada-Mu petunjuk, ketakwaan, penjagaan kehormatan dan kesucian diri, serta kecukupan (hati yang merasa cukup dengan karunia Allah / qanaah).”",
         "note": "HR. Muslim no. 2721 · Ketakwaan & Qanaah · Sumber: https://ilmuislam.id/"
+      },
+      {
+        "title": "Keteguhan Hati dan Memohon Rahmat",
+        "subtitle": "QS Ali ‘Imran [3]: 8",
+        "arabic": "رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً ۚ إِنَّكَ أَنْتَ الْوَهَّابُ",
+        "latin": "Rabbanā lā tuzigh qulūbanā ba‘da idz hadaitanā wa hab lanā mil ladunka rahmah, innaka antal-wahhāb.",
+        "meaning": "“Wahai Tuhan kami, janganlah Engkau jadikan hati kami berpaling (dari kebenaran) setelah Engkau beri petunjuk kepada kami, dan anugerahkanlah kepada kami rahmat dari sisi-Mu. Sesungguhnya Engkau Maha Pemberi.”",
+        "note": "QS Ali ‘Imran [3]: 8 · Doa keteguhan hati para rasikhuna fil 'ilmi & terkait hadits keteguhan hati HR. At-Tirmidzi no. 3522 · Sumber: https://quran.kemenag.go.id/"
       },
       {
         "title": "Rahmat dan petunjuk dalam urusan",

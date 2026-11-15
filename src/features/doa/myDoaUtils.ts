@@ -136,3 +136,4 @@ export function getAllAppDoa(): AvailableDoaSource[] {
 
   return result;
 }
+
