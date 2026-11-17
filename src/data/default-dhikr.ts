@@ -135,4 +135,16 @@ export const DEFAULT_DHIKR: Dhikr[] = [
     createdAt: now,
     updatedAt: now,
   },
+  {
+    id: 'builtin-hasbunallah-wanikmal-wakil',
+    name: 'Hasbunallah wa Ni’mal Wakil',
+    arabicText: 'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ',
+    transliteration: 'Ḥasbunallāhu wa ni‘mal-wakīl',
+    meaning: 'Cukuplah Allah menjadi Penolong kami, dan Dia adalah sebaik-baik Pelindung. (QS. Ali ‘Imran [3]: 173 & HR. Al-Bukhari no. 4563 — Doa Nabi Ibrahim ‘alaihissalam & Nabi Muhammad ﷺ)',
+    defaultTarget: 70,
+    isBuiltIn: true,
+    sortOrder: 12,
+    createdAt: now,
+    updatedAt: now,
+  },
 ];
