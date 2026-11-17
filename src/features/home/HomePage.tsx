@@ -151,7 +151,11 @@ export const HomePage: React.FC<HomePageProps> = ({
             title="Klik untuk memilih dzikir lain"
           >
             {activeDhikr.arabicText && (
-              <p className="arabic-text text-2xl text-primary-dark mb-1 leading-relaxed">
+              <p
+                className="arabic-text text-right text-2xl text-primary-dark mb-1 leading-relaxed"
+                dir="rtl"
+                lang="ar"
+              >
                 {activeDhikr.arabicText}
               </p>
             )}

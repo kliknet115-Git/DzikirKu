@@ -222,7 +222,7 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
           {/* Arabic Paragraph */}
           <div className="py-2">
             <p
-              className={`arabic-text text-primary-dark text-center leading-[2.2] tracking-wide whitespace-pre-line font-medium ${arabicFontSizeClass}`}
+              className={`arabic-text text-primary-dark text-right leading-[2.2] tracking-wide whitespace-pre-line font-medium ${arabicFontSizeClass}`}
               lang="ar"
               dir="rtl"
             >

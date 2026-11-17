@@ -557,7 +557,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
               {activeItem.arabic ? (
                 <div
-                  className={`arabic-text text-center direction-rtl text-[#1E3042] whitespace-pre-line py-1 font-medium ${getArabicFontSizeClass(
+                  className={`arabic-text text-right direction-rtl text-[#1E3042] whitespace-pre-line py-1 font-medium ${getArabicFontSizeClass(
                     activeItem.arabic
                   )}`}
                   lang="ar"

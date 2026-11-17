@@ -173,7 +173,11 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
                     {dhikr.arabicText && (
-                      <p className="arabic-text text-xl text-primary-dark mb-1 leading-relaxed">
+                      <p
+                        className="arabic-text text-right text-xl text-primary-dark mb-1 leading-relaxed"
+                        dir="rtl"
+                        lang="ar"
+                      >
                         {dhikr.arabicText}
                       </p>
                     )}
@@ -281,7 +285,7 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
               onChange={(e) =>
                 setFormData({ ...formData, arabicText: e.target.value })
               }
-              className="w-full px-3.5 py-2.5 border border-border rounded-xl bg-background text-text text-base arabic-text focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary disabled:opacity-60"
+              className="w-full px-3.5 py-2.5 border border-border rounded-xl bg-background text-text text-base arabic-text text-right focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary disabled:opacity-60"
               placeholder="أَسْتَغْفِرُ اللَّهَ"
               dir="rtl"
               disabled={Boolean(editingDhikr?.isBuiltIn)}
