@@ -147,6 +147,32 @@ export const App: React.FC = () => {
     setActiveTab('home');
   };
 
+  // Next / Forward Dhikr Handler (Loop back to first if on last)
+  const handleNextDhikr = useCallback(() => {
+    if (dhikrList.length === 0) return;
+
+    const currentIndex = dhikrList.findIndex((d) => d.id === activeSession?.dhikrId);
+    let nextIndex = 0;
+    if (currentIndex >= 0 && currentIndex < dhikrList.length - 1) {
+      nextIndex = currentIndex + 1;
+    } else {
+      nextIndex = 0; // Wrap back to the first item
+    }
+
+    const nextDhikr = dhikrList[nextIndex];
+    if (!nextDhikr) return;
+
+    const nextSession: ActiveSession = {
+      id: uuidv4(),
+      dhikrId: nextDhikr.id,
+      count: 0,
+      target: nextDhikr.defaultTarget,
+      startedAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+    };
+    handleUpdateSession(nextSession);
+  }, [dhikrList, activeSession, handleUpdateSession]);
+
   // Dhikr Library Handlers
   const handleAddDhikr = async (data: {
     name: string;
@@ -267,6 +293,7 @@ export const App: React.FC = () => {
             settings={settings}
             onUpdateSession={handleUpdateSession}
             onNavigateToDhikr={() => setActiveTab('dhikr')}
+            onNextDhikr={handleNextDhikr}
           />
         )}
 

@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
-import { RotateCcw, Minus, Target, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { RotateCcw, Minus, Target, ChevronsRight, CheckCircle2 } from 'lucide-react';
 import { Header } from '../../components/layout/Header';
 import { ProgressRing } from '../../components/counter/ProgressRing';
 import { CountButton } from '../../components/counter/CountButton';
@@ -23,6 +23,7 @@ interface HomePageProps {
   settings: AppSettings;
   onUpdateSession: (session: ActiveSession) => void;
   onNavigateToDhikr: () => void;
+  onNextDhikr: () => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
@@ -31,6 +32,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   settings,
   onUpdateSession,
   onNavigateToDhikr,
+  onNextDhikr,
 }) => {
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [showTargetModal, setShowTargetModal] = useState(false);
@@ -139,12 +141,15 @@ export const HomePage: React.FC<HomePageProps> = ({
       <Header />
 
       <div className="max-w-lg mx-auto px-5">
-        {/* Dhikr Selector */}
-        <button
-          onClick={onNavigateToDhikr}
-          className="w-full mt-3 p-4 bg-surface rounded-2xl border border-border flex items-center justify-between shadow-sm"
-        >
-          <div className="text-left flex-1 min-w-0 pr-2">
+        {/* Dhikr Selector & Next Button */}
+        <div className="w-full mt-3 p-4 bg-surface rounded-2xl border border-border flex items-center justify-between shadow-sm">
+          <button
+            type="button"
+            onClick={onNavigateToDhikr}
+            className="text-left flex-1 min-w-0 pr-2 hover:opacity-85 active:opacity-75 transition-opacity"
+            aria-label="Pilih dari daftar dzikir"
+            title="Klik untuk memilih dzikir lain"
+          >
             {activeDhikr.arabicText && (
               <p className="arabic-text text-2xl text-primary-dark mb-1 leading-relaxed">
                 {activeDhikr.arabicText}
@@ -153,9 +158,23 @@ export const HomePage: React.FC<HomePageProps> = ({
             <p className="text-sm font-semibold text-text leading-snug break-words">
               {activeDhikr.name || activeDhikr.transliteration}
             </p>
-          </div>
-          <ChevronDown size={20} className="text-muted flex-shrink-0 ml-3" />
-        </button>
+          </button>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              if (settings.hapticsEnabled) triggerHaptic();
+              if (settings.soundEnabled) playClickSound();
+              onNextDhikr();
+            }}
+            className="w-11 h-11 rounded-xl bg-primary-soft/50 hover:bg-primary-soft active:scale-90 text-primary flex items-center justify-center flex-shrink-0 ml-2 transition-all shadow-xs"
+            aria-label="Lanjut ke bacaan berikutnya"
+            title="Lanjut ke bacaan berikutnya"
+          >
+            <ChevronsRight size={22} className="stroke-[2.5]" />
+          </button>
+        </div>
 
         {/* Counter Area */}
         <div className="flex flex-col items-center mt-6">
