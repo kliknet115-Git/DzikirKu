@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dzikirku-v46';
+const CACHE_NAME = 'dzikirku-v47';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
