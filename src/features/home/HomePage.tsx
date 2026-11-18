@@ -174,12 +174,11 @@ export const HomePage: React.FC<HomePageProps> = ({
               if (settings.soundEnabled) playClickSound();
               onPrevDhikr();
             }}
-            className="h-10 px-3.5 rounded-xl bg-surface border border-border hover:border-primary/40 active:scale-95 text-primary flex items-center justify-center gap-1.5 shadow-xs transition-all"
+            className="w-12 h-10 rounded-xl bg-surface border border-border hover:border-primary/40 active:scale-90 text-primary flex items-center justify-center shadow-xs transition-all"
             aria-label="Bacaan sebelumnya (<<)"
             title="Bacaan Sebelumnya"
           >
-            <ChevronsLeft size={19} className="stroke-[2.5]" />
-            <span className="text-xs font-bold text-text">Sebelumnya</span>
+            <ChevronsLeft size={22} className="stroke-[2.5]" />
           </button>
 
           <button
@@ -189,12 +188,11 @@ export const HomePage: React.FC<HomePageProps> = ({
               if (settings.soundEnabled) playClickSound();
               onNextDhikr();
             }}
-            className="h-10 px-3.5 rounded-xl bg-surface border border-border hover:border-primary/40 active:scale-95 text-primary flex items-center justify-center gap-1.5 shadow-xs transition-all"
+            className="w-12 h-10 rounded-xl bg-surface border border-border hover:border-primary/40 active:scale-90 text-primary flex items-center justify-center shadow-xs transition-all"
             aria-label="Bacaan berikutnya (>>)"
             title="Bacaan Berikutnya"
           >
-            <span className="text-xs font-bold text-text">Berikutnya</span>
-            <ChevronsRight size={19} className="stroke-[2.5]" />
+            <ChevronsRight size={22} className="stroke-[2.5]" />
           </button>
         </div>
 
