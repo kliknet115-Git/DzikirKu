@@ -29,16 +29,10 @@ interface HomePageProps {
 
 const getArabicSizeClass = (text: string) => {
   const len = text.trim().length;
-  if (len <= 22) return 'text-2xl leading-snug';
-  if (len <= 45) return 'text-xl leading-snug';
-  if (len <= 80) return 'text-lg leading-tight';
-  if (len <= 100) return 'text-[15px] leading-tight';
-  if (len <= 130) return 'text-sm leading-tight';
-  return 'text-xs leading-tight';
-};
-
-const getTitleSizeClass = (title: string) => {
-  return title.trim().length > 25 ? 'text-xs' : 'text-sm';
+  // Pertahankan ukuran font dzikir tetap besar (mengikuti ukuran dzikir Subhanallah)
+  if (len <= 50) return 'text-2xl leading-relaxed';
+  if (len <= 85) return 'text-[22px] leading-snug';
+  return 'text-xl leading-snug';
 };
 
 export const HomePage: React.FC<HomePageProps> = ({
@@ -152,27 +146,25 @@ export const HomePage: React.FC<HomePageProps> = ({
   return (
     <div
       className="min-h-screen bg-background"
-      style={{ paddingBottom: 'calc(7rem + env(safe-area-inset-bottom, 0px))' }}
+      style={{ paddingBottom: 'calc(4.5rem + env(safe-area-inset-bottom, 0px))' }}
     >
       <Header />
 
-      <div className="max-w-lg mx-auto px-5">
-        {/* Dhikr Content Card with preserved fixed height */}
+      <div className="max-w-lg mx-auto px-4 sm:px-5">
+        {/* Dhikr Content Card - Font besar & layout compact */}
         <button
           type="button"
           onClick={onNavigateToDhikr}
-          className={`w-full mt-3 h-[98px] px-4 py-2.5 bg-surface rounded-2xl border border-border text-left shadow-sm hover:border-primary/40 active:scale-[0.99] transition-all flex flex-col ${
-            activeDhikr.arabicText ? 'justify-between' : 'justify-center'
-          } overflow-hidden`}
+          className="w-full mt-2 px-4 py-2.5 bg-surface rounded-2xl border border-border text-left shadow-2xs hover:border-primary/40 active:scale-[0.99] transition-all flex flex-col justify-between"
           aria-label="Pilih dari daftar dzikir"
           title="Klik untuk memilih dzikir lain"
         >
           {activeDhikr.arabicText && (
-            <div className="flex-1 flex items-center justify-end overflow-hidden w-full min-h-0">
+            <div className="w-full">
               <p
                 className={`arabic-text text-right text-primary-dark ${getArabicSizeClass(
                   activeDhikr.arabicText
-                )} line-clamp-2 w-full`}
+                )}`}
                 dir="rtl"
                 lang="ar"
               >
@@ -180,17 +172,13 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
             </div>
           )}
-          <p
-            className={`font-semibold text-text truncate w-full ${
-              activeDhikr.arabicText ? 'mt-0.5' : ''
-            } ${getTitleSizeClass(activeDhikr.name || activeDhikr.transliteration || '')}`}
-          >
+          <p className="text-xs font-semibold text-text truncate mt-1">
             {activeDhikr.name || activeDhikr.transliteration}
           </p>
         </button>
 
         {/* Navigation Buttons Row: Reverse (<<) & Forward (>>) */}
-        <div className="flex items-center justify-between mt-3 px-0.5">
+        <div className="flex items-center justify-between mt-2 px-0.5">
           <button
             type="button"
             onClick={() => {
@@ -198,11 +186,11 @@ export const HomePage: React.FC<HomePageProps> = ({
               if (settings.soundEnabled) playClickSound();
               onPrevDhikr();
             }}
-            className="w-12 h-10 rounded-xl bg-surface border border-border hover:border-primary/40 active:scale-90 text-primary flex items-center justify-center shadow-xs transition-all"
+            className="w-11 h-9 rounded-xl bg-surface border border-border hover:border-primary/40 active:scale-90 text-primary flex items-center justify-center shadow-2xs transition-all"
             aria-label="Bacaan sebelumnya (<<)"
             title="Bacaan Sebelumnya"
           >
-            <ChevronsLeft size={22} className="stroke-[2.5]" />
+            <ChevronsLeft size={20} className="stroke-[2.5]" />
           </button>
 
           <button
@@ -212,48 +200,48 @@ export const HomePage: React.FC<HomePageProps> = ({
               if (settings.soundEnabled) playClickSound();
               onNextDhikr();
             }}
-            className="w-12 h-10 rounded-xl bg-surface border border-border hover:border-primary/40 active:scale-90 text-primary flex items-center justify-center shadow-xs transition-all"
+            className="w-11 h-9 rounded-xl bg-surface border border-border hover:border-primary/40 active:scale-90 text-primary flex items-center justify-center shadow-2xs transition-all"
             aria-label="Bacaan berikutnya (>>)"
             title="Bacaan Berikutnya"
           >
-            <ChevronsRight size={22} className="stroke-[2.5]" />
+            <ChevronsRight size={20} className="stroke-[2.5]" />
           </button>
         </div>
 
-        {/* Counter Area */}
-        <div className="flex flex-col items-center mt-6">
-          <ProgressRing progress={progress} size={250} strokeWidth={10}>
+        {/* Counter Area - Compact Spacing */}
+        <div className="flex flex-col items-center mt-2.5">
+          <ProgressRing progress={progress} size={210} strokeWidth={8}>
             <div className={`flex flex-col items-center ${justReachedTarget ? 'target-reached-animation' : ''}`}>
-              <span className="text-6xl font-bold text-primary-dark tabular-nums leading-none">
+              <span className="text-5xl font-bold text-primary-dark tabular-nums leading-none">
                 {formatCount(activeSession.count)}
               </span>
-              <span className="text-sm text-muted mt-2">
+              <span className="text-xs text-muted mt-2 font-medium">
                 {reached ? (
                   <span className="text-gold font-semibold flex items-center gap-1">
-                    <CheckCircle2 size={14} />
+                    <CheckCircle2 size={13} />
                     Target tercapai!
                   </span>
                 ) : (
                   `Sisa ${formatCount(remaining)} lagi`
                 )}
               </span>
-              <span className="text-xs text-muted mt-1">
+              <span className="text-[11px] text-muted mt-0.5">
                 {formatCount(activeSession.count)} dari {formatCount(activeSession.target)}
               </span>
             </div>
           </ProgressRing>
 
           {/* Action Buttons Row */}
-          <div className="flex items-center justify-center gap-6 mt-6 w-full">
+          <div className="flex items-center justify-center gap-6 mt-3.5 w-full">
             {/* Reset */}
             <button
               onClick={() => activeSession.count > 0 && setShowResetConfirm(true)}
-              className="flex flex-col items-center gap-1 text-muted hover:text-danger transition-colors"
+              className="flex flex-col items-center gap-1 text-muted hover:text-danger active:scale-95 transition-all"
               aria-label="Reset hitungan"
               disabled={activeSession.count === 0}
             >
-              <div className="w-11 h-11 rounded-full border-2 border-border flex items-center justify-center">
-                <RotateCcw size={18} />
+              <div className="w-10 h-10 rounded-full border border-border bg-surface flex items-center justify-center shadow-2xs">
+                <RotateCcw size={17} />
               </div>
               <span className="text-[10px] font-medium">Reset</span>
             </button>
@@ -264,11 +252,11 @@ export const HomePage: React.FC<HomePageProps> = ({
             {/* Target */}
             <button
               onClick={openTargetModal}
-              className="flex flex-col items-center gap-1 text-muted hover:text-primary transition-colors"
+              className="flex flex-col items-center gap-1 text-muted hover:text-primary active:scale-95 transition-all"
               aria-label="Ubah target"
             >
-              <div className="w-11 h-11 rounded-full border-2 border-border flex items-center justify-center">
-                <Target size={18} />
+              <div className="w-10 h-10 rounded-full border border-border bg-surface flex items-center justify-center shadow-2xs">
+                <Target size={17} />
               </div>
               <span className="text-[10px] font-medium">Target</span>
             </button>
@@ -278,10 +266,10 @@ export const HomePage: React.FC<HomePageProps> = ({
           <button
             onClick={handleUndo}
             disabled={activeSession.count === 0}
-            className="mt-4 flex items-center gap-1.5 px-4 py-2 text-sm text-muted hover:text-text disabled:opacity-30 transition-colors"
+            className="mt-2 flex items-center gap-1.5 px-3 py-1 text-xs text-muted hover:text-text disabled:opacity-30 transition-colors"
             aria-label="Undo satu hitungan"
           >
-            <Minus size={14} />
+            <Minus size={13} />
             <span>Undo</span>
           </button>
         </div>

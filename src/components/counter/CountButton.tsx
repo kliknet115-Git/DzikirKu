@@ -33,7 +33,7 @@ export const CountButton: React.FC<CountButtonProps> = ({ onCount, disabled }) =
       ref={buttonRef}
       onClick={handleClick}
       disabled={disabled}
-      className="w-[120px] h-[120px] rounded-full bg-primary text-white flex items-center justify-center shadow-lg active:shadow-md transition-shadow duration-100 select-none touch-manipulation"
+      className="w-[108px] h-[108px] rounded-full bg-primary text-white flex items-center justify-center shadow-lg active:shadow-md transition-shadow duration-100 select-none touch-manipulation"
       style={{
         WebkitTapHighlightColor: 'transparent',
         touchAction: 'manipulation',
