@@ -27,6 +27,20 @@ interface HomePageProps {
   onPrevDhikr: () => void;
 }
 
+const getArabicSizeClass = (text: string) => {
+  const len = text.trim().length;
+  if (len <= 22) return 'text-2xl leading-snug';
+  if (len <= 45) return 'text-xl leading-snug';
+  if (len <= 80) return 'text-lg leading-tight';
+  if (len <= 100) return 'text-[15px] leading-tight';
+  if (len <= 130) return 'text-sm leading-tight';
+  return 'text-xs leading-tight';
+};
+
+const getTitleSizeClass = (title: string) => {
+  return title.trim().length > 25 ? 'text-xs' : 'text-sm';
+};
+
 export const HomePage: React.FC<HomePageProps> = ({
   activeSession,
   activeDhikr,
@@ -143,24 +157,34 @@ export const HomePage: React.FC<HomePageProps> = ({
       <Header />
 
       <div className="max-w-lg mx-auto px-5">
-        {/* Dhikr Content Card */}
+        {/* Dhikr Content Card with preserved fixed height */}
         <button
           type="button"
           onClick={onNavigateToDhikr}
-          className="w-full mt-3 p-4 bg-surface rounded-2xl border border-border text-left shadow-sm hover:border-primary/40 active:scale-[0.99] transition-all"
+          className={`w-full mt-3 h-[98px] px-4 py-2.5 bg-surface rounded-2xl border border-border text-left shadow-sm hover:border-primary/40 active:scale-[0.99] transition-all flex flex-col ${
+            activeDhikr.arabicText ? 'justify-between' : 'justify-center'
+          } overflow-hidden`}
           aria-label="Pilih dari daftar dzikir"
           title="Klik untuk memilih dzikir lain"
         >
           {activeDhikr.arabicText && (
-            <p
-              className="arabic-text text-right text-2xl text-primary-dark mb-1 leading-relaxed"
-              dir="rtl"
-              lang="ar"
-            >
-              {activeDhikr.arabicText}
-            </p>
+            <div className="flex-1 flex items-center justify-end overflow-hidden w-full min-h-0">
+              <p
+                className={`arabic-text text-right text-primary-dark ${getArabicSizeClass(
+                  activeDhikr.arabicText
+                )} line-clamp-2 w-full`}
+                dir="rtl"
+                lang="ar"
+              >
+                {activeDhikr.arabicText}
+              </p>
+            </div>
           )}
-          <p className="text-sm font-semibold text-text leading-snug break-words">
+          <p
+            className={`font-semibold text-text truncate w-full ${
+              activeDhikr.arabicText ? 'mt-0.5' : ''
+            } ${getTitleSizeClass(activeDhikr.name || activeDhikr.transliteration || '')}`}
+          >
             {activeDhikr.name || activeDhikr.transliteration}
           </p>
         </button>
