@@ -143,18 +143,18 @@ export const HomePage: React.FC<HomePageProps> = ({
       <Header />
 
       <div className="max-w-lg mx-auto px-4 sm:px-5">
-        {/* Dhikr Content Card - Fixed Height & Stable Font */}
+        {/* Dhikr Content Card - Generous Fixed Height & Intact Harakat */}
         <button
           type="button"
           onClick={onNavigateToDhikr}
-          className="w-full mt-2 h-[114px] px-4 py-2.5 bg-surface rounded-2xl border border-border text-left shadow-2xs hover:border-primary/40 active:scale-[0.99] transition-all flex flex-col justify-between overflow-hidden"
+          className="w-full mt-2 h-[150px] px-5 py-3.5 bg-surface rounded-2xl border border-border text-left shadow-2xs hover:border-primary/40 active:scale-[0.99] transition-all flex flex-col justify-between"
           aria-label="Pilih dari daftar dzikir"
           title="Klik untuk memilih dzikir lain"
         >
           {activeDhikr.arabicText && (
-            <div className="flex-1 flex items-center justify-end w-full min-h-0 overflow-hidden">
+            <div className="flex-1 flex items-center justify-end w-full min-h-0 pt-1">
               <p
-                className="arabic-text text-right text-primary-dark text-[22px] leading-snug line-clamp-2 w-full"
+                className="arabic-text text-right text-primary-dark text-[22px] sm:text-2xl leading-[1.8] line-clamp-2 w-full"
                 dir="rtl"
                 lang="ar"
               >
