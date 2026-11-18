@@ -1,5 +1,5 @@
 import React, { useState, useCallback, useEffect, useRef } from 'react';
-import { RotateCcw, Minus, Target, ChevronsRight, CheckCircle2 } from 'lucide-react';
+import { RotateCcw, Minus, Target, ChevronsLeft, ChevronsRight, CheckCircle2 } from 'lucide-react';
 import { Header } from '../../components/layout/Header';
 import { ProgressRing } from '../../components/counter/ProgressRing';
 import { CountButton } from '../../components/counter/CountButton';
@@ -24,6 +24,7 @@ interface HomePageProps {
   onUpdateSession: (session: ActiveSession) => void;
   onNavigateToDhikr: () => void;
   onNextDhikr: () => void;
+  onPrevDhikr: () => void;
 }
 
 export const HomePage: React.FC<HomePageProps> = ({
@@ -33,6 +34,7 @@ export const HomePage: React.FC<HomePageProps> = ({
   onUpdateSession,
   onNavigateToDhikr,
   onNextDhikr,
+  onPrevDhikr,
 }) => {
   const [showResetConfirm, setShowResetConfirm] = useState(false);
   const [showTargetModal, setShowTargetModal] = useState(false);
@@ -141,42 +143,58 @@ export const HomePage: React.FC<HomePageProps> = ({
       <Header />
 
       <div className="max-w-lg mx-auto px-5">
-        {/* Dhikr Selector & Next Button */}
-        <div className="w-full mt-3 p-4 bg-surface rounded-2xl border border-border flex items-center justify-between shadow-sm">
+        {/* Dhikr Content Card */}
+        <button
+          type="button"
+          onClick={onNavigateToDhikr}
+          className="w-full mt-3 p-4 bg-surface rounded-2xl border border-border text-left shadow-sm hover:border-primary/40 active:scale-[0.99] transition-all"
+          aria-label="Pilih dari daftar dzikir"
+          title="Klik untuk memilih dzikir lain"
+        >
+          {activeDhikr.arabicText && (
+            <p
+              className="arabic-text text-right text-2xl text-primary-dark mb-1 leading-relaxed"
+              dir="rtl"
+              lang="ar"
+            >
+              {activeDhikr.arabicText}
+            </p>
+          )}
+          <p className="text-sm font-semibold text-text leading-snug break-words">
+            {activeDhikr.name || activeDhikr.transliteration}
+          </p>
+        </button>
+
+        {/* Navigation Buttons Row: Reverse (<<) & Forward (>>) */}
+        <div className="flex items-center justify-between mt-3 px-0.5">
           <button
             type="button"
-            onClick={onNavigateToDhikr}
-            className="text-left flex-1 min-w-0 pr-2 hover:opacity-85 active:opacity-75 transition-opacity"
-            aria-label="Pilih dari daftar dzikir"
-            title="Klik untuk memilih dzikir lain"
+            onClick={() => {
+              if (settings.hapticsEnabled) triggerHaptic();
+              if (settings.soundEnabled) playClickSound();
+              onPrevDhikr();
+            }}
+            className="h-10 px-3.5 rounded-xl bg-surface border border-border hover:border-primary/40 active:scale-95 text-primary flex items-center justify-center gap-1.5 shadow-xs transition-all"
+            aria-label="Bacaan sebelumnya (<<)"
+            title="Bacaan Sebelumnya"
           >
-            {activeDhikr.arabicText && (
-              <p
-                className="arabic-text text-right text-2xl text-primary-dark mb-1 leading-relaxed"
-                dir="rtl"
-                lang="ar"
-              >
-                {activeDhikr.arabicText}
-              </p>
-            )}
-            <p className="text-sm font-semibold text-text leading-snug break-words">
-              {activeDhikr.name || activeDhikr.transliteration}
-            </p>
+            <ChevronsLeft size={19} className="stroke-[2.5]" />
+            <span className="text-xs font-bold text-text">Sebelumnya</span>
           </button>
 
           <button
             type="button"
-            onClick={(e) => {
-              e.stopPropagation();
+            onClick={() => {
               if (settings.hapticsEnabled) triggerHaptic();
               if (settings.soundEnabled) playClickSound();
               onNextDhikr();
             }}
-            className="w-11 h-11 rounded-xl bg-primary-soft/50 hover:bg-primary-soft active:scale-90 text-primary flex items-center justify-center flex-shrink-0 ml-2 transition-all shadow-xs"
-            aria-label="Lanjut ke bacaan berikutnya"
-            title="Lanjut ke bacaan berikutnya"
+            className="h-10 px-3.5 rounded-xl bg-surface border border-border hover:border-primary/40 active:scale-95 text-primary flex items-center justify-center gap-1.5 shadow-xs transition-all"
+            aria-label="Bacaan berikutnya (>>)"
+            title="Bacaan Berikutnya"
           >
-            <ChevronsRight size={22} className="stroke-[2.5]" />
+            <span className="text-xs font-bold text-text">Berikutnya</span>
+            <ChevronsRight size={19} className="stroke-[2.5]" />
           </button>
         </div>
 
