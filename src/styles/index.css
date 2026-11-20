@@ -34,22 +34,24 @@
   --neu-dock-bg: rgba(234, 236, 231, 0.95);
   --neu-dock-shadow: rgba(162, 172, 160, 0.35);
   --neu-dock-border: rgba(255, 255, 255, 0.8);
+  --ring-progress: #0D5C3E;
 }
 
 :root.dark,
 .dark {
-  --color-primary: #2BB673;
-  --color-primary-dark: #3ED58C;
+  --color-primary: #FFFFFF;
+  --color-primary-dark: #FFFFFF;
   --color-primary-soft: #1B2B22;
   --color-background: #111613;
   --color-surface: #161D18;
   --color-surface-sunken: #0E1310;
   --color-gold: #E5B358;
-  --color-text: #E6ECE8;
-  --color-muted: #8D9D93;
+  --color-text: #FFFFFF;
+  --color-muted: #9EABA2;
   --color-border: #233027;
   --color-danger: #F87171;
   --color-primary-light: #1B2B22;
+  --ring-progress: #2BB673;
 
   /* Neumorphic shadow tokens - Dark (Soft specular highlight & deep shadow) */
   --neu-bg: #161D18;
@@ -225,6 +227,18 @@ body {
   line-height: 2.2;
   font-feature-settings: "cv01" on, "cv02" on;
   text-rendering: optimizeLegibility;
+}
+
+.dark .arabic-text {
+  color: #FFFFFF !important;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5 {
+  color: #FFFFFF !important;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
