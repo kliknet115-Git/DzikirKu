@@ -152,11 +152,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="flex-1 w-full min-h-0 overflow-y-auto no-scrollbar flex flex-col">
               <div className="my-auto w-full py-1">
                 <p
-                  className={`arabic-text text-right text-primary-dark tracking-wide w-full ${
-                    activeDhikr.arabicText.length > 70
-                      ? 'text-[26px] sm:text-[28px] leading-[2.0]'
-                      : 'text-3xl leading-[2.1]'
-                  }`}
+                  className="arabic-text text-right text-primary-dark tracking-wide w-full text-3xl leading-[2.1]"
                   dir="rtl"
                   lang="ar"
                 >

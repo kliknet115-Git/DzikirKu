@@ -137,22 +137,10 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
     else setFontSizeLevel('normal');
   };
 
-  const getArabicFontSizeClass = (text: string) => {
-    const len = text.length;
-    if (fontSizeLevel === 'normal') {
-      if (len > 360) return 'text-xl leading-[2.2]';
-      if (len > 190) return 'text-2xl leading-[2.3]';
-      return 'text-2xl leading-[2.4]';
-    }
-    if (fontSizeLevel === 'large') {
-      if (len > 360) return 'text-2xl leading-[2.3]';
-      if (len > 190) return 'text-3xl leading-[2.4]';
-      return 'text-3xl leading-[2.5]';
-    }
-    // xlarge
-    if (len > 360) return 'text-3xl leading-[2.4]';
-    if (len > 190) return 'text-4xl leading-[2.5]';
-    return 'text-4xl leading-[2.6]';
+  const getArabicFontSizeClass = (_text?: string) => {
+    if (fontSizeLevel === 'normal') return 'text-[28px] leading-[2.1]';
+    if (fontSizeLevel === 'large') return 'text-3xl leading-[2.1]';
+    return 'text-[32px] leading-[2.1]';
   };
 
   return (

@@ -224,7 +224,7 @@ body {
   font-family: 'Amiri', 'Traditional Arabic', 'Simplified Arabic', serif;
   direction: rtl;
   text-align: right;
-  line-height: 2.2;
+  line-height: 2.1;
   font-feature-settings: "cv01" on, "cv02" on;
   text-rendering: optimizeLegibility;
 }

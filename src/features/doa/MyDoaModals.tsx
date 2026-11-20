@@ -294,7 +294,7 @@ export const MyDoaModals: React.FC<MyDoaModalsProps> = ({
                       {/* Arabic Preview */}
                       {source.arabic && (
                         <div
-                          className="text-right text-base text-primary-dark font-arabic truncate pt-1 border-t border-black/[0.04]"
+                          className="text-right text-xl text-primary-dark arabic-text truncate pt-1 border-t border-black/[0.04] dark:border-white/[0.06]"
                           dir="rtl"
                           lang="ar"
                         >

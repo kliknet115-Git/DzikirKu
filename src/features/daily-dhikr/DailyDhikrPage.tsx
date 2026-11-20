@@ -99,10 +99,10 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
 
   const arabicFontSizeClass =
     fontSizeLevel === 'normal'
-      ? 'text-2xl'
+      ? 'text-[28px]'
       : fontSizeLevel === 'large'
       ? 'text-3xl'
-      : 'text-4xl';
+      : 'text-[32px]';
 
   const currentTaps = tapCounts[currentEntry.id] || 0;
   const isTargetMet = currentTaps >= currentEntry.targetCount;
@@ -219,7 +219,7 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
           {/* Arabic Paragraph */}
           <div className="py-2">
             <p
-              className={`arabic-text text-primary-dark text-right leading-[2.2] tracking-wide whitespace-pre-line font-medium ${arabicFontSizeClass}`}
+              className={`arabic-text text-primary-dark text-right leading-[2.1] tracking-wide whitespace-pre-line font-medium ${arabicFontSizeClass}`}
               lang="ar"
               dir="rtl"
             >

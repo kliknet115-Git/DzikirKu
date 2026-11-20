@@ -179,7 +179,7 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
                   <div className="flex-1">
                     {dhikr.arabicText && (
                       <p
-                        className="arabic-text text-right text-xl text-primary-dark mb-1 leading-relaxed"
+                        className="arabic-text text-right text-3xl text-primary-dark mb-2 leading-[2.1] tracking-wide"
                         dir="rtl"
                         lang="ar"
                       >
