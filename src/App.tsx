@@ -110,7 +110,7 @@ export const App: React.FC = () => {
         root.classList.add('dark');
         document
           .querySelector('meta[name="theme-color"]')
-          ?.setAttribute('content', '#111613');
+          ?.setAttribute('content', '#28301C');
       } else {
         root.classList.remove('dark');
         document

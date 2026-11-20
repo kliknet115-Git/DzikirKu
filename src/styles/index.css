@@ -41,31 +41,31 @@
 .dark {
   --color-primary: #FFFFFF;
   --color-primary-dark: #FFFFFF;
-  --color-primary-soft: #1B2B22;
-  --color-background: #111613;
-  --color-surface: #161D18;
-  --color-surface-sunken: #0E1310;
+  --color-primary-soft: #333E25;
+  --color-background: #28301C;
+  --color-surface: #28301C;
+  --color-surface-sunken: #202717;
   --color-gold: #E5B358;
   --color-text: #FFFFFF;
-  --color-muted: #9EABA2;
-  --color-border: #233027;
+  --color-muted: #A8B49B;
+  --color-border: #3B472A;
   --color-danger: #F87171;
-  --color-primary-light: #1B2B22;
-  --ring-progress: #2BB673;
+  --color-primary-light: #333E25;
+  --ring-progress: #3DD286;
 
-  /* Neumorphic shadow tokens - Dark (Soft specular highlight & deep shadow) */
-  --neu-bg: #161D18;
-  --neu-surface: #161D18;
-  --neu-light: rgba(255, 255, 255, 0.055);
-  --neu-dark: rgba(0, 0, 0, 0.65);
-  --neu-dark-sm: rgba(0, 0, 0, 0.5);
-  --neu-dark-lg: rgba(0, 0, 0, 0.8);
-  --neu-card-border: rgba(255, 255, 255, 0.07);
-  --neu-inset-bg: #0E1310;
-  --neu-inset-sm-bg: #121814;
-  --neu-dock-bg: rgba(18, 24, 20, 0.94);
-  --neu-dock-shadow: rgba(0, 0, 0, 0.6);
-  --neu-dock-border: rgba(255, 255, 255, 0.08);
+  /* Neumorphic shadow tokens - Dark (#28301C olive dark mode) */
+  --neu-bg: #28301C;
+  --neu-surface: #28301C;
+  --neu-light: rgba(255, 255, 255, 0.08);
+  --neu-dark: rgba(16, 20, 11, 0.65);
+  --neu-dark-sm: rgba(16, 20, 11, 0.5);
+  --neu-dark-lg: rgba(16, 20, 11, 0.85);
+  --neu-card-border: rgba(255, 255, 255, 0.08);
+  --neu-inset-bg: #202717;
+  --neu-inset-sm-bg: #242B1A;
+  --neu-dock-bg: rgba(40, 48, 28, 0.95);
+  --neu-dock-shadow: rgba(16, 20, 11, 0.6);
+  --neu-dock-border: rgba(255, 255, 255, 0.09);
 }
 
 * {
@@ -176,7 +176,7 @@ body {
 
 .dark .neu-btn-primary {
   background: linear-gradient(145deg, #1f9d63, #0f663e);
-  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.6), -4px -4px 12px rgba(255, 255, 255, 0.05);
+  box-shadow: 6px 6px 16px rgba(16, 20, 11, 0.65), -4px -4px 12px rgba(255, 255, 255, 0.08);
 }
 
 .neu-btn-primary:active {
