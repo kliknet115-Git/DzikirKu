@@ -10,6 +10,7 @@ import {
   SlidersHorizontal,
   Pencil,
   Sparkles,
+  X,
 } from 'lucide-react';
 import { doaCategories } from '../../data/doa-data';
 import type { DoaCategory, DoaItem } from '../../data/doa-data';
@@ -152,7 +153,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
   return (
     <div
-      className="min-h-screen bg-[#F3F6F6] text-[#233444]"
+      className="min-h-screen bg-background text-text"
       style={{
         paddingBottom:
           view === 'detail'
@@ -162,19 +163,19 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
     >
       {/* Sticky Header Topbar */}
       <header
-        className="sticky top-0 z-30 bg-[#F3F6F6]/95 backdrop-blur-md border-b border-[#E6EBEB] px-5 py-3"
+        className="sticky top-0 z-30 bg-background/95 backdrop-blur-md border-b border-white/50 px-5 py-3"
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 10px)' }}
       >
         <div className="max-w-lg mx-auto flex items-center justify-between gap-3">
-          <div className="flex items-center gap-3 min-w-0">
-            <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#18344D] to-[#287A7B] text-white flex items-center justify-center text-xl font-bold shadow-sm flex-shrink-0">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <div className="w-9 h-9 rounded-xl neu-card-sm text-primary flex items-center justify-center text-lg font-serif font-bold flex-shrink-0">
               ۞
             </div>
             <div className="min-w-0">
-              <h1 className="text-base font-extrabold text-[#18344D] truncate leading-tight">
+              <h1 className="text-base font-extrabold text-primary-dark truncate leading-tight">
                 {view === 'detail' ? activeCategory.title : 'Doa'}
               </h1>
-              <p className="text-[10px] font-black tracking-[1.4px] text-[#287A7B] uppercase mt-0.5">
+              <p className="text-[10px] font-bold tracking-[1.4px] text-primary uppercase mt-0.5">
                 {view === 'detail' ? 'BACAAN DOA' : 'KUMPULAN DOA'}
               </p>
             </div>
@@ -186,7 +187,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                 <button
                   type="button"
                   onClick={cycleFontSize}
-                  className="w-9 h-9 rounded-xl bg-white border border-[#E7EDED] text-[#18344D] flex items-center justify-center hover:bg-[#EAF2F3] transition-colors shadow-xs"
+                  className="w-9 h-9 rounded-xl neu-btn text-primary-dark flex items-center justify-center text-xs font-bold"
                   aria-label="Ubah ukuran teks"
                   title="Ukuran Font"
                 >
@@ -202,9 +203,9 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                       setIsSheetOpen(true);
                     }
                   }}
-                  className="w-9 h-9 rounded-xl bg-white border border-[#E7EDED] text-[#287A7B] flex items-center justify-center hover:bg-[#EAF2F3] transition-colors shadow-xs"
+                  className="w-9 h-9 rounded-xl neu-btn text-primary flex items-center justify-center"
                   aria-label={activeCategory.items.length === 1 ? 'Kembali ke semua kategori' : 'Buka daftar doa'}
-                  title={activeCategory.items.length === 1 ? 'Semua Kategori' : 'Ukuran Font'}
+                  title={activeCategory.items.length === 1 ? 'Semua Kategori' : 'Daftar Bacaan'}
                 >
                   <List size={18} />
                 </button>
@@ -215,7 +216,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
               <button
                 type="button"
                 onClick={() => setView('home')}
-                className="w-9 h-9 rounded-xl bg-white border border-[#E7EDED] text-[#18344D] flex items-center justify-center hover:bg-[#EAF2F3] transition-colors shadow-xs"
+                className="w-9 h-9 rounded-xl neu-btn text-primary-dark flex items-center justify-center"
                 aria-label="Kembali ke semua kategori"
               >
                 <List size={18} />
@@ -231,20 +232,20 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
         {view === 'home' && (
           <div className="space-y-4">
             <div className="flex justify-between items-center px-1">
-              <span className="text-[11px] font-black tracking-[1.6px] text-[#287A7B]">
+              <span className="text-[11px] font-extrabold tracking-[1.6px] text-primary neu-inset-sm px-3 py-1 rounded-full uppercase">
                 MENU DOA
               </span>
-              <span className="text-xs font-bold text-[#81909A] tabular-nums">
+              <span className="text-xs font-bold text-muted tabular-nums neu-inset-sm px-3 py-1 rounded-full">
                 {String(doaCategories.length).padStart(2, '0')} KATEGORI
               </span>
             </div>
 
             <section className="px-1">
-              <h2 className="text-2xl font-extrabold text-[#18344D] tracking-tight">
+              <h2 className="text-2xl font-black text-primary-dark tracking-tight">
                 Kumpulan Doa
               </h2>
-              <p className="text-xs text-[#7B8992] leading-relaxed mt-1">
-                Pilih kumpulan doa yang ingin dibaca. Setiap bacaan disusun mengikuti urutan dokumen sumber.
+              <p className="text-xs text-muted leading-relaxed mt-1 font-medium">
+                Pilih kumpulan doa yang ingin dibaca. Setiap bacaan disusun mengikuti urutan rujukan shahih.
               </p>
             </section>
 
@@ -258,54 +259,50 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                     key={c.id}
                     type="button"
                     onClick={() => handleOpenCategory(c.id)}
-                    className={`w-full bg-white rounded-2xl p-4 border shadow-[0_4px_16px_rgba(20,48,66,0.04)] flex items-center gap-3.5 hover:border-[#287A7B]/40 active:scale-[0.985] transition-all text-left ${
-                      isCustom
-                        ? 'border-[#C29A55]/40 bg-gradient-to-r from-white via-white to-[#FDFBF7]'
-                        : 'border-[#EDF0EF]'
-                    }`}
+                    className="w-full neu-card rounded-3xl p-4.5 flex items-center gap-4 active:scale-[0.985] transition-all text-left cursor-pointer"
                   >
                     <div
                       className={`w-12 h-12 rounded-2xl flex items-center justify-center text-xl font-bold flex-shrink-0 ${
                         isCustom
-                          ? 'bg-[#FCF5E5] text-[#A2772E]'
-                          : 'bg-[#EAF2F3] text-[#287A7B]'
+                          ? 'neu-inset-sm text-gold'
+                          : 'neu-inset-sm text-primary'
                       }`}
                     >
                       {c.icon}
                     </div>
                     <div className="flex-1 min-w-0 pr-1">
                       <div className="flex items-center gap-2">
-                        <span className="block text-[15px] font-bold text-[#18344D] leading-snug break-words">
+                        <span className="block text-[15px] font-bold text-primary-dark leading-snug break-words">
                           {c.title}
                         </span>
                         {isCustom && (
-                          <span className="text-[9px] font-black text-[#A2772E] bg-[#FCF5E5] px-1.5 py-0.5 rounded tracking-wider uppercase">
+                          <span className="text-[9px] font-extrabold text-gold bg-gold/15 px-2 py-0.5 rounded-full tracking-wider uppercase">
                             Pribadi
                           </span>
                         )}
                       </div>
-                      <span className="block text-xs text-[#7C8A93] mt-0.5 leading-snug break-words">
+                      <span className="block text-xs text-muted mt-0.5 leading-snug break-words">
                         {c.subtitle}
                       </span>
                       <span
-                        className={`inline-block text-[10px] font-extrabold tracking-wider mt-1.5 uppercase px-2 py-0.5 rounded-md ${
+                        className={`inline-block text-[10px] font-bold tracking-wider mt-1.5 uppercase px-2 py-0.5 rounded-full ${
                           isCustom
-                            ? 'bg-[#FCF5E5] text-[#A2772E]'
-                            : 'bg-[#EAF2F3] text-[#287A7B]'
+                            ? 'neu-inset-sm text-gold'
+                            : 'neu-inset-sm text-primary'
                         }`}
                       >
                         {countLabel}
                       </span>
                     </div>
-                    <ChevronRight size={20} className="text-[#9AA9B0] flex-shrink-0" />
+                    <ChevronRight size={20} className="text-muted/60 flex-shrink-0" />
                   </button>
                 );
               })}
             </div>
 
             {/* Tip Card */}
-            <div className="bg-[#EAF2F3] border border-[#DCE9E9] rounded-2xl p-4 text-[#46606D] text-xs leading-relaxed mt-4">
-              <div className="text-[10px] font-black tracking-wider text-[#287A7B] mb-1">
+            <div className="neu-card-sm rounded-2xl p-4 text-muted text-xs leading-relaxed mt-4">
+              <div className="text-[10px] font-black tracking-wider text-primary mb-1 uppercase">
                 PANDUAN
               </div>
               Ketuk salah satu kategori untuk melihat daftar bacaan. Gunakan tombol sebelumnya, berikutnya, atau daftar bacaan untuk berpindah halaman.
@@ -320,39 +317,39 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
             <button
               type="button"
               onClick={() => setView('home')}
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#7B8992] hover:text-[#18344D] transition-colors py-1"
+              className="inline-flex items-center gap-2 text-xs font-bold text-muted hover:text-text transition-colors py-1 cursor-pointer"
             >
-              <div className="w-7 h-7 rounded-lg bg-white border border-[#E7EDED] flex items-center justify-center text-[#18344D]">
-                <ChevronLeft size={16} />
+              <div className="w-8 h-8 rounded-xl neu-btn flex items-center justify-center text-text">
+                <ChevronLeft size={18} />
               </div>
               <span>Semua kategori doa</span>
             </button>
 
             <div className="flex justify-between items-center px-1">
-              <span className="text-[11px] font-black tracking-[1.6px] text-[#287A7B]">
+              <span className="text-[11px] font-extrabold tracking-[1.6px] text-primary neu-inset-sm px-3 py-1 rounded-full uppercase">
                 KATEGORI DOA
               </span>
-              <span className="text-xs font-bold text-[#81909A] tabular-nums">
+              <span className="text-xs font-bold text-muted tabular-nums neu-inset-sm px-3 py-1 rounded-full">
                 {activeCategory.countLabel}
               </span>
             </div>
 
             <section className="px-1">
-              <h2 className="text-2xl font-extrabold text-[#18344D] tracking-tight leading-tight break-words">
+              <h2 className="text-2xl font-black text-primary-dark tracking-tight leading-tight break-words">
                 {activeCategory.title}
               </h2>
-              <p className="text-xs text-[#7B8992] leading-relaxed mt-1 break-words">
+              <p className="text-xs text-muted leading-relaxed mt-1 break-words font-medium">
                 {activeCategory.subtitle}
               </p>
             </section>
 
             {/* Action Bar for My Doa */}
             {isMyDoa && (
-              <div className="flex items-center gap-2 pt-1">
+              <div className="flex items-center gap-2.5 pt-1">
                 <button
                   type="button"
                   onClick={() => setIsPickerOpen(true)}
-                  className="flex-1 py-2.5 px-3.5 rounded-xl bg-[#287A7B] text-white text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-[#1f6364] active:scale-[0.98] transition-all shadow-xs"
+                  className="flex-1 py-2.5 px-4 rounded-2xl neu-btn-primary text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                 >
                   <Plus size={16} />
                   <span>Tambah Doa</span>
@@ -361,7 +358,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                   <button
                     type="button"
                     onClick={() => setIsManageOpen(true)}
-                    className="py-2.5 px-3.5 rounded-xl bg-white border border-[#D5E2E2] text-[#18344D] text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-[#F0F6F6] active:scale-[0.98] transition-all shadow-xs"
+                    className="py-2.5 px-4 rounded-2xl neu-btn text-primary-dark text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer"
                   >
                     <SlidersHorizontal size={15} />
                     <span>Atur & Urutkan</span>
@@ -372,21 +369,21 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
             {/* Empty State for My Doa */}
             {isMyDoa && myDoaList.length === 0 && (
-              <div className="bg-white rounded-3xl p-6 text-center border border-[#E7EDED] shadow-sm my-2">
-                <div className="w-14 h-14 rounded-2xl bg-[#FCF5E5] text-[#A2772E] flex items-center justify-center text-2xl mx-auto mb-3">
+              <div className="neu-card rounded-3xl p-6 text-center my-2 space-y-3">
+                <div className="w-14 h-14 rounded-2xl neu-inset-sm text-gold flex items-center justify-center text-2xl mx-auto mb-2">
                   ★
                 </div>
-                <h3 className="text-base font-bold text-[#18344D]">
+                <h3 className="text-base font-bold text-primary-dark">
                   Belum Ada Doa di Kategori Ini
                 </h3>
-                <p className="text-xs text-[#7B8992] leading-relaxed max-w-xs mx-auto mt-1 mb-5">
+                <p className="text-xs text-muted leading-relaxed max-w-xs mx-auto">
                   Kumpulkan doa-doa pilihan Anda dari seluruh doa dalam aplikasi ini. Anda dapat mengatur urutan dan mengganti judul doa sesuai kenyamanan Anda.
                 </p>
-                <div className="flex flex-col gap-2 max-w-xs mx-auto">
+                <div className="flex flex-col gap-2 max-w-xs mx-auto pt-2">
                   <button
                     type="button"
                     onClick={() => setIsPickerOpen(true)}
-                    className="w-full py-3 px-4 rounded-xl bg-[#287A7B] text-white text-xs font-bold flex items-center justify-center gap-2 shadow-sm"
+                    className="w-full py-3 px-4 rounded-2xl neu-btn-primary text-xs font-bold flex items-center justify-center gap-2"
                   >
                     <Plus size={16} />
                     <span>Pilih Doa Sekarang</span>
@@ -394,7 +391,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                   <button
                     type="button"
                     onClick={() => handleUpdateMyDoaList(DEFAULT_MY_DOA)}
-                    className="w-full py-2.5 px-4 rounded-xl bg-[#F0F6F6] text-[#287A7B] text-xs font-bold flex items-center justify-center gap-2 hover:bg-[#E3EFEF]"
+                    className="w-full py-2.5 px-4 rounded-2xl neu-btn text-primary text-xs font-bold flex items-center justify-center gap-2"
                   >
                     <Sparkles size={14} />
                     <span>Gunakan Doa Rekomendasi</span>
@@ -405,53 +402,53 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
             {/* Item Rows */}
             {activeCategory.items.length > 0 && (
-              <div className="grid gap-2.5 pt-1">
+              <div className="grid gap-3 pt-1">
                 {activeCategory.items.map((item, idx) => (
                   <React.Fragment key={idx}>
                     {activeCategory.id === 'doa-pilihan' && (
                       idx === 0 ? (
                         <div className="flex items-center gap-2 pt-1 pb-0.5">
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
-                          <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
+                          <div className="h-px bg-border flex-1" />
+                          <span className="text-[10px] font-black tracking-wider text-primary neu-inset-sm px-3 py-1 rounded-full uppercase">
                             1. DOA PERMOHONAN AMPUNAN
                           </span>
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <div className="h-px bg-border flex-1" />
                         </div>
                       ) : idx === 9 ? (
                         <div className="flex items-center gap-2 pt-3 pb-0.5">
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
-                          <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
+                          <div className="h-px bg-border flex-1" />
+                          <span className="text-[10px] font-black tracking-wider text-primary neu-inset-sm px-3 py-1 rounded-full uppercase">
                             2. DOA PERMOHONAN REZEKI
                           </span>
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <div className="h-px bg-border flex-1" />
                         </div>
                       ) : idx === 16 ? (
                         <div className="flex items-center gap-2 pt-3 pb-0.5">
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
-                          <span className="text-[11px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-3 py-1 rounded-lg">
+                          <div className="h-px bg-border flex-1" />
+                          <span className="text-[10px] font-black tracking-wider text-primary neu-inset-sm px-3 py-1 rounded-full uppercase">
                             3. DOA LAINNYA
                           </span>
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <div className="h-px bg-border flex-1" />
                         </div>
                       ) : null
                     )}
                     <button
                       type="button"
                       onClick={() => handleOpenDetail(idx)}
-                      className="w-full bg-white rounded-2xl p-3.5 border border-[#EDF0EF] shadow-[0_2px_10px_rgba(20,48,66,0.03)] flex items-center gap-3 hover:border-[#287A7B]/40 active:scale-[0.99] transition-all text-left overflow-hidden"
+                      className="w-full neu-card rounded-2xl p-4 flex items-center gap-3.5 active:scale-[0.99] transition-all text-left cursor-pointer overflow-hidden"
                     >
-                      <span className="w-8 h-8 rounded-xl bg-[#EDF3F3] text-[#287A7B] text-xs font-black flex items-center justify-center tabular-nums flex-shrink-0">
+                      <span className="w-8 h-8 rounded-xl neu-inset-sm text-primary text-xs font-black flex items-center justify-center tabular-nums flex-shrink-0">
                         {String(idx + 1).padStart(2, '0')}
                       </span>
                       <div className="flex-1 min-w-0 pr-1">
-                        <span className="block text-sm font-bold text-[#18344D] leading-snug break-words">
+                        <span className="block text-sm font-bold text-primary-dark leading-snug break-words">
                           {item.title}
                         </span>
-                        <span className="block text-xs text-[#829098] mt-1 leading-relaxed break-words">
+                        <span className="block text-xs text-muted mt-1 leading-relaxed break-words">
                           {item.subtitle || 'Bacaan doa'}
                         </span>
                       </div>
-                      <ChevronRight size={18} className="text-[#A2AFB5] flex-shrink-0" />
+                      <ChevronRight size={18} className="text-muted/60 flex-shrink-0" />
                     </button>
                   </React.Fragment>
                 ))}
@@ -460,7 +457,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                   <button
                     type="button"
                     onClick={() => setIsPickerOpen(true)}
-                    className="w-full py-3.5 px-4 rounded-2xl border-2 border-dashed border-[#BCD5D5] text-[#287A7B] bg-[#F7FAFA] hover:bg-[#EDF5F5] text-xs font-bold flex items-center justify-center gap-2 transition-colors mt-1"
+                    className="w-full py-3.5 px-4 rounded-2xl neu-btn border-2 border-dashed border-primary/30 text-primary text-xs font-bold flex items-center justify-center gap-2 transition-all mt-1 cursor-pointer"
                   >
                     <Plus size={16} />
                     <span>Tambah Doa Pilihan Lainnya</span>
@@ -485,10 +482,10 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                   setView('category');
                 }
               }}
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#7B8992] hover:text-[#18344D] transition-colors py-1"
+              className="inline-flex items-center gap-2 text-xs font-bold text-muted hover:text-text transition-colors py-1 cursor-pointer"
             >
-              <div className="w-7 h-7 rounded-lg bg-white border border-[#E7EDED] flex items-center justify-center text-[#18344D]">
-                <ChevronLeft size={16} />
+              <div className="w-8 h-8 rounded-xl neu-btn flex items-center justify-center text-text">
+                <ChevronLeft size={18} />
               </div>
               <span className="truncate max-w-[240px]">
                 {activeCategory.items.length === 1 ? 'Semua kategori doa' : activeCategory.title}
@@ -497,7 +494,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
             {/* Progress Row */}
             <div className="flex justify-between items-center px-1">
-              <span className="text-[11px] font-black tracking-[1.4px] text-[#287A7B] uppercase truncate max-w-[220px]">
+              <span className="text-[11px] font-black tracking-[1.4px] text-primary neu-inset-sm px-3 py-1 rounded-full uppercase truncate max-w-[220px]">
                 {activeCategory.id === 'doa-pilihan'
                   ? (activeIndex < 9
                       ? '1. Doa Permohonan Ampunan'
@@ -506,7 +503,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                       : '3. Doa Lainnya')
                   : activeCategory.title}
               </span>
-              <span className="text-xs font-bold text-[#81909A] tabular-nums">
+              <span className="text-xs font-bold text-muted tabular-nums neu-inset-sm px-3 py-1 rounded-full">
                 {String(activeIndex + 1).padStart(2, '0')} /{' '}
                 {String(activeCategory.items.length).padStart(2, '0')}
               </span>
@@ -515,11 +512,11 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
             {/* Title Header */}
             <section className="px-1 flex items-start justify-between gap-3">
               <div className="flex-1 min-w-0">
-                <h2 className="text-xl font-bold text-[#18344D] leading-snug break-words">
+                <h2 className="text-xl font-black text-primary-dark leading-snug break-words">
                   {activeItem.title}
                 </h2>
                 {activeItem.subtitle && (
-                  <p className="text-xs text-[#8A969D] mt-1 font-medium leading-relaxed break-words">
+                  <p className="text-xs text-muted mt-1 font-semibold leading-relaxed break-words">
                     {activeItem.subtitle}
                   </p>
                 )}
@@ -528,7 +525,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                 <button
                   type="button"
                   onClick={() => setEditingIndex(activeIndex)}
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-[#D5E4E4] text-[#287A7B] text-xs font-bold hover:bg-[#EAF2F3] transition-all flex-shrink-0 shadow-xs active:scale-95"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl neu-btn text-primary text-xs font-bold flex-shrink-0 cursor-pointer"
                   title="Ubah judul doa ini"
                 >
                   <Pencil size={13} />
@@ -538,26 +535,22 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
             </section>
 
             {/* Arabic Card */}
-            <div
-              className={`relative overflow-hidden bg-white rounded-3xl p-5 border border-[#EDF0EF] shadow-[0_8px_24px_rgba(20,48,66,0.06)] ${
-                !activeItem.arabic ? 'bg-[#FAFDFF] border-dashed border-[#D2E2E2]' : ''
-              }`}
-            >
+            <div className="relative overflow-hidden neu-card rounded-3xl p-5 sm:p-6">
               {/* Gold Top Accent Line */}
               {activeItem.arabic && (
-                <div className="absolute top-0 left-6 right-6 h-[3px] rounded-b bg-gradient-to-r from-[#C29A55] to-[#DFC58C]" />
+                <div className="absolute top-0 left-6 right-6 h-[3px] rounded-b bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
               )}
 
               {!activeItem.arabic && (
-                <div className="flex items-center gap-2 text-[#287A7B] text-[11px] font-black tracking-wider mb-3">
-                  <span className="w-4 h-[1px] bg-[#C29A55]" />
+                <div className="flex items-center gap-2 text-primary text-[11px] font-black tracking-wider mb-3">
+                  <span className="w-4 h-[1px] bg-gold" />
                   <span>KETERANGAN</span>
                 </div>
               )}
 
               {activeItem.arabic ? (
                 <div
-                  className={`arabic-text text-right direction-rtl text-[#1E3042] whitespace-pre-line py-1 font-medium ${getArabicFontSizeClass(
+                  className={`arabic-text text-right direction-rtl text-primary-dark whitespace-pre-line py-1 font-medium ${getArabicFontSizeClass(
                     activeItem.arabic
                   )}`}
                   lang="ar"
@@ -567,10 +560,10 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                 </div>
               ) : (
                 <div className="text-center py-6 px-3">
-                  <p className="text-lg font-bold text-[#287A7B]">
+                  <p className="text-lg font-bold text-primary">
                     {activeItem.meaning || 'Berdo’a Bebas'}
                   </p>
-                  <p className="text-xs text-[#7B8992] mt-1.5">
+                  <p className="text-xs text-muted mt-1.5">
                     Dianjurkan memanjatkan doa-doa kebaikan sesuai hajat masing-masing
                   </p>
                 </div>
@@ -579,12 +572,12 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
             {/* Arti / Makna Card */}
             {activeItem.meaning && activeItem.arabic && (
-              <div className="bg-white rounded-3xl p-5 border border-[#EDF0EF] shadow-[0_4px_16px_rgba(20,48,66,0.04)]">
-                <div className="flex items-center gap-2 text-[#287A7B] text-[11px] font-black tracking-wider mb-2">
-                  <span className="w-4 h-[1px] bg-[#C29A55]" />
+              <div className="neu-card rounded-3xl p-5 space-y-2">
+                <div className="flex items-center gap-2 text-primary text-[11px] font-bold tracking-widest uppercase">
+                  <span className="w-4 h-[2px] bg-gold rounded-full" />
                   <span>ARTI / MAKNA</span>
                 </div>
-                <p className="text-[15px] text-[#263847] leading-relaxed font-normal whitespace-pre-line">
+                <p className="text-sm text-text leading-relaxed font-normal whitespace-pre-line">
                   {activeItem.meaning}
                 </p>
               </div>
@@ -592,15 +585,15 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
             {/* Catatan / Note Card */}
             {activeItem.note && (
-              <div className="bg-[#EAF2F3] border border-[#DBE8E9] rounded-2xl p-4 flex gap-3 items-start">
-                <div className="w-7 h-7 rounded-lg bg-[#D8E9E9] text-[#287A7B] flex items-center justify-center flex-shrink-0 mt-0.5">
+              <div className="neu-card-sm rounded-2xl p-4 flex gap-3 items-start">
+                <div className="w-7 h-7 rounded-lg neu-inset-sm text-primary flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Info size={16} />
                 </div>
                 <div className="min-w-0">
-                  <div className="text-[10px] font-black text-[#287477] tracking-wider uppercase mb-0.5">
+                  <div className="text-[10px] font-black text-primary tracking-wider uppercase mb-0.5">
                     CATATAN
                   </div>
-                  <p className="text-xs text-[#2E4A59] font-medium leading-relaxed">
+                  <p className="text-xs text-muted font-medium leading-relaxed">
                     {activeItem.note.split(/(https?:\/\/[^\s)]+)/g).map((part, i) =>
                       part.match(/^https?:\/\//) ? (
                         <a
@@ -608,7 +601,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                           href={part}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="underline text-[#1e5a5c] hover:text-[#18344D] font-bold break-all"
+                          className="underline text-primary hover:text-primary-dark font-bold break-all"
                         >
                           {part}
                         </a>
@@ -627,17 +620,17 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
       {/* ================= FIXED BOTTOM PAGER (FOR DETAIL VIEW) ================= */}
       {view === 'detail' && (
         <nav
-          className="fixed left-0 right-0 bg-[#F3F6F6]/95 backdrop-blur-md border-t border-[#E6EBEB] z-40 px-5 py-3"
+          className="fixed left-0 right-0 neu-dock z-40 px-5 py-3 border-t border-white/60"
           style={{ bottom: 'calc(4rem + env(safe-area-inset-bottom, 0px))' }}
           aria-label="Navigasi bacaan doa"
         >
-          <div className="max-w-lg mx-auto flex items-center justify-between gap-2.5">
+          <div className="max-w-lg mx-auto flex items-center justify-between gap-3">
             {/* Previous Button */}
             <button
               type="button"
               onClick={handlePrev}
               disabled={activeIndex === 0}
-              className="w-13 h-12 rounded-2xl bg-white border border-[#E7EDED] text-[#18344D] font-bold flex items-center justify-center disabled:opacity-35 disabled:pointer-events-none hover:bg-black/5 active:scale-95 transition-all shadow-xs"
+              className="w-13 h-12 rounded-2xl neu-btn text-primary-dark font-bold flex items-center justify-center disabled:opacity-35 disabled:pointer-events-none transition-all cursor-pointer"
               aria-label="Bacaan sebelumnya"
             >
               <ChevronLeft size={20} />
@@ -654,7 +647,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                   setIsSheetOpen(true);
                 }
               }}
-              className="w-13 h-12 rounded-2xl bg-white border border-[#E7EDED] text-[#287A7B] font-bold flex items-center justify-center hover:bg-black/5 active:scale-95 transition-all shadow-xs"
+              className="w-13 h-12 rounded-2xl neu-btn text-primary font-bold flex items-center justify-center transition-all cursor-pointer"
               aria-label={activeCategory.items.length === 1 ? 'Kembali ke semua kategori' : 'Daftar bacaan'}
               title={activeCategory.items.length === 1 ? 'Semua Kategori' : 'Daftar Bacaan'}
             >
@@ -665,7 +658,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
             <button
               type="button"
               onClick={handleNext}
-              className="flex-1 h-12 rounded-2xl bg-[#18344D] text-white font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#244B63] active:scale-[0.99] transition-all shadow-md"
+              className="flex-1 h-12 rounded-2xl neu-btn-primary font-bold text-sm flex items-center justify-center gap-2 transition-all cursor-pointer select-none"
             >
               <span>
                 {activeIndex === activeCategory.items.length - 1
@@ -685,33 +678,33 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
       {/* ================= BOTTOM SHEET: LIST OF PRAYERS ================= */}
       {isSheetOpen && (
         <div
-          className="fixed inset-0 bg-[#142B3C]/50 z-50 flex items-end justify-center transition-opacity"
+          className="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 flex items-end justify-center transition-opacity"
           onClick={() => setIsSheetOpen(false)}
         >
           <div
-            className="bg-[#F8FAFA] rounded-t-3xl max-w-lg w-full max-h-[82dvh] flex flex-col p-4 shadow-2xl"
+            className="neu-card rounded-t-3xl max-w-lg w-full max-h-[82dvh] flex flex-col p-4 border border-white/70"
             style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 16px)' }}
             onClick={(e) => e.stopPropagation()}
           >
             {/* Grabber */}
-            <div className="w-10 h-1 rounded-full bg-[#CBD4D6] mx-auto mb-3" />
+            <div className="w-10 h-1.5 rounded-full neu-inset mx-auto mb-3" />
 
             {/* Sheet Header */}
-            <div className="flex items-center justify-between pb-3 px-1 border-b border-[#EDF0EF]">
+            <div className="flex items-center justify-between pb-3 px-1 border-b border-border/60">
               <div>
-                <h3 className="text-base font-bold text-[#18344D]">
+                <h3 className="text-base font-extrabold text-primary-dark">
                   Daftar {activeCategory.title}
                 </h3>
-                <span className="text-xs text-[#7D8B94] font-medium">
+                <span className="text-xs text-muted font-medium">
                   {activeCategory.items.length} bacaan doa
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setIsSheetOpen(false)}
-                className="bg-[#EAF1F1] text-[#18344D] rounded-xl px-3 py-1.5 text-xs font-bold hover:bg-[#DDE7E7] transition-colors"
+                className="w-8 h-8 rounded-full neu-btn-circle flex items-center justify-center text-muted hover:text-text"
               >
-                Tutup
+                <X size={17} />
               </button>
             </div>
 
@@ -724,27 +717,27 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                     {activeCategory.id === 'doa-pilihan' && (
                       idx === 0 ? (
                         <div className="flex items-center gap-2 pt-1 pb-0.5">
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
-                          <span className="text-[10px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-2.5 py-0.5 rounded-md">
+                          <div className="h-px bg-border flex-1" />
+                          <span className="text-[10px] font-black tracking-wider text-primary neu-inset-sm px-2.5 py-0.5 rounded-md uppercase">
                             1. DOA PERMOHONAN AMPUNAN
                           </span>
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <div className="h-px bg-border flex-1" />
                         </div>
                       ) : idx === 9 ? (
                         <div className="flex items-center gap-2 pt-2.5 pb-0.5">
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
-                          <span className="text-[10px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-2.5 py-0.5 rounded-md">
+                          <div className="h-px bg-border flex-1" />
+                          <span className="text-[10px] font-black tracking-wider text-primary neu-inset-sm px-2.5 py-0.5 rounded-md uppercase">
                             2. DOA PERMOHONAN REZEKI
                           </span>
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <div className="h-px bg-border flex-1" />
                         </div>
                       ) : idx === 16 ? (
                         <div className="flex items-center gap-2 pt-2.5 pb-0.5">
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
-                          <span className="text-[10px] font-black tracking-wider text-[#287A7B] bg-[#EAF2F3] px-2.5 py-0.5 rounded-md">
+                          <div className="h-px bg-border flex-1" />
+                          <span className="text-[10px] font-black tracking-wider text-primary neu-inset-sm px-2.5 py-0.5 rounded-md uppercase">
                             3. DOA LAINNYA
                           </span>
-                          <div className="h-px bg-[#D6E3E3] flex-1" />
+                          <div className="h-px bg-border flex-1" />
                         </div>
                       ) : null
                     )}
@@ -755,32 +748,32 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
                         setIsSheetOpen(false);
                         if (settings?.hapticsEnabled) triggerHaptic();
                       }}
-                      className={`w-full p-3.5 rounded-2xl border text-left flex items-center gap-3 transition-all ${
+                      className={`w-full p-3.5 rounded-2xl text-left flex items-center gap-3 transition-all select-none cursor-pointer ${
                         isSelected
-                          ? 'bg-[#EDF6F4] border-[#8AB6B3] shadow-xs'
-                          : 'bg-white border-[#EDF0EF] hover:border-[#DDE7E7]'
+                          ? 'neu-inset text-primary'
+                          : 'neu-btn text-text hover:text-primary-dark'
                       }`}
                     >
                       <span
                         className={`w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold tabular-nums flex-shrink-0 ${
                           isSelected
-                            ? 'bg-[#287A7B] text-white'
-                            : 'bg-[#EDF3F3] text-[#287A7B]'
+                            ? 'neu-btn-primary text-white'
+                            : 'neu-inset-sm text-primary'
                         }`}
                       >
                         {String(idx + 1).padStart(2, '0')}
                       </span>
 
                       <div className="flex-1 min-w-0 pr-1">
-                        <p className="text-sm font-bold text-[#18344D] leading-snug break-words">
+                        <p className="text-sm font-bold leading-snug break-words">
                           {item.title}
                         </p>
-                        <p className="text-xs text-[#829098] mt-0.5 leading-relaxed break-words">
+                        <p className="text-xs text-muted mt-0.5 leading-relaxed break-words">
                           {item.subtitle || activeCategory.title}
                         </p>
                       </div>
 
-                      <ChevronRight size={18} className="text-[#A2AFB5] flex-shrink-0" />
+                      <ChevronRight size={18} className="text-muted/60 flex-shrink-0" />
                     </button>
                   </React.Fragment>
                 );

@@ -24,26 +24,27 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="modal-backdrop fixed inset-0 bg-black/40 z-[70] flex items-center justify-center px-6">
-      <div className="modal-content bg-surface rounded-2xl w-full max-w-sm shadow-xl">
-        <div className="p-6">
-          <h3 className="text-lg font-semibold text-text mb-2">{title}</h3>
-          <p className="text-sm text-muted leading-relaxed">{message}</p>
+    <div className="modal-backdrop fixed inset-0 bg-black/40 backdrop-blur-xs z-[70] flex items-center justify-center px-5">
+      <div className="modal-content neu-card rounded-3xl w-full max-w-sm p-5 border border-white/70 space-y-4">
+        <div>
+          <h3 className="text-lg font-bold text-primary-dark mb-1.5">{title}</h3>
+          <p className="text-xs text-muted leading-relaxed font-medium">{message}</p>
         </div>
-        <div className="flex border-t border-border">
+        <div className="flex items-center gap-2.5 pt-2">
           <button
+            type="button"
             onClick={onCancel}
-            className="flex-1 py-3.5 text-sm font-medium text-muted hover:bg-gray-50 rounded-bl-2xl transition-colors"
+            className="flex-1 py-2.5 px-4 rounded-xl neu-btn text-xs font-semibold text-muted hover:text-text transition-all"
           >
             {cancelLabel}
           </button>
-          <div className="w-px bg-border" />
           <button
+            type="button"
             onClick={onConfirm}
-            className={`flex-1 py-3.5 text-sm font-semibold rounded-br-2xl transition-colors ${
+            className={`flex-1 py-2.5 px-4 rounded-xl text-xs font-bold transition-all ${
               danger
-                ? 'text-danger hover:bg-red-50'
-                : 'text-primary hover:bg-primary-soft'
+                ? 'bg-danger text-white shadow-md active:scale-95'
+                : 'neu-btn-primary'
             }`}
           >
             {confirmLabel}

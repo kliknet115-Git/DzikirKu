@@ -120,51 +120,56 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
       style={{ paddingBottom: 'calc(7rem + env(safe-area-inset-bottom, 0px))' }}
     >
       <header
-        className="px-5 pt-3 pb-4 bg-background sticky top-0 z-10 backdrop-blur-md bg-background/90 border-b border-border/40"
+        className="px-5 pt-3 pb-3 bg-background/95 sticky top-0 z-10 backdrop-blur-md border-b border-white/50"
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 12px)' }}
       >
         <div className="max-w-lg mx-auto">
-          <h1 className="text-xl font-bold text-primary-dark">Pengaturan</h1>
-          <p className="text-xs text-muted mt-0.5">
+          <div className="flex items-center gap-2 mb-0.5">
+            <div className="w-7 h-7 rounded-lg neu-card-sm flex items-center justify-center text-primary font-serif font-bold text-sm">
+              ۞
+            </div>
+            <h1 className="text-xl font-extrabold text-primary-dark">Pengaturan</h1>
+          </div>
+          <p className="text-xs text-muted font-medium">
             Preferensi aplikasi & pengelolaan data
           </p>
         </div>
       </header>
 
-      <div className="max-w-lg mx-auto px-5 pt-3 space-y-5">
+      <div className="max-w-lg mx-auto px-5 pt-4 space-y-5">
         {/* iOS Install Prompt Banner */}
         <button
           type="button"
           onClick={() => setShowIosGuide(true)}
-          className="w-full p-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-2xl shadow-sm text-left flex items-center justify-between gap-3 active:scale-[0.99] transition-transform"
+          className="w-full p-4.5 neu-btn-primary rounded-3xl text-left flex items-center justify-between gap-3 active:scale-[0.99] transition-all cursor-pointer"
         >
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-2xl bg-white/20 backdrop-blur-xs flex items-center justify-center flex-shrink-0">
               <Smartphone size={22} className="text-white" />
             </div>
             <div>
-              <p className="text-sm font-bold">Install di iPhone / iOS</p>
-              <p className="text-xs text-white/80">
+              <p className="text-sm font-extrabold text-white">Install di iPhone / iOS</p>
+              <p className="text-xs text-white/80 font-medium">
                 Jadikan aplikasi penuh tanpa browser bar
               </p>
             </div>
           </div>
-          <ExternalLink size={16} className="text-white/70 flex-shrink-0" />
+          <ExternalLink size={18} className="text-white/70 flex-shrink-0" />
         </button>
 
         {/* Haptics & Sound */}
         <section>
-          <h2 className="text-xs font-semibold text-muted uppercase tracking-wider mb-2 px-1">
+          <h2 className="text-xs font-bold text-muted uppercase tracking-wider mb-2 px-1">
             Umpan Balik Hitungan
           </h2>
-          <div className="bg-surface rounded-2xl border border-border/60 shadow-xs divide-y divide-border/60">
+          <div className="neu-card rounded-3xl divide-y divide-black/[0.04] overflow-hidden">
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-primary-soft/60 flex items-center justify-center text-primary">
+                <div className="w-9 h-9 rounded-xl neu-inset-sm flex items-center justify-center text-primary">
                   <Vibrate size={18} />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-text">Getaran (Haptic)</p>
+                  <p className="text-sm font-bold text-text">Getaran (Haptic)</p>
                   {!hapticsSupported && (
                     <p className="text-[11px] text-muted">
                       Tidak didukung browser ini (iOS Safari menggunakan audio klik)
@@ -182,18 +187,18 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
                   disabled={!hapticsSupported}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary peer-disabled:opacity-50" />
+                <div className="w-12 h-6 rounded-full neu-inset peer-focus:outline-none peer peer-checked:bg-primary/20 transition-all after:content-[''] after:absolute after:top-[2px] after:start-[3px] after:bg-white after:rounded-full after:h-5 after:w-5 after:shadow-sm after:transition-all peer-checked:after:translate-x-6 peer-checked:after:bg-primary peer-disabled:opacity-50" />
               </label>
             </div>
 
             <div className="flex items-center justify-between p-4">
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-primary-soft/60 flex items-center justify-center text-primary">
+                <div className="w-9 h-9 rounded-xl neu-inset-sm flex items-center justify-center text-primary">
                   <Volume2 size={18} />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-text">Suara Ketukan</p>
-                  <p className="text-[11px] text-muted">Klik lembut setiap ketukan hitung</p>
+                  <p className="text-sm font-bold text-text">Suara Ketukan</p>
+                  <p className="text-[11px] text-muted font-medium">Klik lembut setiap ketukan hitung</p>
                 </div>
               </div>
               <label className="relative inline-flex items-center cursor-pointer">
@@ -205,7 +210,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
                   }
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary" />
+                <div className="w-12 h-6 rounded-full neu-inset peer-focus:outline-none peer peer-checked:bg-primary/20 transition-all after:content-[''] after:absolute after:top-[2px] after:start-[3px] after:bg-white after:rounded-full after:h-5 after:w-5 after:shadow-sm after:transition-all peer-checked:after:translate-x-6 peer-checked:after:bg-primary" />
               </label>
             </div>
           </div>
@@ -213,10 +218,10 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
 
         {/* Preferences */}
         <section>
-          <h2 className="text-xs font-semibold text-muted uppercase tracking-wider mb-2 px-1">
+          <h2 className="text-xs font-bold text-muted uppercase tracking-wider mb-2 px-1">
             Target Standar
           </h2>
-          <div className="bg-surface rounded-2xl border border-border/60 shadow-xs">
+          <div className="neu-card rounded-3xl overflow-hidden">
             <button
               type="button"
               onClick={() => {
@@ -224,21 +229,21 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
                 setTargetError('');
                 setShowTargetModal(true);
               }}
-              className="w-full flex items-center justify-between p-4 text-left"
+              className="w-full flex items-center justify-between p-4 text-left cursor-pointer hover:bg-black/[0.01] transition-colors"
             >
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-primary-soft/60 flex items-center justify-center text-primary">
+                <div className="w-9 h-9 rounded-xl neu-inset-sm flex items-center justify-center text-primary">
                   <Target size={18} />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-text">
+                  <p className="text-sm font-bold text-text">
                     Target default dzikir baru
                   </p>
-                  <p className="text-xs text-muted">Nilai awal saat membuat dzikir custom</p>
+                  <p className="text-xs text-muted font-medium">Nilai awal saat membuat dzikir custom</p>
                 </div>
               </div>
               <div className="text-right">
-                <span className="text-sm font-bold text-primary bg-primary-soft px-2.5 py-1 rounded-lg">
+                <span className="text-sm font-bold text-primary neu-inset-sm px-3 py-1 rounded-xl">
                   {settings.defaultTarget}x
                 </span>
               </div>
@@ -248,22 +253,22 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
 
         {/* Backup & Restore JSON */}
         <section>
-          <h2 className="text-xs font-semibold text-muted uppercase tracking-wider mb-2 px-1">
+          <h2 className="text-xs font-bold text-muted uppercase tracking-wider mb-2 px-1">
             Cadangan & Pemulihan (JSON)
           </h2>
-          <div className="bg-surface rounded-2xl border border-border/60 shadow-xs divide-y divide-border/60">
+          <div className="neu-card rounded-3xl divide-y divide-black/[0.04] overflow-hidden">
             <button
               type="button"
               onClick={handleExportData}
-              className="w-full flex items-center justify-between p-4 text-left hover:bg-black/5 transition-colors"
+              className="w-full flex items-center justify-between p-4 text-left hover:bg-black/[0.015] transition-colors cursor-pointer"
             >
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-primary-soft/60 flex items-center justify-center text-primary">
+                <div className="w-9 h-9 rounded-xl neu-inset-sm flex items-center justify-center text-primary">
                   <Download size={18} />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-text">Ekspor Cadangan Data</p>
-                  <p className="text-xs text-muted">Unduh seluruh dzikir custom dan pengaturan</p>
+                  <p className="text-sm font-bold text-text">Ekspor Cadangan Data</p>
+                  <p className="text-xs text-muted font-medium">Unduh seluruh dzikir custom dan pengaturan</p>
                 </div>
               </div>
             </button>
@@ -271,15 +276,15 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="w-full flex items-center justify-between p-4 text-left hover:bg-black/5 transition-colors"
+              className="w-full flex items-center justify-between p-4 text-left hover:bg-black/[0.015] transition-colors cursor-pointer"
             >
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-primary-soft/60 flex items-center justify-center text-primary">
+                <div className="w-9 h-9 rounded-xl neu-inset-sm flex items-center justify-center text-primary">
                   <Upload size={18} />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-text">Impor Cadangan Data</p>
-                  <p className="text-xs text-muted">Pulihkan data dari berkas JSON sebelumnya</p>
+                  <p className="text-sm font-bold text-text">Impor Cadangan Data</p>
+                  <p className="text-xs text-muted font-medium">Pulihkan data dari berkas JSON sebelumnya</p>
                 </div>
               </div>
             </button>
@@ -293,7 +298,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
           </div>
 
           {importStatus && (
-            <p className={`text-xs mt-2 px-1 font-medium ${
+            <p className={`text-xs mt-2 px-1 font-bold ${
               importStatus.startsWith('Error') ? 'text-danger' : 'text-primary'
             }`}>
               {importStatus}
@@ -303,54 +308,54 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
 
         {/* Data Reset */}
         <section>
-          <h2 className="text-xs font-semibold text-danger uppercase tracking-wider mb-2 px-1">
+          <h2 className="text-xs font-bold text-danger uppercase tracking-wider mb-2 px-1">
             Zona Berbahaya
           </h2>
-          <div className="bg-surface rounded-2xl border border-danger/30 shadow-xs">
+          <div className="neu-card rounded-3xl p-2 border border-danger/25">
             <button
               type="button"
               onClick={() => setShowClearConfirm(true)}
-              className="w-full flex items-center gap-3 p-4 text-left hover:bg-red-50/50 rounded-2xl transition-colors"
+              className="w-full flex items-center gap-3 p-3.5 text-left rounded-2xl hover:bg-red-500/10 transition-colors cursor-pointer"
             >
-              <div className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center text-danger">
+              <div className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center text-danger flex-shrink-0">
                 <Trash2 size={18} />
               </div>
               <div>
-                <p className="text-sm font-semibold text-danger">
+                <p className="text-sm font-bold text-danger">
                   Hapus Seluruh Data
                 </p>
-                <p className="text-xs text-muted">
+                <p className="text-xs text-muted font-medium">
                   Hapus dzikir custom dan kembalikan pengaturan ke kondisi awal
                 </p>
               </div>
             </button>
           </div>
-          <p className="text-[11px] text-muted mt-2 px-1 leading-relaxed">
+          <p className="text-[11px] text-muted mt-2 px-1 leading-relaxed font-medium">
             Data tersimpan secara lokal di browser/iPhone Anda (IndexedDB). Tidak ada data yang dikirim ke server.
           </p>
         </section>
 
         {/* Information */}
         <section>
-          <h2 className="text-xs font-semibold text-muted uppercase tracking-wider mb-2 px-1">
+          <h2 className="text-xs font-bold text-muted uppercase tracking-wider mb-2 px-1">
             Informasi
           </h2>
-          <div className="bg-surface rounded-2xl border border-border/60 shadow-xs">
+          <div className="neu-card rounded-3xl overflow-hidden">
             <button
               type="button"
               onClick={() => setShowAbout(true)}
-              className="w-full flex items-center justify-between p-4 text-left"
+              className="w-full flex items-center justify-between p-4 text-left cursor-pointer hover:bg-black/[0.015] transition-colors"
             >
               <div className="flex items-center gap-3">
-                <div className="w-9 h-9 rounded-xl bg-primary-soft/60 flex items-center justify-center text-primary">
+                <div className="w-9 h-9 rounded-xl neu-inset-sm flex items-center justify-center text-primary">
                   <Info size={18} />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-text">Tentang DzikirKu</p>
-                  <p className="text-xs text-muted">Versi 1.0.0 (MVP iOS PWA)</p>
+                  <p className="text-sm font-bold text-text">Tentang DzikirKu</p>
+                  <p className="text-xs text-muted font-medium">Versi 1.0.0 (MVP iOS PWA)</p>
                 </div>
               </div>
-              <span className="text-xs font-medium text-muted">v1.0.0</span>
+              <span className="text-xs font-bold text-muted neu-inset-sm px-2.5 py-1 rounded-xl">v1.0.0</span>
             </button>
           </div>
         </section>
@@ -364,7 +369,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
       >
         <div className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-text uppercase tracking-wider mb-1.5">
+            <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-1.5">
               Target Default
             </label>
             <input
@@ -376,17 +381,17 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
               }}
               min={1}
               max={100000}
-              className="w-full px-4 py-3 border border-border rounded-xl bg-background text-text text-base focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+              className="w-full px-4 py-3 rounded-2xl neu-input text-text text-base font-bold"
               inputMode="numeric"
             />
             {targetError && (
-              <p className="text-danger text-xs mt-1.5">{targetError}</p>
+              <p className="text-danger text-xs font-semibold mt-1.5">{targetError}</p>
             )}
           </div>
           <button
             type="button"
             onClick={handleTargetSave}
-            className="w-full py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors shadow-sm"
+            className="w-full py-3 neu-btn-primary font-bold rounded-2xl transition-all cursor-pointer"
           >
             Simpan Target
           </button>
@@ -422,28 +427,28 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
         title="Tentang DzikirKu"
       >
         <div className="text-center space-y-4 pt-1">
-          <div className="w-16 h-16 rounded-2xl bg-primary text-white mx-auto flex items-center justify-center shadow-md">
-            <span className="text-2xl font-bold font-serif">ذ</span>
+          <div className="w-16 h-16 rounded-3xl neu-card flex items-center justify-center text-primary text-3xl font-serif font-bold mx-auto">
+            ذ
           </div>
           <div>
-            <h3 className="text-lg font-bold text-primary-dark">DzikirKu</h3>
-            <p className="text-xs text-muted">Aplikasi Tasbih Digital Modern</p>
-            <span className="inline-block text-[11px] font-semibold text-primary bg-primary-soft px-2.5 py-0.5 rounded-full mt-1.5">
+            <h3 className="text-lg font-extrabold text-primary-dark">DzikirKu</h3>
+            <p className="text-xs text-muted font-medium">Aplikasi Tasbih Digital Modern</p>
+            <span className="inline-block text-[11px] font-bold text-primary neu-inset-sm px-3 py-1 rounded-full mt-2">
               Versi 1.0.0 (MVP)
             </span>
           </div>
 
-          <div className="bg-background rounded-xl p-3.5 text-left text-xs text-muted space-y-1.5 border border-border/60">
-            <div className="flex items-center gap-2 text-text font-medium">
+          <div className="neu-inset-sm rounded-2xl p-4 text-left text-xs text-muted space-y-1.5">
+            <div className="flex items-center gap-2 text-text font-bold">
               <ShieldCheck size={16} className="text-primary" />
               <span>Privasi & Keamanan:</span>
             </div>
-            <p>
+            <p className="font-medium">
               • 100% Offline-First: Semua data disimpan secara lokal di ponsel Anda melalui IndexedDB.
             </p>
           </div>
 
-          <div className="space-y-1.5 text-xs text-muted leading-relaxed">
+          <div className="space-y-1.5 text-xs text-muted font-medium leading-relaxed">
             <p>
               Dibuat oleh Edi Supriatna, Vibe Coding Developer, Ai enthusiast, 3D Mechanical Designer.
             </p>
@@ -461,54 +466,54 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
         title="Panduan Install di iPhone (iOS)"
       >
         <div className="space-y-4 pt-1">
-          <p className="text-xs text-muted leading-relaxed">
+          <p className="text-xs text-muted leading-relaxed font-medium">
             Aplikasi DzikirKu dirancang khusus sebagai <strong>Progressive Web App (PWA)</strong> untuk iPhone/iOS Safari. Anda dapat menginstalnya langsung ke Layar Utama (Home Screen) tanpa App Store.
           </p>
 
-          <ol className="space-y-3 text-xs text-text">
-            <li className="flex items-start gap-2.5 bg-background p-3 rounded-xl border border-border/60">
-              <span className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">
+          <ol className="space-y-2.5 text-xs text-text">
+            <li className="flex items-start gap-2.5 neu-card-sm p-3 rounded-2xl">
+              <span className="w-6 h-6 rounded-xl neu-btn-primary flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">
                 1
               </span>
               <div>
-                <p className="font-semibold">Buka di Safari iPhone</p>
-                <p className="text-muted text-[11px] mt-0.5">
+                <p className="font-bold">Buka di Safari iPhone</p>
+                <p className="text-muted text-[11px] mt-0.5 font-medium">
                   Buka tautan website aplikasi ini menggunakan browser bawaan Safari.
                 </p>
               </div>
             </li>
 
-            <li className="flex items-start gap-2.5 bg-background p-3 rounded-xl border border-border/60">
-              <span className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">
+            <li className="flex items-start gap-2.5 neu-card-sm p-3 rounded-2xl">
+              <span className="w-6 h-6 rounded-xl neu-btn-primary flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">
                 2
               </span>
               <div>
-                <p className="font-semibold">Tekan Tombol 'Share' (Bagikan)</p>
-                <p className="text-muted text-[11px] mt-0.5">
+                <p className="font-bold">Tekan Tombol 'Share' (Bagikan)</p>
+                <p className="text-muted text-[11px] mt-0.5 font-medium">
                   Ketuk ikon kotak dengan panah ke atas di bilah menu bawah Safari.
                 </p>
               </div>
             </li>
 
-            <li className="flex items-start gap-2.5 bg-background p-3 rounded-xl border border-border/60">
-              <span className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">
+            <li className="flex items-start gap-2.5 neu-card-sm p-3 rounded-2xl">
+              <span className="w-6 h-6 rounded-xl neu-btn-primary flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">
                 3
               </span>
               <div>
-                <p className="font-semibold">Pilih 'Tambah ke Layar Utama'</p>
-                <p className="text-muted text-[11px] mt-0.5">
+                <p className="font-bold">Pilih 'Tambah ke Layar Utama'</p>
+                <p className="text-muted text-[11px] mt-0.5 font-medium">
                   Gulir ke bawah pada menu bagikan dan pilih <em>"Add to Home Screen"</em> (Tambah ke Layar Utama).
                 </p>
               </div>
             </li>
 
-            <li className="flex items-start gap-2.5 bg-background p-3 rounded-xl border border-border/60">
-              <span className="w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">
+            <li className="flex items-start gap-2.5 neu-card-sm p-3 rounded-2xl">
+              <span className="w-6 h-6 rounded-xl neu-btn-primary flex items-center justify-center text-[11px] font-bold flex-shrink-0 mt-0.5">
                 4
               </span>
               <div>
-                <p className="font-semibold">Ketuk 'Tambah' (Add)</p>
-                <p className="text-muted text-[11px] mt-0.5">
+                <p className="font-bold">Ketuk 'Tambah' (Add)</p>
+                <p className="text-muted text-[11px] mt-0.5 font-medium">
                   Ikon aplikasi DzikirKu akan langsung muncul di Layar Utama iPhone Anda dan siap dibuka layaknya aplikasi native iOS.
                 </p>
               </div>
@@ -518,7 +523,7 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
           <button
             type="button"
             onClick={() => setShowIosGuide(false)}
-            className="w-full py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors shadow-sm"
+            className="w-full py-3 neu-btn-primary font-bold rounded-2xl transition-all cursor-pointer"
           >
             Mengerti
           </button>

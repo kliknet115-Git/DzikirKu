@@ -9,7 +9,7 @@ interface ProgressRingProps {
 
 export const ProgressRing: React.FC<ProgressRingProps> = ({
   progress,
-  size = 240,
+  size = 230,
   strokeWidth = 10,
   children,
 }) => {
@@ -23,37 +23,45 @@ export const ProgressRing: React.FC<ProgressRingProps> = ({
   const isComplete = progress >= 1;
 
   return (
-    <div className="relative inline-flex items-center justify-center" style={{ width: size, height: size }}>
-      <svg
-        width={size}
-        height={size}
-        className="transform -rotate-90"
-      >
-        {/* Background track */}
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          stroke="#EAF1E3"
-          strokeWidth={strokeWidth}
-          fill="none"
-        />
-        {/* Progress arc */}
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          stroke={isComplete ? '#D8B65C' : '#0B5A3B'}
-          strokeWidth={strokeWidth}
-          fill="none"
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          className="transition-all duration-300 ease-out"
-        />
-      </svg>
-      <div className="absolute inset-0 flex flex-col items-center justify-center">
-        {children}
+    <div
+      className="relative inline-flex items-center justify-center rounded-full neu-card-lg p-2.5 transition-all"
+      style={{ width: size + 20, height: size + 20 }}
+    >
+      {/* Inner dial recess */}
+      <div className="w-full h-full rounded-full neu-inset flex items-center justify-center relative">
+        <svg
+          width={size}
+          height={size}
+          className="transform -rotate-90 absolute"
+        >
+          {/* Background track (inset groove feel) */}
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            stroke="#D3D8CF"
+            strokeWidth={strokeWidth}
+            fill="none"
+          />
+          {/* Progress arc */}
+          <circle
+            cx={size / 2}
+            cy={size / 2}
+            r={radius}
+            stroke={isComplete ? '#C8963E' : '#0D5C3E'}
+            strokeWidth={strokeWidth}
+            fill="none"
+            strokeLinecap="round"
+            strokeDasharray={circumference}
+            strokeDashoffset={offset}
+            className="transition-all duration-300 ease-out"
+          />
+        </svg>
+
+        {/* Center content disc */}
+        <div className="w-[82%] h-[82%] rounded-full neu-card flex flex-col items-center justify-center z-10 p-2">
+          {children}
+        </div>
       </div>
     </div>
   );

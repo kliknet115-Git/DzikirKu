@@ -18,26 +18,26 @@ const tabs: { id: TabId; label: string; icon: React.ElementType }[] = [
 export const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange }) => {
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 bg-surface/95 backdrop-blur-md border-t border-border z-50"
+      className="fixed bottom-0 left-0 right-0 neu-dock z-50 border-t border-white/50"
       style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
     >
-      <div className="max-w-lg mx-auto flex items-center justify-around h-16 px-1">
+      <div className="max-w-lg mx-auto flex items-center justify-around h-16 px-2">
         {tabs.map(({ id, label, icon: Icon }) => {
           const isActive = activeTab === id;
           return (
             <button
               key={id}
               onClick={() => onTabChange(id)}
-              className={`flex flex-col items-center justify-center gap-1 w-full h-full transition-colors duration-150 ${
+              className={`flex flex-col items-center justify-center gap-1 py-1.5 px-3 rounded-2xl transition-all duration-200 select-none ${
                 isActive
-                  ? 'text-primary'
-                  : 'text-muted hover:text-primary-dark'
+                  ? 'neu-inset-sm text-primary scale-105'
+                  : 'text-muted hover:text-primary-dark active:scale-95'
               }`}
               aria-label={label}
               aria-current={isActive ? 'page' : undefined}
             >
               <Icon size={20} strokeWidth={isActive ? 2.5 : 1.8} />
-              <span className={`text-[10px] leading-none ${isActive ? 'font-bold' : 'font-medium'}`}>
+              <span className={`text-[10px] leading-none tracking-tight ${isActive ? 'font-bold' : 'font-medium'}`}>
                 {label}
               </span>
             </button>

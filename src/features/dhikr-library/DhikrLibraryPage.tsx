@@ -142,33 +142,38 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
       style={{ paddingBottom: 'calc(7rem + env(safe-area-inset-bottom, 0px))' }}
     >
       <header
-        className="px-5 pt-3 pb-4 bg-background sticky top-0 z-10 backdrop-blur-md bg-background/90 border-b border-border/40"
+        className="px-5 pt-3 pb-3 bg-background/95 sticky top-0 z-10 backdrop-blur-md border-b border-white/50"
         style={{ paddingTop: 'calc(env(safe-area-inset-top, 0px) + 12px)' }}
       >
         <div className="max-w-lg mx-auto">
-          <h1 className="text-xl font-bold text-primary-dark">Pilih Dzikir</h1>
-          <p className="text-xs text-muted mt-0.5">
-            Pilih dzikir yang ingin Anda hitung
+          <div className="flex items-center gap-2 mb-0.5">
+            <div className="w-7 h-7 rounded-lg neu-card-sm flex items-center justify-center text-primary font-serif font-bold text-sm">
+              ۞
+            </div>
+            <h1 className="text-xl font-extrabold text-primary-dark">Pilih Dzikir</h1>
+          </div>
+          <p className="text-xs text-muted font-medium">
+            Pilih dzikir yang ingin Anda hitung di tasbih
           </p>
         </div>
       </header>
 
-      <div className="max-w-lg mx-auto px-5 pt-3 space-y-3">
+      <div className="max-w-lg mx-auto px-5 pt-4 space-y-3.5">
         {dhikrList.map((dhikr) => {
           const isActive = dhikr.id === activeDhikrId;
           return (
             <div
               key={dhikr.id}
-              className={`p-4 bg-surface rounded-2xl border-2 transition-all ${
+              className={`p-4 rounded-3xl transition-all ${
                 isActive
-                  ? 'border-primary shadow-sm bg-primary-soft/20'
-                  : 'border-border/60 shadow-xs hover:border-border'
+                  ? 'neu-inset'
+                  : 'neu-card hover:translate-y-[-1px]'
               }`}
             >
               <button
                 type="button"
                 onClick={() => onSelectDhikr(dhikr)}
-                className="w-full text-left focus:outline-none"
+                className="w-full text-left focus:outline-none cursor-pointer"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div className="flex-1">
@@ -182,12 +187,16 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
                       </p>
                     )}
                     <div className="flex items-center gap-2 flex-wrap">
-                      <p className="text-base font-semibold text-text leading-snug break-words">
+                      <p className="text-base font-bold text-text leading-snug break-words">
                         {dhikr.name || dhikr.transliteration}
                       </p>
-                      {dhikr.isBuiltIn && (
-                        <span className="text-[10px] font-medium bg-primary-soft text-primary px-2 py-0.5 rounded-full flex-shrink-0">
+                      {dhikr.isBuiltIn ? (
+                        <span className="text-[10px] font-bold neu-inset-sm text-primary px-2 py-0.5 rounded-full flex-shrink-0">
                           Bawaan
+                        </span>
+                      ) : (
+                        <span className="text-[10px] font-bold neu-inset-sm text-gold px-2 py-0.5 rounded-full flex-shrink-0">
+                          Custom
                         </span>
                       )}
                     </div>
@@ -197,12 +206,12 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
                     {dhikr.meaning && (
                       <p className="text-xs text-muted mt-0.5 leading-relaxed break-words">{dhikr.meaning}</p>
                     )}
-                    <p className="text-xs font-medium text-primary mt-1.5">
+                    <p className="text-xs font-bold text-primary mt-2">
                       Target: {dhikr.defaultTarget}x
                     </p>
                   </div>
                   {isActive && (
-                    <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-7 h-7 rounded-full neu-btn-primary flex items-center justify-center flex-shrink-0 mt-0.5 shadow-sm">
                       <Check size={14} className="text-white stroke-[3]" />
                     </div>
                   )}
@@ -210,14 +219,14 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
               </button>
 
               {/* Actions */}
-              <div className="flex items-center justify-end gap-3 mt-3 pt-2.5 border-t border-border/50">
+              <div className="flex items-center justify-end gap-2 mt-3 pt-2.5 border-t border-black/[0.04]">
                 <button
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
                     openEditForm(dhikr);
                   }}
-                  className="flex items-center gap-1 text-xs text-muted hover:text-primary transition-colors py-1 px-2 rounded-md hover:bg-black/5"
+                  className="flex items-center gap-1.5 text-xs font-semibold text-muted hover:text-primary transition-all py-1.5 px-3 rounded-xl neu-btn"
                 >
                   <Edit2 size={13} />
                   <span>{dhikr.isBuiltIn ? 'Ubah Target' : 'Edit'}</span>
@@ -229,7 +238,7 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
                       e.stopPropagation();
                       setDeleteConfirm(dhikr.id);
                     }}
-                    className="flex items-center gap-1 text-xs text-muted hover:text-danger transition-colors py-1 px-2 rounded-md hover:bg-red-50"
+                    className="flex items-center gap-1.5 text-xs font-semibold text-danger hover:text-red-700 transition-all py-1.5 px-3 rounded-xl neu-btn"
                   >
                     <Trash2 size={13} />
                     <span>Hapus</span>
@@ -244,7 +253,7 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
         <button
           type="button"
           onClick={openAddForm}
-          className="w-full p-4 bg-surface rounded-2xl border-2 border-dashed border-border flex items-center justify-center gap-2 text-sm font-semibold text-primary hover:bg-primary-soft/50 transition-colors active:scale-[0.99]"
+          className="w-full p-4 neu-btn rounded-3xl border-2 border-dashed border-primary/30 flex items-center justify-center gap-2 text-sm font-bold text-primary transition-all active:scale-[0.99] cursor-pointer"
         >
           <Plus size={18} />
           Tambah Dzikir Custom
@@ -259,25 +268,25 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
       >
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-xs font-semibold text-text uppercase tracking-wider mb-1">
+            <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-1.5">
               Nama dzikir {!editingDhikr?.isBuiltIn && <span className="text-danger">*</span>}
             </label>
             <input
               type="text"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              className="w-full px-3.5 py-2.5 border border-border rounded-xl bg-background text-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary disabled:opacity-60"
+              className="w-full px-4 py-2.5 rounded-2xl neu-input text-text text-sm font-semibold disabled:opacity-60"
               placeholder="Contoh: Astaghfirullah"
               disabled={Boolean(editingDhikr?.isBuiltIn)}
             />
             {formErrors.name && (
-              <p className="text-danger text-xs mt-1">{formErrors.name}</p>
+              <p className="text-danger text-xs font-semibold mt-1">{formErrors.name}</p>
             )}
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-text uppercase tracking-wider mb-1">
-              Teks Arab <span className="text-muted font-normal text-[11px]">(opsional)</span>
+            <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-1.5">
+              Teks Arab <span className="text-muted/70 font-normal text-[11px]">(opsional)</span>
             </label>
             <input
               type="text"
@@ -285,7 +294,7 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
               onChange={(e) =>
                 setFormData({ ...formData, arabicText: e.target.value })
               }
-              className="w-full px-3.5 py-2.5 border border-border rounded-xl bg-background text-text text-base arabic-text text-right focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary disabled:opacity-60"
+              className="w-full px-4 py-2.5 rounded-2xl neu-input text-text text-base arabic-text text-right disabled:opacity-60"
               placeholder="أَسْتَغْفِرُ اللَّهَ"
               dir="rtl"
               disabled={Boolean(editingDhikr?.isBuiltIn)}
@@ -293,7 +302,7 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-text uppercase tracking-wider mb-1">
+            <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-1.5">
               Transliterasi {!editingDhikr?.isBuiltIn && <span className="text-danger">*</span>}
             </label>
             <input
@@ -302,18 +311,18 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
               onChange={(e) =>
                 setFormData({ ...formData, transliteration: e.target.value })
               }
-              className="w-full px-3.5 py-2.5 border border-border rounded-xl bg-background text-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary disabled:opacity-60"
+              className="w-full px-4 py-2.5 rounded-2xl neu-input text-text text-sm font-semibold disabled:opacity-60"
               placeholder="Astaghfirullah"
               disabled={Boolean(editingDhikr?.isBuiltIn)}
             />
             {formErrors.transliteration && (
-              <p className="text-danger text-xs mt-1">{formErrors.transliteration}</p>
+              <p className="text-danger text-xs font-semibold mt-1">{formErrors.transliteration}</p>
             )}
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-text uppercase tracking-wider mb-1">
-              Arti / Keterangan <span className="text-muted font-normal text-[11px]">(opsional)</span>
+            <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-1.5">
+              Arti / Keterangan <span className="text-muted/70 font-normal text-[11px]">(opsional)</span>
             </label>
             <input
               type="text"
@@ -321,17 +330,17 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
               onChange={(e) =>
                 setFormData({ ...formData, meaning: e.target.value })
               }
-              className="w-full px-3.5 py-2.5 border border-border rounded-xl bg-background text-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary disabled:opacity-60"
+              className="w-full px-4 py-2.5 rounded-2xl neu-input text-text text-sm font-semibold disabled:opacity-60"
               placeholder="Aku memohon ampun kepada Allah"
               disabled={Boolean(editingDhikr?.isBuiltIn)}
             />
             {formErrors.meaning && (
-              <p className="text-danger text-xs mt-1">{formErrors.meaning}</p>
+              <p className="text-danger text-xs font-semibold mt-1">{formErrors.meaning}</p>
             )}
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-text uppercase tracking-wider mb-1">
+            <label className="block text-xs font-bold text-muted uppercase tracking-wider mb-1.5">
               Target default <span className="text-danger">*</span>
             </label>
             <input
@@ -340,21 +349,21 @@ export const DhikrLibraryPage: React.FC<DhikrLibraryPageProps> = ({
               onChange={(e) =>
                 setFormData({ ...formData, defaultTarget: e.target.value })
               }
-              className="w-full px-3.5 py-2.5 border border-border rounded-xl bg-background text-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+              className="w-full px-4 py-2.5 rounded-2xl neu-input text-text text-sm font-bold"
               placeholder="33"
               inputMode="numeric"
               min={1}
               max={100000}
             />
             {formErrors.defaultTarget && (
-              <p className="text-danger text-xs mt-1">{formErrors.defaultTarget}</p>
+              <p className="text-danger text-xs font-semibold mt-1">{formErrors.defaultTarget}</p>
             )}
           </div>
 
           <div className="pt-2">
             <button
               type="submit"
-              className="w-full py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors shadow-sm active:scale-[0.99]"
+              className="w-full py-3 neu-btn-primary font-bold rounded-2xl transition-all"
             >
               {editingId ? 'Simpan Perubahan' : 'Tambah Dzikir'}
             </button>

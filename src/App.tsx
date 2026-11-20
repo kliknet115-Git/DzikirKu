@@ -300,11 +300,11 @@ export const App: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-background flex flex-col items-center justify-center">
-        <div className="w-16 h-16 rounded-2xl bg-primary text-white flex items-center justify-center animate-pulse">
-          <span className="text-3xl font-bold font-serif">ذ</span>
+      <div className="min-h-screen bg-background flex flex-col items-center justify-center p-6">
+        <div className="w-20 h-20 rounded-3xl neu-card flex items-center justify-center text-primary animate-pulse">
+          <span className="text-4xl font-bold font-serif">ذ</span>
         </div>
-        <p className="text-sm font-semibold text-primary-dark mt-4">Memuat DzikirKu...</p>
+        <p className="text-sm font-bold text-primary-dark mt-5 tracking-wide">Memuat DzikirKu...</p>
       </div>
     );
   }
@@ -376,11 +376,11 @@ export const App: React.FC = () => {
             Anda yakin ingin beralih ke <strong>{pendingDhikr?.name}</strong>? Hitungan saat ini akan direset ke 0.
           </p>
 
-          <div className="space-y-2 pt-2">
+          <div className="space-y-3 pt-2">
             <button
               type="button"
               onClick={handleConfirmSwitch}
-              className="w-full py-3 px-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary-dark transition-colors shadow-sm text-sm"
+              className="w-full py-3 px-4 neu-btn-primary font-semibold rounded-2xl text-sm transition-all"
             >
               Ganti Dzikir & Reset Hitungan
             </button>
@@ -388,7 +388,7 @@ export const App: React.FC = () => {
             <button
               type="button"
               onClick={() => setPendingDhikr(null)}
-              className="w-full py-2.5 px-4 text-muted hover:text-text font-medium text-sm transition-colors"
+              className="w-full py-2.5 px-4 neu-btn text-muted hover:text-text font-medium text-sm rounded-2xl transition-all"
             >
               Batal
             </button>

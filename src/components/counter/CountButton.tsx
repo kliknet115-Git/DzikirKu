@@ -29,18 +29,27 @@ export const CountButton: React.FC<CountButtonProps> = ({ onCount, disabled }) =
   }, [onCount, disabled]);
 
   return (
-    <button
-      ref={buttonRef}
-      onClick={handleClick}
-      disabled={disabled}
-      className="w-[108px] h-[108px] rounded-full bg-primary text-white flex items-center justify-center shadow-lg active:shadow-md transition-shadow duration-100 select-none touch-manipulation"
-      style={{
-        WebkitTapHighlightColor: 'transparent',
-        touchAction: 'manipulation',
-      }}
-      aria-label="Hitung dzikir"
-    >
-      <span className="text-lg font-bold tracking-wide">HITUNG</span>
-    </button>
+    /* Outer Neumorphic Sunken Rim / Well */
+    <div className="w-[124px] h-[124px] rounded-full neu-inset p-2 flex items-center justify-center flex-shrink-0">
+      {/* 3D Convex Emerald Button that sinks on tap */}
+      <button
+        ref={buttonRef}
+        onClick={handleClick}
+        disabled={disabled}
+        className="w-full h-full rounded-full neu-btn-primary flex flex-col items-center justify-center select-none touch-manipulation cursor-pointer disabled:opacity-40 disabled:pointer-events-none group"
+        style={{
+          WebkitTapHighlightColor: 'transparent',
+          touchAction: 'manipulation',
+        }}
+        aria-label="Hitung dzikir"
+      >
+        <span className="text-[17px] font-black tracking-wider text-white drop-shadow-sm group-active:scale-95 transition-transform">
+          HITUNG
+        </span>
+        <span className="text-[9px] font-bold tracking-widest text-white/75 uppercase mt-0.5">
+          KETUK
+        </span>
+      </button>
+    </div>
   );
 };
