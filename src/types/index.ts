@@ -40,7 +40,7 @@ export interface AppSettings {
   id: 'app-settings';
   hapticsEnabled: boolean;
   soundEnabled: boolean;
-  theme: 'light' | 'system';
+  theme: 'light' | 'dark' | 'system';
   defaultTarget: number;
   language: 'id';
   updatedAt: string;

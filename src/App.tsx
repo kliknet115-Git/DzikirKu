@@ -96,6 +96,37 @@ export const App: React.FC = () => {
     };
   }, [loadData]);
 
+  // Apply dark mode class to <html> and update mobile browser theme-color
+  useEffect(() => {
+    const root = document.documentElement;
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+    const applyTheme = () => {
+      const isDark =
+        settings.theme === 'dark' ||
+        (settings.theme === 'system' && mediaQuery.matches);
+
+      if (isDark) {
+        root.classList.add('dark');
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', '#111613');
+      } else {
+        root.classList.remove('dark');
+        document
+          .querySelector('meta[name="theme-color"]')
+          ?.setAttribute('content', '#EAECE7');
+      }
+    };
+
+    applyTheme();
+
+    if (settings.theme === 'system') {
+      mediaQuery.addEventListener('change', applyTheme);
+      return () => mediaQuery.removeEventListener('change', applyTheme);
+    }
+  }, [settings.theme]);
+
   // Active Dhikr entity resolved from activeSession
   const activeDhikr =
     dhikrList.find((d) => d.id === activeSession?.dhikrId) || dhikrList[0] || null;

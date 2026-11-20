@@ -21,13 +21,49 @@
   --sal: env(safe-area-inset-left);
   --sar: env(safe-area-inset-right);
 
-  /* Neumorphic shadow tokens */
+  /* Neumorphic shadow tokens - Light */
   --neu-bg: #EAECE7;
   --neu-surface: #EAECE7;
   --neu-light: #FFFFFF;
   --neu-dark: rgba(162, 172, 160, 0.58);
   --neu-dark-sm: rgba(162, 172, 160, 0.44);
   --neu-dark-lg: rgba(155, 166, 153, 0.65);
+  --neu-card-border: rgba(255, 255, 255, 0.6);
+  --neu-inset-bg: #E2E5E0;
+  --neu-inset-sm-bg: #E4E7E2;
+  --neu-dock-bg: rgba(234, 236, 231, 0.95);
+  --neu-dock-shadow: rgba(162, 172, 160, 0.35);
+  --neu-dock-border: rgba(255, 255, 255, 0.8);
+}
+
+:root.dark,
+.dark {
+  --color-primary: #2BB673;
+  --color-primary-dark: #3ED58C;
+  --color-primary-soft: #1B2B22;
+  --color-background: #111613;
+  --color-surface: #161D18;
+  --color-surface-sunken: #0E1310;
+  --color-gold: #E5B358;
+  --color-text: #E6ECE8;
+  --color-muted: #8D9D93;
+  --color-border: #233027;
+  --color-danger: #F87171;
+  --color-primary-light: #1B2B22;
+
+  /* Neumorphic shadow tokens - Dark (Soft specular highlight & deep shadow) */
+  --neu-bg: #161D18;
+  --neu-surface: #161D18;
+  --neu-light: rgba(255, 255, 255, 0.055);
+  --neu-dark: rgba(0, 0, 0, 0.65);
+  --neu-dark-sm: rgba(0, 0, 0, 0.5);
+  --neu-dark-lg: rgba(0, 0, 0, 0.8);
+  --neu-card-border: rgba(255, 255, 255, 0.07);
+  --neu-inset-bg: #0E1310;
+  --neu-inset-sm-bg: #121814;
+  --neu-dock-bg: rgba(18, 24, 20, 0.94);
+  --neu-dock-shadow: rgba(0, 0, 0, 0.6);
+  --neu-dock-border: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -37,13 +73,13 @@
 }
 
 html {
-  background-color: #EAECE7;
+  background-color: var(--color-background);
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', 'Segoe UI', Roboto, sans-serif;
-  background-color: #EAECE7;
-  color: #1B261F;
+  background-color: var(--color-background);
+  color: var(--color-text);
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -61,33 +97,33 @@ body {
 .neu-card {
   background: var(--neu-bg);
   box-shadow: 7px 7px 16px var(--neu-dark), -7px -7px 16px var(--neu-light);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--neu-card-border);
 }
 
 /* Subtler Small Card / Chip */
 .neu-card-sm {
   background: var(--neu-bg);
   box-shadow: 4px 4px 10px var(--neu-dark-sm), -4px -4px 10px var(--neu-light);
-  border: 1px solid rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--neu-card-border);
 }
 
 /* Large Raised Hero / Dial */
 .neu-card-lg {
   background: var(--neu-bg);
   box-shadow: 12px 12px 26px var(--neu-dark-lg), -12px -12px 26px var(--neu-light);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--neu-card-border);
 }
 
 /* Inset / Sunken / Pressed Container */
 .neu-inset {
-  background: #E2E5E0;
+  background: var(--neu-inset-bg);
   box-shadow: inset 4px 4px 9px var(--neu-dark), inset -4px -4px 9px var(--neu-light);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid var(--neu-card-border);
 }
 
 /* Subtle Inset for Controls / Badges */
 .neu-inset-sm {
-  background: #E4E7E2;
+  background: var(--neu-inset-sm-bg);
   box-shadow: inset 2px 2px 5px var(--neu-dark-sm), inset -2px -2px 5px var(--neu-light);
 }
 
@@ -95,7 +131,7 @@ body {
 .neu-btn {
   background: var(--neu-bg);
   box-shadow: 5px 5px 12px var(--neu-dark-sm), -5px -5px 12px var(--neu-light);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--neu-card-border);
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -114,7 +150,7 @@ body {
   background: var(--neu-bg);
   border-radius: 9999px;
   box-shadow: 4px 4px 10px var(--neu-dark-sm), -4px -4px 10px var(--neu-light);
-  border: 1px solid rgba(255, 255, 255, 0.65);
+  border: 1px solid var(--neu-card-border);
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -131,9 +167,14 @@ body {
 .neu-btn-primary {
   background: linear-gradient(145deg, #106b49, #094b32);
   color: #ffffff;
-  box-shadow: 7px 7px 18px rgba(9, 75, 50, 0.38), -5px -5px 14px rgba(255, 255, 255, 0.85);
+  box-shadow: 7px 7px 18px rgba(9, 75, 50, 0.38), -5px -5px 14px var(--neu-light);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .neu-btn-primary {
+  background: linear-gradient(145deg, #1f9d63, #0f663e);
+  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.6), -4px -4px 12px rgba(255, 255, 255, 0.05);
 }
 
 .neu-btn-primary:active {
@@ -146,7 +187,7 @@ body {
 .neu-btn-gold {
   background: linear-gradient(145deg, #d8a444, #b9842c);
   color: #ffffff;
-  box-shadow: 6px 6px 15px rgba(185, 132, 44, 0.35), -5px -5px 12px rgba(255, 255, 255, 0.8);
+  box-shadow: 6px 6px 15px rgba(185, 132, 44, 0.35), -5px -5px 12px var(--neu-light);
   border: 1px solid rgba(255, 255, 255, 0.25);
   transition: all 0.15s ease;
 }
@@ -158,22 +199,22 @@ body {
 
 /* Neumorphic Input Field */
 .neu-input {
-  background: #E3E6E1;
+  background: var(--neu-inset-bg);
   box-shadow: inset 3px 3px 7px var(--neu-dark-sm), inset -3px -3px 7px var(--neu-light);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1px solid var(--neu-card-border);
   transition: all 0.2s ease;
 }
 
 .neu-input:focus {
   outline: none;
-  border-color: rgba(13, 92, 62, 0.45);
-  box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light), 0 0 0 2px rgba(13, 92, 62, 0.15);
+  border-color: rgba(43, 182, 115, 0.5);
+  box-shadow: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light), 0 0 0 2px rgba(43, 182, 115, 0.2);
 }
 
 /* Neumorphic Floating Nav Dock */
 .neu-dock {
-  background: rgba(234, 236, 231, 0.95);
-  box-shadow: 0 -8px 24px rgba(162, 172, 160, 0.35), 0 -1px 0 rgba(255, 255, 255, 0.8);
+  background: var(--neu-dock-bg);
+  box-shadow: 0 -8px 24px var(--neu-dock-shadow), 0 -1px 0 var(--neu-dock-border);
   backdrop-filter: blur(12px);
 }
 

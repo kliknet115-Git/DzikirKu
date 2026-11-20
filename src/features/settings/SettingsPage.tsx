@@ -10,6 +10,8 @@ import {
   Smartphone,
   ExternalLink,
   ShieldCheck,
+  Sun,
+  Moon,
 } from 'lucide-react';
 import { ConfirmDialog } from '../../components/ui/ConfirmDialog';
 import { Modal } from '../../components/ui/Modal';
@@ -333,6 +335,65 @@ export const SettingsPage: React.FC<SettingsPageProps> = ({
           <p className="text-[11px] text-muted mt-2 px-1 leading-relaxed font-medium">
             Data tersimpan secara lokal di browser/iPhone Anda (IndexedDB). Tidak ada data yang dikirim ke server.
           </p>
+        </section>
+
+        {/* Tampilan & Tema (Dark Mode) */}
+        <section>
+          <h2 className="text-xs font-bold text-muted uppercase tracking-wider mb-2 px-1">
+            Pilihan Tema (Dark Mode)
+          </h2>
+          <div className="neu-card rounded-3xl p-3.5 space-y-3">
+            <div className="flex items-center justify-between px-1">
+              <div>
+                <p className="text-sm font-bold text-text">Mode Tampilan</p>
+                <p className="text-xs text-muted font-medium">
+                  Sesuaikan kenyamanan mata saat berdzikir di malam hari
+                </p>
+              </div>
+            </div>
+
+            {/* Segmented Neumorphic Selector */}
+            <div className="grid grid-cols-3 gap-2 p-1.5 rounded-2xl neu-inset">
+              <button
+                type="button"
+                onClick={() => onUpdateSettings({ theme: 'light' })}
+                className={`py-2.5 px-2 rounded-xl flex flex-col items-center justify-center gap-1.5 transition-all text-xs font-bold cursor-pointer ${
+                  settings.theme === 'light'
+                    ? 'neu-btn-primary shadow-md scale-[1.02]'
+                    : 'text-muted hover:text-text'
+                }`}
+              >
+                <Sun size={17} strokeWidth={settings.theme === 'light' ? 2.5 : 2} />
+                <span>Terang</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => onUpdateSettings({ theme: 'dark' })}
+                className={`py-2.5 px-2 rounded-xl flex flex-col items-center justify-center gap-1.5 transition-all text-xs font-bold cursor-pointer ${
+                  settings.theme === 'dark'
+                    ? 'neu-btn-primary shadow-md scale-[1.02]'
+                    : 'text-muted hover:text-text'
+                }`}
+              >
+                <Moon size={17} strokeWidth={settings.theme === 'dark' ? 2.5 : 2} />
+                <span>Gelap</span>
+              </button>
+
+              <button
+                type="button"
+                onClick={() => onUpdateSettings({ theme: 'system' })}
+                className={`py-2.5 px-2 rounded-xl flex flex-col items-center justify-center gap-1.5 transition-all text-xs font-bold cursor-pointer ${
+                  settings.theme === 'system'
+                    ? 'neu-btn-primary shadow-md scale-[1.02]'
+                    : 'text-muted hover:text-text'
+                }`}
+              >
+                <Smartphone size={17} strokeWidth={settings.theme === 'system' ? 2.5 : 2} />
+                <span>Sistem</span>
+              </button>
+            </div>
+          </div>
         </section>
 
         {/* Information */}

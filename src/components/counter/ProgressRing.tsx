@@ -39,16 +39,17 @@ export const ProgressRing: React.FC<ProgressRingProps> = ({
             cx={size / 2}
             cy={size / 2}
             r={radius}
-            stroke="#D3D8CF"
+            stroke="var(--color-border)"
             strokeWidth={strokeWidth}
             fill="none"
+            opacity="0.65"
           />
           {/* Progress arc */}
           <circle
             cx={size / 2}
             cy={size / 2}
             r={radius}
-            stroke={isComplete ? '#C8963E' : '#0D5C3E'}
+            stroke={isComplete ? 'var(--color-gold)' : 'var(--color-primary)'}
             strokeWidth={strokeWidth}
             fill="none"
             strokeLinecap="round"
