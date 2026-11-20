@@ -229,6 +229,15 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+/* Hide scrollbar for clean UI while keeping scrollability */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .dark .arabic-text {
   color: #FFFFFF !important;
 }
