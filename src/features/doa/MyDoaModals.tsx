@@ -44,14 +44,16 @@ export const MyDoaModals: React.FC<MyDoaModalsProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string>('Semua');
 
   // Rename state
+  const [prevEditingIndex, setPrevEditingIndex] = useState<number | null>(null);
   const [renameText, setRenameText] = useState('');
 
-  // Sync renameText when editingIndex changes
-  React.useEffect(() => {
+  // Sync renameText when editingIndex changes during render
+  if (editingIndex !== prevEditingIndex) {
+    setPrevEditingIndex(editingIndex);
     if (editingIndex !== null && myDoaList[editingIndex]) {
       setRenameText(myDoaList[editingIndex].title);
     }
-  }, [editingIndex, myDoaList]);
+  }
 
   // All sources from app
   const allSources = useMemo(() => getAllAppDoa(), []);

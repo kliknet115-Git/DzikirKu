@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import {
   ChevronLeft,
   ChevronRight,
@@ -46,16 +46,20 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
   const isMyDoa = activeCatId === 'my-doa';
 
-  const activeCategory: DoaCategory = isMyDoa
-    ? {
+  const activeCategory: DoaCategory = useMemo(() => {
+    if (isMyDoa) {
+      return {
         id: 'my-doa',
         icon: '★',
         title: 'Doa Saya',
         subtitle: 'Koleksi doa pilihan pribadi yang dapat disesuaikan urutan dan judulnya',
         countLabel: `${myDoaList.length} DOA`,
         items: myDoaList,
-      }
-    : (doaCategories.find((c) => c.id === activeCatId) || doaCategories[0]);
+      };
+    }
+    return doaCategories.find((c) => c.id === activeCatId) || doaCategories[0];
+  }, [isMyDoa, myDoaList, activeCatId]);
+
   const activeItem: DoaItem | undefined = activeCategory.items[activeIndex];
 
   const handleUpdateMyDoaList = (newList: MyDoaItem[]) => {
@@ -65,6 +69,26 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
       setActiveIndex(Math.max(0, newList.length - 1));
     }
   };
+
+  const handleNext = useCallback(() => {
+    if (settings?.hapticsEnabled) triggerHaptic();
+    if (settings?.soundEnabled) playClickSound();
+
+    if (activeIndex < activeCategory.items.length - 1) {
+      setActiveIndex((prev) => prev + 1);
+    } else {
+      // Loop back to start
+      setActiveIndex(0);
+    }
+  }, [settings?.hapticsEnabled, settings?.soundEnabled, activeIndex, activeCategory.items.length]);
+
+  const handlePrev = useCallback(() => {
+    if (activeIndex > 0) {
+      if (settings?.hapticsEnabled) triggerHaptic();
+      if (settings?.soundEnabled) playClickSound();
+      setActiveIndex((prev) => prev - 1);
+    }
+  }, [settings?.hapticsEnabled, settings?.soundEnabled, activeIndex]);
 
   // Scroll to top on view or item change
   useEffect(() => {
@@ -87,7 +111,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [view, activeIndex, activeCategory]);
+  }, [view, handleNext, handlePrev]);
 
   const handleOpenCategory = (catId: string) => {
     if (settings?.hapticsEnabled) triggerHaptic();
@@ -105,26 +129,6 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
     if (settings?.hapticsEnabled) triggerHaptic();
     setActiveIndex(index);
     setView('detail');
-  };
-
-  const handleNext = () => {
-    if (settings?.hapticsEnabled) triggerHaptic();
-    if (settings?.soundEnabled) playClickSound();
-
-    if (activeIndex < activeCategory.items.length - 1) {
-      setActiveIndex((prev) => prev + 1);
-    } else {
-      // Loop back to start
-      setActiveIndex(0);
-    }
-  };
-
-  const handlePrev = () => {
-    if (activeIndex > 0) {
-      if (settings?.hapticsEnabled) triggerHaptic();
-      if (settings?.soundEnabled) playClickSound();
-      setActiveIndex((prev) => prev - 1);
-    }
   };
 
   const cycleFontSize = () => {

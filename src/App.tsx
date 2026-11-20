@@ -82,7 +82,18 @@ export const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    void loadData();
+    let isMounted = true;
+    const init = async () => {
+      try {
+        await loadData();
+      } catch (err) {
+        if (isMounted) console.error('Failed to load initial data:', err);
+      }
+    };
+    void init();
+    return () => {
+      isMounted = false;
+    };
   }, [loadData]);
 
   // Active Dhikr entity resolved from activeSession
@@ -284,18 +295,66 @@ export const App: React.FC = () => {
     dhikr?: Dhikr[];
     settings?: Partial<AppSettings>;
   }) => {
-    const db = await getDB();
-    if (data.dhikr && Array.isArray(data.dhikr)) {
-      const tx = db.transaction('dhikr', 'readwrite');
-      for (const d of data.dhikr) {
-        await tx.store.put(d);
+    try {
+      const db = await getDB();
+      if (data.dhikr && Array.isArray(data.dhikr)) {
+        const tx = db.transaction('dhikr', 'readwrite');
+        for (const d of data.dhikr) {
+          if (
+            d &&
+            typeof d === 'object' &&
+            typeof d.id === 'string' &&
+            d.id.trim() !== '' &&
+            typeof d.name === 'string' &&
+            d.name.trim() !== '' &&
+            typeof d.defaultTarget === 'number' &&
+            Number.isFinite(d.defaultTarget) &&
+            d.defaultTarget > 0
+          ) {
+            const safeDhikr: Dhikr = {
+              id: d.id,
+              name: d.name,
+              arabicText: typeof d.arabicText === 'string' ? d.arabicText : undefined,
+              transliteration: typeof d.transliteration === 'string' ? d.transliteration : '',
+              meaning: typeof d.meaning === 'string' ? d.meaning : undefined,
+              defaultTarget: d.defaultTarget,
+              isBuiltIn: Boolean(d.isBuiltIn),
+              sortOrder: typeof d.sortOrder === 'number' ? d.sortOrder : 99,
+              createdAt: typeof d.createdAt === 'string' ? d.createdAt : new Date().toISOString(),
+              updatedAt: typeof d.updatedAt === 'string' ? d.updatedAt : new Date().toISOString(),
+            };
+            await tx.store.put(safeDhikr);
+          }
+        }
+        await tx.done;
       }
-      await tx.done;
+      if (data.settings && typeof data.settings === 'object') {
+        const safeSettings: Partial<AppSettings> = {};
+        if (typeof data.settings.hapticsEnabled === 'boolean') {
+          safeSettings.hapticsEnabled = data.settings.hapticsEnabled;
+        }
+        if (typeof data.settings.soundEnabled === 'boolean') {
+          safeSettings.soundEnabled = data.settings.soundEnabled;
+        }
+        if (typeof data.settings.theme === 'string') {
+          safeSettings.theme = data.settings.theme as AppSettings['theme'];
+        }
+        if (
+          typeof data.settings.defaultTarget === 'number' &&
+          Number.isFinite(data.settings.defaultTarget) &&
+          data.settings.defaultTarget > 0
+        ) {
+          safeSettings.defaultTarget = data.settings.defaultTarget;
+        }
+        if (typeof data.settings.language === 'string') {
+          safeSettings.language = data.settings.language as AppSettings['language'];
+        }
+        await updateAppSettings(safeSettings);
+      }
+      await loadData();
+    } catch (err) {
+      console.error('Failed to import data:', err);
     }
-    if (data.settings) {
-      await updateAppSettings(data.settings);
-    }
-    await loadData();
   };
 
   if (isLoading) {
