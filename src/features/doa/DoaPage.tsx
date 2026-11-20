@@ -536,14 +536,9 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
 
             {/* Arabic Card */}
             <div className="relative overflow-hidden neu-card rounded-3xl p-5 sm:p-6">
-              {/* Gold Top Accent Line */}
-              {activeItem.arabic && (
-                <div className="absolute top-0 left-6 right-6 h-[3px] rounded-b bg-gradient-to-r from-gold/60 via-gold to-gold/60" />
-              )}
-
               {!activeItem.arabic && (
                 <div className="flex items-center gap-2 text-primary text-[11px] font-black tracking-wider mb-3">
-                  <span className="w-4 h-[1px] bg-gold" />
+                  <span className="w-4 h-[1px] bg-primary" />
                   <span>KETERANGAN</span>
                 </div>
               )}
@@ -574,7 +569,7 @@ export const DoaPage: React.FC<DoaPageProps> = ({ settings }) => {
             {activeItem.meaning && activeItem.arabic && (
               <div className="neu-card rounded-3xl p-5 space-y-2">
                 <div className="flex items-center gap-2 text-primary text-[11px] font-bold tracking-widest uppercase">
-                  <span className="w-4 h-[2px] bg-gold rounded-full" />
+                  <span className="w-4 h-[2px] bg-primary rounded-full" />
                   <span>ARTI / MAKNA</span>
                 </div>
                 <p className="text-sm text-text leading-relaxed font-normal whitespace-pre-line">

@@ -214,11 +214,8 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
           </h2>
         </div>
 
-        {/* Card 1: Arabic Text Card with Golden Line */}
+        {/* Card 1: Arabic Text Card */}
         <div className="neu-card rounded-3xl relative overflow-hidden p-5 sm:p-6">
-          {/* Top Golden Gradient Line */}
-          <div className="absolute top-0 left-6 right-6 h-[3px] bg-gradient-to-r from-gold/60 via-gold to-gold/60 rounded-b-full" />
-
           {/* Arabic Paragraph */}
           <div className="py-2">
             <p
@@ -286,7 +283,7 @@ export const DailyDhikrPage: React.FC<DailyDhikrPageProps> = ({
         {/* Card 3: Meaning Card */}
         <div className="neu-card rounded-3xl p-5 space-y-2.5">
           <div className="flex items-center gap-2 text-primary font-bold text-[11px] tracking-widest uppercase">
-            <span className="w-4 h-[2px] bg-gold rounded-full" />
+            <span className="w-4 h-[2px] bg-primary rounded-full" />
             <span>MAKNA</span>
           </div>
           <p className="text-sm text-text leading-relaxed font-normal">
