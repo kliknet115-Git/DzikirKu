@@ -22,7 +22,7 @@ interface HomePageProps {
   activeDhikr: Dhikr | null;
   settings: AppSettings;
   onUpdateSession: (session: ActiveSession) => void;
-  onNavigateToDhikr: () => void;
+  onNavigateToDhikr?: () => void;
   onNextDhikr: () => void;
   onPrevDhikr: () => void;
 }
@@ -146,14 +146,8 @@ export const HomePage: React.FC<HomePageProps> = ({
       <Header />
 
       <div className="max-w-lg mx-auto px-4 sm:px-5">
-        {/* Dhikr Content Card - Neumorphic Extruded Surface with Arabic Well */}
-        <button
-          type="button"
-          onClick={onNavigateToDhikr}
-          className="w-full mt-2 h-[155px] px-5 py-4 neu-card rounded-3xl text-left cursor-pointer active:scale-[0.985] transition-all flex flex-col justify-between relative group"
-          aria-label="Pilih dari daftar dzikir"
-          title="Klik untuk memilih dzikir lain"
-        >
+        {/* Dhikr Content Card - Clean Neumorphic Display */}
+        <div className="w-full mt-2 h-[155px] px-5 py-4 neu-card rounded-3xl text-left flex flex-col justify-between relative">
           {activeDhikr.arabicText && (
             <div className="flex-1 flex items-center justify-end w-full min-h-0 pt-0.5">
               <p
@@ -165,15 +159,12 @@ export const HomePage: React.FC<HomePageProps> = ({
               </p>
             </div>
           )}
-          <div className="flex items-center justify-between w-full pt-1 border-t border-black/[0.04]">
+          <div className="w-full pt-1.5 border-t border-black/[0.04]">
             <p className="text-xs font-bold text-text truncate">
               {activeDhikr.name || activeDhikr.transliteration}
             </p>
-            <span className="text-[10px] font-bold text-primary tracking-wide neu-inset-sm px-2 py-0.5 rounded-full">
-              Pilih Dzikir ▾
-            </span>
           </div>
-        </button>
+        </div>
 
         {/* Navigation Buttons Row: Reverse (<<) & Forward (>>) */}
         <div className="flex items-center justify-between mt-3 px-1">
