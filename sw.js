@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dzikirku-v61';
+const CACHE_NAME = 'dzikirku-v62';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -7,8 +7,8 @@ const ASSETS_TO_CACHE = [
   './icons/icon-180.png',
   './icons/icon-192.png',
   './icons/icon-512.png',
-    './assets/index-Br7bkTq-.css',
-  './assets/index-DKvRYPvV.js',
+    './assets/index-BwIhkAQX.css',
+  './assets/index-CuKjx6K3.js',
 ];
 
 // Precache all core assets on install
