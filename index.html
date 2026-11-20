@@ -34,18 +34,23 @@
       href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="./assets/index-BMlfnMtw.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-Cfhp_Lnj.css">
+    <script type="module" crossorigin src="./assets/index-CAI0xcNd.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CQu0BudX.css">
   </head>
   <body class="bg-background text-text select-none">
     <div id="root"></div>
     <script>
-      // Service worker registration
+      // Service worker registration with automatic update check
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./sw.js').catch((err) => {
-            console.log('SW registration failed:', err);
-          });
+          navigator.serviceWorker
+            .register('./sw.js')
+            .then((registration) => {
+              registration.update();
+            })
+            .catch((err) => {
+              console.log('SW registration failed:', err);
+            });
         });
       }
     </script>
