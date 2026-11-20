@@ -147,19 +147,25 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       <div className="max-w-lg mx-auto px-4 sm:px-5">
         {/* Dhikr Content Card - Clean Neumorphic Display */}
-        <div className="w-full mt-2 h-[180px] px-5 py-3.5 neu-card rounded-3xl text-left flex flex-col justify-between relative">
+        <div className="w-full mt-2 h-[230px] px-5 py-3 neu-card rounded-3xl text-left flex flex-col justify-between relative">
           {activeDhikr.arabicText && (
-            <div className="flex-1 flex items-center justify-end w-full min-h-0 py-1 overflow-y-auto no-scrollbar">
-              <p
-                className="arabic-text text-right text-primary-dark text-3xl leading-[2.1] tracking-wide w-full"
-                dir="rtl"
-                lang="ar"
-              >
-                {activeDhikr.arabicText}
-              </p>
+            <div className="flex-1 w-full min-h-0 overflow-y-auto no-scrollbar flex flex-col">
+              <div className="my-auto w-full py-1">
+                <p
+                  className={`arabic-text text-right text-primary-dark tracking-wide w-full ${
+                    activeDhikr.arabicText.length > 70
+                      ? 'text-[26px] sm:text-[28px] leading-[2.0]'
+                      : 'text-3xl leading-[2.1]'
+                  }`}
+                  dir="rtl"
+                  lang="ar"
+                >
+                  {activeDhikr.arabicText}
+                </p>
+              </div>
             </div>
           )}
-          <div className="w-full pt-1.5 border-t border-black/[0.04] dark:border-white/[0.06]">
+          <div className="w-full pt-1.5 border-t border-black/[0.04] dark:border-white/[0.06] flex-shrink-0">
             <p className="text-xs font-bold text-text truncate">
               {activeDhikr.name || activeDhikr.transliteration}
             </p>
@@ -167,7 +173,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         {/* Navigation Buttons Row: Reverse (<<) & Forward (>>) */}
-        <div className="flex items-center justify-between mt-2.5 px-1">
+        <div className="flex items-center justify-between mt-2 px-1">
           <button
             type="button"
             onClick={() => {
@@ -175,14 +181,14 @@ export const HomePage: React.FC<HomePageProps> = ({
               if (settings.soundEnabled) playClickSound();
               onPrevDhikr();
             }}
-            className="w-12 h-10 rounded-2xl neu-btn text-primary flex items-center justify-center transition-all"
+            className="w-11 h-9 rounded-2xl neu-btn text-primary flex items-center justify-center transition-all"
             aria-label="Bacaan sebelumnya (<<)"
             title="Bacaan Sebelumnya"
           >
-            <ChevronsLeft size={20} className="stroke-[2.5]" />
+            <ChevronsLeft size={18} className="stroke-[2.5]" />
           </button>
 
-          <div className="neu-inset-sm px-4 py-1.5 rounded-full text-[11px] font-bold text-muted flex items-center gap-1.5">
+          <div className="neu-inset-sm px-3.5 py-1 rounded-full text-[10px] font-bold text-muted flex items-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-primary/70" />
             <span>Geser / Ganti Dzikir</span>
           </div>
@@ -194,50 +200,50 @@ export const HomePage: React.FC<HomePageProps> = ({
               if (settings.soundEnabled) playClickSound();
               onNextDhikr();
             }}
-            className="w-12 h-10 rounded-2xl neu-btn text-primary flex items-center justify-center transition-all"
+            className="w-11 h-9 rounded-2xl neu-btn text-primary flex items-center justify-center transition-all"
             aria-label="Bacaan berikutnya (>>)"
             title="Bacaan Berikutnya"
           >
-            <ChevronsRight size={20} className="stroke-[2.5]" />
+            <ChevronsRight size={18} className="stroke-[2.5]" />
           </button>
         </div>
 
         {/* Counter Area with Neumorphic Progress Dial */}
-        <div className="flex flex-col items-center mt-2.5">
-          <ProgressRing progress={progress} size={175} strokeWidth={7}>
-            <div className={`flex flex-col items-center ${justReachedTarget ? 'target-reached-animation' : ''}`}>
-              <span className="text-[40px] font-black text-primary-dark tabular-nums leading-none tracking-tight">
+        <div className="flex flex-col items-center mt-2">
+          <ProgressRing progress={progress} size={140} strokeWidth={6}>
+            <div className={`flex flex-col items-center justify-center ${justReachedTarget ? 'target-reached-animation' : ''}`}>
+              <span className="text-[32px] font-black text-primary-dark tabular-nums leading-none tracking-tight">
                 {formatCount(activeSession.count)}
               </span>
-              <span className="text-[11px] text-muted mt-1.5 font-semibold">
+              <span className="text-[10px] text-muted mt-1 font-semibold">
                 {reached ? (
                   <span className="text-gold font-bold flex items-center gap-1">
-                    <CheckCircle2 size={12} />
+                    <CheckCircle2 size={11} />
                     Target tercapai!
                   </span>
                 ) : (
                   `Sisa ${formatCount(remaining)} lagi`
                 )}
               </span>
-              <span className="text-[10px] text-muted/80 mt-0.5 font-medium tabular-nums">
+              <span className="text-[9px] text-muted/80 mt-0.5 font-medium tabular-nums">
                 {formatCount(activeSession.count)} / {formatCount(activeSession.target)}
               </span>
             </div>
           </ProgressRing>
 
           {/* Action Buttons Row */}
-          <div className="flex items-center justify-center gap-6 mt-3.5 w-full">
+          <div className="flex items-center justify-center gap-5 mt-2.5 w-full">
             {/* Reset */}
             <button
               onClick={() => activeSession.count > 0 && setShowResetConfirm(true)}
-              className="flex flex-col items-center gap-1.5 text-muted hover:text-danger active:scale-95 transition-all disabled:opacity-40"
+              className="flex flex-col items-center gap-1 text-muted hover:text-danger active:scale-95 transition-all disabled:opacity-40"
               aria-label="Reset hitungan"
               disabled={activeSession.count === 0}
             >
-              <div className="w-11 h-11 rounded-full neu-btn-circle flex items-center justify-center">
-                <RotateCcw size={17} />
+              <div className="w-9 h-9 rounded-full neu-btn-circle flex items-center justify-center">
+                <RotateCcw size={15} />
               </div>
-              <span className="text-[10px] font-bold">Reset</span>
+              <span className="text-[9px] font-bold">Reset</span>
             </button>
 
             {/* Tactile Neumorphic Count Button */}
@@ -246,13 +252,13 @@ export const HomePage: React.FC<HomePageProps> = ({
             {/* Target */}
             <button
               onClick={openTargetModal}
-              className="flex flex-col items-center gap-1.5 text-muted hover:text-primary active:scale-95 transition-all"
+              className="flex flex-col items-center gap-1 text-muted hover:text-primary active:scale-95 transition-all"
               aria-label="Ubah target"
             >
-              <div className="w-11 h-11 rounded-full neu-btn-circle flex items-center justify-center">
-                <Target size={17} />
+              <div className="w-9 h-9 rounded-full neu-btn-circle flex items-center justify-center">
+                <Target size={15} />
               </div>
-              <span className="text-[10px] font-bold">Target</span>
+              <span className="text-[9px] font-bold">Target</span>
             </button>
           </div>
 
@@ -260,10 +266,10 @@ export const HomePage: React.FC<HomePageProps> = ({
           <button
             onClick={handleUndo}
             disabled={activeSession.count === 0}
-            className="mt-2.5 flex items-center gap-1.5 px-4 py-1.5 rounded-full neu-btn text-xs text-muted hover:text-text disabled:opacity-30 disabled:pointer-events-none transition-all"
+            className="mt-1.5 flex items-center gap-1.5 px-3.5 py-1 rounded-full neu-btn text-[11px] text-muted hover:text-text disabled:opacity-30 disabled:pointer-events-none transition-all"
             aria-label="Undo satu hitungan"
           >
-            <Minus size={13} strokeWidth={2.5} />
+            <Minus size={12} strokeWidth={2.5} />
             <span className="font-semibold">Undo</span>
           </button>
         </div>

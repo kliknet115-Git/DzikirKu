@@ -30,7 +30,7 @@ export const CountButton: React.FC<CountButtonProps> = ({ onCount, disabled }) =
 
   return (
     /* Outer Neumorphic Sunken Rim / Well */
-    <div className="w-[124px] h-[124px] rounded-full neu-inset p-2 flex items-center justify-center flex-shrink-0">
+    <div className="w-[96px] h-[96px] rounded-full neu-inset p-1.5 flex items-center justify-center flex-shrink-0">
       {/* 3D Convex Emerald Button that sinks on tap */}
       <button
         ref={buttonRef}
@@ -43,10 +43,10 @@ export const CountButton: React.FC<CountButtonProps> = ({ onCount, disabled }) =
         }}
         aria-label="Hitung dzikir"
       >
-        <span className="text-[17px] font-black tracking-wider text-white drop-shadow-sm group-active:scale-95 transition-transform">
+        <span className="text-[14px] font-black tracking-wider text-white drop-shadow-sm group-active:scale-95 transition-transform">
           HITUNG
         </span>
-        <span className="text-[9px] font-bold tracking-widest text-white/75 uppercase mt-0.5">
+        <span className="text-[8px] font-bold tracking-widest text-white/75 uppercase mt-0.5">
           KETUK
         </span>
       </button>

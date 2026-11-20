@@ -24,8 +24,8 @@ export const ProgressRing: React.FC<ProgressRingProps> = ({
 
   return (
     <div
-      className="relative inline-flex items-center justify-center rounded-full neu-card-lg p-2.5 transition-all"
-      style={{ width: size + 20, height: size + 20 }}
+      className="relative inline-flex items-center justify-center rounded-full neu-card-lg p-2 transition-all"
+      style={{ width: size + 16, height: size + 16 }}
     >
       {/* Inner dial recess */}
       <div className="w-full h-full rounded-full neu-inset flex items-center justify-center relative">
@@ -60,7 +60,7 @@ export const ProgressRing: React.FC<ProgressRingProps> = ({
         </svg>
 
         {/* Center content disc */}
-        <div className="w-[82%] h-[82%] rounded-full neu-card flex flex-col items-center justify-center z-10 p-2">
+        <div className="w-[82%] h-[82%] rounded-full neu-card flex flex-col items-center justify-center z-10 p-1.5">
           {children}
         </div>
       </div>
